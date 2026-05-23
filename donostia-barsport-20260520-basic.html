@@ -1,0 +1,245 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bar Sport &mdash; Pintxos, Parte Vieja, Donostia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2EADB;--ink:#15110D;--sea:#1B4D5A;--gold:#C5933A;--ember:#D67A2C;--mute:rgba(21,17,13,.62);--line:rgba(21,17,13,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--sea);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;background:rgba(242,234,219,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand b{font-style:normal;font-weight:500;color:var(--sea)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--sea)}
+.lang-btn{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.18em;color:var(--sea);background:transparent;border:1px solid var(--sea);padding:7px 14px;border-radius:20px;cursor:pointer;font-weight:500;text-transform:uppercase;transition:all .2s}
+.lang-btn:hover{background:var(--sea);color:#fff}
+@media(max-width:760px){.nav-links{gap:12px}.nav-links a{font-size:12px}.brand{font-size:22px}.lang-btn{padding:5px 10px;font-size:10px}}
+
+.hero{padding:170px 0 90px;background:var(--paper)}
+.hero .eye{margin-bottom:30px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(60px,11vw,168px);font-weight:500;line-height:.94;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--sea);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:720px;line-height:1.45;color:var(--mute);margin-bottom:46px}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line);max-width:920px}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--sea);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);font-weight:500}
+
+.feat{height:78vh;min-height:560px;overflow:hidden;position:relative}
+.feat img{width:100%;height:100%;object-fit:cover;filter:grayscale(.12) contrast(1.04)}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 100%)}
+.feat .cap{position:absolute;bottom:60px;left:0;right:0;padding:0 40px;color:#fff;z-index:2}
+.feat .cap .eye{color:#E8B260}
+.feat .cap h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5.5vw,68px);font-weight:500;max-width:760px;line-height:1.1;margin-top:14px}
+
+.quote{padding:140px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.quote blockquote{max-width:980px;margin:0 auto;text-align:center}
+.quote blockquote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(28px,4vw,52px);line-height:1.3;color:var(--ink);font-weight:400}
+.quote blockquote p em{color:var(--sea);font-style:italic;font-weight:500}
+.quote cite{display:block;font-style:normal;margin-top:38px;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+
+.dishes{padding:140px 0;background:#fff;border-bottom:1px solid var(--line)}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--sea)}
+.dishes .head p{color:var(--mute);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--paper)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;font-weight:500;margin-bottom:10px}
+.dish p{color:var(--mute);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.room{padding:140px 0;background:var(--paper)}
+.room .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:860px){.room .grid{grid-template-columns:1fr;gap:50px}}
+.room img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:contrast(1.05)}
+.room .text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin:18px 0 26px}
+.room .text h2 em{font-style:italic;color:var(--sea)}
+.room .text p{font-size:17px;color:var(--mute);line-height:1.85;margin-bottom:18px}
+.room .text p b{color:var(--ink);font-weight:500}
+
+.visit{padding:140px 0;background:#fff;border-top:1px solid var(--line)}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 64px}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px}
+.visit .head h2 em{font-style:italic;color:var(--sea)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:var(--paper);border-radius:3px;border:1px solid var(--line)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1}
+.vcard h3 em{font-style:italic;color:var(--sea)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--sea);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:var(--ink)}
+.vcard .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:var(--ink)}
+
+.cta{padding:140px 0;background:var(--sea);color:#fff;text-align:center}
+.cta .eye{color:rgba(255,255,255,.72);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:#E8B260}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--sea);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:#E8B260;color:#fff}
+
+footer{padding:64px 0 48px;background:var(--ink);color:#D6CDBE}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:#E8B260;font-style:normal}
+footer .info{font-size:14px;color:#9D9587;line-height:1.7;text-align:right}
+footer .info a{color:#E8B260;text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#8B826F;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">Bar <b>Sport</b></a>
+  <div class="nav-links">
+    <a href="#barra" data-lang-es="La Barra" data-lang-en="The Counter">La Barra</a>
+    <a href="#parte-vieja" data-lang-es="Parte Vieja" data-lang-en="Old Town">Parte Vieja</a>
+    <a href="#visita" data-lang-es="Visitar" data-lang-en="Visit">Visitar</a>
+    <button class="lang-btn" id="langToggle">EN &#8646; ES</button>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye" data-lang-es="Bar de pintxos &middot; Parte Vieja, Donostia" data-lang-en="Pintxo Bar &middot; Old Town, Donostia">Bar de pintxos &middot; Parte Vieja, Donostia</div>
+  <h1 data-lang-es-html="Bar<br><em>Sport</em>" data-lang-en-html="Bar<br><em>Sport</em>">Bar<br><em>Sport</em></h1>
+  <p class="lead" data-lang-es="Una barra estrecha en la calle Fermin Calbet&oacute;n. Un foie de Las Landas a la plancha que ha hecho historia. La parada obligada de la Parte Vieja, transmitida de boca en boca." data-lang-en="A narrow counter on Fermin Calbet&oacute;n street. A grilled foie de Las Landes that has made history. The mandatory stop of the Old Town, passed on by word of mouth.">Una barra estrecha en la calle Fermin Calbet&oacute;n. Un foie de Las Landas a la plancha que ha hecho historia. La parada obligada de la Parte Vieja, transmitida de boca en boca.</p>
+  <div class="meta">
+    <div class="col"><span data-lang-es="Direcci&oacute;n" data-lang-en="Address">Direcci&oacute;n</span><div class="v">Fermin Calbet&oacute;n, 10 &mdash; 20003</div></div>
+    <div class="col"><span data-lang-es="Tel&eacute;fono" data-lang-en="Phone">Tel&eacute;fono</span><div class="v">+34 943 42 68 88</div></div>
+    <div class="col"><span data-lang-es="Abierto" data-lang-en="Open">Abierto</span><div class="v" data-lang-es="Todos los d&iacute;as" data-lang-en="Every day">Todos los d&iacute;as</div></div>
+  </div>
+</div></section>
+
+<section class="feat reveal">
+  <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1551218808-94e220e084d2%3Fw%3D1600%26q%3D80" alt="Interior de bar de pintxos">
+  <div class="cap">
+    <div class="eye" data-lang-es="La casa" data-lang-en="The house">La casa</div>
+    <h2 data-lang-es="Un bar de pintxos de toda la vida, en la calle m&aacute;s estrecha de la Parte Vieja." data-lang-en="A timeless pintxo bar, on the narrowest street of the Old Town.">Un bar de pintxos de toda la vida, en la calle m&aacute;s estrecha de la Parte Vieja.</h2>
+  </div>
+</section>
+
+<section class="quote reveal"><div class="wrap"><blockquote>
+  <p data-lang-es-html="&laquo;&nbsp;Una parada <em>obligatoria</em> para los amantes del foie. Uno de los <em>mejores</em> de la zona&nbsp;&raquo;." data-lang-en-html="&laquo;&nbsp;A <em>mandatory</em> stop for foie lovers. One of the <em>best</em> in the area&nbsp;&raquo;.">&laquo;&nbsp;Una parada <em>obligatoria</em> para los amantes del foie. Uno de los <em>mejores</em> de la zona&nbsp;&raquo;.</p>
+  <cite data-lang-es="&mdash; Cr&iacute;tica gastron&oacute;mica, Gipuzkoa" data-lang-en="&mdash; Food critics, Gipuzkoa">&mdash; Cr&iacute;tica gastron&oacute;mica, Gipuzkoa</cite>
+</blockquote></div></section>
+
+<section id="barra" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-es="La barra" data-lang-en="The counter">La barra</div>
+    <h2 data-lang-es-html="Tres pintxos, <em>una leyenda</em>." data-lang-en-html="Three pintxos, <em>one legend</em>.">Tres pintxos, <em>una leyenda</em>.</h2>
+    <p data-lang-es="Lo que pides al entrar. Lo que vuelves a pedir cuando regresas." data-lang-en="What you order when you walk in. What you order again when you come back.">Lo que pides al entrar. Lo que vuelves a pedir cuando regresas.</p>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1607198179219-d57d2f0d6747%3Fw%3D900%26q%3D80" alt="Foie a la plancha"></div>
+      <h3 data-lang-es="Foie de Las Landas" data-lang-en="Las Landes Foie">Foie de Las Landas</h3>
+      <p data-lang-es="A la plancha, sobre pan tostado. La firma de la casa, la raz&oacute;n por la que se forma cola." data-lang-en="Grilled, on toasted bread. The signature of the house, the reason the queue forms.">A la plancha, sobre pan tostado. La firma de la casa, la raz&oacute;n por la que se forma cola.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1598103442097-8b74394b95c6%3Fw%3D900%26q%3D80" alt="Txangurro"></div>
+      <h3 data-lang-es="Txangurro al horno" data-lang-en="Baked Txangurro">Txangurro al horno</h3>
+      <p data-lang-es="Centollo desmigado, gratinado con pan rallado y mantequilla. Pura cocina vasca." data-lang-en="Flaked spider crab, gratin&eacute;ed with breadcrumbs and butter. Pure Basque cuisine.">Centollo desmigado, gratinado con pan rallado y mantequilla. Pura cocina vasca.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1432139509613-5c4255815697%3Fw%3D900%26q%3D80" alt="Crema de erizo"></div>
+      <h3 data-lang-es="Crema de erizo" data-lang-en="Sea Urchin Cream">Crema de erizo</h3>
+      <p data-lang-es="El sabor del Cant&aacute;brico en cuchara. Suave, intenso, inolvidable." data-lang-en="The taste of the Cantabrian in a spoon. Smooth, intense, unforgettable.">El sabor del Cant&aacute;brico en cuchara. Suave, intenso, inolvidable.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="parte-vieja" class="room"><div class="wrap"><div class="grid">
+  <img class="reveal" src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559339352-11d035aa65de%3Fw%3D1200%26q%3D80" alt="Calle Fermin Calbeton">
+  <div class="text reveal">
+    <div class="eye" data-lang-es="La calle" data-lang-en="The street">La calle</div>
+    <h2 data-lang-es-html="Fermin Calbet&oacute;n, <em>diez metros de barra</em>." data-lang-en-html="Fermin Calbet&oacute;n, <em>ten metres of counter</em>.">Fermin Calbet&oacute;n, <em>diez metros de barra</em>.</h2>
+    <p data-lang-es-html="La calle m&aacute;s vivida de la Parte Vieja. Aqu&iacute; se entra de pie, se come de pie, se brinda de pie. <b>No se reservan mesas</b> &mdash; se llega, se hace hueco, y el camarero te canta los pintxos del d&iacute;a." data-lang-en-html="The most-lived street in the Old Town. You enter standing, you eat standing, you toast standing. <b>No tables are booked</b> &mdash; you arrive, you make room, and the bartender calls out the pintxos of the day.">La calle m&aacute;s vivida de la Parte Vieja. Aqu&iacute; se entra de pie, se come de pie, se brinda de pie. <b>No se reservan mesas</b> &mdash; se llega, se hace hueco, y el camarero te canta los pintxos del d&iacute;a.</p>
+    <p data-lang-es="Abrimos desde la ma&ntilde;ana hasta la noche, sin cerrar a mediod&iacute;a. As&iacute; ha sido siempre." data-lang-en="We open from morning until night, without closing for lunch. It has always been so.">Abrimos desde la ma&ntilde;ana hasta la noche, sin cerrar a mediod&iacute;a. As&iacute; ha sido siempre.</p>
+  </div>
+</div></div></section>
+
+<section id="visita" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-es="Para venir" data-lang-en="To come">Para venir</div>
+    <h2 data-lang-es-html="Acercarse al <em>Sport</em>." data-lang-en-html="Coming to <em>Sport</em>.">Acercarse al <em>Sport</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3 data-lang-es-html="La direcci&oacute;n <em>exacta</em>." data-lang-en-html="The <em>exact</em> address.">La direcci&oacute;n <em>exacta</em>.</h3>
+      <p data-lang-es="Fermin Calbet&oacute;n, 10 &mdash; en el coraz&oacute;n de la Parte Vieja donostiarra, entre la calle 31 de Agosto y la plaza de la Constituci&oacute;n. La fachada es discreta&nbsp;: dos vidrieras, el r&oacute;tulo en azul." data-lang-en="Fermin Calbet&oacute;n, 10 &mdash; in the heart of Donostia's Old Town, between 31 de Agosto street and Plaza de la Constituci&oacute;n. The facade is discreet&nbsp;: two glass windows, the sign in blue.">Fermin Calbet&oacute;n, 10 &mdash; en el coraz&oacute;n de la Parte Vieja donostiarra, entre la calle 31 de Agosto y la plaza de la Constituci&oacute;n. La fachada es discreta&nbsp;: dos vidrieras, el r&oacute;tulo en azul.</p>
+      <span class="lbl" data-lang-es="Mapa" data-lang-en="Map">Mapa</span>
+      <div class="val"><a href="https://www.google.com/maps/search/Bar+Sport+Fermin+Calbeton+10+Donostia" target="_blank" rel="noopener" data-lang-es="Ver en Google Maps &rarr;" data-lang-en="See on Google Maps &rarr;">Ver en Google Maps &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day" data-lang-es="Lunes &mdash; Jueves" data-lang-en="Monday &mdash; Thursday">Lunes &mdash; Jueves</span><span>09:00&ndash;23:30</span></div>
+        <div class="row"><span class="day" data-lang-es="Viernes &amp; S&aacute;bado" data-lang-en="Friday &amp; Saturday">Viernes &amp; S&aacute;bado</span><span>09:00&ndash;01:30</span></div>
+        <div class="row"><span class="day" data-lang-es="Domingo" data-lang-en="Sunday">Domingo</span><span>11:00&ndash;23:30</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3 data-lang-es-html="Sin <em>reservas</em>." data-lang-en-html="No <em>bookings</em>.">Sin <em>reservas</em>.</h3>
+      <p data-lang-es="No tomamos reservas. Se llega, se entra, se hace hueco en la barra. Si hay mucha gente, se espera fuera con un txakoli en la mano." data-lang-en="We do not take bookings. You arrive, you walk in, you make space at the counter. If it is busy, you wait outside with a txakoli in hand.">No tomamos reservas. Se llega, se entra, se hace hueco en la barra. Si hay mucha gente, se espera fuera con un txakoli en la mano.</p>
+      <p data-lang-es="Para grupos grandes o cualquier duda, llama por tel&eacute;fono &mdash; te atendemos en la barra." data-lang-en="For large groups or any question, give us a call &mdash; we'll answer from the counter.">Para grupos grandes o cualquier duda, llama por tel&eacute;fono &mdash; te atendemos en la barra.</p>
+      <span class="lbl" data-lang-es="Tel&eacute;fono" data-lang-en="Phone">Tel&eacute;fono</span>
+      <div class="val">+34 943 42 68 88</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye" data-lang-es="Visita" data-lang-en="Visit">Visita</div>
+  <h2 data-lang-es-html="El foie te <em>espera</em>." data-lang-en-html="The foie is <em>waiting</em>.">El foie te <em>espera</em>.</h2>
+  <a class="btn" href="tel:+34943426888" data-lang-es="Llamar al bar" data-lang-en="Call the bar">Llamar al bar</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">Bar <em>Sport</em></div>
+    <div class="info">Fermin Calbet&oacute;n, 10 &middot; 20003 Donostia<br><span data-lang-es="Parte Vieja &middot; Gipuzkoa &middot;" data-lang-en="Old Town &middot; Gipuzkoa &middot;">Parte Vieja &middot; Gipuzkoa &middot;</span> <a href="https://www.google.com/maps/search/Bar+Sport+Fermin+Calbeton+10+Donostia" target="_blank" rel="noopener" data-lang-es="Mapa" data-lang-en="Map">Mapa</a></div>
+  </div>
+  <div class="small" data-lang-es="Abierto todos los d&iacute;as &middot; Sin reservas &middot; Barra y de pie" data-lang-en="Open every day &middot; No bookings &middot; Counter only">Abierto todos los d&iacute;as &middot; Sin reservas &middot; Barra y de pie</div>
+</div></footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
+
+(function(){
+  var current="es";
+  var btn=document.getElementById("langToggle");
+  function apply(lang){
+    document.querySelectorAll("[data-lang-"+lang+"]").forEach(function(el){
+      el.textContent=el.getAttribute("data-lang-"+lang);
+    });
+    document.querySelectorAll("[data-lang-"+lang+"-html]").forEach(function(el){
+      el.innerHTML=el.getAttribute("data-lang-"+lang+"-html");
+    });
+    document.documentElement.lang=lang;
+    btn.textContent=(lang==="es"?"EN":"ES")+" ⇄ "+(lang==="es"?"ES":"EN");
+  }
+  if(btn){btn.addEventListener("click",function(){current=(current==="es")?"en":"es";apply(current);});}
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,226 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Fragua &mdash; Taberna y tapas, Salamanca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F3E9D7;--ink:#1B1410;--wine:#7A1E1A;--gold:#B58A3E;--ember:#C8843E;--mute:rgba(27,20,16,.62);--line:rgba(27,20,16,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--wine);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;background:rgba(243,233,215,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand b{font-style:normal;font-weight:500;color:var(--wine)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--wine)}
+@media(max-width:760px){.nav-links{gap:14px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.hero{padding:170px 0 90px;background:var(--paper)}
+.hero .eye{margin-bottom:30px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(60px,11vw,168px);font-weight:500;line-height:.94;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--wine);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:720px;line-height:1.45;color:var(--mute);margin-bottom:46px}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line);max-width:920px}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--wine);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);font-weight:500}
+
+.feat{height:78vh;min-height:560px;overflow:hidden;position:relative}
+.feat img{width:100%;height:100%;object-fit:cover;filter:grayscale(.12) contrast(1.04)}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 100%)}
+.feat .cap{position:absolute;bottom:60px;left:0;right:0;padding:0 40px;color:#fff;z-index:2}
+.feat .cap .eye{color:#E8B260}
+.feat .cap h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5.5vw,68px);font-weight:500;max-width:760px;line-height:1.1;margin-top:14px}
+
+.quote{padding:140px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.quote blockquote{max-width:980px;margin:0 auto;text-align:center}
+.quote blockquote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(28px,4vw,52px);line-height:1.3;color:var(--ink);font-weight:400}
+.quote blockquote p em{color:var(--wine);font-style:italic;font-weight:500}
+.quote cite{display:block;font-style:normal;margin-top:38px;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+
+.dishes{padding:140px 0;background:#fff;border-bottom:1px solid var(--line)}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--wine)}
+.dishes .head p{color:var(--mute);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--paper)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;font-weight:500;margin-bottom:10px}
+.dish p{color:var(--mute);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.room{padding:140px 0;background:var(--paper)}
+.room .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:860px){.room .grid{grid-template-columns:1fr;gap:50px}}
+.room img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:contrast(1.05)}
+.room .text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin:18px 0 26px}
+.room .text h2 em{font-style:italic;color:var(--wine)}
+.room .text p{font-size:17px;color:var(--mute);line-height:1.85;margin-bottom:18px}
+.room .text p b{color:var(--ink);font-weight:500}
+
+.visit{padding:140px 0;background:#fff;border-top:1px solid var(--line)}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 64px}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px}
+.visit .head h2 em{font-style:italic;color:var(--wine)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:var(--paper);border-radius:3px;border:1px solid var(--line)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1}
+.vcard h3 em{font-style:italic;color:var(--wine)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--wine);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:var(--ink)}
+.vcard .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:var(--ink)}
+
+.cta{padding:140px 0;background:var(--wine);color:#fff;text-align:center}
+.cta .eye{color:rgba(255,255,255,.72);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:#E8B260}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--wine);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:#E8B260;color:#fff}
+
+footer{padding:64px 0 48px;background:var(--ink);color:#D6CDBE}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:#E8B260;font-style:normal}
+footer .info{font-size:14px;color:#9D9587;line-height:1.7;text-align:right}
+footer .info a{color:#E8B260;text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#8B826F;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">La <b>Fragua</b></a>
+  <div class="nav-links">
+    <a href="#tapas">Las Tapas</a>
+    <a href="#casa">La Casa</a>
+    <a href="#visita">Visitar</a>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye">Taberna familiar &middot; Salamanca</div>
+  <h1>La<br><em>Fragua</em></h1>
+  <p class="lead">Una barra modesta en la calle Felipe Espino. Recetas de la madre, servicio del hijo, y las tapas de toda la vida &mdash; las de la abuela, sin atajos.</p>
+  <div class="meta">
+    <div class="col"><span>Direcci&oacute;n</span><div class="v">C/ Felipe Espino, 2 &mdash; Salamanca</div></div>
+    <div class="col"><span>Reservas</span><div class="v">+34 697 92 44 97</div></div>
+    <div class="col"><span>Abierto</span><div class="v">Lunes &mdash; S&aacute;bado</div></div>
+  </div>
+</div></section>
+
+<section class="feat reveal">
+  <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1414235077428-338989a2e8c0%3Fw%3D1600%26q%3D80" alt="Barra de tapas">
+  <div class="cap">
+    <div class="eye">La casa</div>
+    <h2>Un sitio peque&ntilde;o donde el camarero es el hijo y la cocinera la madre.</h2>
+  </div>
+</section>
+
+<section class="quote reveal"><div class="wrap"><blockquote>
+  <p>&laquo;&nbsp;Aqu&iacute; se comen las <em>tapas de la abuela</em>, las de toda la vida, las que ya casi nadie hace.&nbsp;&raquo;</p>
+  <cite>&mdash; Prensa local, Salamanca</cite>
+</blockquote></div></section>
+
+<section id="tapas" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye">La carta</div>
+    <h2>Tres tapas, <em>una memoria</em>.</h2>
+    <p>Recetas que la casa lleva haciendo desde 2008 &mdash; pero el sabor es el de toda la vida.</p>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565299543923-37dd37887442%3Fw%3D900%26q%3D80" alt="Huevos con farinato"></div>
+      <h3>Huevos con farinato</h3>
+      <p>La tapa charra por excelencia. Yema corriendo sobre el embutido salmantino bien dorado en su grasa.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1626200419199-391ae4be7a41%3Fw%3D900%26q%3D80" alt="Croquetas caseras"></div>
+      <h3>Croquetas de la casa</h3>
+      <p>De la madre, sin discusi&oacute;n. B&eacute;chamel suave, costra fina, salen del fuego a la barra.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1547592180-85f173990554%3Fw%3D900%26q%3D80" alt="Judias con oreja"></div>
+      <h3>Jud&iacute;as con oreja y chorizo</h3>
+      <p>El plato de cuchara que aguanta una ma&ntilde;ana entera de oposiciones en Anaya. Caldo, fuego y tiempo.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="casa" class="room"><div class="wrap"><div class="grid">
+  <img class="reveal" src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559339352-11d035aa65de%3Fw%3D1200%26q%3D80" alt="La sala">
+  <div class="text reveal">
+    <div class="eye">La casa</div>
+    <h2>Tres en cocina, <em>una receta</em>.</h2>
+    <p>Detr&aacute;s de la barra, Jes&uacute;s Mar&iacute;a &mdash; "Chusma" &mdash;, su mujer Mar&iacute;a en la cocina, y el hijo Cristian sirviendo. <b>Una sola familia</b>, una sola manera de hacer las cosas, desde 2008.</p>
+    <p>Aqu&iacute; no hay carta plastificada ni reservas por internet. La pizarra cuenta lo del d&iacute;a, y la tapa viene con la ca&ntilde;a, como toca en Salamanca.</p>
+  </div>
+</div></div></section>
+
+<section id="visita" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye">Para venir</div>
+    <h2>Encontrar <em>La Fragua</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3>La <em>direcci&oacute;n</em>.</h3>
+      <p>Calle Felipe Espino, 2 &mdash; a un paseo corto de la Plaza Mayor, en una callecita tranquila entre San Pablo y el Paseo del Rector Esperab&eacute;.</p>
+      <span class="lbl">Plano</span>
+      <div class="val"><a href="https://www.google.com/maps/place/La+Fragua/@40.9651,-5.6608,17z" target="_blank" rel="noopener">Ver en Google Maps &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day">Lunes &mdash; Viernes</span><span>08:00&ndash;16:00 &middot; 19:30&ndash;24:00</span></div>
+        <div class="row"><span class="day">S&aacute;bado</span><span>10:00&ndash;16:00 &middot; 19:30&ndash;24:00</span></div>
+        <div class="row"><span class="day">Domingo</span><span>Cerrado</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3>Una <em>llamada</em> basta.</h3>
+      <p>Para grupos o cuando hay much&iacute;simo l&iacute;o, llame antes y le guardamos sitio. El resto del tiempo, basta con asomarse: si hay hueco en la barra, hay tapa.</p>
+      <p>Pagos en met&aacute;lico y con tarjeta. Terraza peque&ntilde;a en la calle cuando el tiempo acompa&ntilde;a.</p>
+      <span class="lbl">Tel&eacute;fono</span>
+      <div class="val">+34 697 92 44 97</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye">Reservas</div>
+  <h2>La barra <em>le espera</em>.</h2>
+  <a class="btn" href="tel:+34697924497">Llamar a La Fragua</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">La <em>Fragua</em></div>
+    <div class="info">C/ Felipe Espino, 2 &middot; 37002 Salamanca<br>Taberna familiar &middot; <a href="https://www.google.com/maps/place/La+Fragua" target="_blank" rel="noopener">Plano</a></div>
+  </div>
+  <div class="small">Lun &mdash; S&aacute;b &middot; 08:00&ndash;16:00 &middot; 19:30&ndash;24:00 &middot; Domingo cerrado</div>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+
+</body></html>

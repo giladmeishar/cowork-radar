@@ -1,0 +1,441 @@
+<!doctype html><html lang="it"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trattoria Sergio Gozzi &mdash; San Lorenzo, Firenze dal 1915</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--night:#100B07;--paper:#F1E7D2;--ink:#1C140C;--wine:#8A1F1A;--gold:#C8943A;--ember:#E0A65A;--mute:rgba(241,231,210,.65);--line:rgba(241,231,210,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--night);color:var(--paper);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--ember);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;mix-blend-mode:difference;color:#fff}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:#fff;text-decoration:none}
+.brand b{font-style:normal;font-weight:500}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:#fff;text-decoration:none;font-size:13px;font-weight:400;transition:opacity .2s}
+.nav-links a:hover{opacity:.7}
+.lang{font-size:11px;letter-spacing:.18em;border:1px solid rgba(255,255,255,.4);padding:6px 12px;border-radius:18px;background:transparent;cursor:pointer;color:#fff;font-weight:500}
+.lang:hover{border-color:#fff}
+@media(max-width:760px){.nav-links{gap:12px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.stage{position:fixed;inset:0;z-index:0;pointer-events:none}
+.stage canvas{width:100%!important;height:100%!important;display:block}
+
+main{position:relative;z-index:1}
+
+.hero{height:100vh;display:flex;align-items:flex-end;padding:0 0 90px;position:relative}
+.hero .wrap{width:100%}
+.hero .eye{margin-bottom:28px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(64px,12vw,200px);color:#fff;font-weight:500;line-height:.92;letter-spacing:-.025em;margin-bottom:26px}
+.hero h1 em{font-style:italic;color:var(--ember);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:740px;line-height:1.45;color:#fff;margin-bottom:42px;opacity:.85}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.18);max-width:920px;color:#fff}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--ember);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:#fff;font-weight:500}
+
+.flow{padding:48vh 0;position:relative}
+.flow .panel{max-width:880px;margin:0 auto;padding:0 40px;text-align:center}
+.flow .panel .eye{margin-bottom:28px}
+.flow .panel p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(30px,4.5vw,58px);line-height:1.25;color:#fff;font-weight:400}
+.flow .panel p em{color:var(--ember);font-style:italic;font-weight:500}
+.flow .panel .by{display:block;margin-top:24px;font-size:11px;letter-spacing:.22em;color:var(--ember);text-transform:uppercase;font-family:Inter,sans-serif;font-style:normal;opacity:.85}
+
+.dishes{background:var(--paper);color:var(--ink);padding:140px 0;position:relative}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head .eye{color:var(--wine)}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--wine)}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--night)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;font-weight:500;margin-bottom:10px}
+.dish p{color:rgba(28,20,12,.62);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.visit{background:transparent;padding:130px 0;position:relative}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 64px}
+.visit .head .eye{color:var(--ember)}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px;color:#fff}
+.visit .head h2 em{font-style:italic;color:var(--ember)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:rgba(16,11,7,.55);border-radius:3px;border:1px solid var(--line);backdrop-filter:blur(10px)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1;color:#fff}
+.vcard h3 em{font-style:italic;color:var(--ember)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--ember);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:#fff}
+.vcard .val a{color:#fff;text-decoration:none;border-bottom:1px solid var(--ember)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:#fff}
+
+.cta{padding:160px 0;background:var(--wine);color:#fff;text-align:center;position:relative}
+.cta .eye{color:rgba(255,255,255,.7);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:var(--ember)}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--wine);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:var(--ember);color:#fff}
+
+footer{padding:64px 0 48px;background:#0A0704;color:#9D9587;position:relative}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:var(--ember);font-style:normal}
+footer .info{font-size:14px;line-height:1.7;text-align:right}
+footer .info a{color:var(--ember);text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:#75695A;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">Trattoria <b>Sergio Gozzi</b></a>
+  <div class="nav-links">
+    <a href="#tavola" data-lang-it="La Tavola" data-lang-en="The Table">La Tavola</a>
+    <a href="#visita" data-lang-it="Visitare" data-lang-en="Visit">Visitare</a>
+    <button class="lang" id="langBtn">EN &#8646; IT</button>
+  </div>
+</div></nav>
+
+<div class="stage" id="stage"></div>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye" data-lang-it="Trattoria Fiorentina &middot; dal 1915" data-lang-en="Florentine Trattoria &middot; since 1915">Trattoria Fiorentina &middot; dal 1915</div>
+  <h1 data-lang-it="Da" data-lang-en="At">Da<br><em>Sergio</em></h1>
+  <p class="lead" data-lang-it="Due sale a volta, le tovaglie a quadretti, il banco di marmo dell'Ottocento. Quattro generazioni della famiglia Gozzi, in Piazza San Lorenzo &mdash; dal 1915." data-lang-en="Two vaulted rooms, checked tablecloths, an 1800s marble counter. Four generations of the Gozzi family, on Piazza San Lorenzo &mdash; since 1915.">Due sale a volta, le tovaglie a quadretti, il banco di marmo dell'Ottocento. Quattro generazioni della famiglia Gozzi, in Piazza San Lorenzo &mdash; dal 1915.</p>
+  <div class="meta">
+    <div class="col"><span data-lang-it="Indirizzo" data-lang-en="Address">Indirizzo</span><div class="v">Piazza San Lorenzo, 8R &mdash; 50123</div></div>
+    <div class="col"><span data-lang-it="Prenotazioni" data-lang-en="Reservations">Prenotazioni</span><div class="v">+39 055 281941</div></div>
+    <div class="col"><span data-lang-it="Aperto" data-lang-en="Open">Aperto</span><div class="v" data-lang-it="Lun &mdash; Sab &middot; solo pranzo" data-lang-en="Mon &mdash; Sat &middot; lunch only">Lun &mdash; Sab &middot; solo pranzo</div></div>
+  </div>
+</div></section>
+
+<section class="flow"><div class="panel">
+  <div class="eye" data-lang-it="L'inizio" data-lang-en="The beginning">L'inizio</div>
+  <p data-lang-it="Nel <em>1915</em>, Antonio Gozzi prese in mano la mescita di vino di Piazza San Lorenzo." data-lang-en="In <em>1915</em>, Antonio Gozzi took over the wine bar on Piazza San Lorenzo.">Nel <em>1915</em>, Antonio Gozzi prese in mano la mescita di vino di Piazza San Lorenzo.</p>
+  <span class="by" data-lang-it="Quattro generazioni della famiglia Gozzi" data-lang-en="Four generations of the Gozzi family">Quattro generazioni della famiglia Gozzi</span>
+</div></section>
+
+<section class="flow"><div class="panel">
+  <div class="eye" data-lang-it="La firma" data-lang-en="The signature">La firma</div>
+  <p data-lang-it="Un <em>peposo</em> stracotto cinque ore nel Chianti &mdash; la ricetta che, si racconta, scaldava i muratori del Brunelleschi." data-lang-en="A <em>peposo</em> slow-cooked five hours in Chianti &mdash; the recipe that, they say, warmed Brunelleschi's masons.">Un <em>peposo</em> stracotto cinque ore nel Chianti &mdash; la ricetta che, si racconta, scaldava i muratori del Brunelleschi.</p>
+  <span class="by" data-lang-it="Tradizione della casa" data-lang-en="House tradition">Tradizione della casa</span>
+</div></section>
+
+<section class="flow"><div class="panel">
+  <div class="eye" data-lang-it="La sala" data-lang-en="The room">La sala</div>
+  <p data-lang-it="Tavoli di marmo dell'Ottocento, lampadari in ferro degli anni Trenta, l'insegna del <em>1946</em>. Niente &egrave; cambiato." data-lang-en="1800s marble tables, 1930s wrought-iron chandeliers, the <em>1946</em> sign. Nothing has changed.">Tavoli di marmo dell'Ottocento, lampadari in ferro degli anni Trenta, l'insegna del <em>1946</em>. Niente &egrave; cambiato.</p>
+  <span class="by" data-lang-it="Piazza San Lorenzo, 8R" data-lang-en="Piazza San Lorenzo, 8R">Piazza San Lorenzo, 8R</span>
+</div></section>
+
+<section id="tavola" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-it="La carta" data-lang-en="The menu">La carta</div>
+    <h2 data-lang-it="Tre piatti, <em>una memoria</em>." data-lang-en="Three dishes, <em>one memory</em>.">Tre piatti, <em>una memoria</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1432139509613-5c4255815697%3Fw%3D900%26q%3D80" alt="Bistecca"></div>
+      <h3 data-lang-it="La bistecca alla fiorentina" data-lang-en="The Florentine steak">La bistecca alla fiorentina</h3>
+      <p data-lang-it="Alta, al sangue, sul tagliere. Solo sale, pepe, un filo d'olio toscano." data-lang-en="Thick, rare, on the board. Just salt, pepper, a thread of Tuscan oil.">Alta, al sangue, sul tagliere. Solo sale, pepe, un filo d'olio toscano.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1572441713132-c542fc4fe282%3Fw%3D900%26q%3D80" alt="Ribollita"></div>
+      <h3 data-lang-it="La ribollita" data-lang-en="The ribollita">La ribollita</h3>
+      <p data-lang-it="Pane raffermo, cavolo nero, cannellini. La zuppa cotta due volte." data-lang-en="Stale bread, black kale, cannellini. The soup cooked twice over.">Pane raffermo, cavolo nero, cannellini. La zuppa cotta due volte.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1611270629569-8b357cb88da9%3Fw%3D900%26q%3D80" alt="Peposo"></div>
+      <h3 data-lang-it="Il peposo" data-lang-en="The peposo">Il peposo</h3>
+      <p data-lang-it="Manzo, Chianti, una manciata di pepe. Cinque ore al forno." data-lang-en="Beef, Chianti, a fistful of pepper. Five hours in the oven.">Manzo, Chianti, una manciata di pepe. Cinque ore al forno.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="visita" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-it="Per venire" data-lang-en="To visit">Per venire</div>
+    <h2 data-lang-it="Trovare <em>Da Sergio</em>." data-lang-en="Finding <em>Da Sergio</em>.">Trovare <em>Da Sergio</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3 data-lang-it="L'indirizzo <em>esatto</em>." data-lang-en="The <em>exact</em> address.">L'indirizzo <em>esatto</em>.</h3>
+      <p data-lang-it="Piazza San Lorenzo 8R &mdash; di fianco alla Basilica. La facciata sobria, l'insegna piccola in alto." data-lang-en="Piazza San Lorenzo 8R &mdash; beside the Basilica. The plain facade, the small sign up high.">Piazza San Lorenzo 8R &mdash; di fianco alla Basilica. La facciata sobria, l'insegna piccola in alto.</p>
+      <span class="lbl" data-lang-it="Mappa" data-lang-en="Map">Mappa</span>
+      <div class="val"><a href="https://www.google.com/maps/place/Trattoria+Sergio+Gozzi/@43.7755,11.2541,17z" target="_blank" rel="noopener" data-lang-it="Vedi su Google Maps &rarr;" data-lang-en="View on Google Maps &rarr;">Vedi su Google Maps &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day" data-lang-it="Luned&igrave; &mdash; Sabato" data-lang-en="Monday &mdash; Saturday">Luned&igrave; &mdash; Sabato</span><span>12:00 &middot; 15:00</span></div>
+        <div class="row"><span class="day" data-lang-it="Domenica" data-lang-en="Sunday">Domenica</span><span data-lang-it="Chiuso" data-lang-en="Closed">Chiuso</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3 data-lang-it="Un <em>solo</em> modo." data-lang-en="A <em>single</em> way.">Un <em>solo</em> modo.</h3>
+      <p data-lang-it="Il telefono, oppure ci si presenta. Non si prenota, si fa la fila e si aspetta un tavolo." data-lang-en="Phone, or just turn up. We don't take reservations &mdash; you queue and wait for a table.">Il telefono, oppure ci si presenta. Non si prenota, si fa la fila e si aspetta un tavolo.</p>
+      <span class="lbl" data-lang-it="Telefono" data-lang-en="Phone">Telefono</span>
+      <div class="val">+39 055 281941</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye" data-lang-it="A pranzo" data-lang-en="For lunch">A pranzo</div>
+  <h2 data-lang-it="Il tavolo di marmo <em>vi aspetta</em>." data-lang-en="The marble table <em>is waiting</em>.">Il tavolo di marmo <em>vi aspetta</em>.</h2>
+  <a class="btn" href="tel:+39055281941" data-lang-it="Chiamare la trattoria" data-lang-en="Call the trattoria">Chiamare la trattoria</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">Trattoria Sergio <em>Gozzi</em></div>
+    <div class="info">Piazza San Lorenzo, 8R &middot; 50123 Firenze<br>Aperto dal 1915 &middot; <a href="https://www.google.com/maps/place/Trattoria+Sergio+Gozzi" target="_blank" rel="noopener">Mappa</a></div>
+  </div>
+  <div class="small">Lun &mdash; Sab &middot; 12:00&ndash;15:00 &middot; solo pranzo &middot; chiuso la domenica</div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+(function(){
+  var btn=document.getElementById("langBtn");
+  if(!btn)return;
+  var lang="it";
+  btn.addEventListener("click",function(){
+    lang=(lang==="it")?"en":"it";
+    document.documentElement.lang=lang;
+    document.querySelectorAll("[data-lang-it]").forEach(function(el){
+      var v=el.getAttribute("data-lang-"+lang);
+      if(v!==null) el.innerHTML=v;
+    });
+    btn.textContent=(lang==="it")?"EN ⇄ IT":"IT ⇄ EN";
+  });
+})();
+
+(function(){
+  if(!window.Lenis)return;
+  const lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,smoothTouch:false});
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
+  requestAnimationFrame(raf);
+  if(window.gsap&&window.ScrollTrigger){
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(time=>lenis.raf(time*1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+})();
+
+(document.fonts&&document.fonts.ready||Promise.resolve()).then(initScene);
+
+function initScene(){
+const host=document.getElementById("stage");
+if(!window.THREE||!host)return;
+
+const W=()=>innerWidth,H=()=>innerHeight;
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x100B07);
+scene.fog=new THREE.FogExp2(0x100B07,.04);
+
+const cam=new THREE.PerspectiveCamera(42,W()/H(),.1,100);
+cam.position.set(0,0,7);cam.lookAt(0,0,0);
+
+const r=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
+r.setPixelRatio(Math.min(devicePixelRatio,2));
+r.setSize(W(),H());
+host.appendChild(r.domElement);
+
+const composer=new THREE.EffectComposer(r);
+composer.addPass(new THREE.RenderPass(scene,cam));
+const bloom=new THREE.UnrealBloomPass(new THREE.Vector2(W(),H()),1.4,0.6,0.38);
+composer.addPass(bloom);
+
+addEventListener("resize",()=>{
+  cam.aspect=W()/H();cam.updateProjectionMatrix();
+  r.setSize(W(),H());composer.setSize(W(),H());
+});
+
+const TW=1400,TH=420;
+const tCanvas=document.createElement('canvas');
+tCanvas.width=TW;tCanvas.height=TH;
+const tctx=tCanvas.getContext('2d');
+
+function sampleText(text,fontSize,italic){
+  tctx.fillStyle='#000';tctx.fillRect(0,0,TW,TH);
+  tctx.fillStyle='#fff';
+  tctx.font=(italic?'italic ':'')+'500 '+fontSize+'px "Cormorant Garamond","Garamond","Times New Roman",serif';
+  tctx.textAlign='center';tctx.textBaseline='middle';
+  tctx.fillText(text,TW/2,TH/2);
+  const img=tctx.getImageData(0,0,TW,TH).data;
+  const pts=[];
+  for(let y=0;y<TH;y+=3){
+    for(let x=0;x<TW;x+=3){
+      if(img[(y*TW+x)*4]>120) pts.push([(x-TW/2)/110,(TH/2-y)/110]);
+    }
+  }
+  for(let i=pts.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    const tmp=pts[i];pts[i]=pts[j];pts[j]=tmp;
+  }
+  return pts;
+}
+
+const N=2400;
+function buildStage(text,fontSize,italic){
+  const pts=sampleText(text,fontSize,italic!==false);
+  const out=new Float32Array(N*3);
+  for(let i=0;i<N;i++){
+    const p=pts[i%pts.length];
+    out[i*3]=p[0]+(Math.random()-.5)*.05;
+    out[i*3+1]=p[1]+(Math.random()-.5)*.05;
+    out[i*3+2]=(Math.random()-.5)*.6;
+  }
+  return out;
+}
+
+const stages=[
+  buildStage('1915',300,true),
+  buildStage('Da Sergio',180,true),
+  buildStage('Peposo',220,true),
+  buildStage('San Lorenzo',180,true),
+];
+
+const current=new Float32Array(N*3);
+const target=new Float32Array(N*3);
+for(let i=0;i<N*3;i++){current[i]=stages[0][i];target[i]=stages[0][i]}
+const phase=new Float32Array(N);
+for(let i=0;i<N;i++)phase[i]=Math.random()*Math.PI*2;
+
+const sCanvas=document.createElement('canvas');
+sCanvas.width=64;sCanvas.height=64;
+const sctx=sCanvas.getContext('2d');
+const grad=sctx.createRadialGradient(32,32,0,32,32,32);
+grad.addColorStop(0,'rgba(255,220,150,1)');
+grad.addColorStop(0.3,'rgba(224,166,90,0.55)');
+grad.addColorStop(0.7,'rgba(180,90,30,0.18)');
+grad.addColorStop(1,'rgba(180,90,30,0)');
+sctx.fillStyle=grad;sctx.fillRect(0,0,64,64);
+const sparkTex=new THREE.CanvasTexture(sCanvas);
+
+const geo=new THREE.BufferGeometry();
+geo.setAttribute('position',new THREE.BufferAttribute(current,3));
+const mat=new THREE.PointsMaterial({
+  map:sparkTex,color:0xFFC178,size:.14,
+  transparent:true,opacity:.95,
+  blending:THREE.AdditiveBlending,depthWrite:false
+});
+const points=new THREE.Points(geo,mat);
+scene.add(points);
+
+const N2=220;
+const bgPos=new Float32Array(N2*3);
+const bgVel=new Float32Array(N2);
+for(let i=0;i<N2;i++){
+  bgPos[i*3]=(Math.random()-.5)*15;
+  bgPos[i*3+1]=Math.random()*9-4;
+  bgPos[i*3+2]=(Math.random()-.5)*5-1.5;
+  bgVel[i]=.002+Math.random()*.005;
+}
+const bgGeo=new THREE.BufferGeometry();
+bgGeo.setAttribute('position',new THREE.BufferAttribute(bgPos,3));
+const bgMat=new THREE.PointsMaterial({
+  map:sparkTex,color:0xC46A2A,size:.07,
+  transparent:true,opacity:.5,
+  blending:THREE.AdditiveBlending,depthWrite:false
+});
+const bgPoints=new THREE.Points(bgGeo,bgMat);
+scene.add(bgPoints);
+
+let stageIdx=0;
+function setStage(i){
+  if(i===stageIdx)return;
+  stageIdx=i;
+  for(let j=0;j<N*3;j++)target[j]=stages[i][j];
+}
+if(window.gsap&&window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.create({
+    trigger:'body',start:'top top',end:'bottom bottom',
+    onUpdate:self=>{
+      const p=self.progress;
+      let idx;
+      if(p<.15) idx=0;
+      else if(p<.36) idx=1;
+      else if(p<.62) idx=2;
+      else idx=3;
+      setStage(idx);
+    }
+  });
+}
+
+let mx=0,my=0;
+addEventListener('mousemove',e=>{mx=(e.clientX/W()-.5);my=(e.clientY/H()-.5)});
+
+let t=0;
+(function loop(){
+  t+=.012;
+  const lerp=.07;
+  const arr=geo.attributes.position.array;
+  for(let i=0;i<N;i++){
+    const i3=i*3;
+    const wx=Math.sin(t*.6+phase[i])*.022;
+    const wy=Math.cos(t*.7+phase[i])*.018;
+    const wz=Math.sin(t*.45+phase[i])*.06;
+    const tx=target[i3]+wx;
+    const ty=target[i3+1]+wy;
+    const tz=target[i3+2]+wz;
+    current[i3]+=(tx-current[i3])*lerp;
+    current[i3+1]+=(ty-current[i3+1])*lerp;
+    current[i3+2]+=(tz-current[i3+2])*lerp;
+    arr[i3]=current[i3];arr[i3+1]=current[i3+1];arr[i3+2]=current[i3+2];
+  }
+  geo.attributes.position.needsUpdate=true;
+
+  const bgArr=bgGeo.attributes.position.array;
+  for(let i=0;i<N2;i++){
+    bgArr[i*3+1]+=bgVel[i];
+    bgArr[i*3]+=Math.sin(t+i)*.0007;
+    if(bgArr[i*3+1]>5){
+      bgArr[i*3+1]=-4;
+      bgArr[i*3]=(Math.random()-.5)*15;
+    }
+  }
+  bgGeo.attributes.position.needsUpdate=true;
+
+  cam.position.x+=(mx*.45-cam.position.x)*.05;
+  cam.position.y+=(-my*.3-cam.position.y)*.05;
+  cam.lookAt(0,0,0);
+
+  composer.render();
+  requestAnimationFrame(loop);
+})();
+}
+</script>
+
+</body></html>

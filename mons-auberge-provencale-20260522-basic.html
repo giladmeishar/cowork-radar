@@ -1,0 +1,230 @@
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>L'Auberge Proven&ccedil;ale &mdash; Mons, Var</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F5EFE2;--ink:#1F1A12;--olive:#5A6B3A;--ochre:#B8772A;--ember:#D08A3B;--mute:rgba(31,26,18,.62);--line:rgba(31,26,18,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--olive);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;background:rgba(245,239,226,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand b{font-style:normal;font-weight:500;color:var(--olive)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--olive)}
+@media(max-width:760px){.nav-links{gap:14px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.hero{padding:170px 0 90px;background:var(--paper)}
+.hero .eye{margin-bottom:30px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(56px,10vw,150px);font-weight:500;line-height:.96;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--olive);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:740px;line-height:1.45;color:var(--mute);margin-bottom:46px}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line);max-width:920px}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--olive);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);font-weight:500}
+
+.feat{height:78vh;min-height:560px;overflow:hidden;position:relative}
+.feat img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04) saturate(.95)}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 100%)}
+.feat .cap{position:absolute;bottom:60px;left:0;right:0;padding:0 40px;color:#fff;z-index:2}
+.feat .cap .eye{color:var(--ember)}
+.feat .cap h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5.5vw,68px);font-weight:500;max-width:780px;line-height:1.1;margin-top:14px}
+
+.quote{padding:140px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.quote blockquote{max-width:980px;margin:0 auto;text-align:center}
+.quote blockquote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(28px,4vw,52px);line-height:1.3;color:var(--ink);font-weight:400}
+.quote blockquote p em{color:var(--olive);font-style:italic;font-weight:500}
+.quote cite{display:block;font-style:normal;margin-top:38px;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+
+.dishes{padding:140px 0;background:#fff;border-bottom:1px solid var(--line)}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--olive)}
+.dishes .head p{color:var(--mute);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--paper)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:28px;font-weight:500;margin-bottom:10px;line-height:1.15}
+.dish p{color:var(--mute);font-size:15px;line-height:1.7;max-width:320px;margin-inline:auto}
+
+.room{padding:140px 0;background:var(--paper)}
+.room .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:860px){.room .grid{grid-template-columns:1fr;gap:50px}}
+.room img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:contrast(1.05)}
+.room .text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin:18px 0 26px}
+.room .text h2 em{font-style:italic;color:var(--olive)}
+.room .text p{font-size:17px;color:var(--mute);line-height:1.85;margin-bottom:18px}
+.room .text p b{color:var(--ink);font-weight:500}
+
+.visit{padding:140px 0;background:#fff;border-top:1px solid var(--line)}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 64px}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px}
+.visit .head h2 em{font-style:italic;color:var(--olive)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:var(--paper);border-radius:3px;border:1px solid var(--line)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1}
+.vcard h3 em{font-style:italic;color:var(--olive)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--olive);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:var(--ink)}
+.vcard .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:var(--ink)}
+
+.cta{padding:140px 0;background:var(--olive);color:#fff;text-align:center}
+.cta .eye{color:rgba(255,255,255,.78);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:var(--ember)}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--olive);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:var(--ember);color:#fff}
+
+footer{padding:64px 0 48px;background:var(--ink);color:#D6CDBE}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:var(--ember);font-style:normal}
+footer .info{font-size:14px;color:#9D9587;line-height:1.7;text-align:right}
+footer .info a{color:var(--ember);text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#8B826F;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">L'<b>Auberge Proven&ccedil;ale</b></a>
+  <div class="nav-links">
+    <a href="#table">La Table</a>
+    <a href="#village">Le Village</a>
+    <a href="#visite">Visiter</a>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye">Mons, Pays de Fayence &middot; depuis trente ans</div>
+  <h1>L'Auberge<br><em>Proven&ccedil;ale</em></h1>
+  <p class="lead">Perch&eacute;e &agrave; huit cents m&egrave;tres au-dessus de la vall&eacute;e de la Siagne. Une cuisine du Var, des produits du march&eacute;, un panorama qui va de l'Est&eacute;rel &agrave; la Corse les jours clairs.</p>
+  <div class="meta">
+    <div class="col"><span>Adresse</span><div class="v">7, rue du Rempart du Midi &mdash; Mons</div></div>
+    <div class="col"><span>R&eacute;servation</span><div class="v">+33 4 94 76 38 33</div></div>
+    <div class="col"><span>Ouvert</span><div class="v">Jeudi &mdash; Lundi &middot; Midi &amp; soir</div></div>
+  </div>
+</div></section>
+
+<section class="feat reveal">
+  <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1414235077428-338989a2e8c0%3Fw%3D1600%26q%3D80" alt="Salle de l'auberge">
+  <div class="cap">
+    <div class="eye">La maison</div>
+    <h2>Une auberge de village comme on n'en fait plus.</h2>
+  </div>
+</section>
+
+<section class="quote reveal"><div class="wrap"><blockquote>
+  <p>&laquo;&nbsp;On y monte pour le <em>panorama</em>. On y revient pour la cuisine d'Alain &mdash; honn&ecirc;te, g&eacute;n&eacute;reuse, <em>profond&eacute;ment proven&ccedil;ale</em>.&nbsp;&raquo;</p>
+  <cite>&mdash; Tripadvisor &middot; classement n&deg;1 des restaurants de Mons</cite>
+</blockquote></div></section>
+
+<section id="table" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye">La carte</div>
+    <h2>Les <em>plats-signature</em>.</h2>
+    <p>Une cuisine du Var, ancr&eacute;e dans la saison, sign&eacute;e Alain Grondin depuis 1995.</p>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1572453800999-e8d2d1589b7c%3Fw%3D900%26q%3D80" alt="Gateau de courgettes"></div>
+      <h3>G&acirc;teau de courgettes au coulis de tomates</h3>
+      <p>Pr&eacute;par&eacute; chaque matin avec les l&eacute;gumes du potager voisin. La plus ancienne entr&eacute;e de la maison.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1544025162-d76694265947%3Fw%3D900%26q%3D80" alt="Cuisse de lapin"></div>
+      <h3>Cuisse de lapin confite &agrave; la tapenade</h3>
+      <p>Cuisson lente, olives noires de Nyons, thym du causse. La signature d'Alain.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1467003909585-2f8a72700288%3Fw%3D900%26q%3D80" alt="Pave de merlu"></div>
+      <h3>Pav&eacute; de merlu en cro&ucirc;te d'amandes</h3>
+      <p>Cr&egrave;me de basilic, l&eacute;gumes du jour. Le poisson change selon l'arrivage du port de Saint-Rapha&euml;l.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="village" class="room"><div class="wrap"><div class="grid">
+  <img class="reveal" src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1499678329028-101435549a4e%3Fw%3D1200%26q%3D80" alt="Village perche de Mons">
+  <div class="text reveal">
+    <div class="eye">Le village</div>
+    <h2>Huit cents m&egrave;tres <em>au-dessus du monde</em>.</h2>
+    <p>Mons est un village perch&eacute; du Haut-Var, &agrave; la fronti&egrave;re des Alpes-Maritimes. Les ruelles m&eacute;di&eacute;vales montent jusqu'au rempart du Midi &mdash; et de l&agrave;, par temps clair, <b>on aper&ccedil;oit la Corse</b>.</p>
+    <p>L'auberge occupe une maison de pays du XVII<sup>e</sup> si&egrave;cle. La terrasse, abrit&eacute;e par un vieux tilleul, surplombe la vall&eacute;e de la Siagne, l'Est&eacute;rel au sud, le Mercantour au nord-est.</p>
+    <p>Alain et R&eacute;gine Grondin y servent les habitants du Pays de Fayence, les randonneurs du GR, et les voyageurs qui montent depuis la c&ocirc;te.</p>
+  </div>
+</div></div></section>
+
+<section id="visite" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye">Pour r&eacute;server</div>
+    <h2>Monter <em>jusqu'&agrave; Mons</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3>L'adresse <em>exacte</em>.</h3>
+      <p>7, rue du Rempart du Midi &mdash; en haut du village, juste avant le belv&eacute;d&egrave;re. Depuis Fayence, comptez vingt minutes par la D563. Depuis Grasse, trente minutes par la D2562.</p>
+      <span class="lbl">Plan</span>
+      <div class="val"><a href="https://www.google.com/maps/search/Auberge+Proven%C3%A7ale+Mons+83440" target="_blank" rel="noopener">Voir sur Google Maps &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day">Jeudi &mdash; Lundi</span><span>12:00&ndash;14:00 &middot; 19:30&ndash;21:30</span></div>
+        <div class="row"><span class="day">Bar &amp; salon de th&eacute;</span><span>9:00&ndash;18:00</span></div>
+        <div class="row"><span class="day">Mardi &amp; Mercredi</span><span>Ferm&eacute;</span></div>
+        <div class="row"><span class="day">Fermeture annuelle</span><span>15&ndash;30 juillet</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3>Un <em>simple appel</em>.</h3>
+      <p>R&eacute;servation au t&eacute;l&eacute;phone, c'est la fa&ccedil;on la plus s&ucirc;re. R&eacute;gine r&eacute;pond, prend votre nom, le nombre de couverts, l'heure souhait&eacute;e.</p>
+      <p>Pour les groupes ou les terrasses du week-end, mieux vaut s'y prendre quelques jours &agrave; l'avance &mdash; il n'y a qu'une vingtaine de couverts en salle, autant en terrasse.</p>
+      <span class="lbl">T&eacute;l&eacute;phone</span>
+      <div class="val">+33 4 94 76 38 33</div>
+      <span class="lbl">Courriel</span>
+      <div class="val">acrgrondin83@orange.fr</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye">R&eacute;servation</div>
+  <h2>La terrasse <em>vous attend</em>, le tilleul aussi.</h2>
+  <a class="btn" href="tel:+33494763833">Appeler l'auberge</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">L'<em>Auberge</em> Proven&ccedil;ale</div>
+    <div class="info">7, rue du Rempart du Midi &middot; 83440 Mons<br>Pays de Fayence, Var &middot; <a href="https://www.google.com/maps/search/Auberge+Proven%C3%A7ale+Mons+83440" target="_blank" rel="noopener">Plan</a></div>
+  </div>
+  <div class="small">Jeu &mdash; Lun &middot; 12:00&ndash;14:00 &middot; 19:30&ndash;21:30 &middot; Ferm&eacute; mar. et mer.</div>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+
+</body></html>

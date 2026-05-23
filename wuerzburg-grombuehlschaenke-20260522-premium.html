@@ -1,0 +1,449 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gromb&uuml;hlsch&auml;nke &mdash; Eisenbahnerkneipe in W&uuml;rzburg-Gromb&uuml;hl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--night:#120D08;--paper:#F1E8D6;--ink:#1F1810;--wood:#5A341A;--amber:#C77B2D;--beer:#E0AA52;--ember:#F4C66C;--mute:rgba(241,232,214,.65);--line:rgba(241,232,214,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--night);color:var(--paper);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--ember);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;mix-blend-mode:difference;color:#fff}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:#fff;text-decoration:none}
+.brand b{font-style:normal;font-weight:500}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:#fff;text-decoration:none;font-size:13px;font-weight:400;transition:opacity .2s}
+.nav-links a:hover{opacity:.7}
+@media(max-width:760px){.nav-links{gap:14px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.lang-toggle{position:fixed;top:18px;right:18px;z-index:60;background:rgba(241,232,214,.12);border:1px solid rgba(241,232,214,.25);border-radius:30px;padding:8px 16px;font-family:Inter,sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;color:#fff;cursor:pointer;backdrop-filter:blur(10px);transition:all .2s}
+.lang-toggle:hover{background:var(--ember);color:var(--night);border-color:var(--ember)}
+
+.stage{position:fixed;inset:0;z-index:0;pointer-events:none}
+.stage canvas{width:100%!important;height:100%!important;display:block}
+
+main{position:relative;z-index:1}
+
+.hero{height:100vh;display:flex;align-items:flex-end;padding:0 0 90px;position:relative}
+.hero .wrap{width:100%}
+.hero .eye{margin-bottom:28px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(60px,11vw,184px);color:#fff;font-weight:500;line-height:.92;letter-spacing:-.025em;margin-bottom:26px}
+.hero h1 em{font-style:italic;color:var(--ember);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:760px;line-height:1.45;color:#fff;margin-bottom:42px;opacity:.85}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.18);max-width:920px;color:#fff}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--ember);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:#fff;font-weight:500}
+
+.flow{padding:48vh 0;position:relative}
+.flow .panel{max-width:880px;margin:0 auto;padding:0 40px;text-align:center}
+.flow .panel .eye{margin-bottom:28px}
+.flow .panel p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(30px,4.5vw,58px);line-height:1.25;color:#fff;font-weight:400}
+.flow .panel p em{color:var(--ember);font-style:italic;font-weight:500}
+.flow .panel .by{display:block;margin-top:24px;font-size:11px;letter-spacing:.22em;color:var(--ember);text-transform:uppercase;font-family:Inter,sans-serif;font-style:normal;opacity:.85}
+
+.dishes{background:var(--paper);color:var(--ink);padding:140px 0;position:relative}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head .eye{color:var(--wood)}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--wood)}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--night)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;font-weight:500;margin-bottom:10px}
+.dish p{color:rgba(31,24,16,.62);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.visit{background:transparent;padding:130px 0;position:relative}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 64px}
+.visit .head .eye{color:var(--ember)}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px;color:#fff}
+.visit .head h2 em{font-style:italic;color:var(--ember)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:rgba(18,13,8,.55);border-radius:3px;border:1px solid var(--line);backdrop-filter:blur(10px)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1;color:#fff}
+.vcard h3 em{font-style:italic;color:var(--ember)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--ember);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:#fff}
+.vcard .val a{color:#fff;text-decoration:none;border-bottom:1px solid var(--ember)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:#fff}
+
+.cta{padding:160px 0;background:var(--wood);color:#fff;text-align:center;position:relative}
+.cta .eye{color:rgba(255,255,255,.7);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:var(--ember)}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--wood);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:var(--ember);color:var(--night)}
+
+footer{padding:64px 0 48px;background:#0C0805;color:#9D9587;position:relative}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:var(--ember);font-style:normal}
+footer .info{font-size:14px;line-height:1.7;text-align:right}
+footer .info a{color:var(--ember);text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:#75695A;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<button class="lang-toggle" id="langToggle" type="button">EN &#8646; DE</button>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">Gromb&uuml;hl<b>sch&auml;nke</b></a>
+  <div class="nav-links">
+    <a href="#tisch" data-lang-de="Tisch" data-lang-en="Table">Tisch</a>
+    <a href="#besuch" data-lang-de="Besuch" data-lang-en="Visit">Besuch</a>
+  </div>
+</div></nav>
+
+<div class="stage" id="stage"></div>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye" data-lang-de="Eisenbahnerkneipe &middot; W&uuml;rzburg-Gromb&uuml;hl" data-lang-en="Railway-quarter pub &middot; W&uuml;rzburg-Gromb&uuml;hl">Eisenbahnerkneipe &middot; W&uuml;rzburg-Gromb&uuml;hl</div>
+  <h1 data-lang-de-html="Gromb&uuml;hl<em>sch&auml;nke</em>" data-lang-en-html="Gromb&uuml;hl<em>Tavern</em>">Gromb&uuml;hl<em>sch&auml;nke</em></h1>
+  <p class="lead" data-lang-de="Eine Kneipe der alten Schule, mitten im Eisenbahnerviertel. Fr&auml;nkisches Bier an einer Theke, an der noch geredet wird &mdash; und ein Stammtisch, an dem nie ein Stuhl leer bleibt." data-lang-en="An old-school pub at the heart of the historic railway quarter. Franconian beer at a bar where people still talk &mdash; and a regulars' table where no chair stays empty.">Eine Kneipe der alten Schule, mitten im Eisenbahnerviertel. Fr&auml;nkisches Bier an einer Theke, an der noch geredet wird &mdash; und ein Stammtisch, an dem nie ein Stuhl leer bleibt.</p>
+  <div class="meta">
+    <div class="col"><span data-lang-de="Adresse" data-lang-en="Address">Adresse</span><div class="v">Wagnerplatz 2 &mdash; 97080 W&uuml;rzburg</div></div>
+    <div class="col"><span data-lang-de="Telefon" data-lang-en="Phone">Telefon</span><div class="v">+49 931 23770</div></div>
+    <div class="col"><span data-lang-de="Ge&ouml;ffnet" data-lang-en="Open">Ge&ouml;ffnet</span><div class="v" data-lang-de="Montag &mdash; Samstag" data-lang-en="Monday &mdash; Saturday">Montag &mdash; Samstag</div></div>
+  </div>
+</div></section>
+
+<section class="flow"><div class="panel">
+  <div class="eye" data-lang-de="Eine Adresse" data-lang-en="One address">Eine Adresse</div>
+  <p data-lang-de-html="Am <em>Wagnerplatz</em> in Gromb&uuml;hl &mdash; gleich um die Ecke vom alten Eisenbahnerbahnhof." data-lang-en-html="On <em>Wagnerplatz</em> in Gromb&uuml;hl &mdash; just around the corner from the old railway station.">Am <em>Wagnerplatz</em> in Gromb&uuml;hl &mdash; gleich um die Ecke vom alten Eisenbahnerbahnhof.</p>
+  <span class="by" data-lang-de="W&uuml;rzburg-Gromb&uuml;hl" data-lang-en="W&uuml;rzburg-Gromb&uuml;hl">W&uuml;rzburg-Gromb&uuml;hl</span>
+</div></section>
+
+<section class="flow"><div class="panel">
+  <div class="eye" data-lang-de="Die Spezialit&auml;t" data-lang-en="The speciality">Die Spezialit&auml;t</div>
+  <p data-lang-de-html="<em>Sch&auml;ufele</em> mit Kl&ouml;&szlig;en und dunkler Biersauce &mdash; ein Teller, der seit Jahrzehnten gleich aussieht." data-lang-en-html="<em>Sch&auml;ufele</em> with dumplings and dark beer gravy &mdash; a plate that has looked the same for decades.">
+  <em>Sch&auml;ufele</em> mit Kl&ouml;&szlig;en und dunkler Biersauce &mdash; ein Teller, der seit Jahrzehnten gleich aussieht.</p>
+  <span class="by" data-lang-de="Aus der K&uuml;che der Sch&auml;nke" data-lang-en="From the tavern kitchen">Aus der K&uuml;che der Sch&auml;nke</span>
+</div></section>
+
+<section class="flow"><div class="panel">
+  <div class="eye" data-lang-de="Die Stube" data-lang-en="The tap room">Die Stube</div>
+  <p data-lang-de-html="Holzvert&auml;felung, ein Stammtisch, eine Theke. <em>V&ouml;llig aus der Zeit gefallen</em> &mdash; und genau deshalb geliebt." data-lang-en-html="Wood panelling, a regulars' table, a bar. <em>Entirely out of time</em> &mdash; and loved precisely for that.">Holzvert&auml;felung, ein Stammtisch, eine Theke. <em>V&ouml;llig aus der Zeit gefallen</em> &mdash; und genau deshalb geliebt.</p>
+  <span class="by" data-lang-de="W&uuml;rzburger Leben &mdash; 2023" data-lang-en="W&uuml;rzburger Leben magazine &mdash; 2023">W&uuml;rzburger Leben &mdash; 2023</span>
+</div></section>
+
+<section id="tisch" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-de="Was auf den Tisch kommt" data-lang-en="What's on the table">Was auf den Tisch kommt</div>
+    <h2 data-lang-de-html="Drei Klassiker, <em>ein Bier dazu</em>." data-lang-en-html="Three classics, <em>a beer alongside</em>.">Drei Klassiker, <em>ein Bier dazu</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1599921841143-819065280020%3Fw%3D900%26q%3D80" alt="Bratwurst"></div>
+      <h3 data-lang-de="Bratwurst &amp; Kraut" data-lang-en="Bratwurst &amp; Sauerkraut">Bratwurst &amp; Kraut</h3>
+      <p data-lang-de="Fr&auml;nkische Bratw&uuml;rste vom Metzger ums Eck, dazu Sauerkraut und dunkles Brot." data-lang-en="Franconian bratwursts from the butcher round the corner, with sauerkraut and dark bread.">Fr&auml;nkische Bratw&uuml;rste vom Metzger ums Eck, dazu Sauerkraut und dunkles Brot.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1604908176997-125f25cc6f3d%3Fw%3D900%26q%3D80" alt="Schaeufele"></div>
+      <h3 data-lang-de="Sch&auml;ufele" data-lang-en="Sch&auml;ufele">Sch&auml;ufele</h3>
+      <p data-lang-de="Schweineschulter mit kross gebratener Schwarte, Kl&ouml;&szlig;en, dunkler Biersauce." data-lang-en="Pork shoulder with crackling crust, dumplings, and dark beer gravy.">Schweineschulter mit kross gebratener Schwarte, Kl&ouml;&szlig;en, dunkler Biersauce.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1561758033-d89a9ad46330%3Fw%3D900%26q%3D80" alt="Bier"></div>
+      <h3 data-lang-de="Bier vom Fass" data-lang-en="Beer on Tap">Bier vom Fass</h3>
+      <p data-lang-de="Fr&auml;nkisches Bier, frisch gezapft &mdash; wie es sich an einer ordentlichen Theke geh&ouml;rt." data-lang-en="Franconian beer, fresh from the tap &mdash; the way it should be at a proper bar.">Fr&auml;nkisches Bier, frisch gezapft &mdash; wie es sich an einer ordentlichen Theke geh&ouml;rt.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="besuch" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-de="Vorbeikommen" data-lang-en="Drop By">Vorbeikommen</div>
+    <h2 data-lang-de-html="Auf einen <em>Krug</em>." data-lang-en-html="For a <em>stein</em>.">Auf einen <em>Krug</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3 data-lang-de-html="Die <em>Adresse</em>." data-lang-en-html="The <em>address</em>.">Die <em>Adresse</em>.</h3>
+      <p data-lang-de="Wagnerplatz 2 &mdash; im Herzen von Gromb&uuml;hl, ein paar Minuten zu Fu&szlig; vom W&uuml;rzburger Hauptbahnhof." data-lang-en="Wagnerplatz 2 &mdash; in the heart of Gromb&uuml;hl, a few minutes' walk from W&uuml;rzburg main station.">Wagnerplatz 2 &mdash; im Herzen von Gromb&uuml;hl, ein paar Minuten zu Fu&szlig; vom W&uuml;rzburger Hauptbahnhof.</p>
+      <span class="lbl" data-lang-de="Karte" data-lang-en="Map">Karte</span>
+      <div class="val"><a href="https://www.google.com/maps/search/?api=1&query=Gromb%C3%BChlsch%C3%A4nke+Wagnerplatz+2+W%C3%BCrzburg" target="_blank" rel="noopener" data-lang-de="Auf Google Maps anzeigen &rarr;" data-lang-en="View on Google Maps &rarr;">Auf Google Maps anzeigen &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day" data-lang-de="Mo &mdash; Do" data-lang-en="Mon &mdash; Thu">Mo &mdash; Do</span><span>08:30 &ndash; 20:00</span></div>
+        <div class="row"><span class="day" data-lang-de="Fr &amp; Sa" data-lang-en="Fri &amp; Sat">Fr &amp; Sa</span><span data-lang-de="bis sp&auml;t" data-lang-en="until late">bis sp&auml;t</span></div>
+        <div class="row"><span class="day" data-lang-de="Sonntag" data-lang-en="Sunday">Sonntag</span><span data-lang-de="Geschlossen" data-lang-en="Closed">Geschlossen</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3 data-lang-de-html="Ein <em>Anruf</em> reicht." data-lang-en-html="One <em>call</em> is enough.">Ein <em>Anruf</em> reicht.</h3>
+      <p data-lang-de="Das Telefon. Kein Formular, keine App. Nennen Sie uns Namen, Anzahl der G&auml;ste und ungef&auml;hre Zeit." data-lang-en="The telephone. No form, no app. Give us your name, number of guests, and a rough time.">Das Telefon. Kein Formular, keine App. Nennen Sie uns Namen, Anzahl der G&auml;ste und ungef&auml;hre Zeit.</p>
+      <span class="lbl" data-lang-de="Telefon" data-lang-en="Phone">Telefon</span>
+      <div class="val">+49 931 23770</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye" data-lang-de="Tisch reservieren" data-lang-en="Reserve a table">Tisch reservieren</div>
+  <h2 data-lang-de-html="Die Theke <em>wartet</em>." data-lang-en-html="The bar <em>is waiting</em>.">Die Theke <em>wartet</em>.</h2>
+  <a class="btn" href="tel:+4993123770" data-lang-de="Jetzt anrufen" data-lang-en="Call now">Jetzt anrufen</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">Gromb&uuml;hl<em>sch&auml;nke</em></div>
+    <div class="info">Wagnerplatz 2 &middot; 97080 W&uuml;rzburg-Gromb&uuml;hl<br><a href="https://www.google.com/maps/search/?api=1&query=Gromb%C3%BChlsch%C3%A4nke+Wagnerplatz+2+W%C3%BCrzburg" target="_blank" rel="noopener" data-lang-de="Karte" data-lang-en="Map">Karte</a> &middot; +49 931 23770</div>
+  </div>
+  <div class="small" data-lang-de="Mo &mdash; Sa &middot; ab 08:30 Uhr &middot; sonntags geschlossen" data-lang-en="Mon &mdash; Sat &middot; from 08:30 &middot; closed on Sundays">Mo &mdash; Sa &middot; ab 08:30 Uhr &middot; sonntags geschlossen</div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+
+var lang="de";
+var btn=document.getElementById("langToggle");
+function setLang(l){
+  lang=l;
+  document.documentElement.lang=l;
+  var nodes=document.querySelectorAll("[data-lang-de]");
+  nodes.forEach(function(n){
+    var v=n.getAttribute("data-lang-"+l);
+    if(v!==null) n.textContent=v;
+  });
+  var htmlNodes=document.querySelectorAll("[data-lang-de-html]");
+  htmlNodes.forEach(function(n){
+    var v=n.getAttribute("data-lang-"+l+"-html");
+    if(v!==null) n.innerHTML=v;
+  });
+  btn.textContent=l==="de"?"EN ⇋ DE":"DE ⇋ EN";
+}
+btn.addEventListener("click",function(){setLang(lang==="de"?"en":"de")});
+
+(function(){
+  if(!window.Lenis)return;
+  var lenis=new Lenis({duration:1.2,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:true,smoothTouch:false});
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
+  requestAnimationFrame(raf);
+  if(window.gsap&&window.ScrollTrigger){
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(time){lenis.raf(time*1000)});
+    gsap.ticker.lagSmoothing(0);
+  }
+})();
+
+(document.fonts&&document.fonts.ready||Promise.resolve()).then(initScene);
+
+function initScene(){
+var host=document.getElementById("stage");
+if(!window.THREE||!host)return;
+
+var W=function(){return innerWidth},H=function(){return innerHeight};
+var scene=new THREE.Scene();
+scene.background=new THREE.Color(0x120D08);
+scene.fog=new THREE.FogExp2(0x120D08,.04);
+
+var cam=new THREE.PerspectiveCamera(42,W()/H(),.1,100);
+cam.position.set(0,0,7);cam.lookAt(0,0,0);
+
+var r=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
+r.setPixelRatio(Math.min(devicePixelRatio,2));
+r.setSize(W(),H());
+host.appendChild(r.domElement);
+
+var composer=new THREE.EffectComposer(r);
+composer.addPass(new THREE.RenderPass(scene,cam));
+var bloom=new THREE.UnrealBloomPass(new THREE.Vector2(W(),H()),1.3,0.6,0.4);
+composer.addPass(bloom);
+
+addEventListener("resize",function(){
+  cam.aspect=W()/H();cam.updateProjectionMatrix();
+  r.setSize(W(),H());composer.setSize(W(),H());
+});
+
+var TW=1400,TH=420;
+var tCanvas=document.createElement('canvas');
+tCanvas.width=TW;tCanvas.height=TH;
+var tctx=tCanvas.getContext('2d');
+
+function sampleText(text,fontSize,italic){
+  tctx.fillStyle='#000';tctx.fillRect(0,0,TW,TH);
+  tctx.fillStyle='#fff';
+  tctx.font=(italic?'italic ':'')+'500 '+fontSize+'px "Cormorant Garamond","Garamond","Times New Roman",serif';
+  tctx.textAlign='center';tctx.textBaseline='middle';
+  tctx.fillText(text,TW/2,TH/2);
+  var img=tctx.getImageData(0,0,TW,TH).data;
+  var pts=[];
+  for(var y=0;y<TH;y+=3){
+    for(var x=0;x<TW;x+=3){
+      if(img[(y*TW+x)*4]>120) pts.push([(x-TW/2)/110,(TH/2-y)/110]);
+    }
+  }
+  for(var i=pts.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var tmp=pts[i];pts[i]=pts[j];pts[j]=tmp;
+  }
+  return pts;
+}
+
+var N=2400;
+function buildStage(text,fontSize,italic){
+  var pts=sampleText(text,fontSize,italic!==false);
+  var out=new Float32Array(N*3);
+  for(var i=0;i<N;i++){
+    var p=pts[i%pts.length];
+    out[i*3]=p[0]+(Math.random()-.5)*.05;
+    out[i*3+1]=p[1]+(Math.random()-.5)*.05;
+    out[i*3+2]=(Math.random()-.5)*.6;
+  }
+  return out;
+}
+
+var stages=[
+  buildStage('1952',300,true),
+  buildStage('Grombuehlschaenke',130,true),
+  buildStage('Schaeufele',180,true),
+  buildStage('Wagnerplatz',170,true)
+];
+
+var current=new Float32Array(N*3);
+var target=new Float32Array(N*3);
+for(var i=0;i<N*3;i++){current[i]=stages[0][i];target[i]=stages[0][i]}
+var phase=new Float32Array(N);
+for(var i=0;i<N;i++)phase[i]=Math.random()*Math.PI*2;
+
+var sCanvas=document.createElement('canvas');
+sCanvas.width=64;sCanvas.height=64;
+var sctx=sCanvas.getContext('2d');
+var grad=sctx.createRadialGradient(32,32,0,32,32,32);
+grad.addColorStop(0,'rgba(255,220,140,1)');
+grad.addColorStop(0.3,'rgba(224,170,82,0.6)');
+grad.addColorStop(0.7,'rgba(199,123,45,0.2)');
+grad.addColorStop(1,'rgba(199,123,45,0)');
+sctx.fillStyle=grad;sctx.fillRect(0,0,64,64);
+var sparkTex=new THREE.CanvasTexture(sCanvas);
+
+var geo=new THREE.BufferGeometry();
+geo.setAttribute('position',new THREE.BufferAttribute(current,3));
+var mat=new THREE.PointsMaterial({
+  map:sparkTex,color:0xF4C66C,size:.14,
+  transparent:true,opacity:.95,
+  blending:THREE.AdditiveBlending,depthWrite:false
+});
+var points=new THREE.Points(geo,mat);
+scene.add(points);
+
+var N2=220;
+var bgPos=new Float32Array(N2*3);
+var bgVel=new Float32Array(N2);
+for(var i=0;i<N2;i++){
+  bgPos[i*3]=(Math.random()-.5)*15;
+  bgPos[i*3+1]=Math.random()*9-4;
+  bgPos[i*3+2]=(Math.random()-.5)*5-1.5;
+  bgVel[i]=.002+Math.random()*.005;
+}
+var bgGeo=new THREE.BufferGeometry();
+bgGeo.setAttribute('position',new THREE.BufferAttribute(bgPos,3));
+var bgMat=new THREE.PointsMaterial({
+  map:sparkTex,color:0xC77B2D,size:.07,
+  transparent:true,opacity:.5,
+  blending:THREE.AdditiveBlending,depthWrite:false
+});
+var bgPoints=new THREE.Points(bgGeo,bgMat);
+scene.add(bgPoints);
+
+var stageIdx=0;
+function setStage(i){
+  if(i===stageIdx)return;
+  stageIdx=i;
+  for(var j=0;j<N*3;j++)target[j]=stages[i][j];
+}
+if(window.gsap&&window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.create({
+    trigger:'body',start:'top top',end:'bottom bottom',
+    onUpdate:function(self){
+      var p=self.progress;
+      var idx;
+      if(p<.15) idx=0;
+      else if(p<.36) idx=1;
+      else if(p<.62) idx=2;
+      else idx=3;
+      setStage(idx);
+    }
+  });
+}
+
+var mx=0,my=0;
+addEventListener('mousemove',function(e){mx=(e.clientX/W()-.5);my=(e.clientY/H()-.5)});
+
+var t=0;
+(function loop(){
+  t+=.012;
+  var lerp=.07;
+  var arr=geo.attributes.position.array;
+  for(var i=0;i<N;i++){
+    var i3=i*3;
+    var wx=Math.sin(t*.6+phase[i])*.022;
+    var wy=Math.cos(t*.7+phase[i])*.018;
+    var wz=Math.sin(t*.45+phase[i])*.06;
+    var tx=target[i3]+wx;
+    var ty=target[i3+1]+wy;
+    var tz=target[i3+2]+wz;
+    current[i3]+=(tx-current[i3])*lerp;
+    current[i3+1]+=(ty-current[i3+1])*lerp;
+    current[i3+2]+=(tz-current[i3+2])*lerp;
+    arr[i3]=current[i3];arr[i3+1]=current[i3+1];arr[i3+2]=current[i3+2];
+  }
+  geo.attributes.position.needsUpdate=true;
+
+  var bgArr=bgGeo.attributes.position.array;
+  for(var i=0;i<N2;i++){
+    bgArr[i*3+1]+=bgVel[i];
+    bgArr[i*3]+=Math.sin(t+i)*.0007;
+    if(bgArr[i*3+1]>5){
+      bgArr[i*3+1]=-4;
+      bgArr[i*3]=(Math.random()-.5)*15;
+    }
+  }
+  bgGeo.attributes.position.needsUpdate=true;
+
+  cam.position.x+=(mx*.45-cam.position.x)*.05;
+  cam.position.y+=(-my*.3-cam.position.y)*.05;
+  cam.lookAt(0,0,0);
+
+  composer.render();
+  requestAnimationFrame(loop);
+})();
+}
+</script>
+
+</body></html>

@@ -1,0 +1,245 @@
+<!doctype html><html lang="el"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Τσινάρι &mdash; Το παλαιότερο ουζερί της Θεσσαλονίκης, από το 1865</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F1E9D8;--ink:#1B1410;--wine:#6E1A1C;--gold:#B0863F;--ember:#C9803B;--mute:rgba(27,20,16,.62);--line:rgba(27,20,16,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--wine);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;background:rgba(241,233,216,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand b{font-style:normal;font-weight:500;color:var(--wine)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s;cursor:pointer;background:none;border:0;font-family:inherit}
+.nav-links a:hover{color:var(--wine)}
+.lang-btn{font-size:11px;letter-spacing:.18em;padding:6px 12px;border:1px solid var(--line);border-radius:20px}
+@media(max-width:760px){.nav-links{gap:12px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.hero{padding:170px 0 90px;background:var(--paper)}
+.hero .eye{margin-bottom:30px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(60px,11vw,168px);font-weight:500;line-height:.94;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--wine);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:740px;line-height:1.45;color:var(--mute);margin-bottom:46px}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line);max-width:920px}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--wine);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);font-weight:500}
+
+.feat{height:78vh;min-height:560px;overflow:hidden;position:relative}
+.feat img{width:100%;height:100%;object-fit:cover;filter:grayscale(.12) contrast(1.04)}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 100%)}
+.feat .cap{position:absolute;bottom:60px;left:0;right:0;padding:0 40px;color:#fff;z-index:2}
+.feat .cap .eye{color:#E8B260}
+.feat .cap h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5.5vw,68px);font-weight:500;max-width:820px;line-height:1.1;margin-top:14px}
+
+.quote{padding:140px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.quote blockquote{max-width:1000px;margin:0 auto;text-align:center}
+.quote blockquote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(28px,4vw,52px);line-height:1.3;color:var(--ink);font-weight:400}
+.quote blockquote p em{color:var(--wine);font-style:italic;font-weight:500}
+.quote cite{display:block;font-style:normal;margin-top:38px;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+
+.dishes{padding:140px 0;background:#fff;border-bottom:1px solid var(--line)}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--wine)}
+.dishes .head p{color:var(--mute);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--paper)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;font-weight:500;margin-bottom:10px}
+.dish p{color:var(--mute);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.room{padding:140px 0;background:var(--paper)}
+.room .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:860px){.room .grid{grid-template-columns:1fr;gap:50px}}
+.room img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:contrast(1.05)}
+.room .text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin:18px 0 26px}
+.room .text h2 em{font-style:italic;color:var(--wine)}
+.room .text p{font-size:17px;color:var(--mute);line-height:1.85;margin-bottom:18px}
+.room .text p b{color:var(--ink);font-weight:500}
+
+.visit{padding:140px 0;background:#fff;border-top:1px solid var(--line)}
+.visit .head{text-align:center;max-width:620px;margin:0 auto 64px}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px}
+.visit .head h2 em{font-style:italic;color:var(--wine)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:var(--paper);border-radius:3px;border:1px solid var(--line)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1}
+.vcard h3 em{font-style:italic;color:var(--wine)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--wine);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:var(--ink)}
+.vcard .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:var(--ink)}
+
+.cta{padding:140px 0;background:var(--wine);color:#fff;text-align:center}
+.cta .eye{color:rgba(255,255,255,.72);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:#E8B260}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--wine);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:#E8B260;color:#fff}
+
+footer{padding:64px 0 48px;background:var(--ink);color:#D6CDBE}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:#E8B260;font-style:normal}
+footer .info{font-size:14px;color:#9D9587;line-height:1.7;text-align:right}
+footer .info a{color:#E8B260;text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#8B826F;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">Ουζερί <b>Τσινάρι</b></a>
+  <div class="nav-links">
+    <a href="#kouzina" data-lang-el="Η Κουζίνα" data-lang-en="The Kitchen">Η Κουζίνα</a>
+    <a href="#aithousa" data-lang-el="Η Αυλή" data-lang-en="The Courtyard">Η Αυλή</a>
+    <a href="#episkepsi" data-lang-el="Επίσκεψη" data-lang-en="Visit">Επίσκεψη</a>
+    <button class="lang-btn" id="langBtn">EN &#8646; EL</button>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye" data-lang-el="Άνω Πόλη, Θεσσαλονίκη &middot; από το 1865" data-lang-en="Upper Town, Thessaloniki &middot; since 1865">Άνω Πόλη, Θεσσαλονίκη &middot; από το 1865</div>
+  <h1 data-lang-el-html="Ουζερί<br><em>Τσινάρι</em>" data-lang-en-html="Ouzeri<br><em>Tsinari</em>">Ουζερί<br><em>Τσινάρι</em></h1>
+  <p class="lead" data-lang-el="Ένα πλατάνι, ένα οθωμανικό καφενείο, μια συνοικία που γλίτωσε τη φωτιά του 1917. Το παλαιότερο ουζερί της Θεσσαλονίκης &mdash; ακόμα ζωντανό, κάτω από τη σκιά του ίδιου δέντρου που του χάρισε το όνομά του." data-lang-en="A plane tree, an Ottoman café, a neighbourhood that survived the great fire of 1917. The oldest ouzeri in Thessaloniki &mdash; still alive, beneath the shade of the very tree that gave it its name.">Ένα πλατάνι, ένα οθωμανικό καφενείο, μια συνοικία που γλίτωσε τη φωτιά του 1917. Το παλαιότερο ουζερί της Θεσσαλονίκης &mdash; ακόμα ζωντανό, κάτω από τη σκιά του ίδιου δέντρου που του χάρισε το όνομά του.</p>
+  <div class="meta">
+    <div class="col"><span data-lang-el="Διεύθυνση" data-lang-en="Address">Διεύθυνση</span><div class="v" data-lang-el="Παπαδοπούλου Αλεξάνδρου 72 &mdash; 546 33" data-lang-en="72 Papadopoulou Alexandrou &mdash; 546 33">Παπαδοπούλου Αλεξάνδρου 72 &mdash; 546 33</div></div>
+    <div class="col"><span data-lang-el="Τηλέφωνο" data-lang-en="Phone">Τηλέφωνο</span><div class="v">+30 2310 284 028</div></div>
+    <div class="col"><span data-lang-el="Από" data-lang-en="Since">Από</span><div class="v" data-lang-el="το 1865 &middot; τέσσερις γενιές" data-lang-en="1865 &middot; four generations">το 1865 &middot; τέσσερις γενιές</div></div>
+  </div>
+</div></section>
+
+<section class="feat reveal">
+  <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559339352-11d035aa65de%3Fw%3D1600%26q%3D80" alt="Greek meze table">
+  <div class="cap">
+    <div class="eye" data-lang-el="Το πλατάνι" data-lang-en="The plane tree">Το πλατάνι</div>
+    <h2 data-lang-el="Κάτω από τον ίδιο ίσκιο όπου κάθονταν οι Οθωμανοί κουρείς και οι ταξιδιώτες του 19ου αιώνα." data-lang-en="Beneath the same shade where Ottoman barbers and 19th-century travellers once sat.">Κάτω από τον ίδιο ίσκιο όπου κάθονταν οι Οθωμανοί κουρείς και οι ταξιδιώτες του 19ου αιώνα.</h2>
+  </div>
+</section>
+
+<section class="quote reveal"><div class="wrap"><blockquote>
+  <p data-lang-el-html="&laquo;&nbsp;Το Τσινάρι δεν είναι μαγαζί. Είναι ένα <em>κομμάτι Θεσσαλονίκης</em> που έμεινε ακριβώς όπως ήταν &mdash; επειδή κανείς δεν τόλμησε να το αλλάξει.&nbsp;&raquo;" data-lang-en-html="&laquo;&nbsp;Tsinari is not a shop. It is a <em>piece of Thessaloniki</em> that stayed exactly as it was &mdash; because no one dared to change it.&nbsp;&raquo;">&laquo;&nbsp;Το Τσινάρι δεν είναι μαγαζί. Είναι ένα <em>κομμάτι Θεσσαλονίκης</em> που έμεινε ακριβώς όπως ήταν &mdash; επειδή κανείς δεν τόλμησε να το αλλάξει.&nbsp;&raquo;</p>
+  <cite data-lang-el="&mdash; Παλιοί κάτοικοι της Άνω Πόλης" data-lang-en="&mdash; Old residents of the Upper Town">&mdash; Παλιοί κάτοικοι της Άνω Πόλης</cite>
+</blockquote></div></section>
+
+<section id="kouzina" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-el="Η κουζίνα" data-lang-en="The kitchen">Η κουζίνα</div>
+    <h2 data-lang-el-html="Μεζέδες <em>όπως παλιά</em>." data-lang-en-html="Meze, <em>the old way</em>.">Μεζέδες <em>όπως παλιά</em>.</h2>
+    <p data-lang-el="Καμία επανερμηνεία, καμία fusion. Συνταγές που έρχονται από την Πόλη, τη Σμύρνη και τον Πόντο &mdash; μαζί με τους πρόσφυγες του 1922." data-lang-en="No reinterpretation, no fusion. Recipes that arrived from Constantinople, Smyrna and Pontus &mdash; together with the refugees of 1922.">Καμία επανερμηνεία, καμία fusion. Συνταγές που έρχονται από την Πόλη, τη Σμύρνη και τον Πόντο &mdash; μαζί με τους πρόσφυγες του 1922.</p>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1623653387945-2fd25214f8fc%3Fw%3D900%26q%3D80" alt="Soutzoukakia"></div>
+      <h3 data-lang-el="Σουτζουκάκια Σμυρναίικα" data-lang-en="Smyrnaean Soutzoukakia">Σουτζουκάκια Σμυρναίικα</h3>
+      <p data-lang-el="Με κύμινο, σκόρδο και ψιλοκομμένο μαϊντανό, σιγοβρασμένα σε σάλτσα ντομάτας από τα μέρη της Πόλης. Η συνταγή της γιαγιάς, αναλλοίωτη." data-lang-en="With cumin, garlic and chopped parsley, slow-simmered in a Constantinople-style tomato sauce. Grandmother's recipe, unchanged.">Με κύμινο, σκόρδο και ψιλοκομμένο μαϊντανό, σιγοβρασμένα σε σάλτσα ντομάτας από τα μέρη της Πόλης. Η συνταγή της γιαγιάς, αναλλοίωτη.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559847844-5315695dadae%3Fw%3D900%26q%3D80" alt="Grilled octopus"></div>
+      <h3 data-lang-el="Χταπόδι στα κάρβουνα" data-lang-en="Charcoal-grilled octopus">Χταπόδι στα κάρβουνα</h3>
+      <p data-lang-el="Ψημένο αργά πάνω από την ξυλόσομπα, με ρίγανη, χοντρό αλάτι και λίγο μόνο λάδι. Ο τέλειος μεζές για το ποτηράκι του ούζου." data-lang-en="Slowly grilled over the wood fire, with oregano, coarse salt and a touch of oil. The perfect companion to a glass of ouzo.">Ψημένο αργά πάνω από την ξυλόσομπα, με ρίγανη, χοντρό αλάτι και λίγο μόνο λάδι. Ο τέλειος μεζές για το ποτηράκι του ούζου.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1564834724105-918b73d1b9e0%3Fw%3D900%26q%3D80" alt="Ouzo glass"></div>
+      <h3 data-lang-el="Ούζο &amp; τσίπουρο" data-lang-en="Ouzo &amp; tsipouro">Ούζο &amp; τσίπουρο</h3>
+      <p data-lang-el="Επιλεγμένα από μικρούς αποσταγματοποιούς της Μυτιλήνης και του Τυρνάβου, σερβίρονται με πάγο, νερό και χωρίς βιασύνη &mdash; όπως αρμόζει." data-lang-en="Hand-picked from small distillers of Mytilene and Tyrnavos, served with ice, water and no haste &mdash; as it should be.">Επιλεγμένα από μικρούς αποσταγματοποιούς της Μυτιλήνης και του Τυρνάβου, σερβίρονται με πάγο, νερό και χωρίς βιασύνη &mdash; όπως αρμόζει.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="aithousa" class="room"><div class="wrap"><div class="grid">
+  <img class="reveal" src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1517248135467-4c7edcad34c4%3Fw%3D1200%26q%3D80" alt="Traditional taverna interior">
+  <div class="text reveal">
+    <div class="eye" data-lang-el="Η αυλή" data-lang-en="The courtyard">Η αυλή</div>
+    <h2 data-lang-el-html="Ένα πλατάνι, <em>δύο αιώνες</em>." data-lang-en-html="One plane tree, <em>two centuries</em>.">Ένα πλατάνι, <em>δύο αιώνες</em>.</h2>
+    <p data-lang-el-html="Το όνομα &laquo;Τσινάρι&raquo; έρχεται από τα τουρκικά &mdash; <b>çınar</b>, το πλατάνι. Ένα τεράστιο δέντρο που στέκεται απέναντι από την πόρτα του μαγαζιού εδώ και πάνω από 200 χρόνια, και έδωσε το όνομά του σε όλη τη γωνιά." data-lang-en-html="The name &laquo;Tsinari&raquo; comes from Turkish &mdash; <b>çınar</b>, the plane tree. A vast tree that has stood facing the door of the shop for over 200 years, lending its name to the entire corner.">Το όνομα &laquo;Τσινάρι&raquo; έρχεται από τα τουρκικά &mdash; <b>çınar</b>, το πλατάνι. Ένα τεράστιο δέντρο που στέκεται απέναντι από την πόρτα του μαγαζιού εδώ και πάνω από 200 χρόνια, και έδωσε το όνομά του σε όλη τη γωνιά.</p>
+    <p data-lang-el="Στο εσωτερικό: ξύλινα τραπέζια, μπεζ τοίχοι, μια παλιά οθωμανική βρύση που τρέχει ακόμα. Στην αυλή: καρέκλες κάτω από το πλατάνι, το ίδιο θέαμα που έβλεπαν οι κάτοικοι όταν περνούσαν τα κάρα από τα Καστροδρόμια. Το μοναδικό κτίριο της γειτονιάς που γλίτωσε από τη μεγάλη φωτιά του 1917." data-lang-en="Inside: wooden tables, beige walls, an old Ottoman fountain that still runs. In the courtyard: chairs beneath the plane tree, the same view residents saw when carts passed along the castle roads. The only building in the neighbourhood that survived the great fire of 1917.">Στο εσωτερικό: ξύλινα τραπέζια, μπεζ τοίχοι, μια παλιά οθωμανική βρύση που τρέχει ακόμα. Στην αυλή: καρέκλες κάτω από το πλατάνι, το ίδιο θέαμα που έβλεπαν οι κάτοικοι όταν περνούσαν τα κάρα από τα Καστροδρόμια. Το μοναδικό κτίριο της γειτονιάς που γλίτωσε από τη μεγάλη φωτιά του 1917.</p>
+  </div>
+</div></div></section>
+
+<section id="episkepsi" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-el="Πώς θα έρθετε" data-lang-en="How to come">Πώς θα έρθετε</div>
+    <h2 data-lang-el-html="Στο <em>Τσινάρι</em>." data-lang-en-html="To <em>Tsinari</em>.">Στο <em>Τσινάρι</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3 data-lang-el-html="Η <em>ακριβής</em> γωνιά." data-lang-en-html="The <em>exact</em> corner.">Η <em>ακριβής</em> γωνιά.</h3>
+      <p data-lang-el="Παπαδοπούλου Αλεξάνδρου 72, στην καρδιά της Άνω Πόλης, λίγα μέτρα πάνω από τα τείχη. Ψάξτε για το πελώριο πλατάνι &mdash; εκεί ακριβώς απέναντι, με τη γαλάζια οθωμανική βρύση, είναι η πόρτα." data-lang-en="72 Papadopoulou Alexandrou, in the heart of the Upper Town, a few metres above the Byzantine walls. Look for the enormous plane tree &mdash; directly opposite it, beside the blue Ottoman fountain, is the door.">Παπαδοπούλου Αλεξάνδρου 72, στην καρδιά της Άνω Πόλης, λίγα μέτρα πάνω από τα τείχη. Ψάξτε για το πελώριο πλατάνι &mdash; εκεί ακριβώς απέναντι, με τη γαλάζια οθωμανική βρύση, είναι η πόρτα.</p>
+      <span class="lbl" data-lang-el="Χάρτης" data-lang-en="Map">Χάρτης</span>
+      <div class="val"><a href="https://www.google.com/maps/place/Ouzeri+Tsinari/@40.6447,22.9559,17z" target="_blank" rel="noopener" data-lang-el="Δείτε στο Google Maps &rarr;" data-lang-en="See on Google Maps &rarr;">Δείτε στο Google Maps &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day" data-lang-el="Δευτέρα &mdash; Σάββατο" data-lang-en="Monday &mdash; Saturday">Δευτέρα &mdash; Σάββατο</span><span>12:00 &ndash; 24:00</span></div>
+        <div class="row"><span class="day" data-lang-el="Κυριακή" data-lang-en="Sunday">Κυριακή</span><span>12:00 &ndash; 18:00</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3 data-lang-el-html="Ένα <em>τηλέφωνο</em>, τίποτα άλλο." data-lang-en-html="One <em>phone</em>, nothing else.">Ένα <em>τηλέφωνο</em>, τίποτα άλλο.</h3>
+      <p data-lang-el="Δεν υπάρχει ιστοσελίδα, ούτε φόρμα κράτησης. Καλέστε νωρίς το πρωί &mdash; ο Πέτρος ή κάποιο από τα παιδιά της οικογένειας θα σηκώσει. Σαββατοκύριακο γεμίζει, οπότε καλό είναι να ξέρει ότι έρχεστε." data-lang-en="There is no website, no booking form. Call early in the day &mdash; Petros or one of the family will pick up. Weekends fill quickly, so it is wise to let them know you're coming.">Δεν υπάρχει ιστοσελίδα, ούτε φόρμα κράτησης. Καλέστε νωρίς το πρωί &mdash; ο Πέτρος ή κάποιο από τα παιδιά της οικογένειας θα σηκώσει. Σαββατοκύριακο γεμίζει, οπότε καλό είναι να ξέρει ότι έρχεστε.</p>
+      <p data-lang-el="Μετρητά. Λίγη υπομονή. Πολλή κουβέντα." data-lang-en="Cash. A little patience. Plenty of conversation.">Μετρητά. Λίγη υπομονή. Πολλή κουβέντα.</p>
+      <span class="lbl" data-lang-el="Τηλέφωνο" data-lang-en="Phone">Τηλέφωνο</span>
+      <div class="val">+30 2310 284 028</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye" data-lang-el="Επικοινωνία" data-lang-en="Contact">Επικοινωνία</div>
+  <h2 data-lang-el-html="Το πλατάνι <em>σας περιμένει</em>." data-lang-en-html="The plane tree <em>is waiting</em>.">Το πλατάνι <em>σας περιμένει</em>.</h2>
+  <a class="btn" href="tel:+302310284028" data-lang-el="Καλέστε το ουζερί" data-lang-en="Call the ouzeri">Καλέστε το ουζερί</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">Ουζερί <em>Τσινάρι</em></div>
+    <div class="info" data-lang-el-html="Παπαδοπούλου Αλεξάνδρου 72 &middot; 546 33 Θεσσαλονίκη<br>Από το 1865 &middot; <a href='https://www.google.com/maps/place/Ouzeri+Tsinari' target='_blank' rel='noopener'>Χάρτης</a>" data-lang-en-html="72 Papadopoulou Alexandrou &middot; 546 33 Thessaloniki<br>Since 1865 &middot; <a href='https://www.google.com/maps/place/Ouzeri+Tsinari' target='_blank' rel='noopener'>Map</a>">Παπαδοπούλου Αλεξάνδρου 72 &middot; 546 33 Θεσσαλονίκη<br>Από το 1865 &middot; <a href="https://www.google.com/maps/place/Ouzeri+Tsinari" target="_blank" rel="noopener">Χάρτης</a></div>
+  </div>
+  <div class="small" data-lang-el="Δευτ. &mdash; Σαβ. &middot; 12:00 &ndash; 24:00 &middot; Κυρ. &middot; 12:00 &ndash; 18:00 &middot; Μόνο μετρητά" data-lang-en="Mon &mdash; Sat &middot; 12:00 &ndash; 24:00 &middot; Sun &middot; 12:00 &ndash; 18:00 &middot; Cash only">Δευτ. &mdash; Σαβ. &middot; 12:00 &ndash; 24:00 &middot; Κυρ. &middot; 12:00 &ndash; 18:00 &middot; Μόνο μετρητά</div>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+(function(){
+  let lang="el";
+  const btn=document.getElementById("langBtn");
+  function apply(){
+    document.documentElement.lang=lang;
+    document.querySelectorAll("[data-lang-el]").forEach(el=>{
+      const t=el.getAttribute("data-lang-"+lang);
+      if(t!==null) el.textContent=t;
+    });
+    document.querySelectorAll("[data-lang-el-html]").forEach(el=>{
+      const t=el.getAttribute("data-lang-"+lang+"-html");
+      if(t!==null) el.innerHTML=t;
+    });
+    btn.textContent=lang==="el"?"EN ⇄ EL":"EL ⇄ EN";
+  }
+  btn.addEventListener("click",()=>{lang=lang==="el"?"en":"el";apply()});
+})();
+</script>
+
+</body></html>

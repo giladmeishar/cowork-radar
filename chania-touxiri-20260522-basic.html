@@ -1,0 +1,245 @@
+<!doctype html><html lang="el"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Του Ξηρή &mdash; Παραδοσιακό Μεζεδοπωλείο, Κάμποι Κεραμιών</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4ECDC;--ink:#2A1A0E;--olive:#4A5D3A;--honey:#B8862C;--terra:#A85C2C;--mute:rgba(42,26,14,.62);--line:rgba(42,26,14,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--olive);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;background:rgba(244,236,220,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand b{font-style:normal;font-weight:500;color:var(--olive)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--olive)}
+@media(max-width:760px){.nav-links{gap:14px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.lang-btn{position:fixed;top:18px;right:18px;z-index:60;padding:8px 14px;background:rgba(244,236,220,.95);border:1px solid var(--line);border-radius:20px;font-family:Inter,sans-serif;font-size:11px;letter-spacing:.18em;color:var(--olive);cursor:pointer;font-weight:500;text-transform:uppercase}
+.lang-btn:hover{background:var(--olive);color:#fff}
+
+.hero{padding:170px 0 90px;background:var(--paper)}
+.hero .eye{margin-bottom:30px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(60px,11vw,168px);font-weight:500;line-height:.94;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--olive);display:block}
+.hero .lead{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:720px;line-height:1.45;color:var(--mute);margin-bottom:46px}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line);max-width:920px}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--olive);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);font-weight:500}
+
+.feat{height:78vh;min-height:560px;overflow:hidden;position:relative}
+.feat img{width:100%;height:100%;object-fit:cover;filter:grayscale(.1) contrast(1.04)}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 100%)}
+.feat .cap{position:absolute;bottom:60px;left:0;right:0;padding:0 40px;color:#fff;z-index:2}
+.feat .cap .eye{color:#E8C77A}
+.feat .cap h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5.5vw,68px);font-weight:500;max-width:760px;line-height:1.1;margin-top:14px}
+
+.quote{padding:140px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.quote blockquote{max-width:980px;margin:0 auto;text-align:center}
+.quote blockquote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(28px,4vw,52px);line-height:1.3;color:var(--ink);font-weight:400}
+.quote blockquote p em{color:var(--olive);font-style:italic;font-weight:500}
+.quote cite{display:block;font-style:normal;margin-top:38px;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+
+.dishes{padding:140px 0;background:#fff;border-bottom:1px solid var(--line)}
+.dishes .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.dishes .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:1.05;margin:18px 0}
+.dishes .head h2 em{font-style:italic;color:var(--olive)}
+.dishes .head p{color:var(--mute);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.5}
+.dishes .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.dishes .grid{grid-template-columns:1fr;gap:44px;padding:0 22px}}
+.dish{text-align:center}
+.dish .pic{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:22px;background:var(--paper)}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.dish:hover .pic img{transform:scale(1.05)}
+.dish h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;font-weight:500;margin-bottom:10px}
+.dish p{color:var(--mute);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.room{padding:140px 0;background:var(--paper)}
+.room .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:860px){.room .grid{grid-template-columns:1fr;gap:50px}}
+.room img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:contrast(1.05)}
+.room .text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin:18px 0 26px}
+.room .text h2 em{font-style:italic;color:var(--olive)}
+.room .text p{font-size:17px;color:var(--mute);line-height:1.85;margin-bottom:18px}
+.room .text p b{color:var(--ink);font-weight:500}
+
+.visit{padding:140px 0;background:#fff;border-top:1px solid var(--line)}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 64px}
+.visit .head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;margin-top:14px}
+.visit .head h2 em{font-style:italic;color:var(--olive)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;padding:0 22px}}
+.vcard{padding:54px 44px;background:var(--paper);border-radius:3px;border:1px solid var(--line)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;margin-bottom:18px;line-height:1.1}
+.vcard h3 em{font-style:italic;color:var(--olive)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.85;margin-bottom:18px}
+.vcard .lbl{font-size:11px;color:var(--olive);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:24px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500;color:var(--ink)}
+.vcard .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--honey)}
+.hours{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:var(--ink)}
+
+.cta{padding:140px 0;background:var(--olive);color:#fff;text-align:center}
+.cta .eye{color:rgba(255,255,255,.72);margin-bottom:18px}
+.cta h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(38px,5.5vw,76px);line-height:1.15;font-weight:500;max-width:820px;margin:0 auto 40px}
+.cta h2 em{color:#E8C77A}
+.btn{display:inline-block;padding:18px 48px;background:#fff;color:var(--olive);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:#E8C77A;color:#fff}
+
+footer{padding:64px 0 48px;background:var(--ink);color:#D6CDBE}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:#E8C77A;font-style:normal}
+footer .info{font-size:14px;color:#9D9587;line-height:1.7;text-align:right}
+footer .info a{color:#E8C77A;text-decoration:none}
+footer .small{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#8B826F;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<button class="lang-btn" id="langBtn" data-lang-el="EN &#8646; EL" data-lang-en="EL &#8646; EN">EN &#8646; EL</button>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">Του <b data-lang-el="Ξηρή" data-lang-en="Xiri">Ξηρή</b></a>
+  <div class="nav-links">
+    <a href="#table" data-lang-el="Η Κουζίνα" data-lang-en="The Kitchen">Η Κουζίνα</a>
+    <a href="#salle" data-lang-el="Το Καφενείο" data-lang-en="The Kafeneio">Το Καφενείο</a>
+    <a href="#visite" data-lang-el="Επίσκεψη" data-lang-en="Visit">Επίσκεψη</a>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye" data-lang-el="Παραδοσιακό Μεζεδοπωλείο &middot; Κάμποι Κεραμιών" data-lang-en="Traditional Mezedopoleio &middot; Kampoi Keramion">Παραδοσιακό Μεζεδοπωλείο &middot; Κάμποι Κεραμιών</div>
+  <h1 data-lang-el="Του<br><em>Ξηρή</em>" data-lang-en="Tou<br><em>Xiri</em>">Του<br><em>Ξηρή</em></h1>
+  <p class="lead" data-lang-el="Ένα παλιό καφενείο του 1946, στην πλατεία του χωριού. Λάδι, τυρί, κρασί &mdash; όλα από τη γη που βλέπεις από το παράθυρο." data-lang-en="An old village kafeneio from 1946, on the square. Oil, cheese, wine &mdash; everything from the land you see from the window.">Ένα παλιό καφενείο του 1946, στην πλατεία του χωριού. Λάδι, τυρί, κρασί &mdash; όλα από τη γη που βλέπεις από το παράθυρο.</p>
+  <div class="meta">
+    <div class="col"><span data-lang-el="Διεύθυνση" data-lang-en="Address">Διεύθυνση</span><div class="v" data-lang-el="Πλατεία Κάμπων &mdash; Κεραμιά, Χανιά" data-lang-en="Village Square &mdash; Kampoi Keramia, Chania">Πλατεία Κάμπων &mdash; Κεραμιά, Χανιά</div></div>
+    <div class="col"><span data-lang-el="Τηλέφωνο" data-lang-en="Phone">Τηλέφωνο</span><div class="v">+30 698 794 1264</div></div>
+    <div class="col"><span data-lang-el="Ανοιχτά" data-lang-en="Open">Ανοιχτά</span><div class="v" data-lang-el="Τετάρτη &mdash; Δευτέρα" data-lang-en="Wednesday &mdash; Monday">Τετάρτη &mdash; Δευτέρα</div></div>
+  </div>
+</div></section>
+
+<section class="feat reveal">
+  <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1597254594473-3a01b5b40df1%3Fw%3D1600%26q%3D80" alt="Traditional Cretan kafeneio">
+  <div class="cap">
+    <div class="eye" data-lang-el="Το χωριό" data-lang-en="The Village">Το χωριό</div>
+    <h2 data-lang-el="Από το 1946, η ίδια πέτρα, ο ίδιος ίσκιος, οι ίδιες φωνές." data-lang-en="Since 1946 &mdash; the same stone, the same shade, the same voices.">Από το 1946, η ίδια πέτρα, ο ίδιος ίσκιος, οι ίδιες φωνές.</h2>
+  </div>
+</section>
+
+<section class="quote reveal"><div class="wrap"><blockquote>
+  <p data-lang-el="&laquo; Ό,τι βάζουμε στο τραπέζι &mdash; <em>βγαίνει από τα χέρια μας</em>, ή από τα χέρια του γείτονα. &raquo;" data-lang-en="&laquo; Whatever we put on the table &mdash; <em>comes from our own hands</em>, or from the neighbour&rsquo;s. &raquo;">&laquo; Ό,τι βάζουμε στο τραπέζι &mdash; <em>βγαίνει από τα χέρια μας</em>, ή από τα χέρια του γείτονα. &raquo;</p>
+  <cite data-lang-el="&mdash; Οικογένεια Ξηράκη, Κάμποι Κεραμιών" data-lang-en="&mdash; The Xirakis family, Kampoi Keramion">&mdash; Οικογένεια Ξηράκη, Κάμποι Κεραμιών</cite>
+</blockquote></div></section>
+
+<section id="table" class="dishes"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-el="Η κουζίνα" data-lang-en="The kitchen">Η κουζίνα</div>
+    <h2 data-lang-el="Τρεις μεζέδες, <em>ένα χωριό</em>." data-lang-en="Three mezes, <em>one village</em>.">Τρεις μεζέδες, <em>ένα χωριό</em>.</h2>
+    <p data-lang-el="Λαχανικά, τυριά και κρέατα από τους Κάμπους. Κρασί από το αμπέλι των Ξηράκηδων." data-lang-en="Vegetables, cheeses and meats from Kampoi. Wine from the Xirakis vineyard.">Λαχανικά, τυριά και κρέατα από τους Κάμπους. Κρασί από το αμπέλι των Ξηράκηδων.</p>
+  </div>
+  <div class="grid">
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1544025162-d76694265947%3Fw%3D900%26q%3D80" alt="Lamb stamnagathi"></div>
+      <h3 data-lang-el="Αρνί με σταμναγκάθι" data-lang-en="Lamb with stamnagathi">Αρνί με σταμναγκάθι</h3>
+      <p data-lang-el="Το πιο κρητικό πιάτο που υπάρχει. Αρνί από τις γειτονικές στάνες, σιγοβρασμένο με το άγριο χόρτο των βουνών." data-lang-en="The most Cretan dish there is. Lamb from neighbouring sheepfolds, slow-cooked with the wild mountain greens.">Το πιο κρητικό πιάτο που υπάρχει. Αρνί από τις γειτονικές στάνες, σιγοβρασμένο με το άγριο χόρτο των βουνών.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565299624946-b28f40a0ae38%3Fw%3D900%26q%3D80" alt="Boureki"></div>
+      <h3 data-lang-el="Μπουρέκι" data-lang-en="Boureki">Μπουρέκι</h3>
+      <p data-lang-el="Πατάτες, κολοκύθι, μυζήθρα και δυόσμος. Ψημένο σε ταψί &mdash; όπως το έκανε η γιαγιά Ευαγγελία." data-lang-en="Potatoes, courgette, mizithra cheese and mint. Baked in a tray &mdash; just as Grandma Evangelia made it.">Πατάτες, κολοκύθι, μυζήθρα και δυόσμος. Ψημένο σε ταψί &mdash; όπως το έκανε η γιαγιά Ευαγγελία.</p>
+    </div>
+    <div class="dish reveal">
+      <div class="pic"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1505253758473-96b7015fcd40%3Fw%3D900%26q%3D80" alt="Cheese plate raki"></div>
+      <h3 data-lang-el="Πιάτο τυριών &amp; ρακή" data-lang-en="Cheese plate &amp; raki">Πιάτο τυριών &amp; ρακή</h3>
+      <p data-lang-el="Γραβιέρα, μυζήθρα, ξινομυζήθρα από τους Κάμπους. Συνοδεύεται με ρακή του σπιτιού &mdash; από το καζάνι του παππού." data-lang-en="Graviera, mizithra, xinomizithra from Kampoi. Served with house raki &mdash; from grandfather&rsquo;s still.">Γραβιέρα, μυζήθρα, ξινομυζήθρα από τους Κάμπους. Συνοδεύεται με ρακή του σπιτιού &mdash; από το καζάνι του παππού.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="salle" class="room"><div class="wrap"><div class="grid">
+  <img class="reveal" src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559339352-11d035aa65de%3Fw%3D1200%26q%3D80" alt="Kafeneio interior">
+  <div class="text reveal">
+    <div class="eye" data-lang-el="Το καφενείο" data-lang-en="The kafeneio">Το καφενείο</div>
+    <h2 data-lang-el="Η πλατεία, <em>η σόμπα</em>, ο παππούς." data-lang-en="The square, <em>the stove</em>, the grandfather.">Η πλατεία, <em>η σόμπα</em>, ο παππούς.</h2>
+    <p data-lang-el="Το κτίριο χτίστηκε το 1946 ως καφενείο της πλατείας. Λειτούργησε έτσι μέχρι το 2018, όταν ο παππούς αποσύρθηκε. Το 2019, η επόμενη γενιά της οικογένειας Ξηράκη ανέλαβε &mdash; <b>χωρίς να αλλάξει τίποτα</b>." data-lang-en="The building was built in 1946 as the village kafeneio. It ran that way until 2018, when grandfather retired. In 2019 the next generation of the Xirakis family took over &mdash; <b>without changing a thing</b>.">Το κτίριο χτίστηκε το 1946 ως καφενείο της πλατείας. Λειτούργησε έτσι μέχρι το 2018, όταν ο παππούς αποσύρθηκε. Το 2019, η επόμενη γενιά της οικογένειας Ξηράκη ανέλαβε &mdash; <b>χωρίς να αλλάξει τίποτα</b>.</p>
+    <p data-lang-el="Ίδιες καρέκλες, ίδιο τζάκι, ίδια ραδιοφωνική φωνή των ειδήσεων. Το βράδυ ανάβει ο φούρνος, βγαίνει το ψωμί &mdash; και αρχίζει το μεζεδοπωλείο." data-lang-en="Same chairs, same fireplace, same radio voice on the news. In the evening the oven lights, the bread comes out &mdash; and the mezedopoleio begins.">Ίδιες καρέκλες, ίδιο τζάκι, ίδια ραδιοφωνική φωνή των ειδήσεων. Το βράδυ ανάβει ο φούρνος, βγαίνει το ψωμί &mdash; και αρχίζει το μεζεδοπωλείο.</p>
+  </div>
+</div></div></section>
+
+<section id="visite" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye" data-lang-el="Για επίσκεψη" data-lang-en="To visit">Για επίσκεψη</div>
+    <h2 data-lang-el="Πώς να έρθετε <em>στους Κάμπους</em>." data-lang-en="How to reach <em>Kampoi</em>.">Πώς να έρθετε <em>στους Κάμπους</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3 data-lang-el="Η <em>πλατεία</em> του χωριού." data-lang-en="The village <em>square</em>.">Η <em>πλατεία</em> του χωριού.</h3>
+      <p data-lang-el="Κάμποι Κεραμιών &mdash; ένα μικρό χωριό 25 λεπτά νότια από τα Χανιά, στους πρόποδες των Λευκών Ορέων. Το μεζεδοπωλείο είναι στην ίδια την πλατεία, δίπλα στην εκκλησία." data-lang-en="Kampoi Keramion &mdash; a small village 25 minutes south of Chania, at the foot of the White Mountains. The mezedopoleio is right on the square, next to the church.">Κάμποι Κεραμιών &mdash; ένα μικρό χωριό 25 λεπτά νότια από τα Χανιά, στους πρόποδες των Λευκών Ορέων. Το μεζεδοπωλείο είναι στην ίδια την πλατεία, δίπλα στην εκκλησία.</p>
+      <span class="lbl" data-lang-el="Χάρτης" data-lang-en="Map">Χάρτης</span>
+      <div class="val"><a href="https://www.google.com/maps/search/Tou+Xiri+Kampoi+Keramia+Chania" target="_blank" rel="noopener" data-lang-el="Άνοιγμα στο Google Maps &rarr;" data-lang-en="Open in Google Maps &rarr;">Άνοιγμα στο Google Maps &rarr;</a></div>
+      <div class="hours">
+        <div class="row"><span class="day" data-lang-el="Τετ &mdash; Σάβ" data-lang-en="Wed &mdash; Sat">Τετ &mdash; Σάβ</span><span>10:00 &ndash; 23:30</span></div>
+        <div class="row"><span class="day" data-lang-el="Κυρ &amp; Δευ" data-lang-en="Sun &amp; Mon">Κυρ &amp; Δευ</span><span>10:00 &ndash; 19:00</span></div>
+        <div class="row"><span class="day" data-lang-el="Τρίτη" data-lang-en="Tuesday">Τρίτη</span><span data-lang-el="Κλειστά" data-lang-en="Closed">Κλειστά</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3 data-lang-el="Κράτηση με <em>τηλέφωνο</em>." data-lang-en="Booking by <em>phone</em>.">Κράτηση με <em>τηλέφωνο</em>.</h3>
+      <p data-lang-el="Ο Νίκος απαντάει ο ίδιος. Πείτε του πόσοι είστε, τι ώρα, και αν θέλετε αρνί &mdash; ζητάει να ξέρει νωρίτερα." data-lang-en="Nikos answers himself. Tell him how many you are, what time, and if you want lamb &mdash; he likes to know in advance.">Ο Νίκος απαντάει ο ίδιος. Πείτε του πόσοι είστε, τι ώρα, και αν θέλετε αρνί &mdash; ζητάει να ξέρει νωρίτερα.</p>
+      <p data-lang-el="Δεν υπάρχει ηλεκτρονική φόρμα. Μόνο τηλέφωνο, μόνο φωνή." data-lang-en="No online form. Only the phone, only a voice.">Δεν υπάρχει ηλεκτρονική φόρμα. Μόνο τηλέφωνο, μόνο φωνή.</p>
+      <span class="lbl" data-lang-el="Τηλέφωνο" data-lang-en="Phone">Τηλέφωνο</span>
+      <div class="val">+30 698 794 1264</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye" data-lang-el="Κράτηση" data-lang-en="Reservation">Κράτηση</div>
+  <h2 data-lang-el="Ένα τραπέζι στην <em>πλατεία</em>, σας περιμένει." data-lang-en="A table on the <em>square</em> is waiting for you.">Ένα τραπέζι στην <em>πλατεία</em>, σας περιμένει.</h2>
+  <a class="btn" href="tel:+306987941264" data-lang-el="Τηλεφωνήστε στον Νίκο" data-lang-en="Call Nikos">Τηλεφωνήστε στον Νίκο</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">Του <em data-lang-el="Ξηρή" data-lang-en="Xiri">Ξηρή</em></div>
+    <div class="info" data-lang-el="Πλατεία Κάμπων &middot; Κεραμιά, Χανιά<br>Από το 1946 &middot; <a href=&quot;https://www.google.com/maps/search/Tou+Xiri+Kampoi+Keramia+Chania&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Χάρτης</a>" data-lang-en="Village Square &middot; Kampoi Keramia, Chania<br>Since 1946 &middot; <a href=&quot;https://www.google.com/maps/search/Tou+Xiri+Kampoi+Keramia+Chania&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Map</a>">Πλατεία Κάμπων &middot; Κεραμιά, Χανιά<br>Από το 1946 &middot; <a href="https://www.google.com/maps/search/Tou+Xiri+Kampoi+Keramia+Chania" target="_blank" rel="noopener">Χάρτης</a></div>
+  </div>
+  <div class="small" data-lang-el="Τετ &mdash; Σάβ &middot; 10:00 &ndash; 23:30 &middot; Κυρ &amp; Δευ &middot; 10:00 &ndash; 19:00 &middot; Τρίτη κλειστά" data-lang-en="Wed &mdash; Sat &middot; 10:00 &ndash; 23:30 &middot; Sun &amp; Mon &middot; 10:00 &ndash; 19:00 &middot; Closed Tuesday">Τετ &mdash; Σάβ &middot; 10:00 &ndash; 23:30 &middot; Κυρ &amp; Δευ &middot; 10:00 &ndash; 19:00 &middot; Τρίτη κλειστά</div>
+</div></footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+
+var lang="el";
+var btn=document.getElementById("langBtn");
+function applyLang(L){
+  document.querySelectorAll("[data-lang-el]").forEach(function(el){
+    var t=el.getAttribute("data-lang-"+L);
+    if(t!==null) el.innerHTML=t;
+  });
+  document.documentElement.lang=L;
+}
+btn.addEventListener("click",function(){
+  lang=(lang==="el"?"en":"el");
+  applyLang(lang);
+});
+</script>
+
+</body></html>

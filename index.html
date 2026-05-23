@@ -1,0 +1,213 @@
+<!doctype html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cowork Radar — לוח בקרה</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1116;--surface:#181C24;--s2:#1F242E;--line:rgba(255,255,255,.08);--text:#E8EAED;--mute:#8B92A0;--ok:#88D498;--accent:#7DD3C0;--amber:#F7B267;--danger:#E07A5F;--info:#7BAFD4;--shadow:0 8px 32px rgba(0,0,0,.4)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:400 14px/1.55 Heebo,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+header{padding:22px 36px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#10141B,#0E1116);position:sticky;top:0;z-index:20}
+header .row{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1600px;margin:0 auto;flex-wrap:wrap}
+h1{font-size:22px;font-weight:600;display:flex;align-items:center;gap:12px}
+h1 .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px var(--accent);animation:p 2s infinite}
+h1.scanning .dot{background:var(--amber);box-shadow:0 0 12px var(--amber);animation:p .8s infinite}
+@keyframes p{50%{opacity:.5}}
+h1 b{color:var(--amber);font-weight:600}
+.stats{display:flex;gap:14px;color:var(--mute);font-size:13px}
+.stats b{color:var(--text)}
+.scan-bar{padding:16px 36px;border-bottom:1px solid var(--line);background:var(--surface)}
+.scan-bar .inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;max-width:1600px;margin:0 auto}
+.lbl{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.14em;font-weight:500;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--mute)}
+.scan-bar.scanning .live-dot{background:var(--amber);animation:p 1s infinite}
+.progress{flex:1;min-width:280px;height:8px;background:var(--s2);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--amber));border-radius:6px;width:0;transition:width 1s linear;position:relative}
+.scan-bar.scanning .bar{background:linear-gradient(90deg,var(--amber),var(--danger));transition:width .5s linear}
+.bar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:sh 1.8s infinite}
+@keyframes sh{to{transform:translateX(200%)}}
+.timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:500;min-width:110px;text-align:center;padding:8px 14px;background:var(--s2);border-radius:8px;border:1px solid var(--line)}
+.scan-bar.scanning .timer{color:var(--amber);border-color:rgba(247,178,103,.4)}
+.scan-now{padding:10px 22px;background:var(--accent);color:#0E1116;font-family:inherit;font-size:14px;font-weight:600;border:0;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:all .15s}
+.scan-now:hover:not(:disabled){background:#9BE5D3;transform:translateY(-1px)}
+.scan-now:disabled{background:var(--s2);color:var(--mute);cursor:not-allowed;border:1px solid var(--line)}
+.spin{display:inline-block;width:12px;height:12px;border:2px solid currentColor;border-top-color:transparent;border-radius:50%;animation:sp .9s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.toolbar{padding:14px 36px;border-bottom:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;align-items:center;max-width:1600px;margin:0 auto}
+.f{padding:7px 13px;background:var(--surface);border:1px solid var(--line);color:var(--text);font:inherit;font-size:13px;border-radius:8px;cursor:pointer;transition:all .15s}
+.f:hover{border-color:var(--accent);color:var(--accent)}
+.f.active{background:var(--accent);color:#0E1116;border-color:var(--accent);font-weight:500}
+.toolbar .g{display:flex;gap:6px}
+.toolbar .sp{flex:1}
+.stat{color:var(--mute);font-size:13px}
+.stat b{color:var(--text)}
+main{max-width:1600px;margin:0 auto;padding:24px 36px 80px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card.status-replied{border-color:var(--ok)}
+.card.status-draft-created,.card.status-sent{border-color:var(--info)}
+.card.status-trash{opacity:.4;border-color:var(--danger)}
+.ch{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:14px}
+.ch h3{font-size:18px;font-weight:600;line-height:1.25;margin-bottom:4px}
+.ch .sub{color:var(--mute);font-size:13px}
+.badge{padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.badge.pending{background:rgba(247,178,103,.15);color:var(--amber);border:1px solid rgba(247,178,103,.3)}
+.badge.draft-created{background:rgba(123,175,212,.15);color:var(--info);border:1px solid rgba(123,175,212,.3)}
+.badge.replied{background:rgba(136,212,152,.15);color:var(--ok);border:1px solid rgba(136,212,152,.3)}
+.badge.trash{background:rgba(224,122,95,.15);color:var(--danger)}
+.ir{display:flex;flex-wrap:wrap;gap:10px;padding:14px 20px;border-bottom:1px solid var(--line);font-size:13px;color:var(--mute)}
+.ir b{color:var(--text);font-weight:500}
+.ir a{color:var(--accent);text-decoration:none}
+.pv{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.pp{position:relative;aspect-ratio:4/3;background:#000;overflow:hidden;cursor:pointer}
+.pp+.pp{border-right:1px solid var(--line)}
+.pp iframe{width:200%;height:200%;transform:scale(.5);transform-origin:top right;border:0;pointer-events:none;background:#fff}
+.pp .tag{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;padding:4px 8px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;z-index:2}
+.pp .cv{position:absolute;inset:0;z-index:1}
+.eb{padding:18px 20px;border-bottom:1px solid var(--line)}
+.eb label{display:flex;align-items:center;gap:8px;color:var(--mute);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.eb .lf{background:var(--s2);padding:2px 8px;border-radius:10px;font-size:10px;letter-spacing:.04em;text-transform:none}
+.es{width:100%;background:var(--s2);border:1px solid var(--line);color:var(--text);font:inherit;font-size:14px;font-weight:500;padding:10px 12px;border-radius:8px;margin-bottom:8px;outline:none}
+.es:focus,.eb textarea:focus{border-color:var(--accent)}
+.eb textarea{width:100%;background:var(--s2);border:1px solid var(--line);color:var(--text);font:inherit;font-size:13.5px;padding:12px;border-radius:8px;outline:none;resize:vertical;min-height:130px;line-height:1.65}
+.ax{display:grid;grid-template-columns:1fr auto auto;gap:8px;padding:14px 20px;background:var(--s2)}
+.btn{padding:11px 16px;font:inherit;font-size:13.5px;font-weight:500;border-radius:8px;cursor:pointer;border:1px solid transparent;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .15s}
+.bs{background:var(--accent);color:#0E1116;font-weight:600}
+.bs:hover{background:#9BE5D3}
+.bf{background:transparent;color:var(--amber);border-color:rgba(247,178,103,.4)}
+.bt{background:transparent;color:var(--danger);border-color:rgba(224,122,95,.3);padding:11px 12px}
+.nn{padding:12px 20px;border-top:1px solid var(--line);background:rgba(247,178,103,.05);font-size:12.5px;color:var(--mute)}
+.nn b{color:var(--amber)}
+.empty{padding:80px 20px;text-align:center;color:var(--mute)}
+.empty h2{font-size:22px;margin-bottom:10px;color:var(--text);font-weight:500}
+dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:14px;padding:0;max-width:560px;width:90vw}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.dh{padding:20px 24px;border-bottom:1px solid var(--line)}
+.dh h3{font-size:18px;font-weight:600;margin-bottom:4px}
+.dh p{color:var(--mute);font-size:13px}
+.db{padding:20px 24px}
+dialog textarea{width:100%;background:var(--s2);border:1px solid var(--line);color:var(--text);font:inherit;font-size:14px;padding:12px;border-radius:8px;min-height:120px;outline:none;resize:vertical}
+.df{padding:14px 24px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end}
+dialog button{padding:10px 20px;font:inherit;font-weight:500;border-radius:8px;cursor:pointer;border:1px solid var(--line);background:var(--s2);color:var(--text)}
+dialog button.pr{background:var(--accent);color:#0E1116;border-color:var(--accent);font-weight:600}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--surface);border:1px solid var(--accent);padding:14px 18px;border-radius:10px;font-size:14px;box-shadow:var(--shadow);z-index:100;max-width:340px;animation:sl .3s}
+@keyframes sl{from{opacity:0;transform:translateY(20px)}}
+</style></head>
+<body>
+<header><div class="row">
+<h1 id="ht"><span class="dot"></span>Cowork <b>Radar</b></h1>
+<div class="stats"><span>סה״כ: <b id="total">0</b></span><span>·</span><span>סריקה אחרונה: <b id="lst">—</b></span></div>
+</div></header>
+<div class="scan-bar" id="sb"><div class="inner">
+<div class="lbl"><span class="live-dot"></span><span id="sl">סבב הבא בעוד</span></div>
+<div class="timer mono" id="tm">--:--</div>
+<div class="progress"><div class="bar" id="pb"></div></div>
+<button class="scan-now" id="snb">סרוק עכשיו ←</button>
+</div></div>
+<div class="toolbar">
+<div class="g" id="sf"><button class="f active" data-status="all">הכל</button><button class="f" data-status="pending">ממתינים</button><button class="f" data-status="draft-created">טיוטה</button><button class="f" data-status="replied">השיבו</button><button class="f" data-status="trash">פח</button></div>
+<div class="g" id="cf"><button class="f active" data-country="all">כל המדינות</button></div>
+<div class="sp"></div>
+<div class="stat">מציג: <b id="vc">0</b></div>
+</div>
+<main><div class="grid" id="grid"></div><div class="empty" id="emp" style="display:none"><h2>הרדאר עוד לא מצא עסקים בקטגוריה הזו</h2></div></main>
+<dialog id="fbd">
+<div class="dh"><h3>הערה לסוכן</h3><p id="fbc">העסק:</p></div>
+<div class="db"><textarea id="fbt" placeholder="למשל: התמונה לא מתאימה, יש פיצה אבל זו מסעדת דגים; או הצבעים יותר מדי כהים; או הסיפא של המייל מלאכותית, תכתוב יותר אישי"></textarea></div>
+<div class="df"><button onclick="cf()">ביטול</button><button class="pr" onclick="sf()">שלח הערה</button></div>
+</dialog>
+<script>
+const FL={FR:"🇫🇷",IT:"🇮🇹",ES:"🇪🇸",GR:"🇬🇷",PT:"🇵🇹",DE:"🇩🇪",IL:"🇮🇱",GB:"🇬🇧",JP:"🇯🇵",US:"🇺🇸"};
+const LN={fr:"Français",it:"Italiano",es:"Español",el:"Ελληνικά",pt:"Português",de:"Deutsch",he:"עברית",en:"English"};
+const SCAN_MS=30*60*1000, EXP_MS=6*60*1000, TO_MS=15*60*1000, TID='cowork-radar-scan';
+let D={businesses:[]}, ast="all", act="all", abi=null;
+function gss(){try{const s=JSON.parse(localStorage.getItem('rss')||'null');if(!s)return null;if(Date.now()-s.startedAt>TO_MS){css();return null}return s}catch{return null}}
+function sss(s){localStorage.setItem('rss',JSON.stringify(s))}
+function css(){localStorage.removeItem('rss')}
+async function load(){
+  try{
+    const r=await fetch("radar-data.json?t="+Date.now());
+    const fr=await r.json();
+    D=fr;
+    const st=gss();
+    if(st && D.lastScan && new Date(D.lastScan)>new Date(st.lastScanBefore||0)){
+      const added=D.businesses.length-st.countBefore;
+      css();
+      toast(`✓ סריקה הסתיימה. ${added>0?added+' עסקים חדשים נוספו.':'לא נמצאו עסקים חדשים.'}`);
+    }
+  }catch(e){if(!D.businesses.length)D={businesses:[],lastScan:null}}
+  ao(); uc(); rcf(); render();
+}
+function uc(){document.getElementById("total").textContent=D.businesses.length;document.getElementById("lst").textContent=D.lastScan?fmtD(D.lastScan):"טרם"}
+function fmtD(s){const d=new Date(s);return d.toLocaleString("he-IL",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}
+function fmtM(ms){const t=Math.max(0,ms),m=Math.floor(t/60000),s=Math.floor((t%60000)/1000);return `${m}:${s.toString().padStart(2,"0")}`}
+function tick(){
+  const sb=document.getElementById("sb"),ht=document.getElementById("ht");
+  const lbl=document.getElementById("sl"),tm=document.getElementById("tm"),pb=document.getElementById("pb"),btn=document.getElementById("snb");
+  const st=gss();
+  if(st){
+    sb.classList.add("scanning");ht.classList.add("scanning");
+    const el=Date.now()-st.startedAt;
+    lbl.textContent="הסוכנים עובדים. זמן שעבר:";
+    tm.textContent=fmtM(el);
+    pb.style.width=Math.min(95,(el/EXP_MS)*100)+"%";
+    btn.disabled=true;btn.innerHTML='<span class="spin"></span> סורק...';
+  } else {
+    sb.classList.remove("scanning");ht.classList.remove("scanning");
+    const last=D.lastScan?new Date(D.lastScan).getTime():Date.now();
+    const next=last+SCAN_MS, rem=Math.max(0,next-Date.now());
+    lbl.textContent="סבב הבא בעוד";
+    tm.textContent=fmtM(rem);
+    pb.style.width=Math.min(100,((SCAN_MS-rem)/SCAN_MS)*100)+"%";
+    btn.disabled=false;btn.innerHTML='סרוק עכשיו ←';
+  }
+}
+async function trig(){
+  if(gss()){toast("⚠ סריקה כבר רצה. חכה שתסתיים.");return}
+  sss({startedAt:Date.now(),lastScanBefore:D.lastScan,countBefore:D.businesses.length});
+  tick();
+  if(window.cowork && typeof window.cowork.runScheduledTask==='function'){
+    try{await window.cowork.runScheduledTask(TID);toast("✓ הסוכנים יוצאים לדרך. זה לוקח 5-8 דקות.")}
+    catch(e){css();tick();toast("⚠ שגיאה: "+e.message)}
+  } else {
+    toast("⚠ פתיחה ישירה לא תומכת ב'סרוק עכשיו'. השתמש בגרסת ה-Cowork Artifact (יותר כפתורים זמינים שם).");
+  }
+}
+function rcf(){
+  const cs=[...new Set(D.businesses.map(b=>b.country))].sort();
+  const w=document.getElementById("cf"),ex=[...w.querySelectorAll("button")].slice(1).map(b=>b.dataset.country);
+  cs.forEach(c=>{if(!ex.includes(c)){const b=document.createElement("button");b.className="f";b.dataset.country=c;b.textContent=(FL[c]||"")+" "+c;b.onclick=()=>{act=c;[...w.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};w.appendChild(b)}});
+}
+function render(){
+  const g=document.getElementById("grid"),em=document.getElementById("emp");
+  const l=D.businesses.filter(b=>{if(ast!=="all"&&b.status!==ast)return false;if(act!=="all"&&b.country!==act)return false;return true}).sort((a,b)=>new Date(b.discoveredAt||0)-new Date(a.discoveredAt||0));
+  document.getElementById("vc").textContent=l.length;
+  if(!l.length){g.style.display="none";em.style.display="block";return}
+  g.style.display="grid";em.style.display="none";
+  g.innerHTML=l.map(card).join("");
+}
+function card(b){
+  const fl=FL[b.country]||"",ln=LN[b.emailDraft?.language]||b.emailDraft?.language||"";
+  const bh=`./${b.sites?.basic||""}`,ph=`./${b.sites?.premium||""}`;
+  return `<div class="card status-${b.status}"><div class="ch"><div><h3>${esc(b.name)}</h3><div class="sub">${esc(b.type||"")} ${fl} ${esc(b.city)}</div></div><span class="badge ${b.status}">${sl(b.status)}</span></div><div class="ir"><div>📍 <b>${esc(b.address)}</b></div>${b.phone?`<div>📞 <b>${esc(b.phone)}</b></div>`:""}${b.email?`<div>✉ <b>${esc(b.email)}</b></div>`:`<div style="color:var(--amber)">✉ אין אימייל — חפש ידנית</div>`}${b.rating?`<div>⭐ <b>${b.rating}</b> (${b.reviewCount||""})</div>`:""}${b.googleMapsUrl?`<div>🗺 <a href="${b.googleMapsUrl}" target="_blank">מפות</a></div>`:""}</div><div class="pv"><div class="pp" onclick="window.open('${bh}','_blank')"><span class="tag">Basic</span><iframe src="${bh}" loading="lazy" sandbox="allow-same-origin"></iframe><div class="cv"></div></div><div class="pp" onclick="window.open('${ph}','_blank')"><span class="tag">Premium</span><iframe src="${ph}" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe><div class="cv"></div></div></div><div class="eb"><label>טיוטת אימייל <span class="lf">${ln}</span></label><input class="es" id="su-${b.id}" value="${esc(b.emailDraft?.subject||"")}" /><textarea id="bo-${b.id}">${esc(b.emailDraft?.body||"")}</textarea></div><div class="ax"><button class="btn bs" onclick="se('${b.id}')">שלח אימייל ←</button><button class="btn bf" onclick="of('${b.id}')">הערה</button><button class="btn bt" onclick="tr('${b.id}')" title="לפח">🗑</button></div>${b.notes&&b.notes.length?`<div class="nn"><b>הערות לסוכן:</b>${b.notes.map(n=>`<div>${esc(n.text)} <span style="opacity:.6">— ${fmtD(n.at)}</span></div>`).join("")}</div>`:""}</div>`;
+}
+function sl(s){return {pending:"ממתין",sent:"נשלח","draft-created":"טיוטה מוכנה",replied:"השיב ✦",trash:"בפח"}[s]||s}
+function esc(s){return (s||"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+function se(id){const b=D.businesses.find(x=>x.id===id);if(!b)return;if(!b.email){toast("⚠ אין אימייל. חפש ידנית בגוגל.");return}const su=document.getElementById("su-"+id).value,bo=document.getElementById("bo-"+id).value;window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(b.email)}&su=${encodeURIComponent(su)}&body=${encodeURIComponent(bo)}`,"_blank");b.status="draft-created";b.emailDraft.subject=su;b.emailDraft.body=bo;b.lastActivity=new Date().toISOString();sar();toast("✓ Gmail נפתח. לחץ Send שם.")}
+function tr(id){const b=D.businesses.find(x=>x.id===id);if(!b)return;b.status=b.status==="trash"?"pending":"trash";b.lastActivity=new Date().toISOString();sar()}
+function of(id){abi=id;const b=D.businesses.find(x=>x.id===id);document.getElementById("fbc").textContent="העסק: "+b.name;document.getElementById("fbt").value="";document.getElementById("fbd").showModal()}
+function cf(){document.getElementById("fbd").close()}
+function sf(){const t=document.getElementById("fbt").value.trim();if(!t)return;const b=D.businesses.find(x=>x.id===abi);if(!b)return;if(!b.notes)b.notes=[];b.notes.push({text:t,at:new Date().toISOString()});sar();cf();toast("✓ ההערה נשמרה. הסבב הבא יקרא ויתקן.")}
+function sar(){localStorage.setItem("cro",JSON.stringify({o:D.businesses.map(b=>({id:b.id,status:b.status,notes:b.notes,emailDraft:b.emailDraft,lastActivity:b.lastActivity}))}));render()}
+function ao(){try{const o=JSON.parse(localStorage.getItem("cro")||"{}");if(o.o)o.o.forEach(ov=>{const b=D.businesses.find(x=>x.id===ov.id);if(b){if(ov.status)b.status=ov.status;if(ov.notes)b.notes=ov.notes;if(ov.emailDraft)b.emailDraft={...b.emailDraft,...ov.emailDraft};if(ov.lastActivity)b.lastActivity=ov.lastActivity}})}catch{}}
+function toast(m){const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),4500)}
+document.getElementById("snb").onclick=trig;
+document.getElementById("sf").onclick=e=>{const b=e.target.closest("button");if(!b)return;ast=b.dataset.status;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};
+document.getElementById("cf").onclick=e=>{const b=e.target.closest("button");if(!b||!b.dataset.country)return;act=b.dataset.country;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};
+load();
+setInterval(tick,1000);
+setInterval(load,15000);
+tick();
+</script>
+</body></html>

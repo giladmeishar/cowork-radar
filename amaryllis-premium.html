@@ -1,0 +1,439 @@
+<!doctype html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amaryllis &mdash; חנות פרחים בתל אביב</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBF6EE;--ink:#1E1A18;--blush:#F4CFC9;--rose:#C97A75;--leaf:#7F9168;--mute:rgba(30,26,24,.6);--line:rgba(30,26,24,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-smooth iframe{pointer-events:none}
+body{background:var(--paper);color:var(--ink);font-family:Heebo,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:10.5px;letter-spacing:.24em;color:var(--rose);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;transition:all .35s;background:transparent;mix-blend-mode:difference;color:#fff}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff;text-decoration:none;letter-spacing:-.01em;mix-blend-mode:difference}
+.brand b{font-style:normal;font-weight:500}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:#fff;text-decoration:none;font-size:13px;font-weight:400;transition:opacity .25s;mix-blend-mode:difference}
+.nav-links a:hover{opacity:.7}
+@media(max-width:860px){.nav-links{gap:12px}.nav-links a{font-size:12px}.brand{font-size:24px}}
+
+/* HERO — full screen 3D canvas with text overlay */
+.stage-pin{position:fixed;inset:0;z-index:0;pointer-events:none}
+.stage-pin canvas{width:100%!important;height:100%!important;display:block}
+
+.hero{height:100vh;position:relative;display:flex;align-items:flex-end;padding:0 0 90px;z-index:1}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(60px,11vw,180px);color:var(--ink);font-weight:500;line-height:.94;letter-spacing:-.025em;margin-bottom:24px;mix-blend-mode:difference;color:#fff}
+.hero h1 em{font-style:italic;color:var(--rose);display:block}
+.hero .tag{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.4vw,30px);color:#fff;max-width:640px;line-height:1.4;margin-bottom:30px;mix-blend-mode:difference}
+.hero .meta-row{display:flex;gap:36px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(255,255,255,.25);max-width:780px;color:#fff;mix-blend-mode:difference}
+.hero .meta-row div b{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:32px;font-weight:500;color:var(--blush);line-height:1.1}
+.hero .meta-row div span{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+
+.scroll-hint{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:5;font-size:10.5px;letter-spacing:.28em;color:#fff;text-transform:uppercase;mix-blend-mode:difference;pointer-events:none}
+.scroll-hint::after{content:"";display:block;width:1px;height:34px;background:#fff;margin:14px auto 0;animation:sp 2s ease-in-out infinite}
+@keyframes sp{0%,100%{height:34px;opacity:.4}50%{height:54px;opacity:1}}
+
+/* Main content scrolls over the fixed 3D scene */
+main{position:relative;z-index:2}
+
+section{padding:140px 0;position:relative}
+@media(max-width:860px){section{padding:90px 0}}
+.s-eye{margin-bottom:16px;display:block}
+.s-title{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,5.8vw,82px);line-height:1.02;font-weight:500;letter-spacing:-.02em;margin-bottom:20px}
+.s-title em{font-style:italic;color:var(--rose)}
+.s-lead{color:var(--mute);font-size:18px;line-height:1.85;max-width:600px}
+
+/* Sticky-text-with-scroll-photo pattern */
+.flow{background:var(--paper);padding:160px 40px}
+.flow .panel{max-width:760px;margin:0 auto 140px;text-align:center}
+.flow .panel:last-child{margin-bottom:0}
+.flow .panel p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(28px,4vw,52px);line-height:1.25;color:var(--ink);font-weight:400}
+.flow .panel p em{color:var(--rose);font-style:italic;font-weight:500}
+.flow .panel .by{display:block;margin-top:22px;font-size:12px;letter-spacing:.16em;color:var(--mute);text-transform:uppercase;font-family:Heebo,sans-serif;font-style:normal}
+
+.bouquets{background:#fff;padding:140px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bouquets .head{text-align:center;max-width:680px;margin:0 auto 70px}
+.bouquets .head .s-lead{margin:0 auto}
+.bouquets .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.bouquets .grid{grid-template-columns:1fr;gap:44px}}
+.bq{text-align:center}
+.bq .pic{aspect-ratio:3/4;overflow:hidden;border-radius:3px;margin-bottom:24px;background:var(--paper)}
+.bq .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.bq:hover .pic img{transform:scale(1.06)}
+.bq h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:32px;font-weight:500;margin-bottom:10px}
+.bq p{color:var(--mute);font-size:14.5px;line-height:1.7;margin-bottom:14px;max-width:300px;margin-inline:auto}
+.bq .px{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;color:var(--rose);font-weight:500}
+
+.full-img{height:90vh;min-height:560px;overflow:hidden;position:relative}
+.full-img img{width:100%;height:100%;object-fit:cover}
+.full-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.5) 100%)}
+.full-img .cap{position:absolute;bottom:50px;left:0;right:0;text-align:center;z-index:2;padding:0 30px}
+.full-img .cap h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(34px,5vw,68px);color:#fff;font-weight:500;text-shadow:0 4px 30px rgba(0,0,0,.4);max-width:760px;margin:0 auto;line-height:1.15}
+.full-img .cap h3 em{color:var(--blush);font-style:italic}
+
+.visit{background:var(--paper);padding:130px 0}
+.visit .head{max-width:680px;margin-bottom:54px}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr;gap:20px}}
+.vcard{padding:56px 44px;background:#fff;border-radius:4px;border:1px solid var(--line)}
+.vcard h3{font-family:"Cormorant Garamond",serif;font-size:40px;font-weight:500;margin-bottom:18px;line-height:1.05}
+.vcard h3 em{font-style:italic;color:var(--rose)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.9;margin-bottom:14px}
+.vcard .lbl{font-size:10.5px;color:var(--rose);letter-spacing:.18em;text-transform:uppercase;font-weight:500;display:block;margin:22px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;font-weight:500}
+.hours{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.hours .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.hours .row:last-child{border-bottom:0}
+.hours .day{color:var(--ink)}
+
+.cta-band{padding:160px 0;text-align:center;background:var(--rose);color:#fff}
+.cta-band h4{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(36px,5.5vw,68px);line-height:1.2;font-weight:500;max-width:820px;margin:14px auto 38px}
+.btn{display:inline-block;padding:18px 44px;background:#fff;color:var(--rose);font-family:Heebo,sans-serif;font-size:14.5px;text-decoration:none;font-weight:500;border-radius:30px;transition:all .3s}
+.btn:hover{background:var(--ink);color:#fff}
+
+footer{padding:60px 0 44px;background:var(--ink);color:#f0e6dc}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:#fff}
+footer .b em{color:var(--blush);font-style:italic}
+footer .info{color:#bcaa9c;font-size:13.5px;line-height:1.75}
+footer .info a{color:#bcaa9c;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
+footer .info a:hover{color:var(--blush)}
+footer .small{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;letter-spacing:.08em;color:#857060}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s ease,transform 1.1s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<div class="stage-pin" id="stage"></div>
+<div class="scroll-hint">SCROLL</div>
+
+<nav id="nav"><div class="wrap"><div class="row">
+<a class="brand" href="#top"><b>Amaryllis</b></a>
+<div class="nav-links">
+<a href="#bouquets">הזרים שלנו</a>
+<a href="#visit">הגעה</a>
+<a href="https://www.google.com/maps/search/amaryllis+tel+aviv" target="_blank" rel="noopener">בגוגל מפות</a>
+</div>
+</div></div></nav>
+
+<header id="top" class="hero">
+<div class="wrap">
+<div class="eye" style="color:#fff;mix-blend-mode:difference;margin-bottom:24px">חנות פרחים &middot; תל אביב &middot; משלוח חינם</div>
+<h1>פרחים שמספרים<em>סיפור.</em></h1>
+<div class="tag">זרים אישיים בעבודת יד, שמגיעים אליך באותו היום &mdash; בכל מקום בתל אביב.</div>
+<div class="meta-row">
+<div><b>4.8 &#9733;</b><span>340 ביקורות בגוגל</span></div>
+<div><b>חינם</b><span>משלוח לכל מקום</span></div>
+<div><b>היום</b><span>הזמנה עד 14:00</span></div>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="flow">
+<div class="panel reveal">
+<p>זר זה לא רק <em>זר</em>.<br>זה איך שאומרים את מה שאי אפשר להגיד <em>במילים</em>.</p>
+<span class="by">פילוסופיית העבודה שלנו &middot; משנת 2019</span>
+</div>
+<div class="panel reveal">
+<p>אנחנו עובדים עם פרחים <em>טריים</em>,<br>שמגיעים בכל בוקר ישירות מהמשתלות.</p>
+<span class="by">איכות &middot; כל יום מחדש</span>
+</div>
+<div class="panel reveal">
+<p>ו-340 לקוחות שכבר <em>סיפרו לנו</em><br>שזה ברור מהשנייה שנכנסים לחנות.</p>
+<span class="by">ממוצע 4.8 כוכבים בגוגל</span>
+</div>
+</section>
+
+<section id="bouquets" class="bouquets">
+<div class="head reveal">
+<div class="eye s-eye">מה אנחנו אורזים</div>
+<h2 class="s-title">שלושה זרים, <em>אהובים</em>.</h2>
+<p class="s-lead">כל זר נארז ביד, עטוף בנייר קראפט, וקשור בסרט. אם תרצה משהו אחר &mdash; פשוט תתקשר ונרכיב לפי הסיפור.</p>
+</div>
+<div class="grid reveal">
+<div class="bq">
+<div class="pic"><img src="https://images.weserv.nl/?url=images.unsplash.com/photo-1518895949257-7621c3c786d7&amp;w=700&amp;h=940&amp;fit=cover" alt="זר סיגנטורה" loading="lazy"></div>
+<h3>סיגנטורה</h3>
+<p>הזר הקלאסי של אמריליס &mdash; שילוב יומיומי של שניים-שלושה מינים, לכל אירוע.</p>
+<span class="px">החל מ-180&#8362;</span>
+</div>
+<div class="bq">
+<div class="pic"><img src="https://images.weserv.nl/?url=images.unsplash.com/photo-1525310072745-f49212b5ac6d&amp;w=700&amp;h=940&amp;fit=cover" alt="זר מוזמן" loading="lazy"></div>
+<h3>זר מוזמן</h3>
+<p>תתקשר, תספר את הסיפור, ואנחנו נרכיב לפי מה ששמענו &mdash; טון, צבעוניות וקשר.</p>
+<span class="px">החל מ-220&#8362;</span>
+</div>
+<div class="bq">
+<div class="pic"><img src="https://images.weserv.nl/?url=images.unsplash.com/photo-1455659817273-f96807779a8a&amp;w=700&amp;h=940&amp;fit=cover" alt="מארז אסופה" loading="lazy"></div>
+<h3>מארז אסופה</h3>
+<p>זר גדול עם פרחי עונה נדירים, לרגעים הגדולים שמגיעים אחת לכמה שנים.</p>
+<span class="px">החל מ-350&#8362;</span>
+</div>
+</div>
+</section>
+
+<section class="full-img reveal">
+<img src="https://images.weserv.nl/?url=images.unsplash.com/photo-1561181286-d3fee7d55364&amp;w=1900&amp;h=1100&amp;fit=cover" alt="" loading="lazy">
+<div class="cap"><h3>"זה לא רק זר. זה <em>מסר</em>."</h3></div>
+</section>
+
+<section id="visit" class="visit"><div class="wrap">
+<div class="head reveal">
+<div class="eye s-eye">איך מזמינים</div>
+<h2 class="s-title">בחנות, או <em>אצלך בבית</em>.</h2>
+</div>
+<div class="grid">
+<div class="vcard reveal">
+<h3>החנות <em>בתל אביב</em>.</h3>
+<p>אפשר לבוא לחנות, לבחור פרחים יחד איתנו, ולהרכיב את הזר על המקום. בלי הזמנה מראש.</p>
+<span class="lbl">כתובת</span>
+<div class="val">תל אביב-יפו</div>
+<span class="lbl">למיקום מדויק</span>
+<div class="val"><a href="https://www.google.com/maps/search/amaryllis+tel+aviv" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none;border-bottom:1px solid var(--rose)">פתח בגוגל מפות &rarr;</a></div>
+<div class="hours">
+<div class="row"><span class="day">ראשון &mdash; חמישי</span><span>9:00 &mdash; 19:00</span></div>
+<div class="row"><span class="day">שישי</span><span>9:00 &mdash; 14:00</span></div>
+<div class="row"><span class="day">שבת</span><span>סגור</span></div>
+</div>
+</div>
+<div class="vcard reveal">
+<h3>משלוח <em>חינם</em>.</h3>
+<p>לכל תל אביב והסביבה הקרובה &mdash; <b>בלי תשלום משלוח</b>. אנחנו מאמינים שזר צריך להגיע ביד, לא דרך אפליקציה.</p>
+<p>הזמנה עד 14:00 &mdash; המשלוח יוצא אותו היום.</p>
+<span class="lbl">חלון הזמנה</span>
+<div class="val">ראשון &mdash; חמישי, 9:00&ndash;14:00</div>
+<span class="lbl">כמה לוקח</span>
+<div class="val">בדרך כלל עד 3 שעות</div>
+</div>
+</div>
+</div></section>
+
+<section class="cta-band reveal"><div class="wrap">
+<div class="eye" style="color:rgba(255,255,255,.85)">לדבר איתנו</div>
+<h4>הדרך הכי מהירה להזמין זר &mdash; <em>שיחת טלפון</em>.</h4>
+<a class="btn" href="https://www.google.com/maps/search/amaryllis+tel+aviv" target="_blank" rel="noopener">למספר ולמיקום &rarr;</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+<div class="row">
+<div class="b"><em>Amaryllis</em></div>
+<div class="info">חנות פרחים &middot; תל אביב &middot; משלוח חינם<br>4.8 &#9733; מ-340 ביקורות &middot; <a href="https://www.google.com/maps/search/amaryllis+tel+aviv" target="_blank" rel="noopener">בגוגל מפות</a></div>
+</div>
+<div class="small">ראשון&ndash;חמישי 9:00&ndash;19:00 &middot; שישי 9:00&ndash;14:00 &middot; שבת סגור</div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+// === Lenis smooth scroll — the buttery ease seen on hydroflowdrink/lesse/hashgraph ===
+(function(){
+  if(!window.Lenis)return;
+  const lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,smoothTouch:false});
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
+  requestAnimationFrame(raf);
+  // Sync with GSAP ScrollTrigger
+  if(window.gsap&&window.ScrollTrigger){
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(time=>lenis.raf(time*1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+})();
+</script>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+// === Premium 3D: scroll-driven camera through bloomed bouquet ===
+(function(){
+const host=document.getElementById("stage");
+if(!window.THREE||!host)return;
+
+const W=()=>innerWidth,H=()=>innerHeight;
+const scene=new THREE.Scene();
+scene.fog=new THREE.FogExp2(0xFBF6EE,.06);
+scene.background=new THREE.Color(0xFBF6EE);
+
+const cam=new THREE.PerspectiveCamera(38,W()/H(),.1,100);
+cam.position.set(0,1.5,5.5);cam.lookAt(0,.6,0);
+
+const r=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
+r.outputEncoding=THREE.sRGBEncoding;
+r.toneMapping=THREE.ACESFilmicToneMapping;
+r.toneMappingExposure=1.15;
+r.setPixelRatio(Math.min(devicePixelRatio,2));
+r.setSize(W(),H());
+host.appendChild(r.domElement);
+
+// === Post-processing: Bloom for the cinematic glow ===
+const composer=new THREE.EffectComposer(r);
+composer.addPass(new THREE.RenderPass(scene,cam));
+const bloom=new THREE.UnrealBloomPass(new THREE.Vector2(W(),H()),0.65,0.45,0.85);
+composer.addPass(bloom);
+
+addEventListener("resize",()=>{
+  cam.aspect=W()/H();cam.updateProjectionMatrix();
+  r.setSize(W(),H());composer.setSize(W(),H());
+});
+
+// === Build a refined bouquet ===
+const root=new THREE.Group();scene.add(root);
+
+// Soft, glowing petal material (slightly emissive for bloom)
+function petalMat(c,emit){
+  return new THREE.MeshStandardMaterial({color:c,roughness:.45,metalness:0,
+    side:THREE.DoubleSide,emissive:emit||c,emissiveIntensity:.12});
+}
+const palette=[
+  petalMat(0xE89BA0,0x9E5258),
+  petalMat(0xF0B5B7,0xA86870),
+  petalMat(0xE07A82,0x8A3036),
+  petalMat(0xF7CEC8,0xC07A78),
+  petalMat(0xEFA6A3,0xA85650),
+  petalMat(0xFADBD5,0xC58F8A),
+];
+const leafMat=new THREE.MeshStandardMaterial({color:0x88A074,roughness:.7,metalness:0,side:THREE.DoubleSide,emissive:0x445236,emissiveIntensity:.08});
+const stemMat=new THREE.MeshStandardMaterial({color:0x6F8B5C,roughness:.65,metalness:0});
+const wrapMat=new THREE.MeshStandardMaterial({color:0xF2E8D8,roughness:.92,metalness:0,side:THREE.DoubleSide,emissive:0xC8B89A,emissiveIntensity:.04});
+
+// Paper wrap cone
+const wrapGeo=new THREE.CylinderGeometry(1.1,.45,1.9,32,2,true);
+const wrap=new THREE.Mesh(wrapGeo,wrapMat);wrap.position.y=-.45;root.add(wrap);
+
+// Flower builder with layered petals
+function flower(x,y,z,scale,mat,rotZ){
+  const f=new THREE.Group();f.position.set(x,y,z);
+  // Center stamen
+  const stamen=new THREE.Mesh(new THREE.SphereGeometry(.08,16,12),
+    new THREE.MeshStandardMaterial({color:0xE8B658,roughness:.5,emissive:0xC48838,emissiveIntensity:.4}));
+  f.add(stamen);
+  // 4 rings of petals
+  for(let ring=0;ring<4;ring++){
+    const count=6+ring*2;
+    const radius=.12+ring*.06;
+    const droop=ring*.18;
+    for(let i=0;i<count;i++){
+      const a=(i/count)*Math.PI*2+ring*.25;
+      const p=new THREE.Mesh(new THREE.SphereGeometry(.16,14,10),mat);
+      p.scale.set(.55,.22,1.05);
+      p.position.set(Math.cos(a)*radius,-droop*.04,Math.sin(a)*radius);
+      const tilt=.6-ring*.18;
+      p.lookAt(Math.cos(a)*radius*3.5,1.2-tilt,Math.sin(a)*radius*3.5);
+      f.add(p);
+    }
+  }
+  f.scale.setScalar(scale);
+  if(rotZ)f.rotation.z=rotZ;
+  return f;
+}
+
+// Place flowers in a dome arrangement
+const positions=[
+  [0,.58,0,1.05,0,.0],
+  [-.4,.5,-.12,.9,1,.15],
+  [.35,.52,.08,.95,2,-.1],
+  [-.1,.58,.42,.92,3,.0],
+  [.18,.45,-.45,.9,4,.2],
+  [-.5,.34,.3,.78,5,.1],
+  [.5,.36,-.1,.78,0,-.15],
+  [-.08,.7,-.28,.74,1,.05],
+  [.24,.66,.3,.74,2,-.05],
+  [-.32,.45,-.05,.7,4,.1],
+];
+positions.forEach(p=>{root.add(flower(p[0],p[1],p[2],p[3],palette[p[4]],p[5]))});
+
+// Leaves between
+for(let i=0;i<10;i++){
+  const a=(i/10)*Math.PI*2;
+  const leaf=new THREE.Mesh(new THREE.SphereGeometry(.26,10,8),leafMat);
+  leaf.scale.set(.16,.04,.55);
+  leaf.position.set(Math.cos(a)*.6,.18-Math.random()*.12,Math.sin(a)*.6);
+  leaf.lookAt(Math.cos(a)*1.6,.65,Math.sin(a)*1.6);
+  root.add(leaf);
+}
+
+// Stems descending
+for(let i=0;i<8;i++){
+  const a=(i/8)*Math.PI*2;
+  const s=new THREE.Mesh(new THREE.CylinderGeometry(.018,.022,1.1,8),stemMat);
+  s.position.set(Math.cos(a)*.17,-.1,Math.sin(a)*.17);
+  s.rotation.x=Math.sin(a)*.1;s.rotation.z=Math.cos(a)*.1;
+  root.add(s);
+}
+
+// === Cinematic lighting ===
+scene.add(new THREE.AmbientLight(0xfff5ec,.55));
+const key=new THREE.DirectionalLight(0xfff0e2,1.1);key.position.set(4,5,3);scene.add(key);
+const fill=new THREE.DirectionalLight(0xfdc4be,.4);fill.position.set(-3,1,-2);scene.add(fill);
+const back=new THREE.SpotLight(0xfddbd6,1.2,12,Math.PI*.25,.6,1);back.position.set(0,4,-3);back.target.position.set(0,0,0);scene.add(back);scene.add(back.target);
+// Soft pink rim glow
+const rim=new THREE.PointLight(0xfaa8a3,.7,5);rim.position.set(0,1,3);scene.add(rim);
+
+// === GSAP ScrollTrigger camera flythrough ===
+if(window.gsap&&window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  // Total scroll length; we animate camera through stages
+  const tl=gsap.timeline({
+    scrollTrigger:{
+      trigger:"body",
+      start:"top top",
+      end:"bottom bottom",
+      scrub:1.2,
+    }
+  });
+  // Stage 1 → 2: pull back and rotate
+  tl.to(cam.position,{x:1.5,y:1.2,z:6.5,duration:1,ease:"power1.inOut"},0)
+    .to(root.rotation,{y:Math.PI*.4,duration:1,ease:"none"},0)
+    .to(bloom,{strength:0.9,duration:.4},0);
+
+  // Stage 2 → 3: close-up into the flowers (dramatic dive)
+  tl.to(cam.position,{x:-.3,y:.65,z:2.4,duration:1,ease:"power2.inOut"},1)
+    .to(root.rotation,{y:Math.PI*.85,duration:1,ease:"none"},1)
+    .to(bloom,{strength:1.4,radius:.7,duration:.5},1);
+
+  // Stage 3 → 4: side-view orbit
+  tl.to(cam.position,{x:3.5,y:.4,z:.5,duration:1,ease:"power1.inOut"},2)
+    .to(root.rotation,{y:Math.PI*1.4,duration:1,ease:"none"},2)
+    .to(bloom,{strength:0.7,duration:.5},2);
+
+  // Stage 4 → 5: back to wide, hero again from new angle
+  tl.to(cam.position,{x:0,y:2.5,z:6,duration:1,ease:"power2.out"},3)
+    .to(root.rotation,{y:Math.PI*2,duration:1,ease:"none"},3)
+    .to(bloom,{strength:0.55,duration:.5},3);
+}
+
+// Subtle constant motion
+let t=0;
+(function loop(){
+  t+=.005;
+  cam.lookAt(0,.6,0);
+  // gentle sway of flowers
+  root.position.y=Math.sin(t)*.02;
+  composer.render();
+  requestAnimationFrame(loop);
+})();
+})();
+</script>
+</body></html>
