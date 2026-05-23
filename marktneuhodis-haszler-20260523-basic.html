@@ -1,0 +1,222 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buschenschank Haszler &mdash; Markt Neuhodis, S&uuml;dburgenland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2EBD9;--ink:#1A211B;--pine:#2A3A2B;--moss:#4D6240;--gold:#C99340;--uhudler:#A23B47;--mute:rgba(26,33,27,.62);--line:rgba(26,33,27,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:860px){.wrap{padding:0 22px}}
+.eye{font-size:11px;letter-spacing:.28em;color:var(--pine);font-weight:500;text-transform:uppercase}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;background:rgba(242,235,217,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"EB Garamond",serif;font-style:italic;font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand b{font-style:normal;font-weight:500;color:var(--uhudler)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--uhudler)}
+@media(max-width:760px){.nav-links{gap:14px}.nav-links a{font-size:12px}.brand{font-size:22px}}
+
+.hero{padding:170px 0 90px;background:var(--paper)}
+.hero .eye{margin-bottom:30px}
+.hero h1{font-family:"EB Garamond",serif;font-size:clamp(58px,10.5vw,160px);font-weight:500;line-height:.94;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--uhudler);display:block}
+.hero .lead{font-family:"EB Garamond",serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);max-width:740px;line-height:1.45;color:var(--mute);margin-bottom:46px}
+.hero .meta{display:flex;gap:48px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line);max-width:920px}
+.hero .meta .col span{display:block;font-size:11px;letter-spacing:.18em;color:var(--pine);text-transform:uppercase;margin-bottom:6px}
+.hero .meta .col .v{font-family:"EB Garamond",serif;font-style:italic;font-size:20px;color:var(--ink);font-weight:500}
+
+.feat{height:78vh;min-height:560px;overflow:hidden;position:relative}
+.feat img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.05)}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.55) 100%)}
+.feat .cap{position:absolute;bottom:60px;left:0;right:0;padding:0 40px;color:#F2EBD9;z-index:2}
+.feat .cap .eye{color:var(--gold)}
+.feat .cap h2{font-family:"EB Garamond",serif;font-style:italic;font-size:clamp(34px,5.5vw,66px);font-weight:500;max-width:780px;line-height:1.1;margin-top:14px}
+
+.quote{padding:130px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.quote blockquote{max-width:980px;margin:0 auto;text-align:center}
+.quote blockquote p{font-family:"EB Garamond",serif;font-style:italic;font-size:clamp(26px,3.6vw,46px);line-height:1.3;color:var(--ink);font-weight:400}
+.quote blockquote p em{color:var(--uhudler);font-style:italic;font-weight:500}
+.quote cite{display:block;font-style:normal;margin-top:38px;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+
+.menu{padding:130px 0;background:#fff;border-bottom:1px solid var(--line)}
+.menu .head{max-width:680px;margin:0 auto 70px;text-align:center}
+.menu .head h2{font-family:"EB Garamond",serif;font-size:clamp(40px,6vw,72px);font-weight:500;line-height:1.05;margin:18px 0}
+.menu .head h2 em{font-style:italic;color:var(--uhudler)}
+.menu .head p{color:var(--mute);font-family:"EB Garamond",serif;font-style:italic;font-size:20px;line-height:1.5}
+.menu .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px}
+@media(max-width:860px){.menu .grid{grid-template-columns:1fr;gap:36px}}
+.item{text-align:center}
+.item .ico{width:62px;height:62px;margin:0 auto 18px;border:1.5px solid var(--moss);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--moss);font-family:"EB Garamond",serif;font-style:italic;font-size:30px;font-weight:500}
+.item h3{font-family:"EB Garamond",serif;font-style:italic;font-size:28px;font-weight:500;margin-bottom:10px}
+.item p{color:var(--mute);font-size:15px;line-height:1.7;max-width:300px;margin-inline:auto}
+
+.room{padding:130px 0;background:var(--paper)}
+.room .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+@media(max-width:860px){.room .grid{grid-template-columns:1fr;gap:44px}}
+.room img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:saturate(.96) contrast(1.05)}
+.room .text h2{font-family:"EB Garamond",serif;font-size:clamp(38px,5vw,64px);font-weight:500;line-height:1.05;margin:18px 0 26px}
+.room .text h2 em{font-style:italic;color:var(--uhudler)}
+.room .text p{font-size:17px;color:var(--mute);line-height:1.85;margin-bottom:18px}
+.room .text p b{color:var(--ink);font-weight:500}
+
+.visit{padding:130px 0;background:#fff;border-top:1px solid var(--line)}
+.visit .head{text-align:center;max-width:600px;margin:0 auto 60px}
+.visit .head h2{font-family:"EB Garamond",serif;font-size:clamp(38px,5vw,64px);font-weight:500;line-height:1.05;margin-top:14px}
+.visit .head h2 em{font-style:italic;color:var(--uhudler)}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1080px;margin:0 auto}
+@media(max-width:860px){.visit .grid{grid-template-columns:1fr}}
+.vcard{padding:46px 40px;background:var(--paper);border-radius:3px;border:1px solid var(--line)}
+.vcard h3{font-family:"EB Garamond",serif;font-size:32px;font-weight:500;margin-bottom:18px;line-height:1.1}
+.vcard h3 em{font-style:italic;color:var(--uhudler)}
+.vcard p{color:var(--mute);font-size:15.5px;line-height:1.8;margin-bottom:16px}
+.vcard .lbl{font-size:11px;color:var(--pine);letter-spacing:.2em;text-transform:uppercase;font-weight:500;display:block;margin:22px 0 6px;padding-top:20px;border-top:1px solid var(--line)}
+.vcard .val{font-family:"EB Garamond",serif;font-style:italic;font-size:21px;font-weight:500;color:var(--ink)}
+.vcard .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold)}
+.cal{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.cal .row{display:flex;justify-content:space-between;padding:9px 0;font-size:14.5px;color:var(--mute);border-bottom:1px dotted var(--line)}
+.cal .row:last-child{border-bottom:0}
+.cal .day{color:var(--ink)}
+
+.cta{padding:130px 0;background:var(--pine);color:#F2EBD9;text-align:center}
+.cta .eye{color:rgba(242,235,217,.72);margin-bottom:18px}
+.cta h2{font-family:"EB Garamond",serif;font-style:italic;font-size:clamp(36px,5vw,68px);line-height:1.18;font-weight:500;max-width:820px;margin:0 auto 36px}
+.cta h2 em{color:var(--gold)}
+.btn{display:inline-block;padding:18px 46px;background:var(--gold);color:var(--pine);font-family:Inter,sans-serif;font-size:14px;text-decoration:none;font-weight:500;border-radius:30px;letter-spacing:.04em;transition:all .25s}
+.btn:hover{background:#F2EBD9}
+
+footer{padding:60px 0 44px;background:var(--ink);color:#A8A99E}
+footer .row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end}
+footer .b{font-family:"EB Garamond",serif;font-style:italic;font-size:28px;color:#F2EBD9}
+footer .b em{color:var(--gold);font-style:normal}
+footer .info{font-size:14px;line-height:1.7;text-align:right}
+footer .info a{color:var(--gold);text-decoration:none}
+footer .small{margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#7F7E72;letter-spacing:.04em}
+@media(max-width:760px){footer .row{align-items:flex-start;flex-direction:column}footer .info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+</style></head>
+<body>
+
+<nav><div class="wrap row">
+  <a href="#" class="brand">Buschenschank <b>Haszler</b></a>
+  <div class="nav-links">
+    <a href="#kueche">K&uuml;che</a>
+    <a href="#haus">Das Haus</a>
+    <a href="#besuch">Besuch</a>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eye">Familie Haszler &middot; Markt Neuhodis seit Generationen</div>
+  <h1>Buschenschank<br><em>Haszler</em></h1>
+  <p class="lead">Ein kleiner Familien&shy;buschen am Fu&szlig; des Geschriebenstein &mdash; eigener Wein, eigene Brettljause, zwei kurze Fenster im Jahr.</p>
+  <div class="meta">
+    <div class="col"><span>Adresse</span><div class="v">Hauptstra&szlig;e 11 &mdash; 7464 Markt Neuhodis</div></div>
+    <div class="col"><span>Telefon</span><div class="v">+43 664 821 20 65</div></div>
+    <div class="col"><span>Region</span><div class="v">Weinidylle S&uuml;dburgenland</div></div>
+  </div>
+</div></section>
+
+<section class="feat reveal">
+  <img src="https://www.weinidylle.at/fileadmin/user_upload/Haszlern.jpg" alt="Buschenschank Haszler &mdash; Hofansicht">
+  <div class="cap">
+    <div class="eye">Das Haus</div>
+    <h2>Ein Hof in der Weinidylle &mdash; ein Tisch, ein Buschen, ein Glas Welschriesling.</h2>
+  </div>
+</section>
+
+<section class="quote reveal"><div class="wrap"><blockquote>
+  <p>&laquo;&nbsp;Wenn der <em>Buschen</em> h&auml;ngt, ist offen. Sonst sind wir <em>im Weingarten</em>.&nbsp;&raquo;</p>
+  <cite>&mdash; Familie Haszler, Markt Neuhodis</cite>
+</blockquote></div></section>
+
+<section id="kueche" class="menu"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye">Aus dem Keller &amp; der K&uuml;che</div>
+    <h2>Eigene Weine, <em>eigene Brettljause</em>.</h2>
+    <p>Welschriesling und Wei&szlig;burgunder vom Hang, Blaufr&auml;nkisch dunkel im Glas &mdash; und der seltene Uhudler, rosig wie eine Walderdbeere.</p>
+  </div>
+  <div class="grid">
+    <div class="item reveal">
+      <div class="ico">W</div>
+      <h3>Welschriesling</h3>
+      <p>Jung, mineralisch, mit gr&uuml;nem Apfel. Der klassische Hauswein der Weinidylle &mdash; k&uuml;hl serviert, im H&auml;ferl wie es Sitte ist.</p>
+    </div>
+    <div class="item reveal">
+      <div class="ico">U</div>
+      <h3>Uhudler</h3>
+      <p>Eine Rarit&auml;t der Region. Rosig im Glas, schmeckt nach Walderdbeere, Himbeere und Schwarzer Johannisbeere &mdash; ein St&uuml;ck Burgenl&auml;ndische Identit&auml;t.</p>
+    </div>
+    <div class="item reveal">
+      <div class="ico">B</div>
+      <h3>Brettljause</h3>
+      <p>Geselchtes, Verhackertes, Krenscharf, Bauernbrot. Alles aus eigener Hand, mit dem schwarzen K&uuml;mmel der Pannonischen Tiefebene.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="haus" class="room"><div class="wrap"><div class="grid">
+  <img class="reveal" src="https://www.weinidylle.at/fileadmin/user_upload/Haszler1n.jpg" alt="Im Garten der Familie Haszler">
+  <div class="text reveal">
+    <div class="eye">Das Haus</div>
+    <h2>Am Fu&szlig; des <em>Geschriebenstein</em>.</h2>
+    <p>Markt Neuhodis liegt am s&uuml;dlichen Abhang der G&uuml;nser Berge, am Fu&szlig; des h&ouml;chsten Berges des Burgenlandes. Die Weinrieden gehen sanft den Hang hinunter, dazwischen Streuobstwiesen, Walnussb&auml;ume, kleine Kapellen.</p>
+    <p>Familie Haszler f&uuml;hrt das Haus schlicht und in altem Stil: <b>Rauchfrei</b>, <b>der Hund darf mit</b>, der Tisch wird f&uuml;r alle gedeckt. Die Buschenschank&shy;tradition ist alt &mdash; sie wird hier nicht inszeniert, sondern gelebt.</p>
+  </div>
+</div></div></section>
+
+<section id="besuch" class="visit"><div class="wrap">
+  <div class="head reveal">
+    <div class="eye">Ausgesteckt is</div>
+    <h2>Zu Gast bei <em>Familie Haszler</em>.</h2>
+  </div>
+  <div class="grid">
+    <div class="vcard reveal">
+      <h3>Termine <em>2026</em>.</h3>
+      <p>Ein Buschen ist nur wenige Tage im Jahr ge&ouml;ffnet &mdash; das ist Burgenl&auml;ndische Tradition und gesetzlich so geregelt. Bitte rufen Sie kurz an, wenn Sie zu mehreren kommen.</p>
+      <div class="cal">
+        <div class="row"><span class="day">Fr&uuml;hlings&shy;buschen</span><span>21.&ndash;26. Mai 2026</span></div>
+        <div class="row"><span class="day">Herbst&shy;buschen</span><span>10.&ndash;15. September 2026</span></div>
+      </div>
+    </div>
+    <div class="vcard reveal">
+      <h3>Anfahrt &amp; <em>Kontakt</em>.</h3>
+      <p>Markt Neuhodis liegt rund eine Stunde s&uuml;dlich von Wien, eine halbe Stunde von der ungarischen Grenze. Die Hauptstra&szlig;e f&uuml;hrt direkt vor das Haus.</p>
+      <span class="lbl">Adresse</span>
+      <div class="val">Hauptstra&szlig;e 11 &middot; 7464 Markt Neuhodis</div>
+      <span class="lbl">Telefon &middot; E-Mail</span>
+      <div class="val">+43 664 821 20 65<br><a href="mailto:haszler.gertrude@drei.at">haszler.gertrude@drei.at</a></div>
+      <span class="lbl">Karte</span>
+      <div class="val"><a href="https://www.google.com/maps/dir/?api=1&destination=47.294036,16.396069" target="_blank" rel="noopener">Google Maps &rarr;</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta reveal"><div class="wrap">
+  <div class="eye">Reservierung</div>
+  <h2>Wenn der Buschen h&auml;ngt, <em>ist Familie</em>.</h2>
+  <a class="btn" href="tel:+436648212065">Bei Familie Haszler anrufen</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="row">
+    <div class="b">Buschenschank <em>Haszler</em></div>
+    <div class="info">Hauptstra&szlig;e 11 &middot; 7464 Markt Neuhodis<br>S&uuml;dburgenland &middot; <a href="tel:+436648212065">+43 664 821 20 65</a></div>
+  </div>
+  <div class="small">&copy; 2026 Familie Haszler &mdash; Markt Neuhodis, Burgenland</div>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body></html>
