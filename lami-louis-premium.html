@@ -194,4 +194,49 @@ footer b{color:var(--gold);font-weight:500}
 
 <div class="bleed">
 <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHM3eEVUrJNNX6KkqUcwelKHgqWhWYDGccq7JwyrvRLHoMiiP3DYCcQf3oi60XTtuv_CbV_lRKKsvqALR9yqLxIsrApwv9o2zs1Ok5_FKLNHecovlgDhtw3ew-5RDsY5a7nA3dV1SL5SD-1=w2400-h1400-k-no" alt="">
-<div class="cap"><span>plate 04 &mdash;</span>
+<div class="cap"><span>plate 04 &mdash;</span>service du soir &middot; III<sup>e</sup> arr.</div>
+</div>
+
+<section id="visiter" class="visit"><div class="wrap">
+<div class="fade">
+<div class="kicker"><span class="n">iii.</span> Visiter <span style="font-family:'JetBrains Mono',monospace;color:rgba(241,236,224,.4);font-size:10.5px;margin-left:auto;letter-spacing:.32em">/ contact</span></div>
+<h2>Le <em>carnet noir</em><br>vous attend.</h2>
+<p class="lead">Un seul moyen, depuis 1924 : le t&eacute;l&eacute;phone. Pas de mail, pas de formulaire. On vous demandera votre nom, le nombre de couverts, l'heure souhait&eacute;e.</p>
+</div>
+<div class="vc fade">
+<div class="row"><div class="lbl">addr.</div><div class="v">32, rue du Vertbois<br>75003 Paris</div></div>
+<div class="row"><div class="lbl">t&eacute;l.</div><div class="v">+33&nbsp;1&nbsp;48&nbsp;87&nbsp;77&nbsp;48</div></div>
+<div class="row"><div class="lbl">plan</div><div class="v"><a href="https://www.google.com/maps/place/Chez+L'Ami+Louis" target="_blank" rel="noopener">Google&nbsp;Maps &rarr;</a></div></div>
+<div class="row"><div class="lbl">heures</div><div class="v small">mer &mdash; dim<br>12:00&ndash;14:00 &middot; 19:30&ndash;22:30<br>ferm&eacute; lun. et mar.</div></div>
+</div>
+</div></section>
+
+<footer>Chez L'<b>Ami</b> Louis &middot; III<sup>e</sup> arr. &middot; 32 rue du Vertbois &middot; depuis 1924</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+(function(){
+if(window.Lenis){
+  const l=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,smoothTouch:false});
+  function raf(t){l.raf(t);requestAnimationFrame(raf)} requestAnimationFrame(raf);
+}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll(".fade").forEach(el=>io.observe(el));
+const frame=document.getElementById("frame"),card=document.getElementById("card");
+let tx=0,ty=0,cx=0,cy=0;
+if(frame&&card){
+  frame.addEventListener("mousemove",e=>{
+    const r=frame.getBoundingClientRect();
+    tx=((e.clientX-r.left)/r.width-.5)*2;
+    ty=((e.clientY-r.top)/r.height-.5)*2;
+  });
+  frame.addEventListener("mouseleave",()=>{tx=0;ty=0});
+  (function loop(){
+    cx+=(tx-cx)*.08; cy+=(ty-cy)*.08;
+    card.style.transform=`rotateY(${cx*9}deg) rotateX(${-cy*9}deg) translateZ(0)`;
+    requestAnimationFrame(loop);
+  })();
+}
+})();
+</script>
+</body></html>
