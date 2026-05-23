@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-23T19:30:00Z",
+  "lastScan": "2026-05-23T21:30:00Z",
   "businesses": [
     {
       "id": "lami-louis-2026-05-19",
@@ -177,6 +177,36 @@
       "status": "pending",
       "discoveredAt": "2026-05-23T19:30:00Z",
       "lastActivity": "2026-05-23T19:30:00Z",
+      "notes": [],
+      "hasEnglishToggle": false
+    },
+    {
+      "id": "genova-sciamadda-20260523",
+      "name": "Antica Sciamadda",
+      "type": "Friggitoria / Sciamadda genovese",
+      "country": "IT",
+      "countryName": "Italy",
+      "city": "Genova",
+      "address": "Via San Giorgio, 14R, 16128 Genova GE",
+      "phone": "+39 010 246 8516",
+      "email": "anticasciamadda@katamail.com",
+      "googleMapsUrl": "https://www.google.com/maps/place/Antica+Sciamadda/@44.4072,8.9335,17z",
+      "rating": "4.3",
+      "reviewCount": "650+",
+      "founded": "1850",
+      "sites": {
+        "basic": "genova-sciamadda-20260523-basic.html",
+        "premium": "genova-sciamadda-20260523-premium.html"
+      },
+      "emailDraft": {
+        "language": "it",
+        "subject": "Antica Sciamadda — una piccola vetrina, in regalo",
+        "body": "Buongiorno Umberto e Ramona,\n\nsono passato per l'Antica Sciamadda cercando una vera farinata di ceci nel cuore vecchio di Genova, e ho notato che non esiste ancora un sito ufficiale della casa. Gratuitamente e senza impegno, ho preparato per voi due bozze — una classica, una più speciale — solo per mostrarvi il tono, e potete vederle qui in due clic:\n\n• Versione classica : https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-basic.html\n• Versione speciale : https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-premium.html\n\nSe una vi piace : mandatemi il nome di dominio che possedete già, oppure me ne occupo io per voi — la registrazione costa molto poco. Se vi interessa, ne parliamo insieme per il prezzo, senza pressioni.\n\nUn caro saluto,\nGilad\n\nPS : Questo è un messaggio unico. Senza risposta da parte vostra, non vi scriverò di nuovo.",
+        "bodyHebrew": "שלום אומברטו ורמונה,\nנכנסתי לאנטיקה שאמאדה בחיפוש אחר פרינטה אמיתית בלב גנואה העתיקה, וראיתי שעדיין אין אתר רשמי של המקום. בחינם וללא התחייבות הכנתי שתי טיוטות — קלאסית ומיוחדת:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-premium.html\nאם אחת מהן מוצאת חן — שלחו לי דומיין שכבר ברשותכם או שאני ארשום עבורכם, הרישום עולה מעט. אם זה מעניין נדבר על המחיר בלי לחץ.\nברכות חמות, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב."
+      },
+      "status": "pending",
+      "discoveredAt": "2026-05-23T21:30:00Z",
+      "lastActivity": "2026-05-23T21:30:00Z",
       "notes": [],
       "hasEnglishToggle": false
     }
