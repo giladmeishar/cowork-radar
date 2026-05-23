@@ -532,7 +532,7 @@
       "city": "Brest",
       "address": "34 rue Algésiras, 29200 Brest",
       "phone": "+33 2 98 44 44 36",
-      "email": null,
+      "email": "adammeishar17@gmail.com",
       "googleMapsUrl": "https://www.google.com/maps/place/Cr%C3%AAperie+Moderne+Yves+Boennec",
       "rating": "3.7",
       "reviewCount": "60+",
@@ -543,12 +543,12 @@
       },
       "emailDraft": {
         "language": "fr",
-        "subject": "Une petite idée pour la Crêperie Moderne",
-        "body": "Bonjour,\n\nJe m'appelle Yoram et je suis tombé sur la Crêperie Moderne en cherchant les belles adresses du vieux Brest. La maison Boënnec, rue Algésiras, depuis 1922 — quatre générations derrière la même bilig, c'est rare et précieux.\n\nEn regardant en ligne, j'ai remarqué que vous n'aviez pas de site internet à votre nom. Sans aucune prétention, j'ai préparé deux petites maquettes gratuites — une version classique éditoriale, et une version plus immersive avec une animation discrète — uniquement pour vous donner une idée de ce à quoi cela pourrait ressembler.\n\nAucun engagement, aucune obligation : si vous êtes curieux de voir, répondez-moi simplement par oui et je vous envoie les deux liens.\n\nAvec tout mon respect pour la maison,\nYoram\n\nPS : Il s'agit d'un message unique. Sans réponse de votre part, je n'écrirai plus."
+        "subject": "Crêperie Moderne — un petit site, en cadeau de Tel Aviv",
+        "body": "Bonjour,\n\nJe m'appelle Gilad et je vous écris depuis Tel Aviv. Je suis tombé sur la Crêperie Moderne en cherchant les belles adresses du vieux Brest — quatre générations rue Algésiras depuis 1922, c'est rare et précieux.\n\nJ'ai remarqué qu'il n'y a pas de site officiel de la maison, juste une page Facebook. Pour vous, gratuitement et sans aucune obligation, j'ai préparé deux maquettes :\n\n• Version classique : https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-basic.html\n• Version contemporaine : https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-premium.html\n\nSi l'une vous plaît, je serais heureux de vous aider à la mettre en ligne avec un nom de domaine simple (ex. creperie-moderne-brest.fr). Sinon, aucun souci — la galette parle d'elle-même.\n\nAvec respect,\nGilad\n\nPS : Il s'agit d'un message unique. Sans réponse de votre part, je n'écrirai plus."
       },
       "status": "pending",
       "discoveredAt": "2026-05-23T08:00:00Z",
-      "lastActivity": "2026-05-23T08:00:00Z",
+      "lastActivity": "2026-05-23T15:30:00Z",
       "notes": [],
       "hasEnglishToggle": false
     },
