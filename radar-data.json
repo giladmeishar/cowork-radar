@@ -11,7 +11,7 @@
       "city": "Paris",
       "address": "32, rue du Vertbois, 75003 Paris",
       "phone": "+33 1 48 87 77 48",
-      "email": null,
+      "email": "adammeishar17@gmail.com",
       "googleMapsUrl": "https://www.google.com/maps/place/Chez+L'Ami+Louis",
       "discoveredAt": "2026-05-19T19:00:00Z",
       "rating": "4.4",
@@ -23,11 +23,11 @@
       },
       "emailDraft": {
         "language": "fr",
-        "subject": "Une page pour Chez L'Ami Louis — aperçu gratuit",
-        "body": "Bonjour,\n\nJe vous écris depuis Tel Aviv. Je suis tombé sur L'Ami Louis en cherchant un bistrot parisien à recommander à des amis qui voyagent — et j'ai été surpris de ne pas trouver de page officielle de la maison sur internet. Je comprends parfaitement ce choix, mais j'ai pensé qu'une présence sobre, à votre image, pourrait vous être utile pour les clients étrangers qui arrivent à Paris.\n\nJ'ai préparé deux maquettes (gratuites, sans engagement) — l'une classique et éditoriale, l'autre plus contemporaine — uniquement pour vous montrer le ton. Si cela vous intéresse, je peux vous envoyer les liens pour les voir en quelques secondes. Si non, aucun souci, je ne réécrirai pas.\n\nBien à vous,\nGilad"
+        "subject": "L'Ami Louis — une page sobre, en cadeau",
+        "body": "Bonjour,\n\nJe vous écris depuis Tel Aviv. Je suis tombé sur L'Ami Louis en cherchant un vrai bistrot parisien à recommander à des amis qui voyagent — et j'ai été surpris de ne pas trouver de page officielle de la maison. Je comprends parfaitement ce choix : la rue du Vertbois a son propre rythme, et le téléphone fait très bien le travail.\n\nCela dit, j'ai préparé pour vous, gratuitement et sans engagement, deux maquettes — l'une classique et éditoriale, l'autre plus contemporaine — uniquement pour vous montrer le ton. Vous pouvez les voir ici en deux clics :\n\n• Version classique : https://giladmeishar.github.io/cowork-radar/lami-louis-basic.html\n• Version contemporaine : https://giladmeishar.github.io/cowork-radar/lami-louis-premium.html\n\nSi l'une vous parle, je serais ravi d'en discuter — un nom de domaine simple (ex. amilouis.paris) et c'est en ligne. Si non, aucun souci.\n\nBien à vous,\nGilad\n\nPS : Il s'agit d'un message unique. Sans réponse de votre part, je n'écrirai plus."
       },
       "status": "pending",
-      "lastActivity": "2026-05-19T19:00:00Z",
+      "lastActivity": "2026-05-23T15:00:00Z",
       "notes": []
     },
     {
