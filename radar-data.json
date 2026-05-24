@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-24T06:22:33Z",
+  "lastScan": "2026-05-24T13:14:24Z",
   "businesses": [
     {
       "id": "lami-louis-2026-05-19",
@@ -102,6 +102,66 @@
       "contactMethod": "phone",
       "contactNote": "Bez veřejné e-mailové adresy — telefonicky nebo Facebook",
       "contactNoteHe": "אין אימייל ציבורי — להתקשר או דרך פייסבוק"
+    },
+    {
+      "id": "napoli-da-donato-20260524",
+      "name": "Antica Trattoria e Pizzeria Da Donato",
+      "type": "Antica trattoria e pizzeria napoletana",
+      "country": "IT",
+      "countryName": "Italia",
+      "city": "Napoli",
+      "address": "Via Silvio Spaventa, 39/41, 80142 Napoli (NA)",
+      "phone": "+39 081 287 828",
+      "email": "adammeishar17@gmail.com",
+      "googleMapsUrl": "https://www.google.com/maps/place/Antica+Trattoria+e+Pizzeria+da+Donato/@40.850850,14.269202,17z/data=!3m1!4b1!4m6!3m5!1s0x133b08a9c8e7f4d9:0xe0f1a8e1c2d7f599!8m2!3d40.850850!4d14.269202!16s%2Fg%2F11bw3v3lyf",
+      "rating": "4.5",
+      "reviewCount": "3400+",
+      "founded": "1956 (radici familiari dal 1930 — quattro generazioni Amoroso)",
+      "sites": {
+        "basic": "napoli-da-donato-20260524-basic.html",
+        "premium": "napoli-da-donato-20260524-premium.html"
+      },
+      "emailDraft": {
+        "language": "it",
+        "subject": "Da Donato — una piccola pagina, in regalo dal vicolo",
+        "body": "Buongiorno,\n\nMi sono imbattuto nell'Antica Trattoria Da Donato cercando una vera cucina napoletana di mercato, e ho visto che la trattoria non ha ancora un proprio sito — solo Facebook. Ho preparato per voi, gratuitamente e senza impegno, due proposte — una classica, l'altra un po' più particolare — solo per farvi vedere il tono:\n\n• Versione classica: https://giladmeishar.github.io/cowork-radar/napoli-da-donato-20260524-basic.html\n• Versione speciale: https://giladmeishar.github.io/cowork-radar/napoli-da-donato-20260524-premium.html\n\nSe una vi piace: mandatemi il nome a dominio che già possedete, oppure me ne occupo io per voi — la registrazione costa pochissimo. Se la cosa vi interessa, ne parliamo insieme per il prezzo, senza fretta.\n\nCordialmente,\nGilad\n\nP.S.: È un messaggio singolo. Se non rispondete, non scriverò più.",
+        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי באנטיקה טראטוריה דה דונאטו — ארבעה דורות של משפחת אמורוסו דרך פורטה נולאנה בנאפולי מאז 1956, עם תנור עצים שמודלק מעשר בבוקר. ראיתי שאין לכם אתר רשמי, רק פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/napoli-da-donato-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/napoli-da-donato-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני ארשום עבורכם, העלות נמוכה. אם זה מעניין, נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית. אם לא תענו לא אכתוב שוב."
+      },
+      "status": "pending",
+      "discoveredAt": "2026-05-24T13:14:24Z",
+      "lastActivity": "2026-05-24T13:14:24Z",
+      "notes": [],
+      "hasEnglishToggle": false
+    },
+    {
+      "id": "cadiz-manzanilla-20260524",
+      "name": "Taberna La Manzanilla",
+      "type": "Taberna andaluza histórica (sherry bar tradicional)",
+      "country": "ES",
+      "countryName": "España",
+      "city": "Cádiz",
+      "address": "Calle Feduchy, 19, 11005 Cádiz",
+      "phone": "+34 956 28 54 01",
+      "email": "adammeishar17@gmail.com",
+      "googleMapsUrl": "https://www.google.com/maps/place/Taberna+La+Manzanilla/@36.5316725,-6.2942182,17z/data=!3m1!4b1!4m6!3m5!1s0xd0dd16244cc3ec5:0x44c3edd2f5caea59!8m2!3d36.5316725!4d-6.2942182!16s%2Fg%2F1td7j_ft",
+      "rating": "4.5",
+      "reviewCount": "5200+",
+      "founded": "1932 (tres generaciones de la familia García Romero)",
+      "sites": {
+        "basic": "cadiz-manzanilla-20260524-basic.html",
+        "premium": "cadiz-manzanilla-20260524-premium.html"
+      },
+      "emailDraft": {
+        "language": "es",
+        "subject": "Taberna La Manzanilla — una pequeña página, de regalo",
+        "body": "Buenas,\n\nMe topé con la Taberna La Manzanilla buscando barras gaditanas que no hayan cambiado en un siglo, y vi que la casa todavía no tiene página web propia — solo Facebook. He preparado para ustedes, gratis y sin compromiso, dos propuestas — una clásica, otra más especial — solo para enseñar el tono:\n\n• Versión clásica: https://giladmeishar.github.io/cowork-radar/cadiz-manzanilla-20260524-basic.html\n• Versión especial: https://giladmeishar.github.io/cowork-radar/cadiz-manzanilla-20260524-premium.html\n\nSi alguna les gusta: envíenme el dominio que ya tengan, o me encargo yo del registro — cuesta muy poco. Si les interesa, hablamos del precio sin prisas.\n\nUn saludo,\nGilad\n\nP.D.: Es un único mensaje. Si no me responden, no volveré a escribir.",
+        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי בטברנה לה מנסניייה — שלושה דורות של משפחת גרסיה ברחוב פדוצ'י בקדיס מאז 1932, חביות שרי שלא התרוקנו מעולם, וכלל הבית: זוג זיתים ממולאים עם כל כוס מנסניייה. ראיתי שאין לכם אתר רשמי, רק פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/cadiz-manzanilla-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/cadiz-manzanilla-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אטפל ברישום, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית. אם לא תענו לא אכתוב שוב."
+      },
+      "status": "pending",
+      "discoveredAt": "2026-05-24T13:14:24Z",
+      "lastActivity": "2026-05-24T13:14:24Z",
+      "notes": [],
+      "hasEnglishToggle": false
     }
   ]
 }
