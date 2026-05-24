@@ -11,7 +11,7 @@
       "city": "Paris",
       "address": "32, rue du Vertbois, 75003 Paris",
       "phone": "+33 1 48 87 77 48",
-      "email": "adammeishar17@gmail.com",
+      "email": null,
       "googleMapsUrl": "https://www.google.com/maps/place/%D7%9C'%D7%90%D7%9E%D7%99+%D7%9C%D7%95%D7%90%D7%99%D7%96%E2%80%AD/@48.8670927,2.3607333,17z/data=!3m1!4b1!4m6!3m5!1s0x47e66e0f94eb6f21:0xaf33bb75b26d4fd4!8m2!3d48.8670892!4d2.3581584!16s%2Fm%2F0gg7_8c",
       "discoveredAt": "2026-05-19T19:00:00Z",
       "rating": "4.4",
@@ -25,11 +25,15 @@
         "language": "fr",
         "subject": "L'Ami Louis — une page sobre, en cadeau",
         "body": "Bonjour,\n\nJe suis tombé sur L'Ami Louis en cherchant un vrai bistrot parisien, et j'ai vu qu'il n'existait pas encore de page officielle de la maison. J'ai préparé pour vous, gratuitement et sans engagement, deux propositions — l'une classique, l'autre plus singulière — uniquement pour vous montrer le ton :\n\n• Version classique : https://giladmeishar.github.io/cowork-radar/lami-louis-basic.html\n• Version spéciale : https://giladmeishar.github.io/cowork-radar/lami-louis-premium.html\n\nSi l'une vous plaît : envoyez-moi le nom de domaine que vous possédez déjà, ou je m'en occupe pour vous — l'enregistrement coûte très peu. Si cela vous intéresse, on en parle ensemble pour le prix, sans pression.\n\nBien à vous,\nGilad\n\nPS : Il s'agit d'un message unique. Sans réponse de votre part, je n'écrirai plus.",
-        "bodyHebrew": "שלום,\nנתקלתי ב-L'Ami Louis בחיפוש אחר ביסטרו פריזאי אמיתי וראיתי שאין עדיין דף רשמי של המסעדה. הכנתי לכם, חינם וללא התחייבות, שתי הצעות — אחת קלאסית ואחת ייחודית — רק להראות את הטון:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/lami-louis-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/lami-louis-premium.html\nאם משהו מוצא חן — שלחו לי דומיין שכבר ברשותכם או שאני ארשום עבורכם, הרישום עולה מעט. אם זה מעניין, נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב."
+        "bodyHebrew": "שלום,\nנתקלתי ב-L'Ami Louis בחיפוש אחר ביסטרו פריזאי אמיתי וראיתי שאין עדיין דף רשמי של המסעדה. הכנתי לכם, חינם וללא התחייבות, שתי הצעות — אחת קלאסית ואחת ייחודית — רק להראות את הטון:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/lami-louis-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/lami-louis-premium.html\nאם משהו מוצא חן — שלחו לי דומיין שכבר ברשותכם או שאני ארשום עבורכם, הרישום עולה מעט. אם זה מעניין, נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב.",
+        "recipientFallback": "phone"
       },
       "status": "pending",
       "lastActivity": "2026-05-23T15:00:00Z",
-      "notes": []
+      "notes": [],
+      "contactMethod": "phone",
+      "contactNote": "Réservations uniquement par téléphone — pas d'adresse email publique",
+      "contactNoteHe": "הזמנות בטלפון בלבד — אין אימייל ציבורי"
     },
     {
       "id": "brest-creperie-moderne-20260523",
@@ -40,7 +44,7 @@
       "city": "Brest",
       "address": "34 rue Algésiras, 29200 Brest",
       "phone": "+33 2 98 44 44 36",
-      "email": "adammeishar17@gmail.com",
+      "email": null,
       "googleMapsUrl": "https://www.google.com/maps/place/Cr%C3%AAperie+Moderne/@48.3907187,-4.490478,17z/data=!3m1!4b1!4m6!3m5!1s0x4816b957f80aca91:0xbfd7365f05416473!8m2!3d48.3907187!4d-4.490478!16s%2Fg%2F1vxdxppq",
       "rating": "3.7",
       "reviewCount": "60+",
@@ -53,13 +57,17 @@
         "language": "fr",
         "subject": "Crêperie Moderne — un petit site, en cadeau du vieux Brest",
         "body": "Bonjour,\n\nJe suis tombé sur la Crêperie Moderne en cherchant les belles adresses du vieux Brest, et j'ai vu qu'il n'existait pas encore de page officielle de la maison. J'ai préparé pour vous, gratuitement et sans engagement, deux propositions — l'une classique, l'autre plus singulière — uniquement pour vous montrer le ton :\n\n• Version classique : https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-basic.html\n• Version spéciale : https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-premium.html\n\nSi l'une vous plaît : envoyez-moi le nom de domaine que vous possédez déjà, ou je m'en occupe pour vous — l'enregistrement coûte très peu. Si cela vous intéresse, on en parle ensemble pour le prix, sans pression.\n\nBien à vous,\nGilad\n\nPS : Il s'agit d'un message unique. Sans réponse de votre part, je n'écrirai plus.",
-        "bodyHebrew": "שלום,\nשמי גלעד. נפגשתי עם Crêperie Moderne — ארבעה דורות ברחוב Algésiras מאז 1922, דבר נדיר ויקר ערך. שמתי לב שאין לכם אתר רשמי, רק דף פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אסדר אותו, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבכבוד, גלעד\nנ.ב.: הודעה חד-פעמית."
+        "bodyHebrew": "שלום,\nשמי גלעד. נפגשתי עם Crêperie Moderne — ארבעה דורות ברחוב Algésiras מאז 1922, דבר נדיר ויקר ערך. שמתי לב שאין לכם אתר רשמי, רק דף פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/brest-creperie-moderne-20260523-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אסדר אותו, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבכבוד, גלעד\nנ.ב.: הודעה חד-פעמית.",
+        "recipientFallback": "phone"
       },
       "status": "pending",
       "discoveredAt": "2026-05-23T08:00:00Z",
       "lastActivity": "2026-05-23T15:30:00Z",
       "notes": [],
-      "hasEnglishToggle": false
+      "hasEnglishToggle": false,
+      "contactMethod": "phone",
+      "contactNote": "Pas de courriel public — appeler ou passer rue Algésiras",
+      "contactNoteHe": "אין אימייל ציבורי — להתקשר או לעבור ברחוב"
     },
     {
       "id": "praha-cernyvol-20260524",
@@ -70,7 +78,7 @@
       "city": "Praha",
       "address": "Loretánské náměstí 107/1, 118 00 Praha 1 — Hradčany",
       "phone": "+420 220 513 481",
-      "email": "adammeishar17@gmail.com",
+      "email": null,
       "googleMapsUrl": "https://www.google.com/maps/place/Hostinec+U+%C4%8Cern%C3%A9ho+vola/@50.0888,14.3922,17z",
       "rating": "4.5",
       "reviewCount": "2000+",
@@ -83,13 +91,17 @@
         "language": "cs",
         "subject": "U Černého vola — malá stránka jako dárek od jednoho z hostů",
         "body": "Dobrý den,\n\nnarazil jsem na Hostinec U Černého vola, když jsem hledal pražskou pivnici, která se opravdu nezměnila, a všiml jsem si, že hospoda nemá svou vlastní stránku — jen Facebook. Připravil jsem pro Vás zdarma a bez závazku dvě varianty — jednu klasickou, jednu zvláštnější — jenom abyste viděli ten tón:\n\n• Klasická verze: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-basic.html\n• Zvláštní verze: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-premium.html\n\nPokud by se Vám jedna líbila: napište mi doménu, kterou už máte, nebo se o registraci postarám za Vás — stojí velmi málo. Pokud by Vás to zajímalo, domluvíme se na ceně v klidu, bez tlaku.\n\nS úctou,\nGilad\n\nP.S.: Toto je jednorázová zpráva. Pokud neodpovíte, znovu Vám psát nebudu.",
-        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי בהוסטינץ U Černého vola — פיוניצה פראגאית מ-1726, נפתחה מחדש ב-1965, רדקציית סמיזדאט לפני סאמט הקטיפה, וברווחים תורמים לבית הספר לילדים עיוורים. ראיתי שאין לכם אתר רשמי, רק פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אטפל ברישום, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב."
+        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי בהוסטינץ U Černého vola — פיוניצה פראגאית מ-1726, נפתחה מחדש ב-1965, רדקציית סמיזדאט לפני סאמט הקטיפה, וברווחים תורמים לבית הספר לילדים עיוורים. ראיתי שאין לכם אתר רשמי, רק פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אטפל ברישום, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב.",
+        "recipientFallback": "phone"
       },
       "status": "pending",
       "discoveredAt": "2026-05-24T06:22:33Z",
       "lastActivity": "2026-05-24T06:22:33Z",
       "notes": [],
-      "hasEnglishToggle": false
+      "hasEnglishToggle": false,
+      "contactMethod": "phone",
+      "contactNote": "Bez veřejné e-mailové adresy — telefonicky nebo Facebook",
+      "contactNoteHe": "אין אימייל ציבורי — להתקשר או דרך פייסבוק"
     }
   ]
 }
