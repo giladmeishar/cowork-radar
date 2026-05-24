@@ -1,0 +1,290 @@
+<!doctype html><html lang="pt"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Modesta da Pampulha — Alcântara, Lisboa desde 1920</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{--tile-white:#F2EDE0;--tile-cream:#E8DFC9;--cobalt:#1F4076;--cobalt-deep:#0F2548;--azul:#3666A8;--lemon:#E8C547;--terra:#B8503E;--ink:#101727;--mute:rgba(16,23,39,.6);--line:rgba(16,23,39,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--tile-white);color:var(--ink);font:400 16px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+.serif{font-family:"Fraunces","Cormorant Garamond",Georgia,serif}
+
+/* SIGNATURE: SVG azulejo tile pattern as background — unique to this site */
+.azulejo-bg{position:fixed;inset:0;z-index:-1;opacity:.07;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%231F4076'/><path d='M80 14 L100 50 L140 56 L110 86 L118 130 L80 110 L42 130 L50 86 L20 56 L60 50 Z' fill='none' stroke='%23F2EDE0' stroke-width='1.5'/><circle cx='80' cy='80' r='14' fill='none' stroke='%23F2EDE0' stroke-width='1.5'/><circle cx='80' cy='80' r='5' fill='%23F2EDE0'/><path d='M0 0 L160 160 M160 0 L0 160' stroke='%23F2EDE0' stroke-width='.6' opacity='.5'/></svg>")}
+
+/* Nav with calçada-portuguesa border */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;background:rgba(242,237,224,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:0 40px}
+.brand{font-family:"Fraunces",serif;font-weight:600;font-size:21px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:12px}
+.brand b{color:var(--cobalt);font-style:italic;font-weight:500}
+.brand::before{content:"";width:22px;height:22px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' fill='%231F4076'/><path d='M12 2 L15 9 L22 9 L17 13 L18 21 L12 17 L6 21 L7 13 L2 9 L9 9 Z' fill='%23F2EDE0'/></svg>") center/contain no-repeat;display:inline-block;flex:0 0 auto}
+.chap{display:flex;gap:24px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.chap a{color:inherit;text-decoration:none;transition:color .2s}
+.chap a:hover{color:var(--cobalt)}
+.chap .pill{padding:7px 14px;border:1px solid var(--cobalt);color:var(--cobalt);border-radius:30px;letter-spacing:.16em}
+@media(max-width:760px){.chap{gap:10px;font-size:9.5px}.chap .pill{padding:5px 10px}}
+
+/* HERO — tile split: left half hand-painted azulejo, right half real photo */
+.hero{min-height:100vh;padding:110px 40px 50px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center;position:relative}
+@media(max-width:980px){.hero{grid-template-columns:1fr;gap:30px;padding:130px 24px 40px}}
+.hero .ck{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero .ck::before{content:"";width:30px;height:1px;background:var(--terra)}
+.hero h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(54px,7.4vw,108px);line-height:.92;letter-spacing:-.022em;margin-bottom:26px;color:var(--ink)}
+.hero h1 em{font-style:italic;color:var(--cobalt);font-weight:500;display:block;font-size:.66em;margin-top:4px}
+.hero h1 .lem{color:var(--lemon);font-style:italic;font-weight:500}
+.hero .lead{font-size:17px;line-height:1.7;color:var(--ink);max-width:500px;margin-bottom:36px;font-weight:300}
+.hero .spec{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid var(--line);padding-top:24px;max-width:520px}
+.hero .spec div span{display:block;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute);margin-bottom:6px;font-weight:500}
+.hero .spec div b{font-family:"Fraunces",serif;font-weight:600;font-size:21px;color:var(--ink)}
+.hero .spec div b em{font-style:italic;color:var(--cobalt)}
+
+/* Tile centerpiece — composed of 4 azulejo cells (different motifs) and one big photo */
+.tilewall{position:relative;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,80px);gap:6px;max-width:480px;margin:0 auto;width:100%;perspective:1200px}
+@media(max-width:980px){.tilewall{grid-template-rows:repeat(4,68px)}}
+.tile{position:relative;overflow:hidden;background:var(--cobalt-deep);box-shadow:inset 0 0 0 2px rgba(255,255,255,.06);transition:transform .9s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.tile.flip{transform:rotateY(180deg) scale(.94)}
+.tile.foto{grid-column:span 2;grid-row:span 4;background:none;box-shadow:0 22px 50px rgba(16,23,39,.36)}
+.tile.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.06) contrast(1.04)}
+.tile.foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,37,72,.55) 100%);pointer-events:none}
+.tile.foto .stamp{position:absolute;bottom:14px;left:14px;font-family:"Fraunces",serif;font-style:italic;color:var(--tile-white);font-size:42px;font-weight:600;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.65);z-index:3}
+.tile.foto .stamp small{display:block;font-family:Inter,sans-serif;font-style:normal;font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:rgba(242,237,224,.88);margin-top:5px;font-weight:500}
+.tile.az{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231F4076'/><path d='M50 12 L62 38 L88 42 L68 60 L74 88 L50 72 L26 88 L32 60 L12 42 L38 38 Z' fill='none' stroke='%23F2EDE0' stroke-width='1.6'/><circle cx='50' cy='50' r='9' fill='%23E8C547'/></svg>");background-size:cover}
+.tile.az2{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231F4076'/><circle cx='50' cy='50' r='38' fill='none' stroke='%23F2EDE0' stroke-width='1.6'/><circle cx='50' cy='50' r='22' fill='none' stroke='%23F2EDE0' stroke-width='1.2'/><circle cx='50' cy='50' r='7' fill='%23E8C547'/><path d='M50 12 L50 88 M12 50 L88 50' stroke='%23F2EDE0' stroke-width='1.2'/></svg>");background-size:cover}
+.tile.az3{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231F4076'/><path d='M0 50 Q25 20 50 50 Q75 80 100 50' stroke='%23F2EDE0' stroke-width='1.6' fill='none'/><path d='M0 30 Q25 0 50 30 Q75 60 100 30' stroke='%23F2EDE0' stroke-width='1.2' fill='none' opacity='.55'/><path d='M0 70 Q25 40 50 70 Q75 100 100 70' stroke='%23F2EDE0' stroke-width='1.2' fill='none' opacity='.55'/></svg>");background-size:cover}
+.tile.az4{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231F4076'/><path d='M50 10 Q90 50 50 90 Q10 50 50 10 Z' fill='none' stroke='%23F2EDE0' stroke-width='1.6'/><path d='M50 30 L50 70 M30 50 L70 50' stroke='%23E8C547' stroke-width='2'/></svg>");background-size:cover}
+.tile.terra{background:var(--terra);display:flex;align-items:center;justify-content:center;color:var(--tile-white);font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:21px;text-align:center;line-height:1.1;padding:8px}
+.tile.lem{background:var(--lemon);display:flex;align-items:center;justify-content:center;color:var(--cobalt-deep);font-family:Inter,sans-serif;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;text-align:center;padding:6px;line-height:1.4}
+
+/* Casa — story section */
+.casa{padding:130px 40px;background:var(--tile-white);position:relative}
+.casa .wrap{max-width:1200px;margin:0 auto}
+.casa .kicker{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.casa .kicker::before{content:"";width:36px;height:1px;background:var(--terra)}
+.casa h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(40px,5.4vw,72px);line-height:1.05;letter-spacing:-.016em;margin-bottom:32px;max-width:800px;color:var(--ink)}
+.casa h2 em{font-style:italic;color:var(--cobalt);font-weight:500}
+.casa .grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;margin-top:36px;align-items:start}
+@media(max-width:880px){.casa .grid2{grid-template-columns:1fr;gap:36px}}
+.casa .body p{font-size:16px;line-height:1.78;color:var(--ink);font-weight:300;margin-bottom:14px;max-width:580px}
+.casa .body p strong{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--cobalt)}
+/* Stat card */
+.stat{background:var(--cobalt-deep);color:var(--tile-white);padding:38px 32px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='80' fill='none' stroke='%23F2EDE0' stroke-width='1' opacity='.15'/><circle cx='100' cy='100' r='50' fill='none' stroke='%23F2EDE0' stroke-width='1' opacity='.18'/><circle cx='100' cy='100' r='20' fill='%23E8C547' opacity='.4'/></svg>");background-size:cover;background-position:center;opacity:.6}
+.stat>*{position:relative;z-index:2}
+.stat .k{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lemon);font-weight:600;margin-bottom:18px}
+.stat .num{font-family:"Fraunces",serif;font-weight:600;font-size:78px;line-height:1;color:var(--tile-white);letter-spacing:-.04em;margin-bottom:8px}
+.stat .num em{font-style:italic;color:var(--lemon);font-weight:500;font-size:.6em;vertical-align:.45em;margin-left:4px}
+.stat .desc{font-size:14px;line-height:1.65;color:rgba(242,237,224,.85);font-weight:300;margin-top:14px}
+.stat .div{margin:24px 0;height:1px;background:rgba(242,237,224,.16)}
+
+/* Dish wall — 4x2 grid */
+.dwall{padding:130px 40px;background:var(--cobalt-deep);color:var(--tile-white);position:relative;overflow:hidden}
+.dwall .wrap{max-width:1280px;margin:0 auto}
+.dwall .kicker{color:var(--lemon)}
+.dwall .kicker::before{background:var(--lemon)}
+.dwall .kicker{font-size:11px;letter-spacing:.36em;text-transform:uppercase;font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.dwall h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(40px,5.4vw,72px);line-height:1.05;color:var(--tile-white);margin-bottom:24px}
+.dwall h2 em{font-style:italic;color:var(--lemon);font-weight:500}
+.dwall .intro{font-size:16px;line-height:1.72;color:rgba(242,237,224,.78);max-width:600px;margin-bottom:50px;font-weight:300}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:880px){.dgrid{grid-template-columns:repeat(2,1fr)}}
+.dcell{position:relative;aspect-ratio:1/1.2;overflow:hidden;background:var(--ink);box-shadow:0 18px 38px rgba(0,0,0,.35)}
+.dcell img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.dcell:hover img{transform:scale(1.06)}
+.dcell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,37,72,.85) 100%);pointer-events:none}
+.dcell .cap{position:absolute;bottom:14px;left:14px;right:14px;z-index:2;color:var(--tile-white)}
+.dcell .cap b{font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:19px;display:block;letter-spacing:-.01em;line-height:1.1;margin-bottom:4px}
+.dcell .cap span{font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--lemon);opacity:.92;font-weight:500}
+
+/* Generations strip */
+.gens{padding:130px 40px;background:var(--tile-cream);position:relative}
+.gens .wrap{max-width:1200px;margin:0 auto}
+.gens .kicker{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.gens .kicker::before{content:"";width:36px;height:1px;background:var(--terra)}
+.gens h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(36px,4.8vw,58px);line-height:1.05;color:var(--ink);margin-bottom:50px}
+.gens h2 em{font-style:italic;color:var(--cobalt);font-weight:500}
+.greel{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+@media(max-width:780px){.greel{grid-template-columns:1fr;gap:24px}}
+.g{padding:32px 28px;background:var(--tile-white);border:1px solid var(--line);position:relative}
+.g::before{content:"";position:absolute;top:-8px;left:24px;width:16px;height:16px;background:var(--lemon);transform:rotate(45deg)}
+.g .yr{font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:46px;color:var(--cobalt);line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+.g .nm{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:14px}
+.g p{font-size:14.5px;line-height:1.7;color:var(--ink);font-weight:300}
+
+/* Visit */
+.visit{padding:130px 40px;background:var(--cobalt-deep);color:var(--tile-white)}
+.visit .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media(max-width:780px){.visit .wrap{grid-template-columns:1fr;gap:32px}}
+.visit .col h3{font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:34px;color:var(--lemon);margin-bottom:24px}
+.visit .col p{font-size:15px;line-height:1.78;color:rgba(242,237,224,.86);margin-bottom:8px;font-weight:300}
+.visit .col p b{display:block;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,237,224,.5);margin-bottom:4px;margin-top:14px;font-weight:600}
+.visit .col p a{color:var(--lemon);text-decoration:none;border-bottom:1px solid rgba(232,197,71,.4)}
+.tag{display:inline-block;margin-top:18px;padding:12px 18px;border:1px solid rgba(232,197,71,.35);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--lemon);font-weight:600}
+
+footer{padding:50px 40px;background:var(--ink);color:rgba(242,237,224,.6);font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-align:center;font-weight:500}
+footer b{color:var(--lemon);font-weight:600}
+
+.fi{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.fi.in{opacity:1;transform:translateY(0)}
+</style></head>
+<body>
+<div class="azulejo-bg"></div>
+
+<nav><div class="row">
+  <a class="brand" href="#">A Modesta <b>da Pampulha</b></a>
+  <div class="chap"><a href="#casa">A casa</a><a href="#dishes">Pratos</a><a href="#gens">Gerações</a><a class="pill" href="#visit">Visitar</a></div>
+</div></nav>
+
+<section class="hero">
+  <div class="left">
+    <div class="ck">Rua do Olival 284 · Alcântara · Lisboa</div>
+    <h1 class="serif">Cem anos.<br><em>Sessenta e dois lugares.</em><br><span class="lem">Cem pessoas ao almoço.</span></h1>
+    <p class="lead">A Modesta da Pampulha abriu como mercearia e taberna em 1920, no coração operário de Alcântara. Cem anos depois, a família Sousa serve iscas com elas e bochechas de javali em mesas partilhadas onde se senta o pedreiro ao lado do ministro — e onde, em todos os almoços, cabem mais corpos do que cadeiras.</p>
+    <div class="spec">
+      <div><span>fundada</span><b>19<em>20</em></b></div>
+      <div><span>gerações</span><b>terceira</b></div>
+      <div><span>lugares</span><b>62</b></div>
+    </div>
+  </div>
+  <div class="tilewall">
+    <div class="tile foto">
+      <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=900&q=85" alt="Tasca tradicional portuguesa" loading="lazy">
+      <div class="stamp">1920<small>desde · Alcântara</small></div>
+    </div>
+    <div class="tile az"></div>
+    <div class="tile lem">há 100 anos · serviço · de almoço</div>
+    <div class="tile az2"></div>
+    <div class="tile terra">iscas<br>com elas</div>
+    <div class="tile az3"></div>
+    <div class="tile az4"></div>
+    <div class="tile lem">62 · lugares<br>100 · pessoas</div>
+  </div>
+</section>
+
+<section class="casa" id="casa">
+  <div class="wrap">
+    <div class="kicker">a casa</div>
+    <h2 class="serif">Uma mercearia que <em>nunca deixou de ser</em> uma casa de pasto.</h2>
+    <div class="grid2">
+      <div class="body">
+        <p><strong>Anabela Sousa</strong> cresceu entre os tachos da cozinha. Os pais, minhotos chegados a Alcântara em criança, abriram a mercearia em 1920 como espaço de barril e bacalhau. Pouco depois, começaram a servir o que tinham ao lume — para os operários do estaleiro, para os carroceiros, para quem passasse a pé na Rua do Olival.</p>
+        <p>Hoje, três gerações depois, a tasca continua a servir mais de cem almoços em sessenta e dois lugares — mesas partilhadas, panela ao lume desde manhã, sotaque do Minho ainda na cozinha. O <strong>The Guardian</strong>, em 1998, classificou A Modesta como uma das últimas casas de pasto verdadeiramente intactas de Lisboa.</p>
+        <p>Não há ementa impressa, há um quadro a giz; não há reservas, há fila à porta a partir do meio-dia; não há vinho de garrafa, há tinto de talha a copo. Há, isso sim, <strong>iscas com elas</strong> todas as quartas — e ninguém sabe explicar bem porquê.</p>
+      </div>
+      <div class="stat">
+        <div class="k">números &amp; rituais</div>
+        <div class="num">100<em>+</em></div>
+        <div class="desc">pessoas servidas num só almoço, em <strong>sessenta e dois lugares</strong> — mesas partilhadas, copos de talha, panela ao lume desde as sete da manhã.</div>
+        <div class="div"></div>
+        <div class="num" style="font-size:60px">3</div>
+        <div class="desc">gerações da família Sousa, sotaque minhoto, três fogões a lenha, uma sala que mudou pouco desde 1920.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dwall" id="dishes">
+  <div class="wrap">
+    <div class="kicker">o que sai da panela</div>
+    <h2 class="serif">Cozinha de mercado, <em>quadro a giz, copo a copo.</em></h2>
+    <p class="intro">Não há ementa fixa — há o quadro pendurado ao lado da porta da cozinha, que muda todos os dias conforme o que veio do Mercado da Ribeira. Estes são os pratos pelos quais se faz fila desde 1920.</p>
+    <div class="dgrid">
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=85" alt="Iscas de fígado com elas" loading="lazy"><div class="cap"><span>especialidade da casa</span><b>Iscas com elas</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=85" alt="Pastéis de bacalhau" loading="lazy"><div class="cap"><span>feitos à mão de manhã</span><b>Pastéis de bacalhau</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1559847844-1597b0d4b8c5?w=600&q=85" alt="Pataniscas de bacalhau com arroz de feijão" loading="lazy"><div class="cap"><span>+ arroz de feijão</span><b>Pataniscas</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1572441713132-51c75654db73?w=600&q=85" alt="Bochechas de javali" loading="lazy"><div class="cap"><span>3 horas no estufado</span><b>Bochechas de javali</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1547573854-74d2a71d0826?w=600&q=85" alt="Peixe espada preto grelhado" loading="lazy"><div class="cap"><span>na grelha de carvão</span><b>Espada preto</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=85" alt="Robalo do mercado da Ribeira" loading="lazy"><div class="cap"><span>se veio fresco da Ribeira</span><b>Robalo grelhado</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=85" alt="Arroz doce com canela" loading="lazy"><div class="cap"><span>sobremesa emblemática</span><b>Arroz doce</b></div></div>
+      <div class="dcell fi"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=85" alt="Vinho tinto de talha a copo" loading="lazy"><div class="cap"><span>do barril, a copo</span><b>Tinto de talha</b></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gens" id="gens">
+  <div class="wrap">
+    <div class="kicker">três gerações</div>
+    <h2 class="serif">Sempre <em>a mesma família.</em> Sempre <em>a mesma rua.</em></h2>
+    <div class="greel">
+      <div class="g">
+        <div class="yr serif">1920</div>
+        <div class="nm">João &amp; Maria — Minho → Lisboa</div>
+        <p>Chegam de criança a Alcântara, abrem a mercearia da Rua do Olival com um barril de tinto à porta. Em pouco tempo, servem refeição aos operários do estaleiro.</p>
+      </div>
+      <div class="g">
+        <div class="yr serif">1968</div>
+        <div class="nm">Joaquim Sousa — segunda geração</div>
+        <p>Fecha a parte de mercearia, transforma o espaço em casa de pasto a tempo inteiro. Mantém o barril, o tacho ao lume e a clientela operária. Acrescenta as iscas com elas à carta.</p>
+      </div>
+      <div class="g">
+        <div class="yr serif">2002</div>
+        <div class="nm">Anabela Sousa — terceira geração</div>
+        <p>Anabela toma conta da cozinha, o marido e o cunhado tomam conta da sala. Recusam ementa fixa, recusam reservas, recusam cartão. Continua a entrar fila à porta às 12h em ponto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="col">
+      <h3 class="serif">Onde &amp; quando</h3>
+      <p><b>Morada</b>Rua do Olival, 284-288<br>1200-745 Lisboa, Alcântara</p>
+      <p><b>Horário</b>Segunda a Sexta · 12h00—15h30<br>Sábado · 12h00—15h00 · Domingo · fechado</p>
+      <p><b>Reservas</b>Não aceitamos reservas. Fila à porta a partir das 11h45.</p>
+      <p><b>Pagamento</b>Multibanco e dinheiro. Sem cartão de crédito.</p>
+      <p><b>Telefone</b><a href="tel:+351213963583">+351 213 963 583</a></p>
+      <p><b>Email</b><a href="mailto:amodestadapampulha.1920@gmail.com">amodestadapampulha.1920@gmail.com</a></p>
+    </div>
+    <div class="col">
+      <h3 class="serif">Como chegar</h3>
+      <p>Estação Alcântara-Terra (CP). Comboio Linha de Cascais — Alcântara-Mar. Eléctrico 15E direção Algés, paragem Calvário. Autocarro 738 e 760.</p>
+      <p>Da estação Alcântara-Terra, subir a Rua do Patrocínio cinco minutos a pé. Estamos na esquina da Rua do Olival com a Travessa do Pasteleiro.</p>
+      <span class="tag">desde 1920 · três gerações · sem ementa</span>
+    </div>
+  </div>
+</section>
+
+<footer><b>A Modesta da Pampulha</b> · Alcântara · Lisboa · 1920—2026 · esta página foi feita à mão como amostra para a família Sousa</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+(function(){
+  try{
+    var l = new Lenis({duration:1.1,easing:function(t){return 1-Math.pow(1-t,3)}});
+    function raf(t){l.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+  }catch(e){}
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{rootMargin:'-40px 0px'});
+  document.querySelectorAll('.fi').forEach(function(el){io.observe(el)});
+
+  // SIGNATURE motion: the azulejo tiles flip randomly as you scroll past the hero
+  var tiles = document.querySelectorAll('.tile.az, .tile.az2, .tile.az3, .tile.az4');
+  var flipped = false;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY > 200 && !flipped){
+      flipped = true;
+      tiles.forEach(function(t,i){
+        setTimeout(function(){
+          t.classList.add('flip');
+          setTimeout(function(){t.classList.remove('flip')}, 700);
+        }, i*120);
+      });
+    }
+    if(window.scrollY < 100) flipped = false;
+  },{passive:true});
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      var id=a.getAttribute('href');if(id.length<2)return;
+      var t=document.querySelector(id);if(!t)return;
+      ev.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+</body></html>

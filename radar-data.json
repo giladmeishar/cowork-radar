@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-24T13:14:24Z",
+  "lastScan": "2026-05-24T13:38:02Z",
   "businesses": [
     {
       "id": "lami-louis-2026-05-19",
@@ -168,6 +168,70 @@
       "contactMethod": "phone",
       "contactNote": "Sin correo público — solo teléfono o visita a la taberna",
       "contactNoteHe": "אין אימייל ציבורי — להתקשר או לעבור בטברנה"
+    },
+    {
+      "id": "athens-diporto-20260524",
+      "name": "Δίπορτο Αγοράς (Diporto Agoras)",
+      "type": "Παραδοσιακό μαγειρείο / κουτούκι — Traditional underground mageireio",
+      "country": "GR",
+      "countryName": "Ελλάδα / Greece",
+      "city": "Αθήνα / Athens",
+      "address": "Σωκράτους 9 & Θεάτρου, Αθήνα 105 52 (Βαρβάκειος Αγορά)",
+      "phone": "+30 210 321 1463",
+      "email": null,
+      "googleMapsUrl": "https://www.google.com/maps/place/Diporto/@37.9807478,23.7236495,17z/data=!3m1!4b1!4m5!3m4!1s0x14a1bd24e9616e5b:0x5841a6222a13396a!8m2!3d37.9807478!4d23.7258382",
+      "rating": "4.4",
+      "reviewCount": "3300+",
+      "founded": "1887 — υπόγειο της Βαρβακείου Αγοράς, τέταρτη γενιά της ίδιας οικογένειας, χωρίς πινακίδα, χωρίς μενού, χωρίς website, χωρίς κάρτες· Atlas Obscura, Culinary Backstreets, Fodor's, The Guardian — όλοι το περιγράφουν ως μία από τις τελευταίες ταβέρνες του 19ου αιώνα που έχουν διατηρηθεί πλήρως.",
+      "sites": {
+        "basic": "athens-diporto-20260524-basic.html",
+        "premium": "athens-diporto-20260524-premium.html"
+      },
+      "emailDraft": {
+        "language": "el",
+        "subject": "Δίπορτο — μια μικρή σελίδα, δώρο από έναν θαμώνα",
+        "body": "Καλησπέρα,\n\nέπεσα πάνω στο Δίπορτο ψάχνοντας ένα αληθινό μαγειρείο της Αθήνας και είδα πως το μαγαζί δεν έχει δική του σελίδα — μόνο αναφορές σε ξένους οδηγούς. Ετοίμασα για εσάς, δωρεάν και χωρίς καμία δέσμευση, δύο προτάσεις — μία κλασική και μία πιο ιδιαίτερη — μόνο για να δείτε τον τόνο:\n\n• Κλασική έκδοση: https://giladmeishar.github.io/cowork-radar/athens-diporto-20260524-basic.html\n• Ειδική έκδοση: https://giladmeishar.github.io/cowork-radar/athens-diporto-20260524-premium.html\n\nΑν κάτι σας αρέσει: στείλτε μου το όνομα τομέα (domain) που έχετε ήδη, ή το κανονίζω εγώ για εσάς — η εγγραφή κοστίζει ελάχιστα. Αν σας ενδιαφέρει, τα λέμε μαζί για την τιμή, χωρίς πίεση.\n\nΜε εκτίμηση,\nGilad\n\nΥ.Γ.: Πρόκειται για ένα μοναδικό μήνυμα. Αν δεν λάβω απάντηση, δε θα ξαναγράψω.",
+        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי בדיפורטו אגוראס — מיכרון אתונאי מ-1887, ארבעה דורות מתחת לשוק וארווקיוס, בלי שלט, בלי תפריט, בלי אתר, בלי כרטיסי אשראי. ראיתי שאין לכם אתר רשמי, רק אזכורים בטיוליסטים זרים. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/athens-diporto-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/athens-diporto-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אטפל ברישום, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית. אם לא תענו לא אכתוב שוב.",
+        "recipientFallback": "phone"
+      },
+      "status": "pending",
+      "discoveredAt": "2026-05-24T13:38:02Z",
+      "lastActivity": "2026-05-24T13:38:02Z",
+      "notes": [],
+      "hasEnglishToggle": false,
+      "contactMethod": "phone",
+      "contactNote": "Χωρίς δημόσιο email — μόνο τηλέφωνο. Το μαγαζί παραμένει εκτός διαδικτύου από επιλογή.",
+      "contactNoteHe": "אין אימייל ציבורי — רק טלפון. המקום בכוונה תחילה לא מקוון."
+    },
+    {
+      "id": "lisboa-modesta-20260524",
+      "name": "A Modesta da Pampulha",
+      "type": "Tasca tradicional de Alcântara (casa de pasto familiar)",
+      "country": "PT",
+      "countryName": "Portugal",
+      "city": "Lisboa",
+      "address": "Rua do Olival, 284-288, 1200-745 Lisboa, Alcântara",
+      "phone": "+351 213 963 583",
+      "email": "amodestadapampulha.1920@gmail.com",
+      "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJgf_eCaI0GQ0RDvaS2-KV6ns",
+      "rating": "3.9",
+      "reviewCount": "1880+",
+      "founded": "1920 — abriu como mercearia e taberna em Alcântara pelos pais minhotos da família Sousa; passou a casa de pasto familiar; hoje gerida por Anabela Sousa (terceira geração) com o marido e o cunhado na sala. Em 1998 o The Guardian classificou-a como uma das últimas casas de pasto verdadeiramente intactas de Lisboa.",
+      "sites": {
+        "basic": "lisboa-modesta-20260524-basic.html",
+        "premium": "lisboa-modesta-20260524-premium.html"
+      },
+      "emailDraft": {
+        "language": "pt",
+        "subject": "A Modesta da Pampulha — uma pequena página, como prenda do Olival",
+        "body": "Bom dia,\n\nDei com A Modesta da Pampulha a procurar uma verdadeira casa de pasto operária em Lisboa, e reparei que a casa ainda não tem página própria — só Facebook e referências em jornais. Preparei para si, gratuitamente e sem qualquer compromisso, duas propostas — uma clássica, outra mais singular — apenas para mostrar o tom:\n\n• Versão clássica: https://giladmeishar.github.io/cowork-radar/lisboa-modesta-20260524-basic.html\n• Versão especial: https://giladmeishar.github.io/cowork-radar/lisboa-modesta-20260524-premium.html\n\nSe alguma vos agradar: enviem-me o nome de domínio que já possuem, ou trato eu do registo por vocês — custa muito pouco. Se for do vosso interesse, falamos juntos sobre o preço, sem pressas.\n\nCom os melhores cumprimentos,\nGilad\n\nP.S.: É uma mensagem única. Se não responderem, não voltarei a escrever.",
+        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי ב-A Modesta da Pampulha — קזה דה פאסטו ברחוב דו אוליבל באלקנטרה מאז 1920, שלושה דורות של משפחת סוזה ממקור מינו, 62 מקומות ישיבה שמשרתים יותר ממאה אנשים בארוחת צהריים אחת, בלי תפריט, בלי הזמנות, יין מחבית בכוסות. ראיתי שאין לכם אתר רשמי, רק פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/lisboa-modesta-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/lisboa-modesta-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני ארשום עבורכם, העלות נמוכה. אם זה מעניין, נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית. אם לא תענו לא אכתוב שוב."
+      },
+      "status": "pending",
+      "discoveredAt": "2026-05-24T13:38:02Z",
+      "lastActivity": "2026-05-24T13:38:02Z",
+      "notes": [],
+      "hasEnglishToggle": false
     }
   ]
 }
