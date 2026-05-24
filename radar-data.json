@@ -112,7 +112,7 @@
       "city": "Napoli",
       "address": "Via Silvio Spaventa, 39/41, 80142 Napoli (NA)",
       "phone": "+39 081 287 828",
-      "email": "adammeishar17@gmail.com",
+      "email": null,
       "googleMapsUrl": "https://www.google.com/maps/place/Antica+Trattoria+e+Pizzeria+da+Donato/@40.850850,14.269202,17z/data=!3m1!4b1!4m6!3m5!1s0x133b08a9c8e7f4d9:0xe0f1a8e1c2d7f599!8m2!3d40.850850!4d14.269202!16s%2Fg%2F11bw3v3lyf",
       "rating": "4.5",
       "reviewCount": "3400+",
@@ -131,7 +131,10 @@
       "discoveredAt": "2026-05-24T13:14:24Z",
       "lastActivity": "2026-05-24T13:14:24Z",
       "notes": [],
-      "hasEnglishToggle": false
+      "hasEnglishToggle": false,
+      "contactMethod": "phone",
+      "contactNote": "Nessun indirizzo email pubblico — solo telefono o passaggio in trattoria",
+      "contactNoteHe": "אין אימייל ציבורי — להתקשר או לעבור במסעדה"
     },
     {
       "id": "cadiz-manzanilla-20260524",
@@ -142,7 +145,7 @@
       "city": "Cádiz",
       "address": "Calle Feduchy, 19, 11005 Cádiz",
       "phone": "+34 956 28 54 01",
-      "email": "adammeishar17@gmail.com",
+      "email": null,
       "googleMapsUrl": "https://www.google.com/maps/place/Taberna+La+Manzanilla/@36.5316725,-6.2942182,17z/data=!3m1!4b1!4m6!3m5!1s0xd0dd16244cc3ec5:0x44c3edd2f5caea59!8m2!3d36.5316725!4d-6.2942182!16s%2Fg%2F1td7j_ft",
       "rating": "4.5",
       "reviewCount": "5200+",
@@ -161,7 +164,10 @@
       "discoveredAt": "2026-05-24T13:14:24Z",
       "lastActivity": "2026-05-24T13:14:24Z",
       "notes": [],
-      "hasEnglishToggle": false
+      "hasEnglishToggle": false,
+      "contactMethod": "phone",
+      "contactNote": "Sin correo público — solo teléfono o visita a la taberna",
+      "contactNoteHe": "אין אימייל ציבורי — להתקשר או לעבור בטברנה"
     }
   ]
 }
