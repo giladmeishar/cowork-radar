@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-24T00:00:00Z",
+  "lastScan": "2026-05-24T06:22:33Z",
   "businesses": [
     {
       "id": "lami-louis-2026-05-19",
@@ -58,6 +58,36 @@
       "status": "pending",
       "discoveredAt": "2026-05-23T08:00:00Z",
       "lastActivity": "2026-05-23T15:30:00Z",
+      "notes": [],
+      "hasEnglishToggle": false
+    },
+    {
+      "id": "praha-cernyvol-20260524",
+      "name": "Hostinec U Černého vola",
+      "type": "Pražská pivnice / Beerhall",
+      "country": "CZ",
+      "countryName": "Czech Republic",
+      "city": "Praha",
+      "address": "Loretánské náměstí 107/1, 118 00 Praha 1 — Hradčany",
+      "phone": "+420 220 513 481",
+      "email": "adammeishar17@gmail.com",
+      "googleMapsUrl": "https://www.google.com/maps/place/Hostinec+U+%C4%8Cern%C3%A9ho+vola/@50.0888,14.3922,17z",
+      "rating": "4.5",
+      "reviewCount": "2000+",
+      "founded": "1726 (znovuotevřeno 1965)",
+      "sites": {
+        "basic": "praha-cernyvol-20260524-basic.html",
+        "premium": "praha-cernyvol-20260524-premium.html"
+      },
+      "emailDraft": {
+        "language": "cs",
+        "subject": "U Černého vola — malá stránka jako dárek od jednoho z hostů",
+        "body": "Dobrý den,\n\nnarazil jsem na Hostinec U Černého vola, když jsem hledal pražskou pivnici, která se opravdu nezměnila, a všiml jsem si, že hospoda nemá svou vlastní stránku — jen Facebook. Připravil jsem pro Vás zdarma a bez závazku dvě varianty — jednu klasickou, jednu zvláštnější — jenom abyste viděli ten tón:\n\n• Klasická verze: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-basic.html\n• Zvláštní verze: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-premium.html\n\nPokud by se Vám jedna líbila: napište mi doménu, kterou už máte, nebo se o registraci postarám za Vás — stojí velmi málo. Pokud by Vás to zajímalo, domluvíme se na ceně v klidu, bez tlaku.\n\nS úctou,\nGilad\n\nP.S.: Toto je jednorázová zpráva. Pokud neodpovíte, znovu Vám psát nebudu.",
+        "bodyHebrew": "שלום,\nשמי גלעד. נתקלתי בהוסטינץ U Černého vola — פיוניצה פראגאית מ-1726, נפתחה מחדש ב-1965, רדקציית סמיזדאט לפני סאמט הקטיפה, וברווחים תורמים לבית הספר לילדים עיוורים. ראיתי שאין לכם אתר רשמי, רק פייסבוק. הכנתי בחינם וללא התחייבות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/praha-cernyvol-20260524-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני אטפל ברישום, העלות נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב."
+      },
+      "status": "pending",
+      "discoveredAt": "2026-05-24T06:22:33Z",
+      "lastActivity": "2026-05-24T06:22:33Z",
       "notes": [],
       "hasEnglishToggle": false
     }
