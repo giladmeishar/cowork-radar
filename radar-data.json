@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-23T21:30:00Z",
+  "lastScan": "2026-05-24T00:00:00Z",
   "businesses": [
     {
       "id": "lami-louis-2026-05-19",
@@ -32,96 +32,6 @@
       "notes": []
     },
     {
-      "id": "firenze-gozzi-20260519",
-      "name": "Trattoria Sergio Gozzi",
-      "type": "Trattoria Fiorentina",
-      "country": "IT",
-      "countryName": "Italy",
-      "city": "Firenze",
-      "address": "Piazza San Lorenzo, 8R, 50123 Firenze FI",
-      "phone": "+39 055 281941",
-      "email": "trattoriasergiogozzi@tiscali.it",
-      "googleMapsUrl": "https://www.google.com/maps/place/Trattoria+Sergio+Gozzi/@43.7753427,11.2543165,17z/data=!3m1!4b1!4m6!3m5!1s0x132a5402ff9bffe9:0x65112528b7990c5e!8m2!3d43.7753427!4d11.2543165!16s%2Fg%2F1tdhx86d",
-      "rating": "4.3",
-      "reviewCount": "3,400+",
-      "founded": "1915",
-      "sites": {
-        "basic": "firenze-gozzi-20260519-basic.html",
-        "premium": "firenze-gozzi-20260519-premium.html"
-      },
-      "emailDraft": {
-        "language": "it",
-        "subject": "Trattoria Sergio Gozzi — un piccolo regalo da un ammiratore",
-        "body": "Buongiorno,\n\nmi sono imbattuto in la Trattoria Sergio Gozzi cercando una buona ribollita e un peposo come si deve, e ho notato che non c'è ancora un sito ufficiale della casa. Gratuitamente e senza impegno, ho preparato per voi due bozze — una classica, una più speciale — solo per mostrarvi il tono:\n\n• Versione classica : https://giladmeishar.github.io/cowork-radar/firenze-gozzi-20260519-basic.html\n• Versione speciale : https://giladmeishar.github.io/cowork-radar/firenze-gozzi-20260519-premium.html\n\nSe una vi piace: mandatemi il nome di dominio che possedete già, oppure me ne occupo io per voi — la registrazione costa molto poco. Se vi interessa, ne parliamo insieme per il prezzo, senza pressioni.\n\nUn caro saluto,\nGilad\n\nPS : Questo è un messaggio unico. Senza risposta, non vi scriverò di nuovo.",
-        "bodyHebrew": "שלום,\nנתקלתי בטרטוריה Sergio Gozzi בחיפוש אחר ריבוליטה ופפוסו כמו שצריך באזור סן לורנצו, וראיתי שאין עדיין אתר רשמי. בחינם וללא התחייבות הכנתי שתי טיוטות — קלאסית ומיוחדת:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/firenze-gozzi-20260519-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/firenze-gozzi-20260519-premium.html\nאם אחת מהן מוצאת חן — שלחו דומיין קיים או שאטפל ברישום. אם זה מעניין, נדבר על המחיר.\nברכות חמות, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב."
-      },
-      "status": "pending",
-      "discoveredAt": "2026-05-20T07:00:00Z",
-      "lastActivity": "2026-05-20T07:00:00Z",
-      "notes": [],
-      "hasEnglishToggle": true
-    },
-    {
-      "id": "lisboa-cartaxinho-20260519",
-      "name": "O Cartaxinho",
-      "type": "Tasca / Tasquinha lisboeta",
-      "country": "PT",
-      "countryName": "Portugal",
-      "city": "Lisboa",
-      "address": "Rua de Santa Marta, 20B, 1150-295 Lisboa",
-      "phone": "+351 21 356 2971",
-      "email": "restaurantecartaxinho@hotmail.com",
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Cartaxinho+Rua+de+Santa+Marta+20B+Lisboa&query_place_id=ChIJ-aKMVwGyGQ0RHHwh0kn7E_o",
-      "rating": "4.3",
-      "reviewCount": "1474",
-      "founded": "casa familiar (Avenida da Liberdade)",
-      "sites": {
-        "basic": "lisboa-cartaxinho-20260519-basic.html",
-        "premium": "lisboa-cartaxinho-20260519-premium.html"
-      },
-      "emailDraft": {
-        "language": "pt",
-        "subject": "Uma pequena montra para O Cartaxinho — sem compromisso",
-        "body": "Bom dia,\n\ndei com O Cartaxinho a procurar uma boa casa de petiscos em Lisboa, e reparei que ainda não existe um site oficial da casa. Gratuitamente e sem compromisso, preparei duas propostas — uma clássica e outra mais especial — apenas para mostrar o tom:\n\n• Versão clássica : https://giladmeishar.github.io/cowork-radar/lisboa-cartaxinho-20260519-basic.html\n• Versão especial : https://giladmeishar.github.io/cowork-radar/lisboa-cartaxinho-20260519-premium.html\n\nSe gostarem de uma: enviem-me o domínio que já têm, ou eu trato disso por vocês — o registo custa muito pouco. Se houver interesse, falamos sobre o preço sem pressão.\n\nCom estima,\nGilad\n\nPS : Esta é uma mensagem única. Se não responder, não voltarei a escrever.",
-        "bodyHebrew": "בוקר טוב,\nנפגשתי עם O Cartaxinho בחיפוש אחר טאסקה טובה בליסבון. ראיתי שעדיין אין אתר רשמי. בחינם וללא התחייבות, הכנתי שתי הצעות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/lisboa-cartaxinho-20260519-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/lisboa-cartaxinho-20260519-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאטפל ברישום, העלות נמוכה. אם יש עניין נדבר על המחיר.\nבכבוד, גלעד\nנ.ב.: הודעה חד-פעמית."
-      },
-      "status": "pending",
-      "discoveredAt": "2026-05-20T07:00:00Z",
-      "lastActivity": "2026-05-20T07:00:00Z",
-      "notes": [],
-      "hasEnglishToggle": true
-    },
-    {
-      "id": "granada-castaneda-20260519",
-      "name": "Bodegas Castañeda",
-      "type": "Taberna / Bodega tradicional",
-      "country": "ES",
-      "countryName": "Spain",
-      "city": "Granada",
-      "address": "Calle de Almireceros, 1–3, 18010 Granada",
-      "phone": "+34 958 21 54 64",
-      "email": "lamancha.castaneda@gmail.com",
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bodegas+Casta%C3%B1eda+Calle+Almireceros+Granada",
-      "rating": null,
-      "reviewCount": null,
-      "founded": "1927",
-      "sites": {
-        "basic": "granada-castaneda-20260519-basic.html",
-        "premium": "granada-castaneda-20260519-premium.html"
-      },
-      "emailDraft": {
-        "language": "es",
-        "subject": "Bodegas Castañeda — una pequeña web, en regalo",
-        "body": "Buenos días,\n\nme encontré con Bodegas Castañeda buscando una taberna auténtica en el centro de Granada, y vi que aún no existe una web oficial de la casa. Gratuitamente y sin compromiso, he preparado dos propuestas — una clásica y otra más especial — solo para enseñaros el tono:\n\n• Versión clásica : https://giladmeishar.github.io/cowork-radar/granada-castaneda-20260519-basic.html\n• Versión especial : https://giladmeishar.github.io/cowork-radar/granada-castaneda-20260519-premium.html\n\nSi os gusta alguna: enviadme el dominio que ya tengáis, o yo me encargo de registrarlo por vosotros — el coste es muy bajo. Si os interesa, hablamos del precio sin presión.\n\nUn cordial saludo,\nGilad\n\nPD : Este es un mensaje único. Si no responde, no volveré a escribir.",
-        "bodyHebrew": "שלום,\nנפגשתי עם Bodegas Castañeda בחיפוש אחר טברנה אותנטית במרכז גרנדה, וראיתי שעדיין אין אתר רשמי. בחינם ובלי התחייבות הכנתי שתי הצעות:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/granada-castaneda-20260519-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/granada-castaneda-20260519-premium.html\nאם משהו מוצא חן — שלחו דומיין קיים או שאני ארשום עבורכם, העלות מאוד נמוכה. אם זה מעניין נדבר על המחיר בלי לחץ.\nבברכה, גלעד\nנ.ב.: הודעה חד-פעמית."
-      },
-      "status": "pending",
-      "discoveredAt": "2026-05-20T07:00:00Z",
-      "lastActivity": "2026-05-20T07:00:00Z",
-      "notes": [],
-      "hasEnglishToggle": true
-    },
-    {
       "id": "brest-creperie-moderne-20260523",
       "name": "Crêperie Moderne (Maison Boënnec)",
       "type": "Crêperie traditionnelle",
@@ -148,65 +58,6 @@
       "status": "pending",
       "discoveredAt": "2026-05-23T08:00:00Z",
       "lastActivity": "2026-05-23T15:30:00Z",
-      "notes": [],
-      "hasEnglishToggle": false
-    },
-    {
-      "id": "marktneuhodis-haszler-20260523",
-      "name": "Buschenschank Thomas & Harald Haszler",
-      "type": "Buschenschank / Familienheuriger",
-      "country": "AT",
-      "countryName": "Austria",
-      "city": "Markt Neuhodis",
-      "address": "Hauptstraße 11, 7464 Markt Neuhodis, Burgenland",
-      "phone": "+43 664 821 20 65",
-      "email": "haszler.gertrude@drei.at",
-      "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=47.294036,16.396069",
-      "rating": null,
-      "reviewCount": null,
-      "founded": "Familienbuschen am Geschriebenstein",
-      "sites": {
-        "basic": "marktneuhodis-haszler-20260523-basic.html",
-        "premium": "marktneuhodis-haszler-20260523-premium.html"
-      },
-      "emailDraft": {
-        "language": "de",
-        "subject": "Buschenschank Haszler — eine kleine Hofseite, als Geschenk",
-        "body": "Grüß Gott,\n\nich bin auf den Buschenschank Haszler gestoßen, als ich nach echten Familienbuschen in der Weinidylle gesucht habe, und mir ist aufgefallen, dass es noch keine eigene Hofseite vom Haus gibt. Kostenlos und unverbindlich habe ich für Sie zwei Entwürfe vorbereitet — einen klassischen und einen besonderen — nur damit Sie den Ton sehen:\n\n• Klassische Version: https://giladmeishar.github.io/cowork-radar/marktneuhodis-haszler-20260523-basic.html\n• Besondere Version: https://giladmeishar.github.io/cowork-radar/marktneuhodis-haszler-20260523-premium.html\n\nWenn Ihnen eine gefällt: schicken Sie mir den Domainnamen, den Sie schon haben — oder ich kümmere mich darum für Sie, die Registrierung kostet sehr wenig. Wenn es Sie interessiert, sprechen wir gemeinsam über den Preis, ganz ohne Druck.\n\nMit herzlichen Grüßen,\nGilad\n\nPS: Dies ist eine einmalige Nachricht. Ohne Antwort von Ihnen schreibe ich nicht mehr."
-      },
-      "status": "pending",
-      "discoveredAt": "2026-05-23T19:30:00Z",
-      "lastActivity": "2026-05-23T19:30:00Z",
-      "notes": [],
-      "hasEnglishToggle": false
-    },
-    {
-      "id": "genova-sciamadda-20260523",
-      "name": "Antica Sciamadda",
-      "type": "Friggitoria / Sciamadda genovese",
-      "country": "IT",
-      "countryName": "Italy",
-      "city": "Genova",
-      "address": "Via San Giorgio, 14R, 16128 Genova GE",
-      "phone": "+39 010 246 8516",
-      "email": "anticasciamadda@katamail.com",
-      "googleMapsUrl": "https://www.google.com/maps/place/Antica+Sciamadda/@44.4072,8.9335,17z",
-      "rating": "4.3",
-      "reviewCount": "650+",
-      "founded": "1850",
-      "sites": {
-        "basic": "genova-sciamadda-20260523-basic.html",
-        "premium": "genova-sciamadda-20260523-premium.html"
-      },
-      "emailDraft": {
-        "language": "it",
-        "subject": "Antica Sciamadda — una piccola vetrina, in regalo",
-        "body": "Buongiorno Umberto e Ramona,\n\nsono passato per l'Antica Sciamadda cercando una vera farinata di ceci nel cuore vecchio di Genova, e ho notato che non esiste ancora un sito ufficiale della casa. Gratuitamente e senza impegno, ho preparato per voi due bozze — una classica, una più speciale — solo per mostrarvi il tono, e potete vederle qui in due clic:\n\n• Versione classica : https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-basic.html\n• Versione speciale : https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-premium.html\n\nSe una vi piace : mandatemi il nome di dominio che possedete già, oppure me ne occupo io per voi — la registrazione costa molto poco. Se vi interessa, ne parliamo insieme per il prezzo, senza pressioni.\n\nUn caro saluto,\nGilad\n\nPS : Questo è un messaggio unico. Senza risposta da parte vostra, non vi scriverò di nuovo.",
-        "bodyHebrew": "שלום אומברטו ורמונה,\nנכנסתי לאנטיקה שאמאדה בחיפוש אחר פרינטה אמיתית בלב גנואה העתיקה, וראיתי שעדיין אין אתר רשמי של המקום. בחינם וללא התחייבות הכנתי שתי טיוטות — קלאסית ומיוחדת:\n• קלאסי: https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-basic.html\n• מיוחד: https://giladmeishar.github.io/cowork-radar/genova-sciamadda-20260523-premium.html\nאם אחת מהן מוצאת חן — שלחו לי דומיין שכבר ברשותכם או שאני ארשום עבורכם, הרישום עולה מעט. אם זה מעניין נדבר על המחיר בלי לחץ.\nברכות חמות, גלעד\nנ.ב.: הודעה חד-פעמית, אם לא תענו לא אכתוב שוב."
-      },
-      "status": "pending",
-      "discoveredAt": "2026-05-23T21:30:00Z",
-      "lastActivity": "2026-05-23T21:30:00Z",
       "notes": [],
       "hasEnglishToggle": false
     }
