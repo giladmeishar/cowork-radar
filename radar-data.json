@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-25T16:55:00Z",
+  "lastScan": "2026-05-25T17:30:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -28,51 +28,59 @@
       "photos": [
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsNso-ExN16nHv_jVbcNhApbKDoMzzOUKrnW42h0yiynXljCA9_bK6sZelGAMF-uxSZTt2v1VPhLwSbVy1B5l-BIgFi4L2eP6C7uP6Qar-ql-hSTssUGY1vrdv0w5ZegIGrG0lcpblbfk=w1200-h1600-k-no",
-          "type": "food",
+          "type": "exterior",
+          "content": "Brodie's Close entrance with Deacon Brodie costumed figure at the gate, hanging lights, chalkboard sign",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoJhyNmmREnauT5hMnANwf1KHD3Ete_utzjZZGIVYeGQcFhRuyuvxcy-QAZnQrBJOWrAxZgdzsgqnDOm6tLse7C4ck04qO4d1b3vD2uCuSUHIkT4Mxo5TV0YD33fdaa5O5Nvt1clTr4lPu=w900-h600-k-no",
           "type": "food",
+          "content": "Iced lemon tea in tall glass + slice of dark chocolate brownie on plate",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnGgj1Hd0sSA2Y7SS_PgfaE4RRcGpsqxCG3srMHFN2hQ0Rk5RUG_omGwWyLVAb5FDS-t1HqrJzjOOkhVc-CG5yMnWPutJMUn-xZ_hfxJuBtxle-Hc2A2niJto5uB7mmGLxWPe4=w600-h400-k-no",
           "type": "food",
+          "content": "Full Scottish breakfast plate — scrambled eggs, baked beans, sourdough toast, roasted tomato + mug of coffee + croissant in background",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjX1wcK4LfppTSayGOylerYfbjgN9o3G3k_to1sBjWZozyMGfMjACMvY43FGYjefJxHmfFI6oqfKl8dadgU-iOXjlhu7_wI78LY2CXi8mcvjI6z7IeVUcNvprmzcYrI5gLZG4z=w800-h1000-k-no",
           "type": "food",
+          "content": "Single home-made golden scone with butter dish and small ramekin of red jam",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJyHR9ixVZOFBAQ6s16p1WAeedotcbxjJt8BXee2_zqR-5pymcdbNTD6kV-3JbbQa9atZ9LQoXqFPQyLJs6Y8nQquIHcqjQCp3JzIsc6Y2L8MqGOeLu5Eui0YsJsF11ioIXzig=w800-h600-k-no",
-          "type": "food",
+          "type": "exterior",
+          "content": "Outdoor terrace in the stone close with orange wooden tables and hanging plants",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHe_6CcnqRRIxbwICjWXENqYrJP9KTSBOc0_EZkWba4boBgONPdBzPStRb64rFLx-UCucsMRDIWrtQX8fvlYZZ36WGQUQcSkx7owPyKY_aWNYNyCG8EunQ5hJGD9fxV23ylaMT09Q=w800-h1000-k-no",
           "type": "food",
+          "content": "Cappuccino with rosetta latte art on wooden table",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHp8yeCRRmp6rfcQlJ-6xlNpob7SgJ1T5R9B7fUwn25Wmcq0djtTWKNQXstLzlVPEKRR-nU2dXkSiM6wbVoiRilSCcfurFEf8wups5EkrGhzWmtqOAI1VqBkAnty8_aEhQuOrHa=w800-h1000-k-no",
           "type": "food",
+          "content": "Toasted sandwich on seeded brown bread + potato crisps + small slaw of magenta pickled cabbage and leaf on a blue plate",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         },
         {
           "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEUv5amVuq1Gi8POdHq_VA3hEfT8BKZjK2iqURoKhFiXVL3UwBBkqSZyRz8J4yKjm3Kg1HJI1vtzV2zM3KizfgaoY48Kxzf0zEHB97GJqrN5jXaLvs0fg5MJh8snFnJHQbg5A8TDg=w1000-h1400-k-no",
           "type": "interior",
+          "content": "Glass display counter inside the cafe — somewhat blurry, low-priority asset",
           "source": "google-maps",
-          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+          "verified": "2026-05-25"
         }
       ],
       "sites": {
