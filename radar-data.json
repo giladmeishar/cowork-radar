@@ -1,5 +1,95 @@
 {
   "version": 1,
-  "lastScan": "2026-05-24T18:30:00Z",
-  "businesses": []
+  "lastScan": "2026-05-25T16:55:00Z",
+  "businesses": [
+    {
+      "id": "deacon-house-cafe-edinburgh-20260525",
+      "name": "Deacon's House Cafe",
+      "country": "UK",
+      "city": "Edinburgh",
+      "neighborhood": "Brodie's Close, Royal Mile, Old Town",
+      "type": "cafe",
+      "addedAt": "2026-05-25",
+      "address": "3 Brodie's Close, 304 Lawnmarket, Edinburgh EH1 2PS, United Kingdom",
+      "phone": "+44 131 226 1894",
+      "email": "contact@deaconshousecafe.co.uk",
+      "emailSource": "verified from business's own legacy site at http://deaconshousecafe.co.uk/ — Contact section",
+      "existingSiteNote": "Has an old 2016 HTTP-only template site (deaconshousecafe.co.uk) that Google Maps does NOT link. Effectively invisible to customers. This makes the modern-site pitch even stronger.",
+      "mapsUrl": "https://www.google.com/maps/place/Deacon's+House+Cafe/@55.9492624,-3.1930883,17z/data=!3m1!4b1!4m6!3m5!1s0x4887c79ab953bb59:0x96485d18d5e7de0e!8m2!3d55.9492624!4d-3.1930883!16s%2Fg%2F1wrgjr5s",
+      "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e",
+      "lat": 55.9492624,
+      "lng": -3.1930883,
+      "story": "A cafe inside the 17th-century close where Deacon William Brodie lived his double life — respected councilor by day, head of a burglary gang by night. Hanged 1788. Robert Louis Stevenson used him as the seed for Dr Jekyll and Mr Hyde. The cafe serves smoked Ayrshire bacon, free-range eggs, home-made scones with Craigie's Farm jam, organic Fairtrade coffee.",
+      "design": {
+        "palette": "Edinburgh slate-grey + Scottish heather purple + whisky amber + parchment + flame orange (rooted in Brodie's Close stone, heather moors, Scotch whisky)",
+        "layout": "Dual-identity scroll grammar — day cafe up top (light parchment), night history at bottom (dark slate), bridged by Stevenson quote divider. Scroll triggers day-to-night palette transition.",
+        "motion": "Two signature motions: (1) fixed gaslamp SVG with irregular candle-flicker animation top-right; (2) vertical tartan-rule down left edge that fills with woven tartan pattern proportional to scroll position. Neither exists on any other site in the radar."
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsNso-ExN16nHv_jVbcNhApbKDoMzzOUKrnW42h0yiynXljCA9_bK6sZelGAMF-uxSZTt2v1VPhLwSbVy1B5l-BIgFi4L2eP6C7uP6Qar-ql-hSTssUGY1vrdv0w5ZegIGrG0lcpblbfk=w1200-h1600-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoJhyNmmREnauT5hMnANwf1KHD3Ete_utzjZZGIVYeGQcFhRuyuvxcy-QAZnQrBJOWrAxZgdzsgqnDOm6tLse7C4ck04qO4d1b3vD2uCuSUHIkT4Mxo5TV0YD33fdaa5O5Nvt1clTr4lPu=w900-h600-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnGgj1Hd0sSA2Y7SS_PgfaE4RRcGpsqxCG3srMHFN2hQ0Rk5RUG_omGwWyLVAb5FDS-t1HqrJzjOOkhVc-CG5yMnWPutJMUn-xZ_hfxJuBtxle-Hc2A2niJto5uB7mmGLxWPe4=w600-h400-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjX1wcK4LfppTSayGOylerYfbjgN9o3G3k_to1sBjWZozyMGfMjACMvY43FGYjefJxHmfFI6oqfKl8dadgU-iOXjlhu7_wI78LY2CXi8mcvjI6z7IeVUcNvprmzcYrI5gLZG4z=w800-h1000-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJyHR9ixVZOFBAQ6s16p1WAeedotcbxjJt8BXee2_zqR-5pymcdbNTD6kV-3JbbQa9atZ9LQoXqFPQyLJs6Y8nQquIHcqjQCp3JzIsc6Y2L8MqGOeLu5Eui0YsJsF11ioIXzig=w800-h600-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHe_6CcnqRRIxbwICjWXENqYrJP9KTSBOc0_EZkWba4boBgONPdBzPStRb64rFLx-UCucsMRDIWrtQX8fvlYZZ36WGQUQcSkx7owPyKY_aWNYNyCG8EunQ5hJGD9fxV23ylaMT09Q=w800-h1000-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHp8yeCRRmp6rfcQlJ-6xlNpob7SgJ1T5R9B7fUwn25Wmcq0djtTWKNQXstLzlVPEKRR-nU2dXkSiM6wbVoiRilSCcfurFEf8wups5EkrGhzWmtqOAI1VqBkAnty8_aEhQuOrHa=w800-h1000-k-no",
+          "type": "food",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEUv5amVuq1Gi8POdHq_VA3hEfT8BKZjK2iqURoKhFiXVL3UwBBkqSZyRz8J4yKjm3Kg1HJI1vtzV2zM3KizfgaoY48Kxzf0zEHB97GJqrN5jXaLvs0fg5MJh8snFnJHQbg5A8TDg=w1000-h1400-k-no",
+          "type": "interior",
+          "source": "google-maps",
+          "placeId": "0x4887c79ab953bb59:0x96485d18d5e7de0e"
+        }
+      ],
+      "sites": {
+        "basic": "deacon-house-cafe-edinburgh-20260525-basic.html",
+        "premium": "deacon-house-cafe-edinburgh-20260525-premium.html"
+      },
+      "emailDraft": {
+        "language": "en",
+        "to": "contact@deaconshousecafe.co.uk",
+        "subject": "Your cafe in Brodie's Close — a quiet idea for the front of house",
+        "body": "Hello,\n\nI walked through Brodie's Close last week and stopped at Deacon's House Cafe. The smoked salmon on the artisan farmhouse bread was excellent, and the cream tea was the most honest one I've had in Edinburgh in a long while.\n\nI noticed Google Maps doesn't link a website for you — and the older site at deaconshousecafe.co.uk isn't connected from there, so most people walking past on the Royal Mile never find it. I make small, beautiful sites for cafes like yours and I built two previews for Deacon's, free, to show what's possible.\n\nThe quiet editorial one (perfect for a Royal Mile cafe):\nhttps://giladmeishar.github.io/cowork-radar/deacon-house-cafe-edinburgh-20260525-basic.html\n\nAnd the one I really wanted to make — built around the 1788 story, with the day cafe up top and the Brodie history at the bottom, the way the close itself feels:\nhttps://giladmeishar.github.io/cowork-radar/deacon-house-cafe-edinburgh-20260525-premium.html\n\nThe domain deaconshousecafe.com is available at around £12/year. If you ever wanted to use either of these, or wanted me to adjust them, just reply and I'll make any change you ask for. Otherwise, please ignore — I won't email a second time.\n\nWith warm regards from a guest who enjoyed your scones.\n\n—\nThis is a one-time message. If you'd rather I didn't email again, just reply with 'no thanks' and I will note it down.",
+        "bodyHebrew": "הקדמתי, שכתבתי לבעל הקפה Deacon's House Cafe באדינבורו — מקום ב-Brodie's Close ברויאל מייל, בלי אתר מקושר מ-Google Maps. הסברתי שהאתר הישן שלהם מ-2016 לא מקושר מ-Maps, אז לקוחות פוטנציאליים לא מוצאים אותו. צירפתי שתי תצוגות מקדימות חינמיות — בסיסית עריכתית + פרמיום שבנוי סביב הסיפור של דיקון בריאודי משנת 1788. הזכרתי שדומיין .com של העסק זמין ב-~£12 לשנה. סיימתי בהבטחה שזה מסר חד-פעמי."
+      },
+      "notes": [],
+      "status": "live",
+      "lastBuilt": "2026-05-25"
+    }
+  ],
+  "processedNoteDraftIds": []
 }

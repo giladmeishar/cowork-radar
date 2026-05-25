@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deacon's House Cafe — Brodie's Close, Edinburgh</title>
+<meta name="description" content="A cafe in the very close where Deacon William Brodie lived his double life. Breakfast, scones, Scottish smoked salmon — served on the Royal Mile since long before the postcards.">
+<style>
+  :root{
+    --stone:#2a2e36;
+    --stone-deep:#1a1d24;
+    --heather:#7a6a93;
+    --whisky:#c8911e;
+    --parchment:#f4ede0;
+    --parchment-deep:#e8dec7;
+    --flame:#c84a2e;
+    --rule:#3b3f48;
+    --ink:#11131a;
+    --serif:'Cormorant Garamond', 'EB Garamond', 'Iowan Old Style', Georgia, serif;
+    --sans:'Inter', system-ui, -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--serif);
+    background:var(--parchment);
+    color:var(--ink);
+    line-height:1.5;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  /* SCROLL-DRIVEN DAY/NIGHT TRANSITION */
+  .stage{
+    background:linear-gradient(180deg,
+      var(--parchment) 0%,
+      var(--parchment) 22%,
+      var(--parchment-deep) 38%,
+      #6a5b7d 55%,
+      var(--stone) 75%,
+      var(--stone-deep) 100%);
+    min-height:100vh;
+  }
+
+  /* TARTAN RULE — signature motion, fills diagonally as you scroll */
+  .tartan-rule{
+    position:fixed;
+    left:24px;
+    top:0;
+    bottom:0;
+    width:6px;
+    z-index:50;
+    pointer-events:none;
+  }
+  .tartan-rule::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(45deg,
+        var(--stone) 0 6px,
+        var(--whisky) 6px 8px,
+        var(--stone) 8px 14px,
+        var(--flame) 14px 16px,
+        var(--heather) 16px 24px);
+    transform-origin:top;
+    transform:scaleY(var(--tartan-fill,0));
+    transition:transform .15s linear;
+  }
+  .tartan-rule::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-left:1px solid rgba(0,0,0,.18);
+    border-right:1px solid rgba(0,0,0,.18);
+  }
+
+  /* CANDLE FLICKER — fixed gaslamp top-right */
+  .gaslamp{
+    position:fixed;
+    top:28px;
+    right:32px;
+    width:48px;
+    height:72px;
+    z-index:60;
+    pointer-events:none;
+  }
+  .gaslamp .flame{
+    transform-origin:50% 90%;
+    animation:flicker 3.2s infinite;
+    filter:drop-shadow(0 0 6px rgba(200,145,30,.7));
+  }
+  .gaslamp .halo{
+    fill:radial-gradient(circle, rgba(200,145,30,.4), transparent);
+    animation:halo-flicker 3.2s infinite;
+  }
+  @keyframes flicker{
+    0%,100%{transform:scaleY(1) scaleX(1);opacity:.95}
+    10%{transform:scaleY(1.04) scaleX(.97);opacity:1}
+    23%{transform:scaleY(.97) scaleX(1.02);opacity:.9}
+    37%{transform:scaleY(1.06) scaleX(.95);opacity:1}
+    52%{transform:scaleY(.96) scaleX(1.01);opacity:.88}
+    71%{transform:scaleY(1.03) scaleX(.98);opacity:.97}
+    85%{transform:scaleY(.98) scaleX(1.03);opacity:.92}
+  }
+  @keyframes halo-flicker{
+    0%,100%{opacity:.55}50%{opacity:.85}
+  }
+
+  /* TOP NAV — minimal */
+  nav{
+    position:fixed;
+    top:24px;
+    left:80px;
+    z-index:55;
+    display:flex;
+    gap:24px;
+    align-items:center;
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  nav .mark{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:18px;
+    letter-spacing:0;
+    text-transform:none;
+    font-weight:500;
+    margin-right:18px;
+  }
+  nav a{color:inherit;text-decoration:none;opacity:.7;transition:opacity .25s}
+  nav a:hover{opacity:1}
+  body.night-mode nav, body.night-mode .mark{color:var(--parchment)}
+
+  /* HERO — DUAL IDENTITY SPLIT */
+  .hero{
+    min-height:100vh;
+    position:relative;
+    display:grid;
+    grid-template-columns:5fr 7fr;
+    padding:120px 64px 80px 80px;
+    gap:64px;
+    align-items:start;
+  }
+  .hero .label{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--flame);
+    font-weight:600;
+    margin-bottom:32px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(48px,7vw,108px);
+    line-height:.96;
+    letter-spacing:-.02em;
+    color:var(--ink);
+    margin-bottom:36px;
+  }
+  .hero h1 .italic{font-style:italic;font-weight:400;color:var(--heather)}
+  .hero h1 .small{display:block;font-size:.55em;font-weight:400;font-style:italic;color:var(--stone);margin-top:8px}
+  .hero .lede{
+    font-size:20px;
+    line-height:1.5;
+    max-width:38ch;
+    color:var(--stone);
+    margin-bottom:40px;
+  }
+  .hero .meta{
+    font-family:var(--sans);
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--stone);
+    border-top:1px solid var(--rule);
+    padding-top:24px;
+    max-width:38ch;
+  }
+  .hero .meta div{margin:6px 0}
+  .hero .meta strong{font-weight:600;color:var(--ink)}
+
+  /* HERO IMAGE — dish-grid asymmetric */
+  .hero-art{
+    position:relative;
+    min-height:80vh;
+  }
+  .hero-art .frame{
+    position:absolute;
+    overflow:hidden;
+    border-radius:2px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 8px 20px -8px rgba(0,0,0,.2);
+  }
+  .hero-art .frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .hero-art .f1{top:0;right:0;width:62%;height:64%}
+  .hero-art .f2{bottom:0;left:0;width:48%;height:42%}
+  .hero-art .f3{bottom:24%;right:8%;width:30%;height:24%}
+  .hero-art .stamp{
+    position:absolute;
+    bottom:6%;
+    left:56%;
+    width:120px;
+    height:120px;
+    border:1px solid var(--stone);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--serif);
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    background:var(--parchment);
+    color:var(--stone);
+    box-shadow:0 6px 18px -8px rgba(0,0,0,.3);
+  }
+  .hero-art .stamp span{display:block;line-height:1.3}
+  .hero-art .stamp .num{font-size:28px;letter-spacing:0;font-weight:500;font-style:italic;margin:4px 0}
+
+  /* DIVIDER — Brodie's quote bridges day & night */
+  .divider{
+    padding:120px 80px;
+    text-align:center;
+    background:linear-gradient(180deg,var(--parchment-deep) 0%,transparent 100%);
+  }
+  .divider blockquote{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(28px,3.4vw,44px);
+    line-height:1.32;
+    color:var(--stone);
+    max-width:18ch;
+    margin:0 auto;
+    position:relative;
+  }
+  .divider blockquote::before, .divider blockquote::after{
+    content:"";
+    display:block;
+    width:48px;
+    height:1px;
+    background:var(--flame);
+    margin:24px auto;
+  }
+  .divider cite{
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--flame);
+    font-weight:600;
+    display:block;
+    margin-top:8px;
+  }
+
+  /* MENU GRID — featured plates */
+  .plates{
+    padding:80px 80px 120px;
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:64px;
+    align-items:start;
+  }
+  .plates .intro{
+    position:sticky;
+    top:120px;
+  }
+  .plates .intro .label{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--heather);
+    font-weight:600;
+    margin-bottom:24px;
+  }
+  .plates .intro h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(40px,4.8vw,68px);
+    line-height:.98;
+    letter-spacing:-.01em;
+    color:var(--parchment);
+    margin-bottom:24px;
+  }
+  .plates .intro h2 .italic{font-style:italic;color:var(--whisky)}
+  .plates .intro p{
+    color:var(--parchment-deep);
+    font-size:18px;
+    line-height:1.55;
+    max-width:34ch;
+  }
+  .plate-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .plate{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    border-radius:2px;
+  }
+  .plate:nth-child(odd){transform:translateY(48px)}
+  .plate img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 1.1s cubic-bezier(.16,.84,.34,1);
+  }
+  .plate:hover img{transform:scale(1.06)}
+  .plate .name{
+    position:absolute;
+    inset:auto 0 0 0;
+    padding:16px 18px;
+    background:linear-gradient(180deg,transparent,rgba(0,0,0,.78));
+    color:var(--parchment);
+    font-family:var(--serif);
+    font-size:18px;
+    font-weight:500;
+  }
+  .plate .name .price{
+    display:block;
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--whisky);
+    font-weight:600;
+    margin-top:4px;
+  }
+
+  /* NIGHT SECTION — Brodie's story */
+  .story{
+    padding:120px 80px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:80px;
+    color:var(--parchment);
+    background:var(--stone-deep);
+    position:relative;
+  }
+  .story::before{
+    content:"1788";
+    position:absolute;
+    top:24px;
+    right:80px;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:140px;
+    line-height:1;
+    color:rgba(200,145,30,.10);
+    pointer-events:none;
+    font-weight:300;
+  }
+  .story .label{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--whisky);
+    font-weight:600;
+    margin-bottom:32px;
+  }
+  .story h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(40px,5vw,76px);
+    line-height:1;
+    letter-spacing:-.01em;
+    margin-bottom:40px;
+    color:var(--parchment);
+  }
+  .story h2 .italic{font-style:italic;color:var(--whisky)}
+  .story p{
+    font-size:18px;
+    line-height:1.7;
+    color:var(--parchment-deep);
+    max-width:40ch;
+    margin-bottom:20px;
+  }
+  .story .pull{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:26px;
+    line-height:1.4;
+    color:var(--whisky);
+    border-left:2px solid var(--whisky);
+    padding-left:24px;
+    margin:32px 0;
+    max-width:38ch;
+  }
+  .story-art{position:relative}
+  .story-art .frame{
+    position:relative;
+    overflow:hidden;
+    border-radius:2px;
+    box-shadow:0 40px 80px -20px rgba(0,0,0,.6);
+  }
+  .story-art .frame img{width:100%;height:auto;display:block;filter:saturate(.78) contrast(1.08) brightness(.92)}
+  .story-art .caption{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--whisky);
+    margin-top:16px;
+    letter-spacing:.18em;
+  }
+
+  /* SPEC SHEET — practical */
+  .spec{
+    padding:120px 80px;
+    background:var(--stone);
+    color:var(--parchment);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    border-top:1px solid var(--rule);
+  }
+  .spec .label{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--whisky);
+    font-weight:600;
+    margin-bottom:24px;
+  }
+  .spec h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(36px,4.2vw,60px);
+    line-height:1;
+    margin-bottom:32px;
+    color:var(--parchment);
+  }
+  .spec h2 .italic{font-style:italic;color:var(--whisky)}
+  .spec dl{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:20px 40px;
+    font-family:var(--sans);
+    font-size:14px;
+    line-height:1.55;
+  }
+  .spec dt{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--whisky);
+    font-weight:600;
+    align-self:start;
+    padding-top:3px;
+  }
+  .spec dd{color:var(--parchment)}
+  .spec dd a{color:var(--parchment);text-decoration:underline;text-decoration-color:var(--whisky);text-underline-offset:4px}
+  .spec dd a:hover{color:var(--whisky)}
+
+  /* FOOTER — final flourish */
+  footer{
+    padding:80px 80px;
+    background:var(--stone-deep);
+    color:var(--parchment);
+    text-align:center;
+    border-top:1px solid var(--rule);
+  }
+  footer .mark{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:32px;
+    margin-bottom:16px;
+  }
+  footer .colophon{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--whisky);
+    margin-bottom:24px;
+  }
+  footer .links{
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--parchment-deep);
+  }
+  footer .links a{color:var(--whisky);text-decoration:none}
+  footer .links a:hover{text-decoration:underline}
+
+  /* REVEAL ANIMATION */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.34,1),transform 1s cubic-bezier(.16,.84,.34,1)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    nav{left:60px;gap:14px;font-size:10px}
+    .hero{grid-template-columns:1fr;padding:120px 32px 60px 60px;gap:40px}
+    .hero-art{min-height:60vh}
+    .plates,.story,.spec{grid-template-columns:1fr;padding:80px 32px 80px 60px;gap:40px}
+    .plates .intro{position:static}
+    .plate:nth-child(odd){transform:none}
+    footer{padding:60px 32px}
+    .tartan-rule{left:16px;width:4px}
+    .gaslamp{top:20px;right:20px;width:36px;height:54px}
+  }
+</style>
+</head>
+<body>
+  <div class="tartan-rule" id="tartanRule"></div>
+
+  <!-- candle gaslamp -->
+  <svg class="gaslamp" viewBox="0 0 48 72" aria-hidden="true">
+    <!-- post -->
+    <rect x="22" y="50" width="4" height="22" fill="#2a2e36"/>
+    <!-- lamp body -->
+    <rect x="14" y="22" width="20" height="28" rx="2" fill="#1a1d24" stroke="#c8911e" stroke-width=".8"/>
+    <rect x="16" y="24" width="16" height="24" fill="rgba(200,145,30,.18)"/>
+    <!-- cap -->
+    <path d="M12,22 L36,22 L34,16 L14,16 Z" fill="#1a1d24" stroke="#c8911e" stroke-width=".8"/>
+    <circle cx="24" cy="14" r="2" fill="#c8911e"/>
+    <!-- flame -->
+    <g class="flame">
+      <ellipse cx="24" cy="38" rx="4" ry="7" fill="#c8911e"/>
+      <ellipse cx="24" cy="40" rx="2.4" ry="4.6" fill="#fff4d0"/>
+      <ellipse cx="24" cy="42" rx="1.2" ry="2.4" fill="#fff"/>
+    </g>
+  </svg>
+
+  <nav>
+    <span class="mark">Deacon's</span>
+    <a href="#plates">Menu</a>
+    <a href="#story">1788</a>
+    <a href="#visit">Visit</a>
+  </nav>
+
+  <div class="stage">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text reveal in">
+        <div class="label">Brodie's Close · Royal Mile · Edinburgh</div>
+        <h1>A cafe in the close <span class="italic">where the Deacon</span><span class="small">lived both his lives.</span></h1>
+        <p class="lede">Smoked Ayrshire bacon, warm scones with Craigie's jam, organic coffee — served quietly in a 17th-century close just off the Lawnmarket. We open before the tour buses do.</p>
+        <div class="meta">
+          <div><strong>Open</strong> · 09:00 – early afternoon, daily</div>
+          <div><strong>Address</strong> · 3 Brodie's Close, 304 Lawnmarket, Edinburgh EH1 2PS</div>
+          <div><strong>Telephone</strong> · 0131 226 1894</div>
+        </div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="frame f1"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsNso-ExN16nHv_jVbcNhApbKDoMzzOUKrnW42h0yiynXljCA9_bK6sZelGAMF-uxSZTt2v1VPhLwSbVy1B5l-BIgFi4L2eP6C7uP6Qar-ql-hSTssUGY1vrdv0w5ZegIGrG0lcpblbfk=w1200-h1600-k-no" alt="A breakfast plate at Deacon's House Cafe"></div>
+        <div class="frame f2"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoJhyNmmREnauT5hMnANwf1KHD3Ete_utzjZZGIVYeGQcFhRuyuvxcy-QAZnQrBJOWrAxZgdzsgqnDOm6tLse7C4ck04qO4d1b3vD2uCuSUHIkT4Mxo5TV0YD33fdaa5O5Nvt1clTr4lPu=w900-h600-k-no" alt="Warm scones served fresh"></div>
+        <div class="frame f3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnGgj1Hd0sSA2Y7SS_PgfaE4RRcGpsqxCG3srMHFN2hQ0Rk5RUG_omGwWyLVAb5FDS-t1HqrJzjOOkhVc-CG5yMnWPutJMUn-xZ_hfxJuBtxle-Hc2A2niJto5uB7mmGLxWPe4=w600-h400-k-no" alt="Coffee detail"></div>
+        <div class="stamp">
+          <div>
+            <span>Est.</span>
+            <span class="num">1788</span>
+            <span>Brodie's Close</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER QUOTE -->
+    <div class="divider reveal">
+      <blockquote>
+        Many a citizen was proud of his close acquaintance with Deacon Brodie.
+        <cite>— Robert Louis Stevenson</cite>
+      </blockquote>
+    </div>
+
+    <!-- PLATES SECTION -->
+    <section class="plates" id="plates">
+      <div class="intro reveal">
+        <div class="label">The day side · Breakfast & lunch</div>
+        <h2>Honest cooking, <span class="italic">fresh every morning.</span></h2>
+        <p>Free-range eggs, smoked Ayrshire bacon, warm scones with Craigie's Farm jam, smashed avocado on sourdough, Scottish smoked salmon on artisan farmhouse bread. Coffee is organic and fair-trade.</p>
+      </div>
+      <div class="plate-grid reveal">
+        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjX1wcK4LfppTSayGOylerYfbjgN9o3G3k_to1sBjWZozyMGfMjACMvY43FGYjefJxHmfFI6oqfKl8dadgU-iOXjlhu7_wI78LY2CXi8mcvjI6z7IeVUcNvprmzcYrI5gLZG4z=w800-h1000-k-no" alt="Smoked salmon plate"><figcaption class="name">Scottish smoked salmon<span class="price">on artisan farmhouse bread · £10.90</span></figcaption></figure>
+        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJyHR9ixVZOFBAQ6s16p1WAeedotcbxjJt8BXee2_zqR-5pymcdbNTD6kV-3JbbQa9atZ9LQoXqFPQyLJs6Y8nQquIHcqjQCp3JzIsc6Y2L8MqGOeLu5Eui0YsJsF11ioIXzig=w800-h600-k-no" alt="Home-made scone with jam and cream"><figcaption class="name">Scottish cream tea<span class="price">scone · Craigie's jam · cream · £7.90</span></figcaption></figure>
+        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHe_6CcnqRRIxbwICjWXENqYrJP9KTSBOc0_EZkWba4boBgONPdBzPStRb64rFLx-UCucsMRDIWrtQX8fvlYZZ36WGQUQcSkx7owPyKY_aWNYNyCG8EunQ5hJGD9fxV23ylaMT09Q=w800-h1000-k-no" alt="The Full Deacon breakfast"><figcaption class="name">The Full Deacon<span class="price">bacon · sausage · eggs · pudding · £10.90</span></figcaption></figure>
+        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHp8yeCRRmp6rfcQlJ-6xlNpob7SgJ1T5R9B7fUwn25Wmcq0djtTWKNQXstLzlVPEKRR-nU2dXkSiM6wbVoiRilSCcfurFEf8wups5EkrGhzWmtqOAI1VqBkAnty8_aEhQuOrHa=w800-h1000-k-no" alt="Avocado on sourdough"><figcaption class="name">Smashed avocado<span class="price">roasted tomato · sourdough · £7.90</span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- STORY — NIGHT SIDE -->
+    <section class="story" id="story">
+      <div class="story-text reveal">
+        <div class="label">The night side · 1788</div>
+        <h2>Brodie was hanged <span class="italic">on the gallows he designed himself.</span></h2>
+        <p>This is the close where Deacon William Brodie lived: respected city councilor and master cabinet-maker by day, head of a burglary gang by night. He kept a wax impression of every key he could touch.</p>
+        <p class="pull">"He was hanged on a gallows of his own improvement — on the very 1st of October, in the year 1788."</p>
+        <p>Robert Louis Stevenson — who grew up around the corner — used Brodie as the seed for <em>The Strange Case of Dr Jekyll and Mr Hyde</em>. The cafe sits in the very stone close, served by the same staircases.</p>
+      </div>
+      <div class="story-art reveal">
+        <div class="frame"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEUv5amVuq1Gi8POdHq_VA3hEfT8BKZjK2iqURoKhFiXVL3UwBBkqSZyRz8J4yKjm3Kg1HJI1vtzV2zM3KizfgaoY48Kxzf0zEHB97GJqrN5jXaLvs0fg5MJh8snFnJHQbg5A8TDg=w1000-h1400-k-no" alt="Inside the close at Deacon's House Cafe"></div>
+        <div class="caption">Brodie's Close · today · the cosy dining room</div>
+      </div>
+    </section>
+
+    <!-- SPEC SHEET -->
+    <section class="spec" id="visit">
+      <div class="reveal">
+        <div class="label">Practical · The visit</div>
+        <h2>Find us in the <span class="italic">narrow close,</span> just up from the castle.</h2>
+        <p style="font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--parchment-deep);max-width:36ch">
+          Walk down the Royal Mile from Edinburgh Castle. Brodie's Close opens to your right just before the cathedral. Step in. We do not take reservations — you simply arrive.
+        </p>
+      </div>
+      <div class="reveal">
+        <dl>
+          <dt>Address</dt><dd>3 Brodie's Close · 304 Lawnmarket · Edinburgh EH1 2PS</dd>
+          <dt>Hours</dt><dd>09:00 to mid-afternoon, daily</dd>
+          <dt>Telephone</dt><dd><a href="tel:+441312261894">0131 226 1894</a></dd>
+          <dt>Email</dt><dd><a href="mailto:contact@deaconshousecafe.co.uk">contact@deaconshousecafe.co.uk</a></dd>
+          <dt>Style</dt><dd>Sit, breakfast, no need to book · cash & card</dd>
+        </dl>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="mark">Deacon's House Cafe</div>
+    <div class="colophon">Brodie's Close · 304 Lawnmarket · Edinburgh · since 1788</div>
+    <div class="links">
+      <a href="mailto:contact@deaconshousecafe.co.uk">contact@deaconshousecafe.co.uk</a>
+      &nbsp;·&nbsp;
+      <a href="tel:+441312261894">0131 226 1894</a>
+    </div>
+  </footer>
+
+<script>
+  // signature motion 1 — tartan-rule fills as you scroll
+  const tartan = document.getElementById('tartanRule');
+  const updateTartan = () => {
+    const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+    const p = Math.min(1, Math.max(0, window.scrollY / max));
+    tartan.style.setProperty('--tartan-fill', p.toFixed(3));
+    if(p > 0.55) document.body.classList.add('night-mode');
+    else document.body.classList.remove('night-mode');
+  };
+  window.addEventListener('scroll', updateTartan, { passive: true });
+  updateTartan();
+
+  // signature motion 2 — reveals on intersection
+  const reveals = document.querySelectorAll('.reveal:not(.in)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>
