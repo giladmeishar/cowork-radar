@@ -246,4 +246,19 @@ async function sf(){const t=document.getElementById("fbt").value.trim();if(!t)re
         }
       }catch(e){toast("ההערה נשמרה אבל לא הצלחתי להפעיל סוכן: "+e.message);}
     }
- 
+  } else {
+    toast("✓ ההערה נשמרה מקומית במכשיר הזה. (מ-Cowork Artifact תיגבה גם ב-Gmail וגם תפעיל את הסוכן.)");
+  }
+}
+function sar(){localStorage.setItem("cro",JSON.stringify({o:D.businesses.map(b=>({id:b.id,status:b.status,notes:b.notes,emailDraft:b.emailDraft,lastActivity:b.lastActivity}))}));render()}
+function ao(){try{const o=JSON.parse(localStorage.getItem("cro")||"{}");if(o.o)o.o.forEach(ov=>{const b=D.businesses.find(x=>x.id===ov.id);if(b){if(ov.status)b.status=ov.status;if(ov.notes)b.notes=ov.notes;if(ov.emailDraft)b.emailDraft={...b.emailDraft,...ov.emailDraft};if(ov.lastActivity)b.lastActivity=ov.lastActivity}})}catch{}}
+function toast(m){const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),4500)}
+document.getElementById("snb").onclick=trig;
+document.getElementById("sf").onclick=e=>{const b=e.target.closest("button");if(!b)return;ast=b.dataset.status;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};
+document.getElementById("cf").onclick=e=>{const b=e.target.closest("button");if(!b||!b.dataset.country)return;act=b.dataset.country;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};
+load();
+setInterval(tick,1000);
+setInterval(load,15000);
+tick();
+</script>
+</body></html>
