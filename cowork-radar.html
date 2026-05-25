@@ -128,14 +128,20 @@ function sss(s){localStorage.setItem('rss',JSON.stringify(s))}
 function css(){localStorage.removeItem('rss')}
 async function load(){
   try{
+    const prevLastScan = D.lastScan, prevCount = D.businesses.length;
     const r=await fetch("radar-data.json?t="+Date.now());
     const fr=await r.json();
     D=fr;
     const st=gss();
     if(st && D.lastScan && new Date(D.lastScan)>new Date(st.lastScanBefore||0)){
+      // user-triggered scan completed — toast then clear scan state
       const added=D.businesses.length-st.countBefore;
       css();
       toast(`✓ סריקה הסתיימה. ${added>0?added+' עסקים חדשים נוספו.':'לא נמצאו עסקים חדשים.'}`);
+    } else if (prevLastScan && D.lastScan && new Date(D.lastScan) > new Date(prevLastScan)) {
+      // background cron-driven scan completed while no manual scan state was set
+      const added=D.businesses.length-prevCount;
+      toast(`✓ סריקה אוטומטית הסתיימה. ${added>0?added+' עסקים חדשים נוספו.':'אין עסקים חדשים.'}`);
     }
   }catch(e){if(!D.businesses.length)D={businesses:[],lastScan:null}}
   ao(); uc(); rcf(); render();
@@ -158,9 +164,15 @@ function tick(){
     sb.classList.remove("scanning");ht.classList.remove("scanning");
     const last=D.lastScan?new Date(D.lastScan).getTime():Date.now();
     const next=last+SCAN_MS, rem=Math.max(0,next-Date.now());
-    lbl.textContent="סבב הבא בעוד";
-    tm.textContent=fmtM(rem);
-    pb.style.width=Math.min(100,((SCAN_MS-rem)/SCAN_MS)*100)+"%";
+    if(rem<=0){
+      lbl.textContent="ממתין לסריקה הבאה (אוטומטי תוך דק׳)…";
+      tm.textContent="—:—";
+      pb.style.width="100%";
+    } else {
+      lbl.textContent="סבב הבא בעוד";
+      tm.textContent=fmtM(rem);
+      pb.style.width=Math.min(100,((SCAN_MS-rem)/SCAN_MS)*100)+"%";
+    }
     btn.disabled=false;btn.innerHTML='סרוק עכשיו ←';
   }
 }
@@ -234,10 +246,4 @@ async function sf(){const t=document.getElementById("fbt").value.trim();if(!t)re
         }
       }catch(e){toast("ההערה נשמרה אבל לא הצלחתי להפעיל סוכן: "+e.message);}
     }
-  } else {
-    toast("✓ ההערה נשמרה מקומית במכשיר הזה. (מ-Cowork Artifact תיגבה גם ב-Gmail וגם תפעיל את הסוכן.)");
-  }
-}
-function sar(){localStorage.setItem("cro",JSON.stringify({o:D.businesses.map(b=>({id:b.id,status:b.status,notes:b.notes,emailDraft:b.emailDraft,lastActivity:b.lastActivity}))}));render()}
-function ao(){try{const o=JSON.parse(localStorage.getItem("cro")||"{}");if(o.o)o.o.forEach(ov=>{const b=D.businesses.find(x=>x.id===ov.id);if(b){if(ov.status)b.status=ov.status;if(ov.notes)b.notes=ov.notes;if(ov.emailDraft)b.emailDraft={...b.emailDraft,...ov.emailDraft};if(ov.lastActivity)b.lastActivity=ov.lastActivity}})}catch{}}
-function toast(m){
+ 
