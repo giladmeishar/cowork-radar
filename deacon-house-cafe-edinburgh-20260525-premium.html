@@ -655,5 +655,8 @@
   window.addEventListener('scroll', updateTartan, { passive: true });
   updateTartan();
 
-  // signature motion 2 — reveals on intersection
-  const re
+  // signature motion 2 — reveal all immediately (no fragile IntersectionObserver)
+  document.querySelectorAll('.reveal').forEach(r => r.classList.add('in'));
+</script>
+</body>
+</html>
