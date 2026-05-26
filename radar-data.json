@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T13:19:50.075827Z",
+  "lastScan": "2026-05-26T12:00:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -98,115 +98,6 @@
       "status": "draft-created",
       "lastBuilt": "2026-05-25",
       "lastActivity": "2026-05-26T11:27:00Z"
-    },
-    {
-      "id": "creperia-la-bombarde-porto-20260526",
-      "name": "Creperia La Bombarde",
-      "city": "Porto",
-      "country": "Portugal",
-      "neighborhood": "Foz do Douro",
-      "address": "R. de Gondarém 239, 4150-376 Porto",
-      "phone": "+351 22 099 0228",
-      "email": "creperia.labombarde@gmail.com",
-      "contactMethod": "email",
-      "type": "creperie",
-      "cuisine": "Breton crepes and galettes",
-      "established": 2009,
-      "mapsUrl": "https://www.google.com/maps/place/Creperia+La+Bombarde/@41.1553128,-8.6792824,17z/data=!3m1!4b1!4m6!3m5!1s0xd246f75a01bd991:0xf853c6e3b52e1067!8m2!3d41.1553128!4d-8.6792824!16s%2Fg%2F1yg4fj5xk",
-      "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-      "reviewCount": 588,
-      "rating": 4.6,
-      "hasWebsite": false,
-      "social": {
-        "facebook": "https://www.facebook.com/CreperiaLaBombarde/",
-        "instagram": "https://www.instagram.com/creperialabombarde/",
-        "wordpress": "http://www.creperialabombarde.wordpress.com"
-      },
-      "photos": [
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0fQ5j-ofLy3WC17NXv98PO1myB0glNUVKn0iFjhH4KU6a0w76vLzgwFyYo6NxJ4qXDkmlBQiXNsRRh1DZ3LiKA-LxcEoCaWlofM9_bMQXW5Q5EwHU0dxUSjCWFt-z-b0iKMzYD_1T4uEKt=w800-h600-k-no",
-          "type": "food",
-          "content": "Folded buckwheat galette with sauteed spinach, mushrooms and melted cheese spilling from the open center",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2FC_klXE3K1Ho52GoFQz4k0-kxKat_FnjqJtkeiTEwLhEgRTkKtSY9pYXqE77qr9NWDN5vhgZUMHjOlNNHogIqaenNffqB6zFo6zEU0b0FUkpBA0Ner7zJZCXrxYykVrAfYSfJfKVMZrfs=w800-h600-k-no",
-          "type": "food",
-          "content": "Open buckwheat galette with smoked salmon ribbons, arugula, white cream drizzle and black sesame seeds",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn366_IAeMreBQT748zJmIMXrIi1WoRGTaskw7BLqnsThnNLI_IT8fJg025mxbncg_RwCV4Y_4osyNGvREalrEsDpN7gYaGLRmL4rPCWdNPQmWlQeEAFSJoK1x8ZbMD5LhW3E7xO8wVcVYpH=w800-h600-k-no",
-          "type": "food",
-          "content": "Round dark buckwheat crepe topped with smoked salmon, chives and a swirl of white cream sauce",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1tbkLbdGunBOQuth0BJf7eO_d4Epe4hc4sg3AtcBZv5RWgZhEYgPE6f-ha9CRvMIV1I4OL5wCLNxXZXtXLpRPhB5pcbzRHpIePB1L__wIur0Gaihu36zMFhYjcfnDHQCVUBwgsOMY2PuY=w800-h600-k-no",
-          "type": "food",
-          "content": "Sweet wheat crepe drizzled with parallel stripes of dark chocolate sauce",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0lpHZVujBtrqih_n4Q1Fp9JVHmJ3jho_k5fxeaA1v_8k2yTojXO-MFcDOHXZ_UfKufHuBVjLV0wW46Byf_j1ggKBenv3crpUuV2excy6xyhb5DFxWNaBD4O-iTybx_yzwtKGSAuxRxSbg=w800-h600-k-no",
-          "type": "food",
-          "content": "Tall glass of chocolate milkshake topped with whipped cream and a whole Oreo biscuit",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3yJLGFv2EQunGwENPcmclLDRR9Il0RmMSq6xueWUagQvRJHyC8cGyTmLNZyHnFmcLrBl5a5Ad7cnZTffek1NuD9YNrZ0vLX-FCIvDLUXJpQFtOUoaSkjDtlOSeo5IkLChHJJBDVTLLklz7=w800-h600-k-no",
-          "type": "food",
-          "content": "Plate of greens with beans, dried onions and cream over what looks like a galette base on wooden table",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn33g3w3vczc6AophAkZqKgsRJemD2MoSOzK47ErPl1_m4SM0nnNDD6Nw6L_ksWkFijfR7V6WQIrrGdbvsRWrhb9OnlfINrU1EqPiMhu7jv7LaoFrR0aJ7kOqrhs1ilagqoz1dkRFFjsLQXg=w800-h600-k-no",
-          "type": "food",
-          "content": "Galette topped with smoked salmon, arugula and an egg yolk, with a customer hand reaching in",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0vc83gbYrSa3SmrZQEBrLKq_lckbbpNcXosPioiE6W8WCQJK0I3QlS4sJNFy_8Hldl-xlw5nbcdTfxbJ1IxacGDjxn1PT0WgEx4CzLs4PeLjWloXFewUcDp_gDaPSv76HnCHobzK5NRXo=w800-h600-k-no",
-          "type": "food",
-          "content": "Wooden cafe table with two galettes, a coffee cup, small succulent plants and decorative red object",
-          "source": "google-maps",
-          "placeId": "0xd246f75a01bd991:0xf853c6e3b52e1067",
-          "verified": "2026-05-26"
-        }
-      ],
-      "design": {
-        "palette": "paper-cream + ink + atlantic-sea-blue + ember-rust + breton-foam",
-        "layout": "compass-hero with rotating needle + horizontal marquee + dish 4-up grid + ferro-cast spec sheet",
-        "motion": "scroll-driven compass needle rotation (720deg over scroll) + marquee word ticker + hover scale dishes",
-        "fonts": "Georgia editorial + Brush Script italic accents + Courier mono meta"
-      },
-      "sites": {
-        "premium": "creperia-la-bombarde-porto-20260526-premium.html",
-        "basic": "creperia-la-bombarde-porto-20260526-basic.html"
-      },
-      "emailDraft": {
-        "language": "pt",
-        "subject": "Uma página simples para a Bombarde — galettes da Foz",
-        "body": "Bom dia,\n\nSou o Gilad. Adoro o conceito da Bombarde — uma crêperie bretã de raiz na Foz, com trigo sarraceno verdadeiro, sidra fresca, e a sua Galette Saumon que é certamente uma das melhores do Porto.\n\nReparei que ainda não têm um site próprio (apenas Facebook e Instagram). Quando alguém procura \"creperia foz porto\" no Google, a sua casa aparece em terceiro lugar — mas sem site, perde reservas para quem tem.\n\nFiz dois esboços para mostrar como ficaria, usando as fotos do vosso Google Maps (galettes, milkshake Oreo, mesa de brunch):\n\n  Premium: https://giladmeishar.github.io/cowork-radar/creperia-la-bombarde-porto-20260526-premium.html\n  Simples: https://giladmeishar.github.io/cowork-radar/creperia-la-bombarde-porto-20260526-basic.html\n\nPosso assegurar o domínio creperialabombarde.pt (cerca de 15€/ano) e publicar a versão que escolherem por 180€ — tudo incluído (alojamento primeiro ano, formulário de reservas, ligação ao Instagram).\n\nSe não interessar, basta ignorar este email — só envio uma vez.\n\nBom dia da cozinha,\nGilad",
-        "bodyHebrew": "שלום!\n\nאני גילעד. גיליתי את Creperia La Bombarde ב-Foz do Douro — קרפרי ברטונית קטנה ב-Porto. אין להם אתר משלהם (רק פייסבוק ואינסטגרם). הכנתי שני סקיצות מתוך תמונות הגוגל מאפס שלהם — גאלט עם סלמון מעושן, מילקשייק אוראו, שולחן ברנץ' מעץ.\n\nפרימיום: בעל מצפן מסתובב עם הגלילה, מארקי טקסט, רשת ארבע מנות, רשימה טכנית של 'מספרי הגאלט'.\n\nהצעתי: רכישת דומיין creperialabombarde.pt (~€15) + פרסום (€180).\n\nאם לא רלוונטי — להתעלם, אני שולח רק פעם אחת."
-      },
-      "addedAt": "2026-05-26T13:19:50.075827Z",
-      "status": "site-built",
-      "notes": []
     }
   ],
   "processedNoteDraftIds": [],
