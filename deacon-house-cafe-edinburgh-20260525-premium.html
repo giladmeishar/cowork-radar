@@ -298,4 +298,27 @@
   const tartan = document.getElementById('tartanRule');
   const updateTartan = () => {
     const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
-    const p = Math.
+    const p = Math.min(1, Math.max(0, window.scrollY / max));
+    tartan.style.setProperty('--tartan-fill', (4 + p*96).toFixed(2) + '%');
+    if(p > 0.55) document.body.classList.add('night');
+    else document.body.classList.remove('night');
+  };
+  window.addEventListener('scroll', updateTartan, { passive: true });
+  updateTartan();
+
+  const stage = document.getElementById('heroStage');
+  const wrap = document.getElementById('heroArt');
+  if(stage && wrap && window.matchMedia('(min-width: 981px) and (pointer: fine)').matches){
+    wrap.addEventListener('mousemove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const dx = (e.clientX - r.left)/r.width - .5;
+      const dy = (e.clientY - r.top)/r.height - .5;
+      stage.style.transform = 'rotateY(' + (dx*8) + 'deg) rotateX(' + (-dy*6) + 'deg)';
+    });
+    wrap.addEventListener('mouseleave', () => {
+      stage.style.transform = 'rotateY(0) rotateX(0)';
+    });
+  }
+</script>
+</body>
+</html>
