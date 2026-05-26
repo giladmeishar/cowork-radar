@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T12:00:00Z",
+  "lastScan": "2026-05-26T13:33:50.912008Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -102,17 +102,11 @@
   ],
   "processedNoteDraftIds": [],
   "lastScanReport": {
-    "runId": "e704848c-b446-448b-8228-33fe23bc461a",
-    "completedAt": "2026-05-26T13:19:50.075827Z",
-    "added": [
-      {
-        "id": "creperia-la-bombarde-porto-20260526",
-        "name": "Creperia La Bombarde",
-        "city": "Porto",
-        "premium": "creperia-la-bombarde-porto-20260526-premium.html"
-      }
-    ],
+    "runId": "d65497a0-923f-4dac-9d44-bf10a6daa70c",
+    "completedAt": "2026-05-26T13:33:50.912008Z",
+    "added": [],
     "notesActedOn": [],
-    "emailReplies": []
+    "emailReplies": [],
+    "skipReason": "Discovery gate failed for all candidates: Bar Mleczny Pod Temidą (own website), Milkbar Tomasza (own website), Café du Jura (own website), Antica Rosticceria Catanese 1907 (phone-only, no email in 4 attempts), Crystal Palace pastizzeria (no email), Bar Mleczny Centralny (no email). Honoring rollback pattern — no additions until photo-verification reliability improves."
   }
 }
