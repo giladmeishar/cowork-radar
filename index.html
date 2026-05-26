@@ -98,7 +98,7 @@ dialog button.pr{background:var(--accent);color:#0E1116;border-color:var(--accen
 <body>
 <header><div class="row">
 <h1 id="ht"><span class="dot"></span>Cowork <b>Radar</b></h1>
-<div class="stats"><span>סה״כ: <b id="total">0</b></span><span>·</span><span>סריקה אחרונה: <b id="lst">—</b></span></div>
+<div class="stats"><span id="connStatus" style="display:inline-flex;align-items:center;gap:6px;padding:2px 10px;background:rgba(125,211,192,.10);border:1px solid rgba(125,211,192,.30);border-radius:12px;color:var(--accent);font-size:12px;font-weight:500"><span style="width:7px;height:7px;border-radius:50%;background:currentColor"></span><span id="connText">בודק…</span></span><button id="notifBtn" onclick="reqNotifs(true)" style="display:none;padding:4px 12px;background:rgba(247,178,103,.12);color:var(--amber);border:1px solid rgba(247,178,103,.45);border-radius:12px;font-size:12px;font-weight:500;font-family:inherit;cursor:pointer">🔔 הפעל התראות</button><span>סה״כ: <b id="total">0</b></span><span>·</span><span>סריקה אחרונה: <b id="lst">—</b></span></div>
 </div></header>
 <div class="scan-bar" id="sb"><div class="inner">
 <div class="lbl"><span class="live-dot"></span><span id="sl">סבב הבא בעוד</span></div>
@@ -128,17 +128,25 @@ function sss(s){localStorage.setItem('rss',JSON.stringify(s))}
 function css(){localStorage.removeItem('rss')}
 async function load(){
   try{
+    const prevLastScan = D.lastScan, prevCount = D.businesses.length;
     const r=await fetch("radar-data.json?t="+Date.now());
     const fr=await r.json();
     D=fr;
     const st=gss();
     if(st && D.lastScan && new Date(D.lastScan)>new Date(st.lastScanBefore||0)){
+      // user-triggered scan completed — toast then clear scan state
       const added=D.businesses.length-st.countBefore;
       css();
+      const ni=document.getElementById('noteInflight');if(ni)ni.remove();
       toast(`✓ סריקה הסתיימה. ${added>0?added+' עסקים חדשים נוספו.':'לא נמצאו עסקים חדשים.'}`);
+    } else if (prevLastScan && D.lastScan && new Date(D.lastScan) > new Date(prevLastScan)) {
+      // background cron-driven scan completed while no manual scan state was set
+      const added=D.businesses.length-prevCount;
+      toast(`✓ סריקה אוטומטית הסתיימה. ${added>0?added+' עסקים חדשים נוספו.':'אין עסקים חדשים.'}`);
     }
+    if(D.lastScanReport) processReport(D.lastScanReport);
   }catch(e){if(!D.businesses.length)D={businesses:[],lastScan:null}}
-  ao(); uc(); rcf(); render();
+  ao(); uc(); rcf(); render(); updateConnStatus();
 }
 function uc(){document.getElementById("total").textContent=D.businesses.length;document.getElementById("lst").textContent=D.lastScan?fmtD(D.lastScan):"טרם"}
 function fmtD(s){const d=new Date(s);return d.toLocaleString("he-IL",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}
@@ -158,25 +166,36 @@ function tick(){
     sb.classList.remove("scanning");ht.classList.remove("scanning");
     const last=D.lastScan?new Date(D.lastScan).getTime():Date.now();
     const next=last+SCAN_MS, rem=Math.max(0,next-Date.now());
-    lbl.textContent="סבב הבא בעוד";
-    tm.textContent=fmtM(rem);
-    pb.style.width=Math.min(100,((SCAN_MS-rem)/SCAN_MS)*100)+"%";
+    if(rem<=0){
+      const now=new Date();
+      const nextCron=new Date(now);
+      nextCron.setMinutes(0,0,0);
+      nextCron.setHours(now.getHours()+1);
+      const remCron=Math.max(0,nextCron.getTime()-Date.now());
+      lbl.textContent="הסריקה הבאה (cron) בעוד";
+      tm.textContent=fmtM(remCron);
+      pb.style.width=Math.min(100,((3600000-remCron)/3600000)*100)+"%";
+    } else {
+      lbl.textContent="סבב הבא בעוד";
+      tm.textContent=fmtM(rem);
+      pb.style.width=Math.min(100,((SCAN_MS-rem)/SCAN_MS)*100)+"%";
+    }
     btn.disabled=false;btn.innerHTML='סרוק עכשיו ←';
   }
 }
-async function trig(){
+async function trig(){reqNotifs();
   if(gss()){toast("⚠ סריקה כבר רצה. חכה שתסתיים.");return}
   sss({startedAt:Date.now(),lastScanBefore:D.lastScan,countBefore:D.businesses.length});
   tick();
   let triggered=false;
   if(window.cowork && typeof window.cowork.runScheduledTask==='function'){
-    try{await window.cowork.runScheduledTask(TID);triggered=true;toast("✓ הסוכנים יצאו לדרך. 5-8 דק' לאתרים החדשים. הדף יתעדכן אוטומטית.");}
+    try{await window.cowork.runScheduledTask(TID);triggered=true;toast("✓ הסוכנים יצאו לדרך. 5-8 דק' לאתרים החדשים.");notif("⟳ סריקה התחילה","הסוכן יצא לעבודה — נעדכן כשיש תוצאות","https://giladmeishar.github.io/cowork-radar/");}
     catch(e){console.error(e)}
   }
   if(!triggered){
-    // Fallback for direct GitHub Pages opening (no Cowork host): point user to artifact
-    const ok=confirm("הכפתור עובד רק מתוך אפליקציית Cowork (לא מ-GitHub Pages רגיל).\n\nלפתוח את הדאשבורד ב-Cowork עכשיו?");
-    if(ok)window.open("claude://artifact/cowork-radar","_blank");
+    // FALLBACK: open user's email app with prefilled scan-request email
+    triggerViaMailto({kind:'manual-scan'});
+    toast("✓ פותח את האימייל — לחץ Send והסוכן יתחיל בסריקה הבאה (≤5 דק').");
     css();tick();
   }
 }
@@ -203,7 +222,7 @@ function card(b){
   const emailRow=b.email
     ? `<div>✉ <b>${esc(b.email)}</b></div>`
     : `<div style="color:var(--amber);font-weight:500">✉ אין אימייל ציבורי — טלפון בלבד</div>`;
-  return `<div class="card status-${b.status}"><div class="ch"><div><h3>${esc(b.name)}</h3><div class="sub">${esc(b.type||"")} ${fl} ${esc(b.city)}</div></div><span class="badge ${b.status}">${sl(b.status)}</span></div><div class="ir"><div>📍 <b>${esc(b.address)}</b></div>${b.phone?`<div>📞 <b>${esc(b.phone)}</b></div>`:""}${emailRow}${b.rating?`<div>⭐ <b>${b.rating}</b> (${b.reviewCount||""})</div>`:""}${b.googleMapsUrl?`<div style="margin-left:auto"><a href="${b.googleMapsUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(125,211,192,.12);border:1px solid rgba(125,211,192,.45);border-radius:6px;color:var(--accent);text-decoration:none;font-weight:500;font-size:12.5px;letter-spacing:.04em">🗺 Google Maps ←</a></div>`:""}</div>${b.contactNote?`<div style="padding:10px 20px;background:rgba(247,178,103,.06);border-bottom:1px solid var(--line);font-size:12.5px;color:var(--amber)">ℹ ${esc(b.contactNote)}</div>`:""}<div class="pv"><div class="pp" onclick="window.open('${bh}','_blank')"><span class="tag">קלאסי</span><iframe src="${bh}" loading="lazy" sandbox="allow-same-origin"></iframe><div class="cv"></div></div><div class="pp" onclick="window.open('${ph}','_blank')"><span class="tag">מיוחד</span><iframe src="${ph}" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe><div class="cv"></div></div></div><div class="eb"><label>טיוטת אימייל <span class="lf">${ln}</span></label><input class="es" id="su-${b.id}" value="${esc(b.emailDraft?.subject||"")}" ${phoneOnly?'disabled style="opacity:.5"':''} /><textarea id="bo-${b.id}" ${phoneOnly?'disabled style="opacity:.5"':''}>${esc(b.emailDraft?.body||"")}</textarea>${b.emailDraft?.bodyHebrew?`<div class="he">${esc(b.emailDraft.bodyHebrew)}</div>`:""}</div><div class="ax">${primaryBtn}<button class="btn bf" onclick="of('${b.id}')">הערה</button><button class="btn bt" onclick="tr('${b.id}')" title="לפח">🗑</button></div>${b.notes&&b.notes.length?`<div class="nn"><b>הערות לסוכן:</b>${b.notes.map(n=>`<div>${esc(n.text)} <span style="opacity:.6">— ${fmtD(n.at)}</span></div>`).join("")}</div>`:""}</div>`;
+  return `<div class="card status-${b.status}"><div class="ch"><div><h3>${esc(b.name)}</h3><div class="sub">${esc(b.type||"")} ${fl} ${esc(b.city)}</div></div><span class="badge ${b.status}">${sl(b.status)}</span></div><div class="ir"><div>📍 <b>${esc(b.address)}</b></div>${b.phone?`<div>📞 <b>${esc(b.phone)}</b></div>`:""}${emailRow}${b.rating?`<div>⭐ <b>${b.rating}</b> (${b.reviewCount||""})</div>`:""}${b.googleMapsUrl?`<div style="margin-left:auto"><a href="${b.googleMapsUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(125,211,192,.12);border:1px solid rgba(125,211,192,.45);border-radius:6px;color:var(--accent);text-decoration:none;font-weight:500;font-size:12.5px;letter-spacing:.04em">🗺 Google Maps ←</a></div>`:""}</div>${b.contactNote?`<div style="padding:10px 20px;background:rgba(247,178,103,.06);border-bottom:1px solid var(--line);font-size:12.5px;color:var(--amber)">ℹ ${esc(b.contactNote)}</div>`:""}<div class="pv"><div class="pp" onclick="window.open('${bh}','_blank')"><span class="tag">קלאסי</span><iframe src="${bh}" loading="lazy" sandbox="allow-same-origin"></iframe><div class="cv"></div></div><div class="pp" onclick="window.open('${ph}','_blank')"><span class="tag">מיוחד</span><iframe src="${ph}" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe><div class="cv"></div></div></div><div class="eb"><label>טיוטת אימייל <span class="lf">${ln}</span></label><input class="es" id="su-${b.id}" value="${esc(b.emailDraft?.subject||"")}" ${phoneOnly?'disabled style="opacity:.5"':''} /><textarea id="bo-${b.id}" ${phoneOnly?'disabled style="opacity:.5"':''}>${esc(b.emailDraft?.body||"")}</textarea>${b.emailDraft?.bodyHebrew?`<div class="he">${esc(b.emailDraft.bodyHebrew)}</div>`:""}</div><div class="ax">${primaryBtn}<button class="btn bf" onclick="of('${b.id}')">הערה</button><button class="btn bt" onclick="tr('${b.id}')" title="לפח">🗑</button></div>${b.notes&&b.notes.length?`<div class="nn"><b>הערות לסוכן:</b>${b.notes.map(n=>`<div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0">${n.processedAt?'<span style="color:var(--ok);font-weight:700;min-width:16px" title="טופל '+fmtD(n.processedAt)+'">✓</span>':'<span style="color:var(--amber);min-width:16px" title="ממתין">●</span>'}<div style="flex:1"><div>${esc(n.text)} <span style="opacity:.6;font-size:11px">— ${fmtD(n.at)}</span></div>${n.response?'<div style="opacity:.7;font-size:12px;margin-top:3px;color:var(--ok)">↳ '+esc(n.response)+'</div>':''}</div></div>`).join("")}</div>`:""}</div>`;
 }
 function sl(s){return {pending:"ממתין",sent:"נשלח","draft-created":"טיוטה מוכנה",replied:"השיב ✦",trash:"בפח"}[s]||s}
 function esc(s){return (s||"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
@@ -211,7 +230,7 @@ function se(id){const b=D.businesses.find(x=>x.id===id);if(!b)return;if(!b.email
 function tr(id){const b=D.businesses.find(x=>x.id===id);if(!b)return;b.status=b.status==="trash"?"pending":"trash";b.lastActivity=new Date().toISOString();sar()}
 function of(id){abi=id;const b=D.businesses.find(x=>x.id===id);document.getElementById("fbc").textContent="העסק: "+b.name;document.getElementById("fbt").value="";document.getElementById("fbd").showModal()}
 function cf(){document.getElementById("fbd").close()}
-async function sf(){const t=document.getElementById("fbt").value.trim();if(!t)return;const b=D.businesses.find(x=>x.id===abi);if(!b)return;if(!b.notes)b.notes=[];b.notes.push({text:t,at:new Date().toISOString()});sar();cf();
+async function sf(){reqNotifs();const t=document.getElementById("fbt").value.trim();if(!t)return;const b=D.businesses.find(x=>x.id===abi);if(!b)return;if(!b.notes)b.notes=[];b.notes.push({text:t,at:new Date().toISOString()});sar();cf();
   // Also persist note as a Gmail draft so it's searchable across devices + becomes a permanent record
   if(window.cowork && typeof window.cowork.callMcpTool==='function'){
     try{
@@ -220,15 +239,135 @@ async function sf(){const t=document.getElementById("fbt").value.trim();if(!t)re
         subject:`[Cowork Radar Note] ${b.name}`,
         body:`Business: ${b.name}\nID: ${b.id}\nWhen: ${new Date().toLocaleString('he-IL')}\n\nNote:\n${t}\n\nThe scanner agent will read this on the next run and adjust.`
       });
-      toast("✓ ההערה נשמרה גם ב-Gmail Drafts (גיבוי בין מכשירים).");
-    }catch(e){toast("✓ ההערה נשמרה מקומית. (לא הצלחתי לשמור ב-Gmail: "+e.message+")")}
+      toast("✓ ההערה נשמרה ב-Gmail Drafts. מפעיל את הסוכן עכשיו…");
+    }catch(e){toast("✓ ההערה נשמרה מקומית. (לא הצלחתי לשמור ב-Gmail: "+e.message+")");}
+    // IMMEDIATELY trigger the scan task so the note is processed within minutes, not on the next hourly tick
+    if(typeof window.cowork.runScheduledTask==='function'){
+      try{
+        if(gss()){ toast("⚠ סריקה כבר רצה — ההערה תיקלט בתורה."); }
+        else{
+          sss({startedAt:Date.now(),lastScanBefore:D.lastScan,countBefore:D.businesses.length,trigger:'note:'+b.id});
+          showNoteInflight(b.name, t);
+          tick();
+          await window.cowork.runScheduledTask(TID);
+          toast("✓ הסוכן יצא לעבוד על ההערה. כ-3-6 דק'.");
+        }
+      }catch(e){toast("ההערה נשמרה אבל לא הצלחתי להפעיל סוכן: "+e.message);}
+    }
   } else {
-    toast("✓ ההערה נשמרה מקומית במכשיר הזה. (מ-Cowork Artifact תיגבה גם ב-Gmail.)");
+    // No window.cowork — open email app with prefilled note
+    triggerViaMailto({kind:'note',businessId:b.id,businessName:b.name,text:t});
+    showNoteInflight(b.name, t);
+    toast("✓ פותח את האימייל — לחץ Send והסוכן יקלוט את ההערה בסבב הקרוב (≤5 דק').");
   }
 }
 function sar(){localStorage.setItem("cro",JSON.stringify({o:D.businesses.map(b=>({id:b.id,status:b.status,notes:b.notes,emailDraft:b.emailDraft,lastActivity:b.lastActivity}))}));render()}
 function ao(){try{const o=JSON.parse(localStorage.getItem("cro")||"{}");if(o.o)o.o.forEach(ov=>{const b=D.businesses.find(x=>x.id===ov.id);if(b){if(ov.status)b.status=ov.status;if(ov.notes)b.notes=ov.notes;if(ov.emailDraft)b.emailDraft={...b.emailDraft,...ov.emailDraft};if(ov.lastActivity)b.lastActivity=ov.lastActivity}})}catch{}}
 function toast(m){const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),4500)}
+
+function showNoteInflight(biz, txt){
+  const old=document.getElementById('noteInflight');if(old)old.remove();
+  const b=document.createElement('div');
+  b.id='noteInflight';
+  b.style.cssText="position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(40,55,75,.95);color:var(--text);border:1px solid var(--accent);border-radius:10px;padding:14px 20px;box-shadow:0 12px 30px rgba(0,0,0,.5);z-index:80;max-width:520px;font-size:13px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(6px)";
+  b.innerHTML='<span class="spin" style="display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-top-color:transparent;border-radius:50%;animation:sp .9s linear infinite"></span><span><b style="color:var(--accent)">הסוכן עובד על ההערה ל-'+biz.replace(/[<>]/g,'')+'</b><br><span style="opacity:.7">"'+txt.replace(/[<>]/g,'').slice(0,80)+(txt.length>80?'…':'')+'"</span></span><button onclick="document.getElementById(\'noteInflight\').remove()" style="margin-left:auto;background:transparent;color:var(--mute);border:0;cursor:pointer;font-size:18px">×</button>';
+  document.body.appendChild(b);
+  // auto-dismiss after 10 min in case scan toast doesn't fire
+  setTimeout(()=>{const el=document.getElementById('noteInflight');if(el)el.remove();}, 600000);
+}
+
+function showOpenAppPrompt(){
+  if(document.getElementById('openAppBanner'))return;
+  const b=document.createElement('div');
+  b.id='openAppBanner';
+  b.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:18px 22px;box-shadow:0 12px 40px rgba(0,0,0,.6);z-index:100;max-width:520px;font-size:14px;color:var(--text);display:flex;flex-direction:column;gap:12px";
+  b.innerHTML='<div style="font-weight:600;color:var(--accent)">פתח באפליקציית Cowork כדי לסרוק</div><div style="color:var(--mute);font-size:13px;line-height:1.5">הכפתור עובד רק כשהדאשבורד פתוח באפליקציית Cowork (מחשב או טלפון).</div><div style="display:flex;gap:8px;flex-wrap:wrap"><a href="claude://artifact/cowork-radar" style="background:var(--accent);color:#0E1116;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600">📱 פתח באפליקציית Cowork</a><a href="cowork://artifact/cowork-radar" style="background:var(--s2);color:var(--text);padding:10px 16px;border-radius:8px;text-decoration:none;border:1px solid var(--line)">חלופה (mobile)</a><button onclick="document.getElementById(\'openAppBanner\').remove()" style="background:transparent;color:var(--mute);padding:10px 16px;border-radius:8px;border:1px solid var(--line);cursor:pointer">סגור</button></div>';
+  document.body.appendChild(b);
+}
+
+// Mailto-based trigger — works from ANY browser (no window.cowork needed).
+// Opens the user's email app with a prefilled message they just need to send.
+// The cron task searches the inbox/sent for these subjects and treats them as triggers.
+function triggerViaMailto(payload){
+  const subject = payload.kind==='manual-scan'
+    ? '[Cowork Radar TRIGGER] בקשת סריקה ידנית'
+    : '[Cowork Radar TRIGGER] הערה ל-'+(payload.businessName||'');
+  const lines = ['שלום,',''];
+  if(payload.kind==='manual-scan'){
+    lines.push('הפעלתי סריקה ידנית מהדאשבורד.','הסוכן יקלוט את הבקשה ויתחיל לחפש עסקים חדשים תוך ≤5 דק׳.','');
+  } else {
+    lines.push('כתבתי הערה על '+(payload.businessName||'העסק')+'.','הסוכן יקלוט את ההערה ויפעל לפיה (תיקון תמונה / שכתוב מייל / עיצוב מחדש / וכו׳).','');
+  }
+  lines.push('---');
+  lines.push('Type: '+payload.kind);
+  lines.push('When: '+new Date().toISOString());
+  lines.push('Source: public-dashboard');
+  if(payload.businessId) lines.push('BusinessID: '+payload.businessId);
+  if(payload.text) lines.push('','Note:',payload.text);
+  lines.push('---','','*שלח את האימייל — הסוכן יקלוט תוך ≤5 דק׳ ויסמן ✓ על ההערה בדאשבורד.*');
+  const body = lines.join('\n');
+  const url = 'mailto:kasa38@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  window.location.href = url;
+}
+
+function reqNotifs(explicit){
+  if(!('Notification' in window)){if(explicit)toast("⚠ הדפדפן/האפליקציה לא תומך בהתראות");return false;}
+  const btn=document.getElementById('notifBtn');
+  if(Notification.permission==='granted'){if(btn)btn.style.display='none';return true;}
+  if(Notification.permission==='denied'){
+    if(btn){btn.style.display='inline-flex';btn.textContent='🔕 התראות נחסמו (כנס להגדרות)';btn.style.color='var(--mute)';btn.style.borderColor='var(--line)';}
+    if(explicit)toast("⚠ ההתראות חסומות. שנה בהגדרות הדפדפן/האפליקציה.");
+    return false;
+  }
+  if(btn)btn.style.display='inline-flex';
+  Notification.requestPermission().then(p=>{
+    if(p==='granted'){if(btn)btn.style.display='none';toast("✓ התראות הופעלו — תקבל פוש על: סריקה התחילה, אתר חדש עלה, תגובת אימייל, הערה טופלה.");if(!explicit)return;notif("✓ התראות הופעלו","תוכל לקבל עדכון על כל אירוע ב-Cowork Radar","https://giladmeishar.github.io/cowork-radar/");}
+    else if(p==='denied' && btn){btn.textContent='🔕 התראות נחסמו';btn.style.color='var(--mute)';}
+  });
+  return false;
+}
+function notif(title, body, url){
+  if(!('Notification' in window)||Notification.permission!=='granted')return;
+  try{const n=new Notification(title,{body,tag:'cwr-'+Date.now()});if(url)n.onclick=()=>{window.focus();window.open(url,'_blank');n.close();};}catch(e){console.error('notif failed',e);}
+}
+function processReport(report){
+  if(!report||!report.runId)return;
+  try{
+    const seen=JSON.parse(localStorage.getItem('cwr-seen-reports')||'[]');
+    if(seen.includes(report.runId))return;
+    if(report.added&&report.added.length){
+      const names=report.added.map(b=>b.name).join(', ');
+      notif('✨ '+report.added.length+' אתרים חדשים', names, 'https://giladmeishar.github.io/cowork-radar/');
+    }
+    if(report.notesActedOn&&report.notesActedOn.length){
+      report.notesActedOn.forEach(n=>notif('✏ הערה טופלה: '+(n.business||''), n.summary||'בדוק מה שונה', 'https://giladmeishar.github.io/cowork-radar/'));
+    }
+    if(report.emailReplies&&report.emailReplies.length){
+      report.emailReplies.forEach(r=>notif('✉ תגובה מ-'+(r.from||r.business||''), r.snippet||'יש תגובה חדשה','https://mail.google.com/mail/'));
+    }
+    seen.push(report.runId);
+    localStorage.setItem('cwr-seen-reports',JSON.stringify(seen.slice(-50)));
+  }catch(e){console.error('processReport',e);}
+}
+
+// connection-status reporter — runs on every load() too
+function updateConnStatus(){
+  const el=document.getElementById('connStatus'),txt=document.getElementById('connText');
+  if(!el||!txt) return;
+  if(window.cowork && typeof window.cowork.runScheduledTask==='function'){
+    el.style.background='rgba(136,212,152,.12)';el.style.borderColor='rgba(136,212,152,.40)';el.style.color='var(--ok)';
+    txt.textContent='Cowork app — סריקה מיידית';
+    el.style.cursor='default';el.onclick=null;
+  } else {
+    el.style.background='rgba(123,175,212,.12)';el.style.borderColor='rgba(123,175,212,.40)';el.style.color='var(--info)';
+    txt.textContent='דפדפן — סריקה דרך מייל (≤10 דק׳)';
+    el.style.cursor='pointer';el.title='לחץ לפרטים על איך לפתוח באפליקציה';
+    el.onclick=()=>showOpenAppPrompt();
+  }
+}
+updateConnStatus();
+reqNotifs(false); // show the notif button if permission is default/denied; hide if granted
+
 document.getElementById("snb").onclick=trig;
 document.getElementById("sf").onclick=e=>{const b=e.target.closest("button");if(!b)return;ast=b.dataset.status;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};
 document.getElementById("cf").onclick=e=>{const b=e.target.closest("button");if(!b||!b.dataset.country)return;act=b.dataset.country;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.classList.toggle("active",x===b));render()};
