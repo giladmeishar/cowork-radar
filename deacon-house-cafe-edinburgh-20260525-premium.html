@@ -4,561 +4,187 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Deacon's House Cafe — Brodie's Close, Edinburgh</title>
-<meta name="description" content="A cafe in the very close where Deacon William Brodie lived his double life. Breakfast, scones, Scottish smoked salmon — served on the Royal Mile since long before the postcards.">
+<meta name="description" content="A cafe inside the 17th-century close where Deacon William Brodie lived his double life. Breakfast, scones, organic coffee — on the Royal Mile since long before the postcards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --stone:#2a2e36;
-    --stone-deep:#1a1d24;
+    --stone-deep:#15171c;
     --heather:#7a6a93;
     --whisky:#c8911e;
+    --whisky-bright:#e8a824;
     --parchment:#f4ede0;
-    --parchment-deep:#e8dec7;
+    --parchment-deep:#e2d4b8;
     --flame:#c84a2e;
-    --rule:#3b3f48;
+    --rule:rgba(0,0,0,.08);
     --ink:#11131a;
-    --serif:'Cormorant Garamond', 'EB Garamond', 'Iowan Old Style', Georgia, serif;
-    --sans:'Inter', system-ui, -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --serif:'Cormorant Garamond','EB Garamond','Iowan Old Style',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:var(--serif);
-    background:var(--parchment);
-    color:var(--ink);
-    line-height:1.5;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+  body{font-family:var(--serif);background:var(--parchment);color:var(--ink);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
 
-  /* SCROLL-DRIVEN DAY/NIGHT TRANSITION */
-  .stage{
-    background:linear-gradient(180deg,
-      var(--parchment) 0%,
-      var(--parchment) 22%,
-      var(--parchment-deep) 38%,
-      #6a5b7d 55%,
-      var(--stone) 75%,
-      var(--stone-deep) 100%);
-    min-height:100vh;
-  }
+  .tartan{position:fixed;left:18px;top:0;bottom:0;width:5px;z-index:50;pointer-events:none;
+    background:repeating-linear-gradient(180deg,var(--stone) 0 8px,var(--whisky) 8px 11px,var(--stone) 11px 19px,var(--flame) 19px 22px,var(--heather) 22px 36px);
+    mask-image:linear-gradient(180deg,transparent 0%,#000 4%,#000 var(--tartan-fill,4%),transparent calc(var(--tartan-fill,4%) + .5%));
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 4%,#000 var(--tartan-fill,4%),transparent calc(var(--tartan-fill,4%) + .5%))}
 
-  /* TARTAN RULE — signature motion, fills diagonally as you scroll */
-  .tartan-rule{
-    position:fixed;
-    left:24px;
-    top:0;
-    bottom:0;
-    width:6px;
-    z-index:50;
-    pointer-events:none;
-  }
-  .tartan-rule::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      repeating-linear-gradient(45deg,
-        var(--stone) 0 6px,
-        var(--whisky) 6px 8px,
-        var(--stone) 8px 14px,
-        var(--flame) 14px 16px,
-        var(--heather) 16px 24px);
-    transform-origin:top;
-    transform:scaleY(var(--tartan-fill,0));
-    transition:transform .15s linear;
-  }
-  .tartan-rule::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-left:1px solid rgba(0,0,0,.18);
-    border-right:1px solid rgba(0,0,0,.18);
-  }
+  .gaslamp{position:fixed;top:24px;right:24px;width:42px;height:60px;z-index:55;pointer-events:none;filter:drop-shadow(0 0 10px rgba(232,168,36,.45))}
+  .gaslamp .flame{transform-origin:50% 90%;animation:flicker 3.1s infinite}
+  @keyframes flicker{0%,100%{transform:scale(1);opacity:.95}13%{transform:scale(1.07,.95);opacity:1}26%{transform:scale(.94,1.06);opacity:.88}44%{transform:scale(1.05,.97);opacity:1}62%{transform:scale(.97,1.04);opacity:.91}81%{transform:scale(1.02,.98);opacity:.96}}
 
-  /* CANDLE FLICKER — fixed gaslamp top-right */
-  .gaslamp{
-    position:fixed;
-    top:28px;
-    right:32px;
-    width:48px;
-    height:72px;
-    z-index:60;
-    pointer-events:none;
-  }
-  .gaslamp .flame{
-    transform-origin:50% 90%;
-    animation:flicker 3.2s infinite;
-    filter:drop-shadow(0 0 6px rgba(200,145,30,.7));
-  }
-  .gaslamp .halo{
-    fill:radial-gradient(circle, rgba(200,145,30,.4), transparent);
-    animation:halo-flicker 3.2s infinite;
-  }
-  @keyframes flicker{
-    0%,100%{transform:scaleY(1) scaleX(1);opacity:.95}
-    10%{transform:scaleY(1.04) scaleX(.97);opacity:1}
-    23%{transform:scaleY(.97) scaleX(1.02);opacity:.9}
-    37%{transform:scaleY(1.06) scaleX(.95);opacity:1}
-    52%{transform:scaleY(.96) scaleX(1.01);opacity:.88}
-    71%{transform:scaleY(1.03) scaleX(.98);opacity:.97}
-    85%{transform:scaleY(.98) scaleX(1.03);opacity:.92}
-  }
-  @keyframes halo-flicker{
-    0%,100%{opacity:.55}50%{opacity:.85}
-  }
+  nav.top{position:fixed;top:24px;left:60px;z-index:55;display:flex;gap:22px;align-items:center;font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--stone);transition:color .4s}
+  nav.top .mark{font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:0;text-transform:none;font-weight:600;margin-right:14px;color:var(--ink)}
+  nav.top a{color:inherit;text-decoration:none;opacity:.65;transition:opacity .2s}
+  nav.top a:hover{opacity:1;color:var(--flame)}
+  body.night nav.top,body.night nav.top .mark{color:var(--parchment)}
 
-  /* TOP NAV — minimal */
-  nav{
-    position:fixed;
-    top:24px;
-    left:80px;
-    z-index:55;
-    display:flex;
-    gap:24px;
-    align-items:center;
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    font-weight:500;
-  }
-  nav .mark{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:18px;
-    letter-spacing:0;
-    text-transform:none;
-    font-weight:500;
-    margin-right:18px;
-  }
-  nav a{color:inherit;text-decoration:none;opacity:.7;transition:opacity .25s}
-  nav a:hover{opacity:1}
-  body.night-mode nav, body.night-mode .mark{color:var(--parchment)}
+  .hero{position:relative;padding:130px 56px 80px 56px;display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center;min-height:100vh}
+  .hero-text .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--flame);font-weight:600;margin-bottom:28px}
+  .hero-text h1{font-family:var(--serif);font-weight:500;font-size:clamp(46px,6.5vw,104px);line-height:.94;letter-spacing:-.02em;color:var(--ink);margin-bottom:30px}
+  .hero-text h1 .italic{font-style:italic;font-weight:400;color:var(--heather)}
+  .hero-text h1 .small{display:block;font-size:.52em;font-weight:400;font-style:italic;color:var(--stone);margin-top:6px}
+  .hero-text .lede{font-size:19px;line-height:1.55;max-width:42ch;color:var(--stone);margin-bottom:36px}
+  .hero-text .meta{font-family:var(--sans);font-size:13px;letter-spacing:.04em;color:var(--stone);border-top:1px solid var(--rule);padding-top:22px;max-width:42ch}
+  .hero-text .meta div{margin:5px 0}
+  .hero-text .meta strong{font-weight:600;color:var(--ink)}
 
-  /* HERO — DUAL IDENTITY SPLIT */
-  .hero{
-    min-height:100vh;
-    position:relative;
-    display:grid;
-    grid-template-columns:5fr 7fr;
-    padding:120px 64px 80px 80px;
-    gap:64px;
-    align-items:start;
-  }
-  .hero .label{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.32em;
-    text-transform:uppercase;
-    color:var(--flame);
-    font-weight:600;
-    margin-bottom:32px;
-  }
-  .hero h1{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:clamp(48px,7vw,108px);
-    line-height:.96;
-    letter-spacing:-.02em;
-    color:var(--ink);
-    margin-bottom:36px;
-  }
-  .hero h1 .italic{font-style:italic;font-weight:400;color:var(--heather)}
-  .hero h1 .small{display:block;font-size:.55em;font-weight:400;font-style:italic;color:var(--stone);margin-top:8px}
-  .hero .lede{
-    font-size:20px;
-    line-height:1.5;
-    max-width:38ch;
-    color:var(--stone);
-    margin-bottom:40px;
-  }
-  .hero .meta{
-    font-family:var(--sans);
-    font-size:13px;
-    letter-spacing:.05em;
-    color:var(--stone);
-    border-top:1px solid var(--rule);
-    padding-top:24px;
-    max-width:38ch;
-  }
-  .hero .meta div{margin:6px 0}
-  .hero .meta strong{font-weight:600;color:var(--ink)}
+  .hero-art{position:relative;aspect-ratio:1/1.05;max-height:84vh;perspective:1600px}
+  .hero-stage{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .25s cubic-bezier(.16,.84,.34,1)}
+  .hero-art .frame{position:absolute;overflow:hidden;border-radius:3px;box-shadow:0 30px 60px -22px rgba(0,0,0,.45),0 8px 22px -8px rgba(0,0,0,.22);transform:translateZ(0)}
+  .hero-art .frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,.84,.34,1)}
+  .hero-art .frame:hover img{transform:scale(1.04)}
+  .hero-art .f1{top:0;left:14%;width:78%;height:62%;transform:translateZ(40px)}
+  .hero-art .f2{bottom:0;left:0;width:48%;height:38%;transform:translateZ(70px)}
+  .hero-art .f3{bottom:6%;right:0;width:38%;height:34%;transform:translateZ(20px)}
+  .hero-art .stamp{position:absolute;bottom:8%;left:54%;transform:translateZ(110px) rotate(-6deg);width:114px;height:114px;border:1px solid var(--stone);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--parchment);color:var(--stone);font-family:var(--serif);font-size:10px;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 14px 28px -10px rgba(0,0,0,.35)}
+  .hero-art .stamp .num{display:block;font-size:30px;letter-spacing:0;font-weight:500;font-style:italic;margin:3px 0;text-transform:none}
 
-  /* HERO IMAGE — dish-grid asymmetric */
-  .hero-art{
-    position:relative;
-    min-height:80vh;
-  }
-  .hero-art .frame{
-    position:absolute;
-    overflow:hidden;
-    border-radius:2px;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,.35),0 8px 20px -8px rgba(0,0,0,.2);
-  }
-  .hero-art .frame img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
-  .hero-art .f1{top:0;right:0;width:62%;height:64%}
-  .hero-art .f2{bottom:0;left:0;width:48%;height:42%}
-  .hero-art .f3{bottom:24%;right:8%;width:30%;height:24%}
-  .hero-art .stamp{
-    position:absolute;
-    bottom:6%;
-    left:56%;
-    width:120px;
-    height:120px;
-    border:1px solid var(--stone);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:var(--serif);
-    text-align:center;
-    font-size:11px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    background:var(--parchment);
-    color:var(--stone);
-    box-shadow:0 6px 18px -8px rgba(0,0,0,.3);
-  }
-  .hero-art .stamp span{display:block;line-height:1.3}
-  .hero-art .stamp .num{font-size:28px;letter-spacing:0;font-weight:500;font-style:italic;margin:4px 0}
+  .marquee{background:var(--stone);color:var(--parchment);padding:18px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);position:relative}
+  .marquee-track{display:flex;gap:48px;font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;white-space:nowrap;animation:scrollM 30s linear infinite}
+  .marquee-track .ornament{color:var(--whisky)}
+  @keyframes scrollM{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* DIVIDER — Brodie's quote bridges day & night */
-  .divider{
-    padding:120px 80px;
-    text-align:center;
-    background:linear-gradient(180deg,var(--parchment-deep) 0%,transparent 100%);
-  }
-  .divider blockquote{
-    font-family:var(--serif);
-    font-style:italic;
-    font-weight:400;
-    font-size:clamp(28px,3.4vw,44px);
-    line-height:1.32;
-    color:var(--stone);
-    max-width:18ch;
-    margin:0 auto;
-    position:relative;
-  }
-  .divider blockquote::before, .divider blockquote::after{
-    content:"";
-    display:block;
-    width:48px;
-    height:1px;
-    background:var(--flame);
-    margin:24px auto;
-  }
-  .divider cite{
-    font-family:var(--sans);
-    font-style:normal;
-    font-size:11px;
-    letter-spacing:.24em;
-    text-transform:uppercase;
-    color:var(--flame);
-    font-weight:600;
-    display:block;
-    margin-top:8px;
-  }
+  .divider{padding:120px 64px 100px;text-align:center;background:var(--parchment-deep)}
+  .divider blockquote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,3.4vw,46px);line-height:1.3;color:var(--stone);max-width:22ch;margin:0 auto}
+  .divider blockquote::before,.divider blockquote::after{content:"";display:block;width:48px;height:1px;background:var(--flame);margin:24px auto}
+  .divider cite{font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--flame);font-weight:600;display:block;margin-top:10px}
 
-  /* MENU GRID — featured plates */
-  .plates{
-    padding:80px 80px 120px;
-    display:grid;
-    grid-template-columns:1fr 1.4fr;
-    gap:64px;
-    align-items:start;
-  }
-  .plates .intro{
-    position:sticky;
-    top:120px;
-  }
-  .plates .intro .label{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.32em;
-    text-transform:uppercase;
-    color:var(--heather);
-    font-weight:600;
-    margin-bottom:24px;
-  }
-  .plates .intro h2{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:clamp(40px,4.8vw,68px);
-    line-height:.98;
-    letter-spacing:-.01em;
-    color:var(--parchment);
-    margin-bottom:24px;
-  }
-  .plates .intro h2 .italic{font-style:italic;color:var(--whisky)}
-  .plates .intro p{
-    color:var(--parchment-deep);
-    font-size:18px;
-    line-height:1.55;
-    max-width:34ch;
-  }
-  .plate-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-  }
-  .plate{
-    position:relative;
-    aspect-ratio:4/5;
-    overflow:hidden;
-    border-radius:2px;
-  }
-  .plate:nth-child(odd){transform:translateY(48px)}
-  .plate img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:transform 1.1s cubic-bezier(.16,.84,.34,1);
-  }
+  .plates{padding:100px 56px 130px;display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start;background:linear-gradient(180deg,var(--parchment-deep),#3f3a4a 78%,#252028)}
+  .plates .intro{position:sticky;top:120px}
+  .plates .intro .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--whisky);font-weight:600;margin-bottom:22px}
+  .plates .intro h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.5vw,66px);line-height:1;letter-spacing:-.01em;color:var(--parchment);margin-bottom:24px}
+  .plates .intro h2 .italic{font-style:italic;color:var(--whisky-bright)}
+  .plates .intro p{color:var(--parchment-deep);font-size:18px;line-height:1.6;max-width:36ch}
+  .plate-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .plate{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/5;box-shadow:0 20px 40px -16px rgba(0,0,0,.45)}
+  .plate:nth-child(2){transform:translateY(48px)}
+  .plate:nth-child(3){transform:translateY(-24px)}
+  .plate img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,.84,.34,1)}
   .plate:hover img{transform:scale(1.06)}
-  .plate .name{
-    position:absolute;
-    inset:auto 0 0 0;
-    padding:16px 18px;
-    background:linear-gradient(180deg,transparent,rgba(0,0,0,.78));
-    color:var(--parchment);
-    font-family:var(--serif);
-    font-size:18px;
-    font-weight:500;
-  }
-  .plate .name .price{
-    display:block;
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.18em;
-    color:var(--whisky);
-    font-weight:600;
-    margin-top:4px;
-  }
+  .plate .name{position:absolute;inset:auto 0 0 0;padding:18px 20px 16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.85));color:var(--parchment);font-family:var(--serif);font-size:19px;font-weight:500}
+  .plate .name .price{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.18em;color:var(--whisky-bright);font-weight:600;margin-top:6px;text-transform:uppercase}
 
-  /* NIGHT SECTION — Brodie's story */
-  .story{
-    padding:120px 80px;
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:80px;
-    color:var(--parchment);
-    background:var(--stone-deep);
-    position:relative;
-  }
-  .story::before{
-    content:"1788";
-    position:absolute;
-    top:24px;
-    right:80px;
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:140px;
-    line-height:1;
-    color:rgba(200,145,30,.10);
-    pointer-events:none;
-    font-weight:300;
-  }
-  .story .label{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.32em;
-    text-transform:uppercase;
-    color:var(--whisky);
-    font-weight:600;
-    margin-bottom:32px;
-  }
-  .story h2{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:clamp(40px,5vw,76px);
-    line-height:1;
-    letter-spacing:-.01em;
-    margin-bottom:40px;
-    color:var(--parchment);
-  }
-  .story h2 .italic{font-style:italic;color:var(--whisky)}
-  .story p{
-    font-size:18px;
-    line-height:1.7;
-    color:var(--parchment-deep);
-    max-width:40ch;
-    margin-bottom:20px;
-  }
-  .story .pull{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:26px;
-    line-height:1.4;
-    color:var(--whisky);
-    border-left:2px solid var(--whisky);
-    padding-left:24px;
-    margin:32px 0;
-    max-width:38ch;
-  }
-  .story-art{position:relative}
-  .story-art .frame{
-    position:relative;
-    overflow:hidden;
-    border-radius:2px;
-    box-shadow:0 40px 80px -20px rgba(0,0,0,.6);
-  }
-  .story-art .frame img{width:100%;height:auto;display:block;filter:saturate(.78) contrast(1.08) brightness(.92)}
-  .story-art .caption{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--whisky);
-    margin-top:16px;
-    letter-spacing:.18em;
-  }
+  .story{padding:130px 56px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;color:var(--parchment);background:var(--stone-deep);position:relative;overflow:hidden}
+  .story::before{content:"1788";position:absolute;top:30px;right:80px;font-family:var(--serif);font-style:italic;font-size:clamp(120px,18vw,260px);line-height:1;color:rgba(200,145,30,.06);pointer-events:none;font-weight:300}
+  .story .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--whisky-bright);font-weight:600;margin-bottom:28px}
+  .story h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.8vw,72px);line-height:1;letter-spacing:-.01em;margin-bottom:36px;color:var(--parchment)}
+  .story h2 .italic{font-style:italic;color:var(--whisky-bright)}
+  .story p{font-size:18px;line-height:1.75;color:var(--parchment-deep);max-width:40ch;margin-bottom:20px}
+  .story .pull{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.4;color:var(--whisky-bright);border-left:2px solid var(--whisky);padding-left:24px;margin:36px 0;max-width:36ch}
+  .story-art{position:relative;align-self:start;margin-top:8px}
+  .story-art img{width:100%;border-radius:3px;box-shadow:0 40px 80px -20px rgba(0,0,0,.65);filter:saturate(.82) contrast(1.06)}
+  .story-art .caption{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--whisky-bright);margin-top:14px}
 
-  /* SPEC SHEET — practical */
-  .spec{
-    padding:120px 80px;
-    background:var(--stone);
-    color:var(--parchment);
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    border-top:1px solid var(--rule);
-  }
-  .spec .label{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.32em;
-    text-transform:uppercase;
-    color:var(--whisky);
-    font-weight:600;
-    margin-bottom:24px;
-  }
-  .spec h2{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:clamp(36px,4.2vw,60px);
-    line-height:1;
-    margin-bottom:32px;
-    color:var(--parchment);
-  }
-  .spec h2 .italic{font-style:italic;color:var(--whisky)}
-  .spec dl{
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:20px 40px;
-    font-family:var(--sans);
-    font-size:14px;
-    line-height:1.55;
-  }
-  .spec dt{
-    font-size:11px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--whisky);
-    font-weight:600;
-    align-self:start;
-    padding-top:3px;
-  }
-  .spec dd{color:var(--parchment)}
-  .spec dd a{color:var(--parchment);text-decoration:underline;text-decoration-color:var(--whisky);text-underline-offset:4px}
-  .spec dd a:hover{color:var(--whisky)}
+  .spec{padding:120px 56px;background:var(--stone);color:var(--parchment);display:grid;grid-template-columns:1fr 1fr;gap:64px;border-top:1px solid rgba(255,255,255,.08)}
+  .spec .kicker{font-family:var(--sans);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--whisky-bright);font-weight:600;margin-bottom:22px}
+  .spec h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4vw,60px);line-height:1.02;margin-bottom:28px;color:var(--parchment)}
+  .spec h2 .italic{font-style:italic;color:var(--whisky-bright)}
+  .spec p.intro{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--parchment-deep);max-width:38ch}
+  .spec dl{display:grid;grid-template-columns:auto 1fr;gap:18px 36px;font-family:var(--sans);font-size:14px;line-height:1.55}
+  .spec dt{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--whisky-bright);font-weight:600;padding-top:2px;align-self:start}
+  .spec dd a{color:var(--parchment);text-decoration:underline;text-decoration-color:var(--whisky-bright);text-underline-offset:4px;transition:color .2s}
+  .spec dd a:hover{color:var(--whisky-bright)}
+  .spec .cta{grid-column:1/-1;margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+  .spec .cta a{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:2px;font-family:var(--sans);font-size:13px;letter-spacing:.06em;font-weight:600;text-decoration:none;transition:all .2s}
+  .spec .cta .primary{background:var(--whisky);color:var(--stone-deep)}
+  .spec .cta .primary:hover{background:var(--whisky-bright);transform:translateY(-1px)}
+  .spec .cta .ghost{color:var(--parchment);border:1px solid var(--parchment-deep)}
+  .spec .cta .ghost:hover{background:var(--parchment);color:var(--stone-deep)}
 
-  /* FOOTER — final flourish */
-  footer{
-    padding:80px 80px;
-    background:var(--stone-deep);
-    color:var(--parchment);
-    text-align:center;
-    border-top:1px solid var(--rule);
-  }
-  footer .mark{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:32px;
-    margin-bottom:16px;
-  }
-  footer .colophon{
-    font-family:var(--sans);
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--whisky);
-    margin-bottom:24px;
-  }
-  footer .links{
-    font-family:var(--sans);
-    font-size:13px;
-    color:var(--parchment-deep);
-  }
-  footer .links a{color:var(--whisky);text-decoration:none}
+  footer{padding:80px 56px;background:var(--stone-deep);color:var(--parchment);text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+  footer .mark{font-family:var(--serif);font-style:italic;font-size:30px;margin-bottom:14px}
+  footer .colo{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--whisky-bright);margin-bottom:18px}
+  footer .links{font-family:var(--sans);font-size:13px;color:var(--parchment-deep)}
+  footer .links a{color:var(--whisky-bright);text-decoration:none}
   footer .links a:hover{text-decoration:underline}
 
-  /* REVEAL ANIMATION */
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,.84,.34,1),transform 1s cubic-bezier(.16,.84,.34,1)}
-  .reveal.in{opacity:1;transform:translateY(0)}
+  .ent{animation:entrance .9s cubic-bezier(.16,.84,.34,1) both}
+  .ent.d1{animation-delay:.08s}.ent.d2{animation-delay:.18s}.ent.d3{animation-delay:.28s}
+  @keyframes entrance{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-  /* RESPONSIVE */
-  @media (max-width:900px){
-    nav{left:60px;gap:14px;font-size:10px}
-    .hero{grid-template-columns:1fr;padding:120px 32px 60px 60px;gap:40px}
-    .hero-art{min-height:60vh}
-    .plates,.story,.spec{grid-template-columns:1fr;padding:80px 32px 80px 60px;gap:40px}
+  @media (max-width:980px){
+    nav.top{left:40px;gap:14px;font-size:10px}
+    nav.top .mark{font-size:16px}
+    .hero{grid-template-columns:1fr;padding:104px 28px 60px 40px;gap:40px}
+    .hero-art{aspect-ratio:1/1.1;max-height:none}
+    .plates,.story,.spec{grid-template-columns:1fr;padding:72px 28px 80px 40px;gap:36px}
     .plates .intro{position:static}
-    .plate:nth-child(odd){transform:none}
-    footer{padding:60px 32px}
-    .tartan-rule{left:16px;width:4px}
-    .gaslamp{top:20px;right:20px;width:36px;height:54px}
+    .plate:nth-child(2),.plate:nth-child(3){transform:none}
+    .divider{padding:80px 28px}
+    .marquee-track{font-size:24px;gap:32px}
+    footer{padding:60px 28px}
+    .tartan{left:10px;width:4px}
+    .gaslamp{top:16px;right:14px;width:32px;height:46px}
+  }
+  @media (max-width:520px){
+    .hero-text h1{font-size:42px}
+    .plate-grid{grid-template-columns:1fr;gap:14px}
+    .plate{aspect-ratio:5/4}
+    .story::before{font-size:120px}
   }
 </style>
 </head>
 <body>
-  <div class="tartan-rule" id="tartanRule"></div>
+  <div class="tartan" id="tartanRule"></div>
 
-  <!-- candle gaslamp -->
-  <svg class="gaslamp" viewBox="0 0 48 72" aria-hidden="true">
-    <!-- post -->
-    <rect x="22" y="50" width="4" height="22" fill="#2a2e36"/>
-    <!-- lamp body -->
-    <rect x="14" y="22" width="20" height="28" rx="2" fill="#1a1d24" stroke="#c8911e" stroke-width=".8"/>
-    <rect x="16" y="24" width="16" height="24" fill="rgba(200,145,30,.18)"/>
-    <!-- cap -->
-    <path d="M12,22 L36,22 L34,16 L14,16 Z" fill="#1a1d24" stroke="#c8911e" stroke-width=".8"/>
-    <circle cx="24" cy="14" r="2" fill="#c8911e"/>
-    <!-- flame -->
+  <svg class="gaslamp" viewBox="0 0 42 60" aria-hidden="true">
+    <rect x="19" y="40" width="4" height="20" fill="#15171c"/>
+    <rect x="11" y="16" width="20" height="24" rx="2" fill="#15171c" stroke="#c8911e" stroke-width=".8"/>
+    <rect x="13" y="18" width="16" height="20" fill="rgba(200,145,30,.22)"/>
+    <path d="M9,16 L33,16 L31,10 L11,10 Z" fill="#15171c" stroke="#c8911e" stroke-width=".8"/>
+    <circle cx="21" cy="8" r="1.6" fill="#c8911e"/>
     <g class="flame">
-      <ellipse cx="24" cy="38" rx="4" ry="7" fill="#c8911e"/>
-      <ellipse cx="24" cy="40" rx="2.4" ry="4.6" fill="#fff4d0"/>
-      <ellipse cx="24" cy="42" rx="1.2" ry="2.4" fill="#fff"/>
+      <ellipse cx="21" cy="30" rx="3.6" ry="6.4" fill="#c8911e"/>
+      <ellipse cx="21" cy="32" rx="2.2" ry="4.2" fill="#fff4d0"/>
+      <ellipse cx="21" cy="33.5" rx="1" ry="2" fill="#fff"/>
     </g>
   </svg>
 
-  <nav>
+  <nav class="top">
     <span class="mark">Deacon's</span>
     <a href="#plates">Menu</a>
     <a href="#story">1788</a>
     <a href="#visit">Visit</a>
   </nav>
 
-  <div class="stage">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text reveal in">
-        <div class="label">Brodie's Close · Royal Mile · Edinburgh</div>
-        <h1>A cafe in the close <span class="italic">where the Deacon</span><span class="small">lived both his lives.</span></h1>
-        <p class="lede">Smoked Ayrshire bacon, warm scones with Craigie's jam, organic coffee — served quietly in a 17th-century close just off the Lawnmarket. We open before the tour buses do.</p>
-        <div class="meta">
-          <div><strong>Open</strong> · 09:00 – early afternoon, daily</div>
-          <div><strong>Address</strong> · 3 Brodie's Close, 304 Lawnmarket, Edinburgh EH1 2PS</div>
-          <div><strong>Telephone</strong> · 0131 226 1894</div>
-        </div>
+  <section class="hero">
+    <div class="hero-text">
+      <div class="kicker ent">Brodie's Close · Royal Mile · Edinburgh</div>
+      <h1 class="ent d1">A cafe in the close <span class="italic">where the Deacon</span><span class="small">lived both his lives.</span></h1>
+      <p class="lede ent d2">Smoked Ayrshire bacon, warm scones with Craigie's Farm jam, organic Fairtrade coffee — served quietly in a 17th-century close just off the Lawnmarket. We open before the tour buses do.</p>
+      <div class="meta ent d3">
+        <div><strong>Open</strong> · 09:00 – mid afternoon, daily</div>
+        <div><strong>Address</strong> · 3 Brodie's Close, 304 Lawnmarket, Edinburgh EH1 2PS</div>
+        <div><strong>Telephone</strong> · 0131 226 1894</div>
       </div>
-      <div class="hero-art reveal">
+    </div>
+    <div class="hero-art ent d2" id="heroArt">
+      <div class="hero-stage" id="heroStage">
         <div class="frame f1"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsNso-ExN16nHv_jVbcNhApbKDoMzzOUKrnW42h0yiynXljCA9_bK6sZelGAMF-uxSZTt2v1VPhLwSbVy1B5l-BIgFi4L2eP6C7uP6Qar-ql-hSTssUGY1vrdv0w5ZegIGrG0lcpblbfk=w1200-h1600-k-no" alt="Entrance to Brodie's Close with a Deacon Brodie figure at the gate"></div>
         <div class="frame f2"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHe_6CcnqRRIxbwICjWXENqYrJP9KTSBOc0_EZkWba4boBgONPdBzPStRb64rFLx-UCucsMRDIWrtQX8fvlYZZ36WGQUQcSkx7owPyKY_aWNYNyCG8EunQ5hJGD9fxV23ylaMT09Q=w900-h600-k-no" alt="Cappuccino with latte art on a wooden table"></div>
         <div class="frame f3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjX1wcK4LfppTSayGOylerYfbjgN9o3G3k_to1sBjWZozyMGfMjACMvY43FGYjefJxHmfFI6oqfKl8dadgU-iOXjlhu7_wI78LY2CXi8mcvjI6z7IeVUcNvprmzcYrI5gLZG4z=w600-h400-k-no" alt="Home-made scone with butter and jam"></div>
@@ -570,71 +196,97 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- DIVIDER QUOTE -->
-    <div class="divider reveal">
-      <blockquote>
-        Many a citizen was proud of his close acquaintance with Deacon Brodie.
-        <cite>— Robert Louis Stevenson</cite>
-      </blockquote>
     </div>
+  </section>
 
-    <!-- PLATES SECTION -->
-    <section class="plates" id="plates">
-      <div class="intro reveal">
-        <div class="label">The day side · Breakfast & lunch</div>
-        <h2>Honest cooking, <span class="italic">fresh every morning.</span></h2>
-        <p>Free-range eggs, smoked Ayrshire bacon, warm scones with Craigie's Farm jam, smashed avocado on sourdough, Scottish smoked salmon on artisan farmhouse bread. Coffee is organic and fair-trade.</p>
-      </div>
-      <div class="plate-grid reveal">
-        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnGgj1Hd0sSA2Y7SS_PgfaE4RRcGpsqxCG3srMHFN2hQ0Rk5RUG_omGwWyLVAb5FDS-t1HqrJzjOOkhVc-CG5yMnWPutJMUn-xZ_hfxJuBtxle-Hc2A2niJto5uB7mmGLxWPe4=w800-h1000-k-no" alt="A full Scottish breakfast plate with scrambled eggs, baked beans, sourdough toast and roasted tomato"><figcaption class="name">The Full Deacon<span class="price">eggs · beans · tomato · toast · £10.90</span></figcaption></figure>
-        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjX1wcK4LfppTSayGOylerYfbjgN9o3G3k_to1sBjWZozyMGfMjACMvY43FGYjefJxHmfFI6oqfKl8dadgU-iOXjlhu7_wI78LY2CXi8mcvjI6z7IeVUcNvprmzcYrI5gLZG4z=w800-h1000-k-no" alt="A home-made scone with butter and jam"><figcaption class="name">Home-made scone<span class="price">with butter & Craigie's Farm jam · £3.80</span></figcaption></figure>
-        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoJhyNmmREnauT5hMnANwf1KHD3Ete_utzjZZGIVYeGQcFhRuyuvxcy-QAZnQrBJOWrAxZgdzsgqnDOm6tLse7C4ck04qO4d1b3vD2uCuSUHIkT4Mxo5TV0YD33fdaa5O5Nvt1clTr4lPu=w800-h1000-k-no" alt="Iced lemon tea and a slice of dark chocolate brownie"><figcaption class="name">Iced tea & brownie<span class="price">freshly brewed · home-baked · £4.90</span></figcaption></figure>
-        <figure class="plate"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHp8yeCRRmp6rfcQlJ-6xlNpob7SgJ1T5R9B7fUwn25Wmcq0djtTWKNQXstLzlVPEKRR-nU2dXkSiM6wbVoiRilSCcfurFEf8wups5EkrGhzWmtqOAI1VqBkAnty8_aEhQuOrHa=w800-h1000-k-no" alt="A toasted artisan sandwich on seeded brown bread with crisps and a small slaw of pickled red cabbage"><figcaption class="name">Toasted artisan sandwich<span class="price">seeded brown bread · crisps · slaw · £8.50</span></figcaption></figure>
-      </div>
-    </section>
-
-    <!-- STORY — NIGHT SIDE -->
-    <section class="story" id="story">
-      <div class="story-text reveal">
-        <div class="label">The night side · 1788</div>
-        <h2>Brodie was hanged <span class="italic">on the gallows he designed himself.</span></h2>
-        <p>This is the close where Deacon William Brodie lived: respected city councilor and master cabinet-maker by day, head of a burglary gang by night. He kept a wax impression of every key he could touch.</p>
-        <p class="pull">"He was hanged on a gallows of his own improvement — on the very 1st of October, in the year 1788."</p>
-        <p>Robert Louis Stevenson — who grew up around the corner — used Brodie as the seed for <em>The Strange Case of Dr Jekyll and Mr Hyde</em>. The cafe sits in the very stone close, served by the same staircases.</p>
-      </div>
-      <div class="story-art reveal">
-        <div class="frame"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJyHR9ixVZOFBAQ6s16p1WAeedotcbxjJt8BXee2_zqR-5pymcdbNTD6kV-3JbbQa9atZ9LQoXqFPQyLJs6Y8nQquIHcqjQCp3JzIsc6Y2L8MqGOeLu5Eui0YsJsF11ioIXzig=w1000-h1400-k-no" alt="The outdoor terrace of Deacon's House Cafe in Brodie's Close — stone walls, orange wooden tables, hanging plants"></div>
-        <div class="caption">Brodie's Close · today · the outdoor terrace</div>
-      </div>
-    </section>
-
-    <!-- SPEC SHEET -->
-    <section class="spec" id="visit">
-      <div class="reveal">
-        <div class="label">Practical · The visit</div>
-        <h2>Find us in the <span class="italic">narrow close,</span> just up from the castle.</h2>
-        <p style="font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--parchment-deep);max-width:36ch">
-          Walk down the Royal Mile from Edinburgh Castle. Brodie's Close opens to your right just before the cathedral. Step in. We do not take reservations — you simply arrive.
-        </p>
-      </div>
-      <div class="reveal">
-        <dl>
-          <dt>Address</dt><dd>3 Brodie's Close · 304 Lawnmarket · Edinburgh EH1 2PS</dd>
-          <dt>Hours</dt><dd>09:00 to mid-afternoon, daily</dd>
-          <dt>Telephone</dt><dd><a href="tel:+441312261894">0131 226 1894</a></dd>
-          <dt>Email</dt><dd><a href="mailto:contact@deaconshousecafe.co.uk">contact@deaconshousecafe.co.uk</a></dd>
-          <dt>Style</dt><dd>Sit, breakfast, no need to book · cash & card</dd>
-        </dl>
-      </div>
-    </section>
-
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Free-range eggs</span><span class="ornament">✦</span>
+      <span>Smoked Ayrshire bacon</span><span class="ornament">✦</span>
+      <span>Craigie's Farm jam</span><span class="ornament">✦</span>
+      <span>Organic Fairtrade coffee</span><span class="ornament">✦</span>
+      <span>Pot of Shibui leaf tea</span><span class="ornament">✦</span>
+      <span>Home-made scones</span><span class="ornament">✦</span>
+      <span>Free-range eggs</span><span class="ornament">✦</span>
+      <span>Smoked Ayrshire bacon</span><span class="ornament">✦</span>
+      <span>Craigie's Farm jam</span><span class="ornament">✦</span>
+      <span>Organic Fairtrade coffee</span><span class="ornament">✦</span>
+      <span>Pot of Shibui leaf tea</span><span class="ornament">✦</span>
+      <span>Home-made scones</span><span class="ornament">✦</span>
+    </div>
   </div>
+
+  <div class="divider">
+    <blockquote>
+      Many a citizen was proud of his close acquaintance with Deacon Brodie.
+      <cite>— Robert Louis Stevenson</cite>
+    </blockquote>
+  </div>
+
+  <section class="plates" id="plates">
+    <div class="intro">
+      <div class="kicker">The day side · Breakfast & lunch</div>
+      <h2>Honest cooking, <span class="italic">fresh every morning.</span></h2>
+      <p>No bookings — you simply arrive. Cash & card. Everything from the kitchen is made the morning you eat it.</p>
+    </div>
+    <div class="plate-grid">
+      <figure class="plate">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnGgj1Hd0sSA2Y7SS_PgfaE4RRcGpsqxCG3srMHFN2hQ0Rk5RUG_omGwWyLVAb5FDS-t1HqrJzjOOkhVc-CG5yMnWPutJMUn-xZ_hfxJuBtxle-Hc2A2niJto5uB7mmGLxWPe4=w800-h1000-k-no" alt="A full Scottish breakfast plate with scrambled eggs, baked beans, sourdough toast and roasted tomato">
+        <figcaption class="name">The Full Deacon<span class="price">eggs · beans · tomato · toast · £10.90</span></figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjX1wcK4LfppTSayGOylerYfbjgN9o3G3k_to1sBjWZozyMGfMjACMvY43FGYjefJxHmfFI6oqfKl8dadgU-iOXjlhu7_wI78LY2CXi8mcvjI6z7IeVUcNvprmzcYrI5gLZG4z=w800-h1000-k-no" alt="A home-made scone with butter and jam">
+        <figcaption class="name">Home-made scone<span class="price">butter · Craigie's Farm jam · £3.80</span></figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoJhyNmmREnauT5hMnANwf1KHD3Ete_utzjZZGIVYeGQcFhRuyuvxcy-QAZnQrBJOWrAxZgdzsgqnDOm6tLse7C4ck04qO4d1b3vD2uCuSUHIkT4Mxo5TV0YD33fdaa5O5Nvt1clTr4lPu=w800-h1000-k-no" alt="Iced lemon tea and a slice of dark chocolate brownie">
+        <figcaption class="name">Iced tea & brownie<span class="price">freshly brewed · home-baked · £4.90</span></figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHp8yeCRRmp6rfcQlJ-6xlNpob7SgJ1T5R9B7fUwn25Wmcq0djtTWKNQXstLzlVPEKRR-nU2dXkSiM6wbVoiRilSCcfurFEf8wups5EkrGhzWmtqOAI1VqBkAnty8_aEhQuOrHa=w800-h1000-k-no" alt="A toasted artisan sandwich on seeded brown bread with crisps and a small slaw of pickled red cabbage">
+        <figcaption class="name">Toasted artisan sandwich<span class="price">seeded brown · crisps · slaw · £8.50</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-text">
+      <div class="kicker">The night side · 1788</div>
+      <h2>Brodie was hanged <span class="italic">on the gallows he designed himself.</span></h2>
+      <p>This is the close where Deacon William Brodie lived: respected city councilor and master cabinet-maker by day, head of a burglary gang by night. He kept a wax impression of every key he could touch.</p>
+      <p class="pull">"He was hanged on a gallows of his own improvement — on the very 1st of October, in the year 1788."</p>
+      <p>Robert Louis Stevenson grew up around the corner and used Brodie as the seed for <em>The Strange Case of Dr Jekyll and Mr Hyde</em>. The cafe sits in the very stone close, served by the same narrow staircases.</p>
+    </div>
+    <div class="story-art">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJyHR9ixVZOFBAQ6s16p1WAeedotcbxjJt8BXee2_zqR-5pymcdbNTD6kV-3JbbQa9atZ9LQoXqFPQyLJs6Y8nQquIHcqjQCp3JzIsc6Y2L8MqGOeLu5Eui0YsJsF11ioIXzig=w1000-h1400-k-no" alt="The outdoor terrace of Deacon's House Cafe in Brodie's Close — stone walls, orange wooden tables, hanging plants">
+      <div class="caption">Brodie's Close · today · the outdoor terrace</div>
+    </div>
+  </section>
+
+  <section class="spec" id="visit">
+    <div>
+      <div class="kicker">Practical · The visit</div>
+      <h2>Find us in the <span class="italic">narrow close,</span> just up from the castle.</h2>
+      <p class="intro">Walk down the Royal Mile from Edinburgh Castle. Brodie's Close opens to your right just before the cathedral. Step in. We do not take reservations — you simply arrive.</p>
+    </div>
+    <div>
+      <dl>
+        <dt>Address</dt><dd>3 Brodie's Close · 304 Lawnmarket · Edinburgh EH1 2PS</dd>
+        <dt>Hours</dt><dd>09:00 to mid-afternoon · daily</dd>
+        <dt>Telephone</dt><dd><a href="tel:+441312261894">0131 226 1894</a></dd>
+        <dt>Email</dt><dd><a href="mailto:contact@deaconshousecafe.co.uk">contact@deaconshousecafe.co.uk</a></dd>
+        <dt>Style</dt><dd>Sit, breakfast, no need to book · cash & card</dd>
+      </dl>
+    </div>
+    <div class="cta">
+      <a class="primary" href="mailto:contact@deaconshousecafe.co.uk">Get in touch ↗</a>
+      <a class="ghost" href="https://www.google.com/maps/place/Deacon's+House+Cafe/@55.9492624,-3.1930883,17z" target="_blank" rel="noopener">Open in Maps</a>
+    </div>
+  </section>
 
   <footer>
     <div class="mark">Deacon's House Cafe</div>
-    <div class="colophon">Brodie's Close · 304 Lawnmarket · Edinburgh · since 1788</div>
+    <div class="colo">Brodie's Close · 304 Lawnmarket · Edinburgh · since 1788</div>
     <div class="links">
       <a href="mailto:contact@deaconshousecafe.co.uk">contact@deaconshousecafe.co.uk</a>
       &nbsp;·&nbsp;
@@ -643,20 +295,7 @@
   </footer>
 
 <script>
-  // signature motion 1 — tartan-rule fills as you scroll
   const tartan = document.getElementById('tartanRule');
   const updateTartan = () => {
     const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
-    const p = Math.min(1, Math.max(0, window.scrollY / max));
-    tartan.style.setProperty('--tartan-fill', p.toFixed(3));
-    if(p > 0.55) document.body.classList.add('night-mode');
-    else document.body.classList.remove('night-mode');
-  };
-  window.addEventListener('scroll', updateTartan, { passive: true });
-  updateTartan();
-
-  // signature motion 2 — reveal all immediately (no fragile IntersectionObserver)
-  document.querySelectorAll('.reveal').forEach(r => r.classList.add('in'));
-</script>
-</body>
-</html>
+    const p = Math.
