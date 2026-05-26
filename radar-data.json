@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T12:00:00Z",
+  "lastScan": "2026-05-26T12:30:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -98,6 +98,43 @@
       "status": "draft-created",
       "lastBuilt": "2026-05-25",
       "lastActivity": "2026-05-26T11:27:00Z"
+    },
+    {
+      "id": "le-garet-lyon-20260526",
+      "name": "Le Garet",
+      "country": "FR",
+      "city": "Lyon",
+      "neighborhood": "1er arrondissement, near Place des Terreaux",
+      "type": "bouchon lyonnais",
+      "addedAt": "2026-05-26",
+      "address": "7 rue du Garet, 69001 Lyon, France",
+      "phone": "+33 4 78 28 16 94",
+      "email": null,
+      "contactMethod": "phone",
+      "contactNote": "Pas de courriel public — appeler pour réserver",
+      "contactNoteHe": "אין אימייל ציבורי — להזמין בטלפון",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Garet+Lyon+bouchon",
+      "story": "Bouchon lyonnais ouvert en 1920, fréquenté par Jean Moulin pendant la guerre. Chef Emmanuel Ferra. Cuisine traditionnelle : quenelles de brochet sauce Nantua, andouillette tirée à la ficelle, tête de veau, tablier de sapeur. 40 couverts. Service midi et soir, fermé samedi-dimanche. Réservation par téléphone uniquement.",
+      "design": {
+        "palette": "Cream paper + ink + Beaujolais burgundy + mustard yellow + olive green — palette of a Lyon bouchon checked tablecloth",
+        "layout": "Typography-only (no photos to verify) — centered display Playfair Display hero with laurel SVG, blockquote section, two-column carte with crossed dotted leaders + prices in monospace burgundy, burgundy-deep visit section with mustard CTA, paper-noise SVG overlay across page",
+        "motion": "Subtle entrance rise on hero, paper-noise overlay gives static engraved-print feel"
+      },
+      "photos": [],
+      "photoNote": "No photos used — typography-only site per safer-no-photo policy after 3 photo-attribution failures this week",
+      "sites": {
+        "basic": "le-garet-lyon-20260526-basic.html",
+        "premium": "le-garet-lyon-20260526-premium.html"
+      },
+      "emailDraft": {
+        "language": "fr",
+        "to": null,
+        "note": "Email not available — would need to call to pitch. Skipping cold-email for this business.",
+        "bodyHebrew": "Le Garet — בושון לִיוֹן אותנטי משנת 1920. אין אימייל ציבורי. אם רוצים — להתקשר 04 78 28 16 94."
+      },
+      "notes": [],
+      "status": "phone-only",
+      "lastBuilt": "2026-05-26"
     }
   ],
   "processedNoteDraftIds": [],
