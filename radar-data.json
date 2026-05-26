@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T13:00:00Z",
+  "lastScan": "2026-05-26T13:50:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -113,14 +113,23 @@
       "contactMethod": "phone",
       "contactNote": "Pas de courriel public — appeler pour réserver",
       "contactNoteHe": "אין אימייל ציבורי — להזמין בטלפון",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Garet+Lyon+bouchon",
+      "mapsUrl": "https://www.google.com/maps/place/Le+Garet/@45.7669381,4.8369146,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4eaf917877381:0x8eccccf3603f33ad",
       "story": "Bouchon lyonnais ouvert en 1920, fréquenté par Jean Moulin pendant la guerre. Chef Emmanuel Ferra. Cuisine traditionnelle : quenelles de brochet sauce Nantua, andouillette tirée à la ficelle, tête de veau, tablier de sapeur. 40 couverts. Service midi et soir, fermé samedi-dimanche. Réservation par téléphone uniquement.",
       "design": {
-        "palette": "Cream paper + ink + Beaujolais burgundy + mustard yellow + olive green — palette of a Lyon bouchon checked tablecloth",
-        "layout": "Typography-only (no photos to verify) — centered display Playfair Display hero with laurel SVG, blockquote section, two-column carte with crossed dotted leaders + prices in monospace burgundy, burgundy-deep visit section with mustard CTA, paper-noise SVG overlay across page",
-        "motion": "Subtle entrance rise on hero, paper-noise overlay gives static engraved-print feel"
+        "palette": "Lyon bouchon yellow + ink + Beaujolais burgundy + mustard + olive — palette pulled from the real verified facade photo",
+        "layout": "Full-bleed Ken-Burns hero of the verified yellow facade with 'LE GARET' sign, ribbon of lyonnais specialties, centered histoire section with Jean Moulin reference + pulled quote, 2x2 carte grid with traditional dishes + prices, burgundy-deep visit",
+        "motion": "Slow Ken-Burns zoom on hero, marquee ribbon of dishes, rise-on-load entrance"
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGWegzicS1aGJeVI8s_6SAvfD3XYT0ki2hhMVUMQhvIVuoeoAPmKa4sm3jqS7OOpK-C7OH6bDskS97E3wbN0BG-WLkVJdaMV1g4slRd6vVKKeiC3QensXb_fEO7mXq2429Ltr7WtgahyYly=w1800-h2400-k-no",
+          "type": "exterior",
+          "content": "VERIFIED via screenshot ss_08998aa29 (my own visual check). Shows yellow Lyon bouchon facade with large dark sign 'LE GARET' over the door, oval purple 'BOUCHON LYONNAIS' emblem at top, glass-front with posted menus and posters",
+          "source": "google-maps",
+          "placeId": "0x47f4eaf917877381:0x8eccccf3603f33ad",
+          "verified": "screenshot-ss_08998aa29"
+        }
+      ],
       "photoNote": "No photos used — typography-only site per safer-no-photo policy after 3 photo-attribution failures this week",
       "sites": {
         "basic": "le-garet-lyon-20260526-basic.html",
@@ -134,7 +143,8 @@
       },
       "notes": [],
       "status": "phone-only",
-      "lastBuilt": "2026-05-26"
+      "lastBuilt": "2026-05-26",
+      "placeId": "0x47f4eaf917877381:0x8eccccf3603f33ad"
     },
     {
       "id": "anna-maria-trattoria-bologna-20260526",
