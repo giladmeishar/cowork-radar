@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T13:57:25.217675Z",
+  "lastScan": "2026-05-26T16:27:49.036535Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -102,11 +102,11 @@
   ],
   "processedNoteDraftIds": [],
   "lastScanReport": {
-    "runId": "f6054f65-9bfa-4d84-aa8d-7f44e695f8d4",
-    "completedAt": "2026-05-26T13:57:25.217675Z",
+    "runId": "0b3d637c-b631-4a27-8fef-1586cb15c6e8",
+    "completedAt": "2026-05-26T16:27:49.036535Z",
     "added": [],
     "notesActedOn": [],
     "emailReplies": [],
-    "skipReason": "Continuing rollback pattern (3 prior automated additions rolled back for photo-attribution errors). Search round produced only aggregators/well-established businesses; none passed STRICT gate (no website + verifiable Maps URL + real email in ≤4 attempts). No new outreach replies detected. Awaiting user-driven trigger or Note for next addition."
+    "skipReason": "Heartbeat only. No user triggers, no note drafts, no email replies. Continuing rollback-recovery posture: 3 prior photo-attribution failures triggered cron pause; resuming discovery requires a user-driven trigger email or note. Maintaining single verified business (Deacon House Cafe Edinburgh) as the only entry until user explicitly approves resumption."
   }
 }
