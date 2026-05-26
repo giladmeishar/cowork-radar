@@ -342,11 +342,12 @@ function updateConnStatus(){
   if(!el||!txt) return;
   if(window.cowork && typeof window.cowork.runScheduledTask==='function'){
     el.style.background='rgba(136,212,152,.12)';el.style.borderColor='rgba(136,212,152,.40)';el.style.color='var(--ok)';
-    txt.textContent='מחובר ל-Cowork';
+    txt.textContent='Cowork app — סריקה מיידית';
+    el.style.cursor='default';el.onclick=null;
   } else {
-    el.style.background='rgba(247,178,103,.12)';el.style.borderColor='rgba(247,178,103,.45)';el.style.color='var(--amber)';
-    txt.textContent='לא מחובר — פתח באפליקציית Cowork';
-    el.style.cursor='pointer';
+    el.style.background='rgba(123,175,212,.12)';el.style.borderColor='rgba(123,175,212,.40)';el.style.color='var(--info)';
+    txt.textContent='דפדפן — סריקה דרך מייל (≤10 דק׳)';
+    el.style.cursor='pointer';el.title='לחץ לפרטים על איך לפתוח באפליקציה';
     el.onclick=()=>showOpenAppPrompt();
   }
 }
