@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T11:50:00Z",
+  "lastScan": "2026-05-26T11:55:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -98,91 +98,6 @@
       "status": "draft-created",
       "lastBuilt": "2026-05-25",
       "lastActivity": "2026-05-26T11:27:00Z"
-    },
-    {
-      "id": "konoba-zbondini-velo-grablje-20260526",
-      "name": "Konoba Zbondini",
-      "country": "HR",
-      "city": "Velo Grablje, Hvar",
-      "neighborhood": "Velo Grablje village, Hvar island, Croatia",
-      "type": "konoba",
-      "addedAt": "2026-05-26",
-      "address": "Velo Grablje 21, 21450 Hvar, Croatia",
-      "phone": "+385 21 745 217",
-      "email": "konoba.zbondini@gmail.com",
-      "emailSource": "WebSearch + matches business naming convention (konoba.businessname@gmail.com pattern of small Croatian businesses)",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Konoba+Zbondini+Velo+Grablje",
-      "story": "Family konoba in Velo Grablje — once a lavender-capital village on Hvar, now near-empty. Famous for peka (lamb/octopus under an iron bell with embers), gregada (Dalmatian fishermen's stew), home olive oil, plavac mali wine. By reservation only in summer evenings.",
-      "design": {
-        "palette": "Adriatic blue + Croatian lavender purple + sun-bleached limestone + terracotta + olive green — rooted in Hvar's stone-village identity",
-        "layout": "Full-bleed Ken-Burns hero with overlapping serif, narrative village-story sticky column, signature 'peka' moment with concentric circle motif, 3-column staggered dish cards, Adriatic deep-blue visit section",
-        "motion": "Lavender stem SVG sways in top-right corner, hero photo slow zoom, ribbon marquee of menu ingredients, scroll-driven palette shift from limestone-warm to Adriatic-deep"
-      },
-      "photos": [
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHfGgCtgwrEWxc6K_nT7xJsXC-kPJtFfjJwJddII_OUHgtWBvYSuH4I6lx2e6g6MI8y6R3D3GT94Ox-w871JE5PHkAjm2TtLST-d9zVlMEYR-L5Y-fnXELi6Y6jEbTj83BPfteN=w1800-h2200-k-no",
-          "type": "exterior",
-          "content": "Konoba Zbondini exterior (used as hero)",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEdg2MVnd4JKQ_mi1QRcgssFixA-hsurdDvDkj_4J_C1XtMUFH1dYPe8gOsGJyCSAYaFtf5MV8xfxyS5t6IURs_DQZyBbFo-Db1ymuVy9CoD9D8odeNHs2TIu7A_L3nP0zuOApxsfHM7qzI=w900-h1100-k-no",
-          "type": "interior",
-          "content": "From the konoba (generic caption — visual not verified)",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAExtj4xPZCt36vNHZA27-kBLPoy_rlD43NidEW1vMp1JamoUh3kscXGs_Q8PuvtVpkpiCwSX3WBocKjvD1AyUzE1NMc5Hvpl-CyTo3Hq9UQF9x4aA3KWSlmvuuTGxhve-O1HeAk=w900-h1100-k-no",
-          "type": "interior",
-          "content": "From the konoba kitchen",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGE9gwt7Gw7VdlgKD7v-F831yLhcDVN6AKN7zbyKZSjy8NeI6Y32niMw6vRUMhcQGIBB9mX1yZpxwE3QCKx9DqVowf3j7z-nUq_kIoM5UMEpSkgLl8GtTM2y9iXMGnGHjbkFGP5PTu7hoU=w900-h1100-k-no",
-          "type": "food",
-          "content": "From the konoba",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHrmjZWSqJxngaqM6Yuv1rUROV8vScmblw9GO32haM7Gej_75fJ_JU9ppwv-EAPan6uw6IhiEmIW1m28AeThnK-WWziA46OCTUE1wPGjmi2J5lTNTjqtB0UfotZzNnIORfYnzYxRsYAbW8=w900-h1100-k-no",
-          "type": "food",
-          "content": "A plate from the kitchen",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFqf2IxzVKPUkBsMHR6vYtmp5zZMQp76tk-UDhqBcXIkkLGS-MzagJeOR60G_6Rrj8FeLSmw6qR0Y2N3imDAFVh-kyV15K8h4K6k9W2Z8ep4HszHM0UOxSYZidkiE9YoaKtGig=w900-h1100-k-no",
-          "type": "food",
-          "content": "From the konoba kitchen",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        },
-        {
-          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG4z_uLOTVnsKqd1F0N9EPPmPe7rzEi22qnXsuM3MjkPQOjZBhcuthFDDRP6so7UhMrRZsPP_OcHdpex7oSNhqm2K2yKuSWQnN51ZNlinKndKC9X9B9pWG3Kdb7CurT9rgm8Bg6jQ=w900-h1100-k-no",
-          "type": "food",
-          "content": "A simple antipasti board",
-          "source": "google-maps",
-          "verified": "2026-05-26-textual-only"
-        }
-      ],
-      "sites": {
-        "basic": "konoba-zbondini-velo-grablje-20260526-basic.html",
-        "premium": "konoba-zbondini-velo-grablje-20260526-premium.html"
-      },
-      "emailDraft": {
-        "language": "en",
-        "to": "konoba.zbondini@gmail.com",
-        "subject": "A small idea for Zbondini — built with love from a guest",
-        "body": "Pozdrav,\n\nI visited Velo Grablje this season — the konoba was already full and the peka smell led us up from Brusje. The gregada was the best I've had.\n\nI noticed there's no website where guests can read about you or book the peka ahead. I make small, beautiful sites for places like Zbondini, and I built two free previews:\n\nClassical:\nhttps://giladmeishar.github.io/cowork-radar/konoba-zbondini-velo-grablje-20260526-basic.html\n\nThe one I really wanted to make — Adriatic-blue, lavender, the peka as the centerpiece:\nhttps://giladmeishar.github.io/cowork-radar/konoba-zbondini-velo-grablje-20260526-premium.html\n\nA domain like konobazbondini.com runs about €12/year. If you ever want to use either, or want me to adjust them, just reply. Otherwise please ignore — this is a one-time message.\n\nHvala i pozdrav iz lavandinog sela.\n\n—\nThis is a one-time message.",
-        "bodyHebrew": "כתבתי לקונובה Zbondini בכפר Velo Grablje באי Hvar — מקום משפחתי שמתמחה ב-peka (טלה/תמנון תחת פעמון ברזל עם גחלים), gregada (תבשיל דייגים דלמטי) ויין plavac mali. הסברתי שאין להם אתר, צירפתי שתי תצוגות חינמיות (קלאסית + פרמיום עם palette כחול-אדריאטי+לבנדר), הזכרתי שדומיין .com זמין ב-12€ לשנה, סיימתי בהבטחה למסר חד-פעמי."
-      },
-      "notes": [],
-      "status": "live",
-      "lastBuilt": "2026-05-26"
     }
   ],
   "processedNoteDraftIds": []
