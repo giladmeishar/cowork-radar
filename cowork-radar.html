@@ -290,16 +290,21 @@ function showOpenAppPrompt(){
 // The cron task searches the inbox/sent for these subjects and treats them as triggers.
 function triggerViaMailto(payload){
   const subject = payload.kind==='manual-scan'
-    ? '[Cowork Radar TRIGGER] Manual scan request'
-    : '[Cowork Radar TRIGGER] Note for '+(payload.businessName||'');
-  const lines = [
-    'Type: '+payload.kind,
-    'When: '+new Date().toISOString(),
-    'Source: public-dashboard',
-  ];
+    ? '[Cowork Radar TRIGGER] בקשת סריקה ידנית'
+    : '[Cowork Radar TRIGGER] הערה ל-'+(payload.businessName||'');
+  const lines = ['שלום,',''];
+  if(payload.kind==='manual-scan'){
+    lines.push('הפעלתי סריקה ידנית מהדאשבורד.','הסוכן יקלוט את הבקשה ויתחיל לחפש עסקים חדשים תוך ≤5 דק׳.','');
+  } else {
+    lines.push('כתבתי הערה על '+(payload.businessName||'העסק')+'.','הסוכן יקלוט את ההערה ויפעל לפיה (תיקון תמונה / שכתוב מייל / עיצוב מחדש / וכו׳).','');
+  }
+  lines.push('---');
+  lines.push('Type: '+payload.kind);
+  lines.push('When: '+new Date().toISOString());
+  lines.push('Source: public-dashboard');
   if(payload.businessId) lines.push('BusinessID: '+payload.businessId);
-  if(payload.text) lines.push('','Note:','', payload.text);
-  lines.push('','— Cowork Radar (please send this email; the scanner will pick it up on the next run, ≤10 min)');
+  if(payload.text) lines.push('','Note:',payload.text);
+  lines.push('---','','*שלח את האימייל — הסוכן יקלוט תוך ≤5 דק׳ ויסמן ✓ על ההערה בדאשבורד.*');
   const body = lines.join('\n');
   const url = 'mailto:kasa38@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   window.location.href = url;
