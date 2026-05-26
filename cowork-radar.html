@@ -193,8 +193,9 @@ async function trig(){reqNotifs();
     catch(e){console.error(e)}
   }
   if(!triggered){
-    // Fallback for public site (no window.cowork): show persistent open-app prompt
-    showOpenAppPrompt();
+    // FALLBACK: open user's email app with prefilled scan-request email
+    triggerViaMailto({kind:'manual-scan'});
+    toast("✓ פותח את האימייל — לחץ Send והסוכן יתחיל בסריקה הבאה (≤10 דק').");
     css();tick();
   }
 }
@@ -254,8 +255,10 @@ async function sf(){reqNotifs();const t=document.getElementById("fbt").value.tri
       }catch(e){toast("ההערה נשמרה אבל לא הצלחתי להפעיל סוכן: "+e.message);}
     }
   } else {
-    toast("⚠ ההערה לא נשלחה לסוכן — תפתח את הדאשבורד באפליקציית Cowork ושלח שוב.");
-    showOpenAppPrompt();
+    // No window.cowork — open email app with prefilled note
+    triggerViaMailto({kind:'note',businessId:b.id,businessName:b.name,text:t});
+    showNoteInflight(b.name, t);
+    toast("✓ פותח את האימייל — לחץ Send והסוכן יקלוט את ההערה בסבב הקרוב (≤10 דק').");
   }
 }
 function sar(){localStorage.setItem("cro",JSON.stringify({o:D.businesses.map(b=>({id:b.id,status:b.status,notes:b.notes,emailDraft:b.emailDraft,lastActivity:b.lastActivity}))}));render()}
@@ -280,6 +283,26 @@ function showOpenAppPrompt(){
   b.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:18px 22px;box-shadow:0 12px 40px rgba(0,0,0,.6);z-index:100;max-width:520px;font-size:14px;color:var(--text);display:flex;flex-direction:column;gap:12px";
   b.innerHTML='<div style="font-weight:600;color:var(--accent)">פתח באפליקציית Cowork כדי לסרוק</div><div style="color:var(--mute);font-size:13px;line-height:1.5">הכפתור עובד רק כשהדאשבורד פתוח באפליקציית Cowork (מחשב או טלפון).</div><div style="display:flex;gap:8px;flex-wrap:wrap"><a href="claude://artifact/cowork-radar" style="background:var(--accent);color:#0E1116;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600">📱 פתח באפליקציית Cowork</a><a href="cowork://artifact/cowork-radar" style="background:var(--s2);color:var(--text);padding:10px 16px;border-radius:8px;text-decoration:none;border:1px solid var(--line)">חלופה (mobile)</a><button onclick="document.getElementById(\'openAppBanner\').remove()" style="background:transparent;color:var(--mute);padding:10px 16px;border-radius:8px;border:1px solid var(--line);cursor:pointer">סגור</button></div>';
   document.body.appendChild(b);
+}
+
+// Mailto-based trigger — works from ANY browser (no window.cowork needed).
+// Opens the user's email app with a prefilled message they just need to send.
+// The cron task searches the inbox/sent for these subjects and treats them as triggers.
+function triggerViaMailto(payload){
+  const subject = payload.kind==='manual-scan'
+    ? '[Cowork Radar TRIGGER] Manual scan request'
+    : '[Cowork Radar TRIGGER] Note for '+(payload.businessName||'');
+  const lines = [
+    'Type: '+payload.kind,
+    'When: '+new Date().toISOString(),
+    'Source: public-dashboard',
+  ];
+  if(payload.businessId) lines.push('BusinessID: '+payload.businessId);
+  if(payload.text) lines.push('','Note:','', payload.text);
+  lines.push('','— Cowork Radar (please send this email; the scanner will pick it up on the next run, ≤10 min)');
+  const body = lines.join('\n');
+  const url = 'mailto:kasa38@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  window.location.href = url;
 }
 
 function reqNotifs(){
