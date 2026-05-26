@@ -137,6 +137,7 @@ async function load(){
       // user-triggered scan completed — toast then clear scan state
       const added=D.businesses.length-st.countBefore;
       css();
+      const ni=document.getElementById('noteInflight');if(ni)ni.remove();
       toast(`✓ סריקה הסתיימה. ${added>0?added+' עסקים חדשים נוספו.':'לא נמצאו עסקים חדשים.'}`);
     } else if (prevLastScan && D.lastScan && new Date(D.lastScan) > new Date(prevLastScan)) {
       // background cron-driven scan completed while no manual scan state was set
@@ -245,6 +246,7 @@ async function sf(){reqNotifs();const t=document.getElementById("fbt").value.tri
         if(gss()){ toast("⚠ סריקה כבר רצה — ההערה תיקלט בתורה."); }
         else{
           sss({startedAt:Date.now(),lastScanBefore:D.lastScan,countBefore:D.businesses.length,trigger:'note:'+b.id});
+          showNoteInflight(b.name, t);
           tick();
           await window.cowork.runScheduledTask(TID);
           toast("✓ הסוכן יצא לעבוד על ההערה. כ-3-6 דק'.");
@@ -252,12 +254,24 @@ async function sf(){reqNotifs();const t=document.getElementById("fbt").value.tri
       }catch(e){toast("ההערה נשמרה אבל לא הצלחתי להפעיל סוכן: "+e.message);}
     }
   } else {
-    toast("✓ ההערה נשמרה מקומית במכשיר הזה. (מ-Cowork Artifact תיגבה גם ב-Gmail וגם תפעיל את הסוכן.)");
+    toast("⚠ ההערה לא נשלחה לסוכן — תפתח את הדאשבורד באפליקציית Cowork ושלח שוב.");
+    showOpenAppPrompt();
   }
 }
 function sar(){localStorage.setItem("cro",JSON.stringify({o:D.businesses.map(b=>({id:b.id,status:b.status,notes:b.notes,emailDraft:b.emailDraft,lastActivity:b.lastActivity}))}));render()}
 function ao(){try{const o=JSON.parse(localStorage.getItem("cro")||"{}");if(o.o)o.o.forEach(ov=>{const b=D.businesses.find(x=>x.id===ov.id);if(b){if(ov.status)b.status=ov.status;if(ov.notes)b.notes=ov.notes;if(ov.emailDraft)b.emailDraft={...b.emailDraft,...ov.emailDraft};if(ov.lastActivity)b.lastActivity=ov.lastActivity}})}catch{}}
 function toast(m){const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),4500)}
+
+function showNoteInflight(biz, txt){
+  const old=document.getElementById('noteInflight');if(old)old.remove();
+  const b=document.createElement('div');
+  b.id='noteInflight';
+  b.style.cssText="position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(40,55,75,.95);color:var(--text);border:1px solid var(--accent);border-radius:10px;padding:14px 20px;box-shadow:0 12px 30px rgba(0,0,0,.5);z-index:80;max-width:520px;font-size:13px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(6px)";
+  b.innerHTML='<span class="spin" style="display:inline-block;width:14px;height:14px;border:2px solid var(--accent);border-top-color:transparent;border-radius:50%;animation:sp .9s linear infinite"></span><span><b style="color:var(--accent)">הסוכן עובד על ההערה ל-'+biz.replace(/[<>]/g,'')+'</b><br><span style="opacity:.7">"'+txt.replace(/[<>]/g,'').slice(0,80)+(txt.length>80?'…':'')+'"</span></span><button onclick="document.getElementById(\'noteInflight\').remove()" style="margin-left:auto;background:transparent;color:var(--mute);border:0;cursor:pointer;font-size:18px">×</button>';
+  document.body.appendChild(b);
+  // auto-dismiss after 10 min in case scan toast doesn't fire
+  setTimeout(()=>{const el=document.getElementById('noteInflight');if(el)el.remove();}, 600000);
+}
 
 function showOpenAppPrompt(){
   if(document.getElementById('openAppBanner'))return;
