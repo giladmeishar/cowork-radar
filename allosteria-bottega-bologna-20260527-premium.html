@@ -50,6 +50,17 @@
   .hero .meta span{display:inline-flex;align-items:center;gap:8px}
   .hero .meta .dot{width:5px;height:5px;border-radius:50%;background:var(--tomato-l)}
 
+  /* PHOTO STRIP */
+  .strip{padding:80px 36px 40px;background:var(--ivory);text-align:center}
+  .strip-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+  .strip-grid figure{margin:0;background:#000;overflow:hidden;border-radius:1px;box-shadow:0 24px 50px -28px rgba(28,22,17,.45);position:relative}
+  .strip-grid figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;transition:transform 1.3s cubic-bezier(.16,.84,.34,1)}
+  .strip-grid figure:hover img{transform:scale(1.05)}
+  .strip-grid figure:nth-child(2){transform:translateY(36px)}
+  .strip-grid figcaption{position:absolute;bottom:14px;left:18px;font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ivory);background:rgba(15,42,32,.65);padding:6px 10px;backdrop-filter:blur(4px)}
+
+  @media (max-width:880px){.strip-grid{grid-template-columns:1fr;gap:14px}.strip-grid figure:nth-child(2){transform:none}}
+
   /* RIBBON */
   .ribbon{background:var(--emerald-d);color:var(--ivory);padding:22px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
   .ribbon-row{display:flex;gap:60px;white-space:nowrap;font-family:var(--display);font-style:italic;font-size:32px;font-weight:400;animation:marq 38s linear infinite}
@@ -162,6 +173,14 @@
     <span>parmigiano reggiano 36 mesi</span><span class="b">·</span>
   </div>
 </div>
+
+<section class="strip">
+  <div class="strip-grid">
+    <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWsdQLKks5dMIdYHbLbBu3q2zSW8QwLUqpOelXxgZZF0Ob_dsl4h2BvqLckhG6ZXBlnvF2gbY1EUkCo7UqaWaEWxMZCCijKHf7QWY=w900-h1100-k-no" alt="From All'Osteria Bottega"><figcaption>Dalla bottega</figcaption></figure>
+    <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbU8ncxOeu3r21CGyTxW5bWMNeDrs2qEVdG2BL6A-GxcCnCcnhO1K8N4fmDcEL6um6hQDoRBkGoEwXTI6la1kKdpoO-7wthM-mjch=w900-h1100-k-no" alt="From All'Osteria Bottega"><figcaption>Nel locale</figcaption></figure>
+    <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGNyAapNhKEwLy5f9Zk3SZhXvoCSSrsbwerkhdDpenLkWPNy5HqEA58IVS_RHjYdy7audjPta0umfDWPHn7CyonNC_FOuo32n8snmb=w900-h1100-k-no" alt="From All'Osteria Bottega"><figcaption>La cucina</figcaption></figure>
+  </div>
+</section>
 
 <section class="storia" id="storia">
   <div class="storia-wrap">

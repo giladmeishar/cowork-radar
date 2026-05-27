@@ -174,6 +174,30 @@
           "source": "google-maps",
           "placeId": "0x477fd4ed23ca080d:0x866b63c0c16946e8",
           "verified": "screenshot-ss_82879fz3q"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWsdQLKks5dMIdYHbLbBu3q2zSW8QwLUqpOelXxgZZF0Ob_dsl4h2BvqLckhG6ZXBlnvF2gbY1EUkCo7UqaWaEWxMZCCijKHf7QWY=w900-h1100-k-no",
+          "type": "unknown",
+          "content": "From All'Osteria Bottega place_id panel — generic caption 'Dalla bottega' used to avoid mis-attribution",
+          "source": "google-maps",
+          "placeId": "0x477fd4ed23ca080d:0x866b63c0c16946e8",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbU8ncxOeu3r21CGyTxW5bWMNeDrs2qEVdG2BL6A-GxcCnCcnhO1K8N4fmDcEL6um6hQDoRBkGoEwXTI6la1kKdpoO-7wthM-mjch=w900-h1100-k-no",
+          "type": "unknown",
+          "content": "From place_id panel — generic 'Nel locale'",
+          "source": "google-maps",
+          "placeId": "0x477fd4ed23ca080d:0x866b63c0c16946e8",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGNyAapNhKEwLy5f9Zk3SZhXvoCSSrsbwerkhdDpenLkWPNy5HqEA58IVS_RHjYdy7audjPta0umfDWPHn7CyonNC_FOuo32n8snmb=w900-h1100-k-no",
+          "type": "unknown",
+          "content": "From place_id panel — generic 'La cucina'",
+          "source": "google-maps",
+          "placeId": "0x477fd4ed23ca080d:0x866b63c0c16946e8",
+          "verified": "place_id-panel-direct-extraction"
         }
       ],
       "sites": {
