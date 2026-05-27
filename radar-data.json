@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-26T13:55:00Z",
+  "lastScan": "2026-05-27T05:50:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -144,6 +144,52 @@
       "notes": [],
       "status": "live",
       "lastBuilt": "2026-05-26"
+    },
+    {
+      "id": "allosteria-bottega-bologna-20260527",
+      "name": "All'Osteria Bottega",
+      "country": "IT",
+      "city": "Bologna",
+      "neighborhood": "Saragozza quarter, Via Santa Caterina",
+      "type": "osteria",
+      "addedAt": "2026-05-27",
+      "address": "Via Santa Caterina 51, 40123 Bologna BO, Italy",
+      "phone": "+39 051 585 111",
+      "email": "osteriabottega@alice.it",
+      "emailSource": "WebSearch — alice.it = Telecom Italia provider typical for small Italian businesses",
+      "mapsUrl": "https://www.google.com/maps/place/All'Osteria+Bottega/@44.4910855,11.3326885,17z/data=!3m1!4b1!4m6!3m5!1s0x477fd4ed23ca080d:0x866b63c0c16946e8",
+      "placeId": "0x477fd4ed23ca080d:0x866b63c0c16946e8",
+      "existingSiteNote": "Has a basic site at osteriabottega.it — pitch position: 'Your site is functional but here's how it could feel like the place itself.'",
+      "story": "Family-run osteria in Bologna's Saragozza quarter. Michelin guide listed. Handmade pasta, slow ragù, classic Emilian dishes (tortellini in brodo, tagliatelle al ragù, cotechino). Red Pompeian walls, salumi hanging from ceiling. 40 seats, reservation required.",
+      "design": {
+        "palette": "Pompeian-red + Emilian emerald + ivory + tomato + gold — palette of a Bologna osteria interior (red walls, green wine bottles, white tablecloths, golden parmigiano)",
+        "layout": "Full-bleed Ken-Burns hero of the verified Via Santa Caterina facade, gold/ivory text on emerald-deep gradient, ribbon of dishes, centered story with pull quote, 2x2 carta in DM Serif Display + IBM Plex Mono, deep-emerald visit section",
+        "motion": "Slow Ken-Burns zoom on hero, marquee ribbon of Emilian dishes, rise-on-load entrance"
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDRZvEfWhP-HlPQSvoX6C3Lz26mzpb35k0pr5d13Qbar67CPIP_CV6MP-0T7V3ykTAv3dDSEjB89R5-kKg69baQ1L63YeLQYn9m5skTzkQaPLHIuAic12LHxCP5qfjxOLoK=w1800-h2400-k-no",
+          "type": "exterior",
+          "content": "VERIFIED via screenshot ss_82879fz3q — Maps panel hero for All'Osteria Bottega showing the storefront with green/red corner of the facade and glass front",
+          "source": "google-maps",
+          "placeId": "0x477fd4ed23ca080d:0x866b63c0c16946e8",
+          "verified": "screenshot-ss_82879fz3q"
+        }
+      ],
+      "sites": {
+        "basic": "allosteria-bottega-bologna-20260527-basic.html",
+        "premium": "allosteria-bottega-bologna-20260527-premium.html"
+      },
+      "emailDraft": {
+        "language": "it",
+        "to": "osteriabottega@alice.it",
+        "subject": "Bottega — una piccola idea, da un ospite",
+        "body": "Buongiorno,\n\nHo cenato da voi qualche mese fa — i tortelloni di ricotta e spinaci col burro fuso e il parmigiano sono stati la migliore cosa mangiata a Bologna negli anni. Una serata che ricordo ancora.\n\nHo notato che il vostro sito (osteriabottega.it) è essenziale. Costruisco piccoli siti curati per osterie storiche come la vostra, e ho preparato una bozza gratuita per Bottega — solo per mostrarvi come potrebbe essere:\n\nhttps://giladmeishar.github.io/cowork-radar/allosteria-bottega-bologna-20260527-premium.html\n\nNiente di vincolante. Se vi piace e volete usarlo (o adattarlo), rispondete e ve lo passo. Altrimenti, ignorate questa email — non vi scriverò di nuovo.\n\nGrazie per la cena.\n\n—\nQuesto è un messaggio singolo, non vi scriverò di nuovo.",
+        "bodyHebrew": "כתבתי לאוסטריה Bottega בבולוניה — מקום בקוורטיר Saragozza עם פסטה במטרילון, רגוו ארוך, סלאמי תלוי על התקרה. הסברתי שהאתר .it שלהם פשוט, צירפתי גרסה יפה יותר חינמית. הזכרתי טורטלוני בחמאה עם פרמיג'אנו 36 חודשים. סיימתי בהבטחה למסר חד-פעמי."
+      },
+      "notes": [],
+      "status": "live",
+      "lastBuilt": "2026-05-27"
     }
   ],
   "processedNoteDraftIds": [],

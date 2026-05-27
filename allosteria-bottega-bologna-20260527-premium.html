@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All'Osteria Bottega — Bologna</title>
+<meta name="description" content="Osteria storica nel quartiere Saragozza — pasta tirata a mano, salumi del territorio, ricette delle nonne. Via Santa Caterina 51, Bologna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#f5efe2;
+    --ivory-2:#ebe3d0;
+    --ink:#1c1611;
+    --ink-2:#5a4d40;
+    --emerald:#1f4d3a;
+    --emerald-d:#0f2a20;
+    --tomato:#a83729;
+    --tomato-l:#c64a36;
+    --gold:#c89d3c;
+    --rule:rgba(28,22,17,.15);
+    --display:'DM Serif Display','Iowan Old Style',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ivory);font-weight:500;mix-blend-mode:difference}
+  .topbar .mark{font-family:var(--display);font-style:italic;font-size:24px;letter-spacing:-.01em;text-transform:none;font-weight:400;color:var(--ivory)}
+  .topbar nav{display:flex;gap:26px}
+  .topbar a{color:inherit;text-decoration:none;opacity:.78;transition:opacity .2s}
+  .topbar a:hover{opacity:1}
+
+  /* HERO — verified facade */
+  .hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:flex-end;padding:0}
+  .hero .bg{position:absolute;inset:0;background-image:url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDRZvEfWhP-HlPQSvoX6C3Lz26mzpb35k0pr5d13Qbar67CPIP_CV6MP-0T7V3ykTAv3dDSEjB89R5-kKg69baQ1L63YeLQYn9m5skTzkQaPLHIuAic12LHxCP5qfjxOLoK=w1800-h2400-k-no");background-size:cover;background-position:center 38%;animation:zoom 26s ease-in-out infinite alternate;filter:saturate(1.05) contrast(1.04)}
+  @keyframes zoom{from{transform:scale(1.05)}to{transform:scale(1.14)}}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,32,.32) 0%,rgba(15,42,32,.06) 30%,rgba(15,42,32,.78) 88%,var(--emerald-d) 100%);pointer-events:none}
+  .hero-inner{position:relative;z-index:2;width:100%;max-width:1280px;margin:0 auto;padding:0 36px 82px;color:var(--ivory)}
+  .hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:26px;display:flex;align-items:center;gap:14px}
+  .hero .kicker::before{content:"";width:36px;height:1px;background:var(--gold)}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(62px,11vw,184px);line-height:.88;letter-spacing:-.025em;color:var(--ivory);text-shadow:0 4px 30px rgba(15,42,32,.5);margin-bottom:16px}
+  .hero h1 .italic{font-style:italic;color:var(--gold)}
+  .hero .sub{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.7vw,36px);color:var(--ivory-2);text-shadow:0 2px 16px rgba(15,42,32,.6);max-width:36ch;line-height:1.32;margin-top:16px;margin-bottom:44px;font-weight:400}
+  .hero .meta{display:flex;gap:28px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--gold);flex-wrap:wrap;text-shadow:0 1px 8px rgba(15,42,32,.6)}
+  .hero .meta span{display:inline-flex;align-items:center;gap:8px}
+  .hero .meta .dot{width:5px;height:5px;border-radius:50%;background:var(--tomato-l)}
+
+  /* RIBBON */
+  .ribbon{background:var(--emerald-d);color:var(--ivory);padding:22px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+  .ribbon-row{display:flex;gap:60px;white-space:nowrap;font-family:var(--display);font-style:italic;font-size:32px;font-weight:400;animation:marq 38s linear infinite}
+  .ribbon-row .b{color:var(--gold);font-style:normal;font-family:var(--mono);font-size:14px;letter-spacing:.3em}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* STORIA */
+  .storia{padding:130px 36px;background:var(--ivory);text-align:center;border-bottom:1px solid var(--rule)}
+  .storia-wrap{max-width:860px;margin:0 auto}
+  .storia .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--tomato);font-weight:500;margin-bottom:24px}
+  .storia h2{font-family:var(--display);font-weight:400;font-size:clamp(42px,5.6vw,86px);line-height:.98;color:var(--ink);margin-bottom:28px;letter-spacing:-.015em}
+  .storia h2 .italic{font-style:italic;color:var(--emerald)}
+  .storia p{font-size:18px;line-height:1.7;color:var(--ink-2);max-width:46ch;margin:0 auto 18px}
+  .storia .pull{font-family:var(--display);font-style:italic;font-size:26px;color:var(--ink);max-width:32ch;margin:36px auto 0;line-height:1.4;border-top:1px solid var(--emerald);padding-top:28px}
+
+  /* CARTA */
+  .carta{padding:130px 36px;background:var(--ivory-2);border-bottom:1px solid var(--rule)}
+  .carta-wrap{max-width:1080px;margin:0 auto}
+  .carta .head{text-align:center;margin-bottom:60px}
+  .carta .head .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--emerald);font-weight:500;margin-bottom:18px}
+  .carta h2{font-family:var(--display);font-weight:400;font-size:clamp(54px,8vw,112px);line-height:.92;color:var(--ink);letter-spacing:-.02em}
+  .carta h2 .italic{font-style:italic;color:var(--tomato)}
+  .carta-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .section h3{font-family:var(--display);font-weight:400;font-size:30px;color:var(--emerald);margin-bottom:18px;letter-spacing:-.005em;border-bottom:1px solid var(--emerald);padding-bottom:12px}
+  .section ul{list-style:none;padding:0}
+  .section li{padding:14px 0;border-bottom:1px dotted var(--rule);display:flex;justify-content:space-between;gap:18px;align-items:baseline}
+  .section li:last-child{border-bottom:0}
+  .dish{font-family:var(--display);font-size:19px;font-weight:400;color:var(--ink);line-height:1.3}
+  .dish .desc{display:block;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--ink-2);margin-top:4px;font-style:italic}
+  .price{font-family:var(--mono);font-size:13px;color:var(--tomato);font-weight:500;white-space:nowrap}
+
+  /* VISIT */
+  .visit{padding:140px 36px;background:var(--emerald-d);color:var(--ivory)}
+  .visit-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+  .visit .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:24px}
+  .visit h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,5.6vw,86px);line-height:.96;color:var(--ivory);margin-bottom:28px;letter-spacing:-.02em}
+  .visit h2 .italic{font-style:italic;color:var(--gold)}
+  .visit p{font-size:17px;line-height:1.75;color:rgba(245,239,226,.86);max-width:38ch;margin-bottom:18px}
+  .visit dl{display:grid;grid-template-columns:1fr;gap:0;margin-top:10px}
+  .visit dt{font-family:var(--mono);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:500;padding-top:22px;border-top:1px solid rgba(245,239,226,.14)}
+  .visit dt:first-of-type{border-top:0;padding-top:0}
+  .visit dd{font-family:var(--display);font-size:22px;line-height:1.3;color:var(--ivory);font-weight:400;padding:8px 0 22px}
+  .visit dd a{color:var(--ivory);text-decoration:none;border-bottom:1px solid var(--gold);transition:color .2s}
+  .visit dd a:hover{color:var(--gold)}
+  .visit .cta{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+  .visit .cta a{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;transition:all .25s;border-radius:1px}
+  .visit .cta .primary{background:var(--tomato);color:var(--ivory)}
+  .visit .cta .primary:hover{background:var(--gold);color:var(--emerald-d);transform:translateY(-2px)}
+  .visit .cta .ghost{color:var(--ivory);border:1px solid rgba(245,239,226,.4)}
+  .visit .cta .ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+  footer{padding:60px 36px 36px;background:var(--emerald-d);color:var(--ivory);text-align:center;border-top:1px solid rgba(245,239,226,.10)}
+  footer .mark{font-family:var(--display);font-style:italic;font-size:38px;font-weight:400;color:var(--ivory);margin-bottom:6px}
+  footer .since{font-family:var(--mono);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  footer .row{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:rgba(245,239,226,.7)}
+  footer .row a{color:var(--gold);text-decoration:none}
+
+  .ent{animation:rise 1s cubic-bezier(.16,.84,.34,1) both}
+  .ent.d1{animation-delay:.1s}.ent.d2{animation-delay:.22s}.ent.d3{animation-delay:.34s}
+  @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+  @media (max-width:880px){
+    .topbar{padding:14px 20px;font-size:9.5px;gap:14px}
+    .topbar nav{gap:14px}
+    .hero-inner{padding:0 22px 60px}
+    .storia,.carta,.visit{padding:80px 24px}
+    .carta-grid,.visit-wrap{grid-template-columns:1fr;gap:36px}
+    .ribbon-row{font-size:22px;gap:36px}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="mark">Bottega</span>
+  <nav>
+    <a href="#storia">La storia</a>
+    <a href="#carta">La carta</a>
+    <a href="#visita">Visitare</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="bg"></div>
+  <div class="hero-inner">
+    <div class="kicker ent">Via Santa Caterina · Saragozza · Bologna</div>
+    <h1 class="ent d1">All'Osteria <span class="italic">Bottega</span></h1>
+    <p class="sub ent d2">Una piccola osteria nel cuore del Saragozza. Le ricette della tradizione, la sfoglia tirata a mano, i salumi del territorio.</p>
+    <div class="meta ent d3">
+      <span><span class="dot"></span>Aperto dalle 12:30</span>
+      <span><span class="dot"></span>Via Santa Caterina 51 · 40123</span>
+      <span><span class="dot"></span>051 585 111</span>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-row">
+    <span>tortellini in brodo</span><span class="b">·</span>
+    <span>tagliatelle al ragù</span><span class="b">·</span>
+    <span>tortelloni di ricotta e spinaci</span><span class="b">·</span>
+    <span>cotechino con purè</span><span class="b">·</span>
+    <span>passatelli in brodo</span><span class="b">·</span>
+    <span>parmigiano reggiano 36 mesi</span><span class="b">·</span>
+    <span>tortellini in brodo</span><span class="b">·</span>
+    <span>tagliatelle al ragù</span><span class="b">·</span>
+    <span>tortelloni di ricotta e spinaci</span><span class="b">·</span>
+    <span>cotechino con purè</span><span class="b">·</span>
+    <span>passatelli in brodo</span><span class="b">·</span>
+    <span>parmigiano reggiano 36 mesi</span><span class="b">·</span>
+  </div>
+</div>
+
+<section class="storia" id="storia">
+  <div class="storia-wrap">
+    <div class="label">La storia</div>
+    <h2>La pasta tirata <span class="italic">a mano,</span> al mattarello.</h2>
+    <p>All'Osteria Bottega è una piccola osteria di Bologna, nel quartiere Saragozza, fuori dai percorsi turistici e in mezzo alla città vera. Pareti rosso pompeiano, salumi appesi al soffitto, fogli di sfoglia stesi nel retro la mattina.</p>
+    <p>I tortellini si chiudono uno per uno. Il ragù cuoce lento, come si fa qui da generazioni. La carta dei vini parte dall'Emilia e arriva fino alla Toscana — niente d'oltralpe, niente etichette urlate.</p>
+    <p class="pull">«La sfoglia non si fa con la macchina. Mai.»</p>
+  </div>
+</section>
+
+<section class="carta" id="carta">
+  <div class="carta-wrap">
+    <div class="head">
+      <div class="label">La carta</div>
+      <h2>Cucina <span class="italic">emiliana.</span></h2>
+    </div>
+    <div class="carta-grid">
+      <div class="section">
+        <h3>Antipasti</h3>
+        <ul>
+          <li><div><span class="dish">Tagliere di salumi e formaggi<span class="desc">mortadella, prosciutto, salame, squacquerone</span></span></div><span class="price">18€</span></li>
+          <li><div><span class="dish">Crescentine con squacquerone e prosciutto<span class="desc">pane fritto, formaggio fresco</span></span></div><span class="price">14€</span></li>
+          <li><div><span class="dish">Vitello tonnato della casa<span class="desc">vitello al rosa, salsa tonnata classica</span></span></div><span class="price">14€</span></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Primi</h3>
+        <ul>
+          <li><div><span class="dish">Tortellini in brodo di cappone<span class="desc">la signoria della cucina bolognese</span></span></div><span class="price">18€</span></li>
+          <li><div><span class="dish">Tagliatelle al ragù<span class="desc">sfoglia a mano, ragù di lunga cottura</span></span></div><span class="price">16€</span></li>
+          <li><div><span class="dish">Tortelloni di ricotta e spinaci<span class="desc">burro fuso e parmigiano 36 mesi</span></span></div><span class="price">16€</span></li>
+          <li><div><span class="dish">Passatelli in brodo<span class="desc">pangrattato, parmigiano, noce moscata</span></span></div><span class="price">15€</span></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Secondi</h3>
+        <ul>
+          <li><div><span class="dish">Cotechino con purè<span class="desc">cottura tradizionale di otto ore</span></span></div><span class="price">22€</span></li>
+          <li><div><span class="dish">Bollito misto con salse<span class="desc">manzo, gallina, lingua, salsa verde</span></span></div><span class="price">24€</span></li>
+          <li><div><span class="dish">Lombo di maiale al latte<span class="desc">cottura lenta, sugo cremoso</span></span></div><span class="price">20€</span></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Dolci & vini</h3>
+        <ul>
+          <li><div><span class="dish">Zuppa inglese<span class="desc">pan di Spagna, alchermes, crema</span></span></div><span class="price">8€</span></li>
+          <li><div><span class="dish">Tortino al cioccolato<span class="desc">cuore caldo, gelato alla vaniglia</span></span></div><span class="price">9€</span></li>
+          <li><div><span class="dish">Sangiovese di Romagna<span class="desc">calice / bottiglia</span></span></div><span class="price">7 / 28€</span></li>
+          <li><div><span class="dish">Pignoletto frizzante<span class="desc">il bianco dei colli bolognesi</span></span></div><span class="price">6 / 24€</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visita">
+  <div class="visit-wrap">
+    <div>
+      <div class="label">Per prenotare</div>
+      <h2>Dietro Porta <span class="italic">Saragozza.</span></h2>
+      <p>Nel quartiere Saragozza, a cinque minuti dalla stazione e a dieci dalla Piazza Maggiore. Una sala intima, quaranta coperti. La prenotazione è caldamente consigliata — la cena del sabato si chiude con settimane di anticipo.</p>
+      <div class="cta">
+        <a class="primary" href="mailto:osteriabottega@alice.it">Scrivere ↗</a>
+        <a class="ghost" href="tel:+39051585111">Telefonare</a>
+      </div>
+    </div>
+    <div>
+      <dl>
+        <dt>Indirizzo</dt><dd>Via Santa Caterina 51 · 40123 Bologna</dd>
+        <dt>Telefono</dt><dd><a href="tel:+39051585111">051 585 111</a></dd>
+        <dt>Email</dt><dd><a href="mailto:osteriabottega@alice.it">osteriabottega@alice.it</a></dd>
+        <dt>Orari</dt><dd>Pranzo 12:30–14:00 · Cena 20:00–22:30</dd>
+        <dt>Coperti</dt><dd>40 posti · prenotazione caldamente consigliata</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mark">All'Osteria Bottega</div>
+  <div class="since">Via Santa Caterina · Bologna · Saragozza</div>
+  <div class="row"><a href="mailto:osteriabottega@alice.it">osteriabottega@alice.it</a> · <a href="tel:+39051585111">051 585 111</a></div>
+</footer>
+
+</body>
+</html>
