@@ -128,6 +128,30 @@
           "source": "google-maps",
           "placeId": "0x477fd4bc8f6e2efb:0xcb75c7bd2a72098e",
           "verified": "screenshot-ss_99668ney8"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHnIgc-ez6SBgAwrxKwC-AXHa0jRAXNT9_ziLZEkjTI95-AgPi4ZIXy4Tj-kaH9wyMCBy7PP7SZ-3vq6HEZzQ7L9t0HpLStdXfazYVI3MhB9F8bC0-vBKMqoh3rW1S-XOeXi8SziP5YhMtU=w900-h1100-k-no",
+          "type": "unknown",
+          "content": "from place_id panel",
+          "source": "google-maps",
+          "placeId": "0x477fd4bc8f6e2efb:0xcb75c7bd2a72098e",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDaLW4es2mH-_4ECouAqgEVVYcVbGMqTAol5ATmlFxNYwkIBok-D1IPtqJcvYLEK-ml9rrKRMDY-V5J6fY_HKVxnVVkcOBKvhB_nHHII8i0pd1Fb4IpI7cAmyrIChEIYCankvp=w900-h1100-k-no",
+          "type": "unknown",
+          "content": "from place_id panel",
+          "source": "google-maps",
+          "placeId": "0x477fd4bc8f6e2efb:0xcb75c7bd2a72098e",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQN1nhHwdmnhgP5CtLZryn5y6ITW68xii0R4sS7fEHOQhvw0xmEkS4G2eqUmf9oN5QLDZl3fkWs0659GQlimmL8nKKIrQ4L7CNUE4sRHuTUPcIYResksLJlqDJSF-N6JKHmEU=w900-h1100-k-no",
+          "type": "unknown",
+          "content": "from place_id panel",
+          "source": "google-maps",
+          "placeId": "0x477fd4bc8f6e2efb:0xcb75c7bd2a72098e",
+          "verified": "place_id-panel-direct-extraction"
         }
       ],
       "sites": {
