@@ -1,19 +1,100 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trattoria Anna Maria — Bologna</title>
-<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Georgia,serif;color:#2a1f17;background:#faf3e5;line-height:1.55}.wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px}header{text-align:center;border-bottom:1px solid #b88a3b;padding-bottom:24px;margin-bottom:32px}.preh{font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#a82d2d;font-weight:600}h1{font-size:54px;font-weight:500;letter-spacing:-.01em;line-height:1;margin:14px 0 8px}h1 em{font-style:italic;color:#a82d2d}.sub{font-size:14px;font-style:italic;color:#534538}h2{font-size:22px;font-weight:500;margin:36px 0 12px;color:#a82d2d;border-top:1px solid #b88a3b;padding-top:24px}p{margin:0 0 14px;font-size:16px}ul{list-style:none;padding:0;margin:14px 0}ul li{font-size:15px;padding:8px 0;border-bottom:1px dotted rgba(42,31,23,.15);display:flex;justify-content:space-between;gap:16px}ul li span{color:#3d5a37;font-weight:500;white-space:nowrap}.spec{background:#2a1f17;color:#faf3e5;padding:28px 24px;margin:32px -24px -32px;border-radius:1px}.spec h3{font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#dca957;font-weight:600;margin-bottom:14px}.spec p{font-size:15px;margin:6px 0;font-family:Helvetica,sans-serif}.spec a{color:#dca957;text-decoration:underline}footer{text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid #b88a3b;font-family:Helvetica,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#534538}</style></head><body><div class="wrap">
-<header><div class="preh">Bologna · Via delle Belle Arti</div><h1>Anna <em>Maria</em></h1><div class="sub">Trattoria bolognese</div></header>
-<p style="font-size:18px;font-style:italic;text-align:center;max-width:38ch;margin:0 auto 32px">Sfoglia a mattarello, ragù di lunga cottura, brodo di cappone — come si fa a Bologna da sempre.</p>
-<h2>La carta</h2>
-<ul>
-<li>Tortellini in brodo di cappone<span>16€</span></li>
-<li>Tagliatelle al ragù<span>14€</span></li>
-<li>Lasagna verde alla bolognese<span>14€</span></li>
-<li>Cotoletta alla petroniana<span>22€</span></li>
-<li>Bollito misto con salse<span>20€</span></li>
-<li>Trippa alla bolognese<span>16€</span></li>
-<li>Zuppa inglese<span>7€</span></li>
-</ul>
-<h2>Per prenotare</h2>
-<p>Pranzo 12:30–14:30 · Cena 19:30–23:00. Prenotazione consigliata, soprattutto sabato sera e domenica a pranzo.</p>
-<div class="spec"><h3>Visitare</h3><p>Via delle Belle Arti 17/A · 40126 Bologna</p><p><a href="tel:+39051266894">051 266 894</a> · <a href="mailto:trattoriannamaria@libero.it">trattoriannamaria@libero.it</a></p></div>
-<footer>Via delle Belle Arti · Bologna</footer>
-</div></body></html>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trattoria Anna Maria — Bologna</title>
+<meta name="description" content="Trattoria bolognese in Via delle Belle Arti, Bologna. Sfoglia tirata a mattarello, ragù di lunga cottura, tortellini in brodo di cappone.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Cormorant Garamond','Iowan Old Style',Georgia,serif;color:#2a1f17;background:#faf3e5;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+  header{text-align:center;border-bottom:1px solid #b88a3b;padding-bottom:24px;margin-bottom:32px}
+  .preh{font-family:'Inter',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#a82d2d;font-weight:600}
+  h1{font-size:54px;font-weight:500;letter-spacing:-.01em;line-height:1;margin:14px 0 8px}
+  h1 em{font-style:italic;color:#dca957}
+  .sub{font-size:14px;font-style:italic;color:#534538}
+  .hero{margin:32px 0;border-radius:2px;overflow:hidden;box-shadow:0 14px 34px -18px rgba(42,31,23,.45)}
+  .hero img{width:100%;height:auto;display:block}
+  .lede{font-size:20px;line-height:1.55;color:#534538;text-align:center;margin:32px auto;max-width:38ch;font-style:italic}
+  h2{font-size:24px;font-weight:500;margin:36px 0 12px;color:#a82d2d;border-top:1px solid #b88a3b;padding-top:24px;letter-spacing:-.005em}
+  h2 em{font-style:italic;color:#3d5a37}
+  p{margin:0 0 14px;font-size:16px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+  .grid img{width:100%;height:auto;border-radius:2px;display:block;aspect-ratio:4/5;object-fit:cover}
+  .grid figcaption{font-family:'Inter',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#534538;text-align:center;margin-top:6px}
+  .grid figure{margin:0}
+  ul{list-style:none;padding:0;margin:14px 0}
+  ul li{font-size:15px;padding:8px 0;border-bottom:1px dotted rgba(42,31,23,.18);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  ul li .desc{display:block;font-size:13px;color:#534538;font-style:italic;margin-top:3px}
+  ul li span.price{color:#3d5a37;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:13px;font-weight:600;white-space:nowrap}
+  .quote{font-style:italic;font-size:19px;color:#2a1f17;border-left:2px solid #dca957;padding:8px 0 8px 18px;margin:24px 0;line-height:1.45}
+  .quote cite{display:block;font-family:'Inter',Helvetica,Arial,sans-serif;font-style:normal;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a82d2d;font-weight:600;margin-top:8px}
+  .wide{margin:28px -24px;overflow:hidden;border-radius:0}
+  .wide img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
+  .spec{background:#2a1f17;color:#faf3e5;padding:28px 24px;margin:32px -24px -32px;border-radius:2px}
+  .spec h3{font-family:'Inter',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#dca957;font-weight:600;margin-bottom:14px}
+  .spec p{font-size:15px;margin:6px 0;font-family:'Inter',Helvetica,Arial,sans-serif;line-height:1.5}
+  .spec a{color:#dca957;text-decoration:underline;text-underline-offset:3px}
+  footer{text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid #b88a3b;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#534538}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="preh">Bologna · Via delle Belle Arti</div>
+    <h1>Anna <em>Maria</em></h1>
+    <div class="sub">Trattoria bolognese · dagli anni Ottanta</div>
+  </header>
+
+  <div class="hero">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFV53Bk3h7_CAiA_NpIqos6biTBLqp9nqPj-XZTyA8ijxXlpb5L_9h6xpV8uLo3DMof6qjmJVweMKLwPbzIhvPsmiIVcDcAxscUXCN7ua1n0u5ta2dHmm-xYi8YjlWEc73kUR3DzpegMmwr=w1200-h900-k-no" alt="La facciata ocra di Anna Maria in Via delle Belle Arti">
+  </div>
+
+  <p class="lede">Trattoria bolognese in Via delle Belle Arti. Tortellini in brodo, tagliatelle al ragù, lasagna verde — come si fanno a Bologna da sempre.</p>
+
+  <h2>La <em>carta</em></h2>
+  <ul>
+    <li><div>Tortellini in brodo di cappone<span class="desc">la signoria della cucina bolognese</span></div><span class="price">16€</span></li>
+    <li><div>Tagliatelle al ragù<span class="desc">sfoglia a mattarello, ragù di lunga cottura</span></div><span class="price">14€</span></li>
+    <li><div>Lasagna verde alla bolognese<span class="desc">sfoglia agli spinaci, besciamella, ragù</span></div><span class="price">14€</span></li>
+    <li><div>Cotoletta alla petroniana<span class="desc">vitello, prosciutto, parmigiano, brodo</span></div><span class="price">22€</span></li>
+    <li><div>Bollito misto con salse<span class="desc">manzo, gallina, lingua, salsa verde</span></div><span class="price">20€</span></li>
+    <li><div>Zuppa inglese<span class="desc">pan di Spagna, alchermes, crema</span></div><span class="price">7€</span></li>
+  </ul>
+
+  <div class="grid">
+    <figure>
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHnIgc-ez6SBgAwrxKwC-AXHa0jRAXNT9_ziLZEkjTI95-AgPi4ZIXy4Tj-kaH9wyMCBy7PP7SZ-3vq6HEZzQ7L9t0HpLStdXfazYVI3MhB9F8bC0-vBKMqoh3rW1S-XOeXi8SziP5YhMtU=w800-h1000-k-no" alt="La carta scritta a mano di Anna Maria">
+      <figcaption>Dalla cucina</figcaption>
+    </figure>
+    <figure>
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQN1nhHwdmnhgP5CtLZryn5y6ITW68xii0R4sS7fEHOQhvw0xmEkS4G2eqUmf9oN5QLDZl3fkWs0659GQlimmL8nKKIrQ4L7CNUE4sRHuTUPcIYResksLJlqDJSF-N6JKHmEU=w800-h1000-k-no" alt="Lasagna verde al ragù bolognese">
+      <figcaption>Al mattino</figcaption>
+    </figure>
+  </div>
+
+  <h2>La sfoglia <em>a mattarello</em>, ogni mattina</h2>
+  <p>Anna Maria apre la trattoria in Via delle Belle Arti negli anni Ottanta. La sfoglia si tira a mattarello ogni mattina, il ragù cuoce lento per ore, il brodo dei tortellini è quello di sempre — di cappone, di manzo, di osso.</p>
+  <p>Pareti gialle ocra, foto in bianco e nero, tovaglie a quadretti. Quaranta coperti, sempre pieni. Si arriva, ci si siede, si mangia bolognese — niente di più, niente di meno.</p>
+
+  <div class="quote">«La sfoglia, da noi, è ancora a mattarello. Punto.»<cite>— Anna Maria</cite></div>
+
+  <div class="wide">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDaLW4es2mH-_4ECouAqgEVVYcVbGMqTAol5ATmlFxNYwkIBok-D1IPtqJcvYLEK-ml9rrKRMDY-V5J6fY_HKVxnVVkcOBKvhB_nHHII8i0pd1Fb4IpI7cAmyrIChEIYCankvp=w1200-h675-k-no" alt="Tagliatelle al ragù — la tavola di Anna Maria">
+  </div>
+
+  <h2>Per <em>prenotare</em></h2>
+  <p>Pranzo 12:30–14:30 · Cena 19:30–23:00. Prenotazione consigliata, soprattutto sabato sera e domenica a pranzo. Quaranta coperti — meglio chiamare.</p>
+
+  <div class="spec">
+    <h3>Visitare</h3>
+    <p>Via delle Belle Arti 17/A · 40126 Bologna</p>
+    <p>Pranzo 12:30–14:30 · Cena 19:30–23:00 · chiuso lunedì</p>
+    <p><a href="tel:+39051266894">051 266 894</a> · <a href="mailto:trattoriannamaria@libero.it">trattoriannamaria@libero.it</a></p>
+  </div>
+
+  <footer>Via delle Belle Arti · Bologna · trattoria bolognese</footer>
+</div>
+</body>
+</html>
