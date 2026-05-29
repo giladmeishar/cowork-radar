@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-29T18:30:00Z",
+  "lastScan": "2026-05-29T19:25:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -168,6 +168,59 @@
       "notes": [],
       "status": "live",
       "lastBuilt": "2026-05-26"
+    },
+    {
+      "id": "tselementes-sifnos-20260529",
+      "name": "Καφενείο-Ουζερί Τσελεμεντές",
+      "type": "Καφενείο-Ουζερί",
+      "city": "Apollonia",
+      "country": "GR",
+      "address": "Steno, Apollonia 840 03, Greece",
+      "phone": "+30 22840 33601",
+      "email": "tselementes.ouzeri@gmail.com",
+      "rating": "4.6",
+      "reviewCount": "464",
+      "googleMapsUrl": "https://www.google.com/maps/place/Kafeneio-Ouzeri+TSELEMENTES/@36.9716759,24.7236658,17z/data=!3m1!4b1!4m6!3m5!1s0x1498f3739b1d5999:0xdb7f02fe74254828!8m2!3d36.9716759!4d24.7236658!16s%2Fg%2F11f66g7wfp",
+      "discoveredAt": "2026-05-29T19:25:00Z",
+      "status": "draft-created",
+      "sites": {
+        "basic": "tselementes-sifnos-20260529-basic.html",
+        "premium": "tselementes-sifnos-20260529-premium.html"
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_EoAZLE1SDRcLLvylMowSWMDJlyYB-9-eLVJY9jKWXrCbmvgusJvZm49l8w6-zYeOvsik6Hf4fBvAq6O0vMllIp_-KLXbs7ftQ1SyhZXckSng-CiCd8Y9BtIPZTmeV0QTHuQ",
+          "type": "exterior",
+          "content": "Cycladic stepped alley with wooden chairs and white-marble bistro table under a barrel arch",
+          "source": "google-maps",
+          "verified": "audit-tselementes-v2.html-#0"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlPohCdOYwUSq8Arzl9bN0bGd_oSKLxwPnFJe1zelqvduxX_skxAt0NUawzfH_n3jxIx4rsmooI-DRCZvzGETZMQ8DWjviQYi4SGUcg-QwRBJGB_WtO9tNjgacOS0rZX6tI6aJ",
+          "type": "menu",
+          "content": "printed menu titled 'Τσελεμεντές · Καφενείο · Ουζερί' with coffee + beer prices in euro",
+          "source": "google-maps",
+          "verified": "audit-tselementes-v2.html-#3"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBHPoy8EHXOq3oit6sNfQU5hk271owh-PpwZzClDYsARkQJuRv8L-T5PRLSGVXrWvD-XKL5vNQ81huYMG56uKLG-5AmCsue0c1P16pn_J5e_Bxixc3MI9KWvs_2qgR96CNJAOo",
+          "type": "food",
+          "content": "plate with grilled meat, sauce in a small bowl, and a side of fried potatoes",
+          "source": "google-maps",
+          "verified": "audit-tselementes-v2.html-#4"
+        }
+      ],
+      "design": {
+        "palette": "Aegean blue + chalk white + bougainvillea + saffron",
+        "layout": "3-photo gallery + parallax-free editorial",
+        "motion": "ken-burns hero + marquee"
+      },
+      "emailDraft": {
+        "language": "el",
+        "subject": "Μια μικρή ιδέα για το Τσελεμεντές",
+        "body": "Γεια σας,\n\nΕίδα το καφενείο-ουζερί σας στην Απολλωνία και έφτιαξα δύο μικρά δείγματα ιστοσελίδας — δωρεάν, για να δείτε πώς θα μπορούσε να μοιάζει η παρουσία σας στο διαδίκτυο.\n\nΚλασική: https://giladmeishar.github.io/cowork-radar/tselementes-sifnos-20260529-basic.html\nΜοντέρνα: https://giladmeishar.github.io/cowork-radar/tselementes-sifnos-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες από το Google Maps. Αν σας αρέσει κάποια, μπορώ να την κάνω δική σας με όνομα τομέα (πχ. tselementes-sifnos.gr) — γύρω στα 60€/χρόνο.\n\nΑυτό είναι μοναδικό μήνυμα — δεν στέλνω newsletters.\n\nΦιλικά,\nGilad",
+        "bodyHebrew": "שלום,\nראיתי את הקפנייו-אוזרי שלכם בסיפנוס ובניתי שני אתרי דוגמה חינמיים. השתמשתי בתמונות שלכם מגוגל. אם אהבתם, אפשר להקים עם דומיין שלכם (~60€/שנה). הודעה חד-פעמית."
+      }
     }
   ],
   "processedNoteDraftIds": [],
