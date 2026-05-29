@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-27T05:50:00Z",
+  "lastScan": "2026-05-29T17:42:35.955325Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -172,11 +172,11 @@
   ],
   "processedNoteDraftIds": [],
   "lastScanReport": {
-    "runId": "db0bbf1a-7ef0-4b5b-b758-58eff4f70081",
-    "completedAt": "2026-05-26T17:34:41.643623Z",
+    "runId": "8d331ed7-f9cc-4eee-b501-3460d74124b1",
+    "completedAt": "2026-05-29T17:42:35.955325Z",
     "added": [],
     "notesActedOn": [],
     "emailReplies": [],
-    "skipReason": "Heartbeat only. Checked: no [Cowork Radar TRIGGER] emails (newer_than:2d), no [Cowork Radar Note] drafts, no inbox replies to outreach. 3 prior photo-attribution failures pause active discovery until user sends an explicit trigger via the public dashboard mailto fallback. Current ledger preserved: deacon-house-cafe-edinburgh (verified) + le-garet-lyon (phone-only, predates the new no-email-skip gate)."
+    "skipReason": "Heartbeat only. Checked 2026-05-29: no [Cowork Radar TRIGGER] emails (newer_than:2d), no [Cowork Radar Note] drafts, no inbox replies from contact@deaconshousecafe.co.uk or trattoriannamaria@libero.it. Active discovery remains paused after 3 photo-attribution failures (Deacon's captions / Konoba Zbondini cross-business photos / Creperia La Bombarde mixed photos) until user sends an explicit trigger via the public dashboard mailto fallback. Current ledger preserved: 2 verified businesses (deacon-house-cafe-edinburgh, anna-maria-trattoria-bologna)."
   }
 }
