@@ -121,7 +121,7 @@ dialog button.pr{background:var(--accent);color:#0E1116;border-color:var(--accen
 <script>
 const FL={FR:"🇫🇷",IT:"🇮🇹",ES:"🇪🇸",GR:"🇬🇷",PT:"🇵🇹",DE:"🇩🇪",IL:"🇮🇱",GB:"🇬🇧",JP:"🇯🇵",US:"🇺🇸"};
 const LN={fr:"Français",it:"Italiano",es:"Español",el:"Ελληνικά",pt:"Português",de:"Deutsch",he:"עברית",en:"English"};
-const SCAN_MS=60*60*1000, EXP_MS=8*60*1000, TO_MS=20*60*1000, TID='cowork-radar-scan';
+const SCAN_MS=30*60*1000, EXP_MS=8*60*1000, TO_MS=20*60*1000, TID='cowork-radar-scan';
 let D={businesses:[]}, ast="all", act="all", abi=null;
 function gss(){try{const s=JSON.parse(localStorage.getItem('rss')||'null');if(!s)return null;if(Date.now()-s.startedAt>TO_MS){css();return null}return s}catch{return null}}
 function sss(s){localStorage.setItem('rss',JSON.stringify(s))}
@@ -167,14 +167,15 @@ function tick(){
     const last=D.lastScan?new Date(D.lastScan).getTime():Date.now();
     const next=last+SCAN_MS, rem=Math.max(0,next-Date.now());
     if(rem<=0){
+      // Cron is */30 — next run is at next :00 or :30 of the hour
       const now=new Date();
       const nextCron=new Date(now);
-      nextCron.setMinutes(0,0,0);
-      nextCron.setHours(now.getHours()+1);
+      const m=now.getMinutes();
+      if(m<30){nextCron.setMinutes(30,0,0)}else{nextCron.setMinutes(0,0,0);nextCron.setHours(now.getHours()+1)}
       const remCron=Math.max(0,nextCron.getTime()-Date.now());
       lbl.textContent="הסריקה הבאה (cron) בעוד";
       tm.textContent=fmtM(remCron);
-      pb.style.width=Math.min(100,((3600000-remCron)/3600000)*100)+"%";
+      pb.style.width=Math.min(100,((SCAN_MS-remCron)/SCAN_MS)*100)+"%";
     } else {
       lbl.textContent="סבב הבא בעוד";
       tm.textContent=fmtM(rem);
@@ -195,7 +196,8 @@ async function trig(){reqNotifs();
   if(!triggered){
     // FALLBACK: open user's email app with prefilled scan-request email
     triggerViaMailto({kind:'manual-scan'});
-    toast("✓ פותח את האימייל — לחץ Send והסוכן יתחיל בסריקה הבאה (≤5 דק').");
+    toast("✓ פתחתי לך את האימייל עם המייל המוכן. לחץ Send והסוכן יתחיל מיד (≤2 דק').");
+    notif("⟳ אישור נדרש בגיימייל","שלחתי אליך אימייל פתוח — לחץ Send והסריקה תרוץ","https://giladmeishar.github.io/cowork-radar/");
     css();tick();
   }
 }
