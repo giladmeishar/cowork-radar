@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-29T17:54:47.340220Z",
+  "lastScan": "2026-05-29T18:04:26.552277Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -172,8 +172,8 @@
   ],
   "processedNoteDraftIds": [],
   "lastScanReport": {
-    "runId": "d5612e83-0f4e-47d7-b258-b590376b6eef",
-    "completedAt": "2026-05-29T17:54:47.340220Z",
+    "runId": "f23e3d40-95ee-445e-b8bf-ddc3712463a3",
+    "completedAt": "2026-05-29T18:04:26.552277Z",
     "added": [],
     "notesActedOn": [],
     "emailReplies": [],
