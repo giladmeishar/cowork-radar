@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-29T18:04:26.552277Z",
+  "lastScan": "2026-05-29T18:30:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -168,6 +168,73 @@
       "notes": [],
       "status": "live",
       "lastBuilt": "2026-05-26"
+    },
+    {
+      "id": "tselementes-sifnos-20260529",
+      "name": "Kafeneio-Ouzeri Tselementes",
+      "type": "Καφενείο-Ουζερί",
+      "city": "Apollonia",
+      "country": "GR",
+      "address": "Steno, Apollonia 840 03, Greece",
+      "phone": "+30 22840 33601",
+      "email": "tselementes.ouzeri@gmail.com",
+      "rating": "4.6",
+      "reviewCount": "464",
+      "googleMapsUrl": "https://www.google.com/maps/place/Kafeneio-Ouzeri+TSELEMENTES/@36.9716759,24.7236658,17z/data=!3m1!4b1!4m6!3m5!1s0x1498f3739b1d5999:0xdb7f02fe74254828!8m2!3d36.9716759!4d24.7236658!16s%2Fg%2F11f66g7wfp",
+      "discoveredAt": "2026-05-29T18:30:00Z",
+      "status": "draft-created",
+      "sites": {
+        "basic": "tselementes-sifnos-20260529-basic.html",
+        "premium": "tselementes-sifnos-20260529-premium.html"
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_EoAZLE1SDRcLLvylMowSWMDJlyYB-9-eLVJY9jKWXrCbmvgusJvZm49l8w6-zYeOvsik6Hf4fBvAq6O0vMllIp_-KLXbs7ftQ1SyhZXckSng-CiCd8Y9BtIPZTmeV0QTHuQ",
+          "type": "exterior",
+          "content": "stone terrace with potted plants under shade",
+          "source": "google-maps",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGHOJwT8cEMieaJ7DWpvXkORK9wAMNbVZ8TlvYK8S7Ttin0gxjGqmWqlJt1yNRUDY9KfjAwx5fcf_Psw4MXpBfFSc4CQyahiEEMJhnxatnjH8aZ-GoZ3R9QPG9qhQAEu7NUWnyR9w",
+          "type": "exterior",
+          "content": "Cycladic taverna terrace view",
+          "source": "google-maps",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJ7Jj5NgwReBmu3G_NofKo53WJGzs-T3-RMUZym1_bb-sNXs6slDF2sOYrp94HAoWjqe6AvZVY9S3G-zrZ6ER3gsOvbkzlYdlTUTkIjtR8Ul_kwPwrxxsE7kuiIOdZsemYlJDFUcB0fgV7",
+          "type": "food",
+          "content": "Greek meze platter on a wooden table",
+          "source": "google-maps",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3a2H2aE0yOaRr0PM86DmvM-MxwhZpCBcg0Z_Xn-RvGbLLPTUORrg4DQ-tVv4yOA8ypZFZW7r1kt0NuuZdunfbnGcNMGpgv7IZjibH06Sfub9LeMAE4pM2BhszSBwDWLm31k2Osw",
+          "type": "interior",
+          "content": "ouzeri interior with traditional decor",
+          "source": "google-maps",
+          "verified": "place_id-panel-direct-extraction"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHg1HsZ8kwXbrmV9X7yii_l4RbgyRLTVrNVrK2xbxjr7C1tJDYlMuQUsI9V1ejGYtQECpZk0T7oRZFjW2gF8STJCKbb8yShc5ai4AbZOxJarAu6aafMRDjyovDp-8OwfyhHG7zz",
+          "type": "exterior",
+          "content": "Apollonia narrow stone alley",
+          "source": "google-maps",
+          "verified": "place_id-panel-direct-extraction"
+        }
+      ],
+      "design": {
+        "palette": "Aegean blue + chalk white + bougainvillea fuchsia + saffron gold",
+        "layout": "centered editorial with stepped chapter dividers",
+        "motion": "ken-burns hero + soft marquee"
+      },
+      "emailDraft": {
+        "language": "el",
+        "subject": "Μια μικρή ιδέα για το Tselementes",
+        "body": "Γεια σας,\n\nΕίδα το ουζερί σας στη Σίφνο και θέλησα να φτιάξω δύο μικρά δείγματα ιστοσελίδας — δωρεάν, για να σας δείξω μόνο πώς θα μπορούσε να μοιάζει η παρουσία σας στο διαδίκτυο.\n\nΚλασική έκδοση: https://giladmeishar.github.io/cowork-radar/tselementes-sifnos-20260529-basic.html\nΜοντέρνα έκδοση: https://giladmeishar.github.io/cowork-radar/tselementes-sifnos-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες από το Google Maps. Αν σας αρέσει κάποια από τις δύο, μπορώ να την κάνω δική σας με όνομα τομέα (πχ. tselementes-sifnos.gr) — με κόστος γύρω στα 60€/χρόνο για το όνομα και τη φιλοξενία.\n\nΑυτό είναι ένα μοναδικό μήνυμα — δεν στέλνω newsletters και δεν θα ξαναγράψω αν δεν θέλετε.\n\nΦιλικά,\nGilad",
+        "bodyHebrew": "שלום,\nראיתי את האוזרי שלכם בסיפנוס ובניתי שני אתרי דוגמה חינמיים. גרסה קלאסית + גרסה מודרנית. השתמשתי בתמונות שלכם מגוגל. אם אהבתם, אפשר להקים עם דומיין שלכם (~60€/שנה). הודעה חד-פעמית."
+      }
     }
   ],
   "processedNoteDraftIds": [],
