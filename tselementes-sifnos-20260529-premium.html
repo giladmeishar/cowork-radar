@@ -3,124 +3,254 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Τσελεμεντές — Καφενείο-Ουζερί, Απολλωνία Σίφνου</title>
-<meta name="description" content="Παραδοσιακό καφενείο-ουζερί στα στενά της Απολλωνίας. Σιφνέικα μεζεδάκια, ρακή χύμα, καρέκλες ψάθινες.">
+<title>Τσελεμεντές — από το 1878 ζει το όνομα στη Σίφνο</title>
+<meta name="description" content="Καφενείο-ουζερί στα στενά της Απολλωνίας Σίφνου.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@200;300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--aegean:#0E3B5C;--aegean-d:#082841;--chalk:#F6F1E6;--chalk-w:#FBF8F1;--bougain:#C13F70;--gold:#F2C879;--ink:#1B1C1E;--ink-2:#3F3F42;--rule:rgba(14,59,92,.16);
---display:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'Roboto Mono',monospace}
-html{scroll-behavior:smooth}body{background:var(--chalk);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--chalk);font-weight:500;mix-blend-mode:difference}
-.topbar .mark{font-family:var(--display);font-style:italic;font-size:22px;letter-spacing:0;text-transform:none;font-weight:500}
-.topbar nav{display:flex;gap:24px}.topbar nav a{color:inherit;text-decoration:none;opacity:.75;transition:opacity .2s}.topbar nav a:hover{opacity:1}
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
-.hero .bg{position:absolute;inset:0;background-image:url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_EoAZLE1SDRcLLvylMowSWMDJlyYB-9-eLVJY9jKWXrCbmvgusJvZm49l8w6-zYeOvsik6Hf4fBvAq6O0vMllIp_-KLXbs7ftQ1SyhZXckSng-CiCd8Y9BtIPZTmeV0QTHuQ=w1600-h2200-k-no");background-size:cover;background-position:center 30%;animation:kb 28s ease-in-out infinite alternate;filter:saturate(.96) contrast(1.05)}
-@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.08) translate(-2%,-1%)}}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,65,.42) 0%,rgba(8,40,65,.08) 35%,rgba(8,40,65,.7) 90%,var(--aegean-d) 100%)}
-.hero-inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 36px 80px;color:var(--chalk)}
-.hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:28px;display:flex;align-items:center;gap:14px}
-.hero .kicker::before{content:"";width:34px;height:1px;background:var(--gold)}
-.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(56px,10vw,168px);line-height:.86;letter-spacing:-.025em;color:var(--chalk);margin-bottom:24px}
-.hero h1 .italic{font-style:italic;color:var(--gold);font-weight:500}
-.hero .sub{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.6vw,34px);color:#EAD8B2;max-width:36ch;line-height:1.32;margin-bottom:48px;font-weight:400}
-.hero .meta{display:flex;gap:28px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:#EAD8B2;flex-wrap:wrap;text-shadow:0 1px 8px rgba(8,40,65,.6)}
-.hero .meta .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;margin:0 6px;vertical-align:middle}
-.ribbon{background:var(--aegean-d);color:var(--chalk);padding:22px 0;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.ribbon-row{display:flex;gap:60px;white-space:nowrap;font-family:var(--display);font-style:italic;font-size:32px;font-weight:400;animation:marq 50s linear infinite}
+:root{
+  --aegean:#0A2B47;--aegean-d:#06192B;--chalk:#F6F1E6;--chalk-w:#FBF8F1;
+  --bougain:#C13F70;--gold:#E7B25C;--olive:#737256;--ink:#0B0C0E;--ink-2:#3A3B3E;
+  --rule:rgba(10,43,71,.18);
+  --d:'Cormorant Garamond',Georgia,serif;--s:'Inter',system-ui,sans-serif;--m:'Roboto Mono',monospace;
+}
+html{scroll-behavior:smooth;background:var(--chalk)}
+body{background:var(--chalk);color:var(--ink);font-family:var(--s);font-weight:300;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* TOP BAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;font-family:var(--m);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--chalk);font-weight:500;mix-blend-mode:difference;pointer-events:none}
+.topbar > *{pointer-events:auto}
+.topbar .mark{font-family:var(--d);font-style:italic;font-size:22px;letter-spacing:0;text-transform:none;font-weight:500}
+.topbar nav{display:flex;gap:24px}.topbar nav a{color:inherit;text-decoration:none;opacity:.7;transition:opacity .2s}.topbar nav a:hover{opacity:1}
+
+/* PROGRESS RAIL */
+.rail{position:fixed;top:0;left:0;height:2px;width:0;background:var(--gold);z-index:70;transition:width .15s linear}
+
+/* HERO — masked reveal */
+.hero{height:100vh;position:relative;overflow:hidden;background:var(--aegean-d)}
+.hero .bg{position:absolute;inset:0;background-image:url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_EoAZLE1SDRcLLvylMowSWMDJlyYB-9-eLVJY9jKWXrCbmvgusJvZm49l8w6-zYeOvsik6Hf4fBvAq6O0vMllIp_-KLXbs7ftQ1SyhZXckSng-CiCd8Y9BtIPZTmeV0QTHuQ=w1800-h2400-k-no");background-size:cover;background-position:center 30%;filter:saturate(.94) contrast(1.06)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,25,43,.45) 0%,rgba(6,25,43,.05) 28%,rgba(6,25,43,.78) 92%,var(--aegean-d) 100%)}
+.hero-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5vw 8vh;color:var(--chalk)}
+.hero .kicker{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:32px;display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(20px)}
+.hero .kicker::before{content:"";width:42px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--d);font-weight:400;font-size:clamp(64px,12vw,210px);line-height:.84;letter-spacing:-.03em;color:var(--chalk);margin-bottom:20px}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:inline-block;font-style:italic;color:var(--gold);transform:translateY(100%);opacity:0}
+.hero h1 span b{display:inline-block;font-weight:400;transform:translateY(100%);opacity:0}
+.hero .sub{font-family:var(--d);font-style:italic;font-size:clamp(22px,2.6vw,36px);color:#EAD8B2;max-width:34ch;line-height:1.32;margin-top:36px;margin-bottom:48px;font-weight:400;opacity:0;transform:translateY(20px)}
+.hero .meta{display:flex;gap:32px;font-family:var(--m);font-size:11px;letter-spacing:.22em;color:#EAD8B2;flex-wrap:wrap;text-shadow:0 1px 8px rgba(6,25,43,.6);opacity:0;transform:translateY(20px)}
+.hero .meta i{font-style:normal;color:var(--gold);margin:0 6px}
+.scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:3;font-family:var(--m);font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--chalk);opacity:.6;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bob 2s ease-in-out infinite}
+.scroll-cue::after{content:"";width:1px;height:24px;background:var(--chalk)}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* CHAPTER MARKER */
+.chapter{padding:140px 5vw 80px;background:var(--chalk);position:relative}
+.chapter .num{font-family:var(--m);font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--bougain);font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.chapter .num::before{content:"";width:40px;height:1px;background:var(--bougain)}
+.chapter h2{font-family:var(--d);font-weight:500;font-size:clamp(46px,7vw,110px);line-height:.92;color:var(--aegean);letter-spacing:-.025em;max-width:18ch}
+.chapter h2 i{font-style:italic;color:var(--olive)}
+
+/* RIBBON */
+.ribbon{background:var(--aegean-d);color:var(--chalk);padding:30px 0;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ribbon-row{display:flex;gap:60px;white-space:nowrap;font-family:var(--d);font-style:italic;font-size:42px;font-weight:400;animation:marq 55s linear infinite}
 .ribbon-row .d{color:var(--gold);font-style:normal}
 @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.gallery{padding:110px 36px 40px;background:var(--chalk)}
-.gallery .label{display:block;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bougain);font-weight:500;margin-bottom:18px}
-.gallery h2{text-align:center;font-family:var(--display);font-weight:500;font-style:italic;font-size:clamp(36px,5vw,68px);line-height:1;color:var(--aegean);letter-spacing:-.015em;margin-bottom:54px}
-.gal-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
-.gal-grid figure{margin:0;background:var(--aegean-d);overflow:hidden;position:relative;box-shadow:0 30px 60px -30px rgba(14,59,92,.4)}
-.gal-grid figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.16,.84,.34,1)}
-.gal-grid figure:hover img{transform:scale(1.06)}
-.gal-grid figcaption{position:absolute;bottom:16px;left:18px;font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--chalk);background:rgba(8,40,65,.62);padding:7px 12px;backdrop-filter:blur(3px)}
-.gal-grid .g1{grid-column:1;grid-row:1/3;aspect-ratio:3/4}
-.gal-grid .g2,.gal-grid .g3{aspect-ratio:4/3}
-@media(max-width:880px){.gal-grid{grid-template-columns:1fr}.gal-grid .g1{grid-column:1;grid-row:auto}}
-.story{padding:130px 36px;background:var(--chalk-w);position:relative;border-bottom:1px solid var(--rule);text-align:center}
-.story-wrap{max-width:680px;margin:0 auto}
-.story .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bougain);font-weight:500;margin-bottom:24px}
-.story h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,5.5vw,82px);line-height:.96;color:var(--aegean);margin-bottom:32px;letter-spacing:-.015em}
-.story h2 .italic{font-style:italic;color:var(--bougain)}
-.story p{font-size:18px;line-height:1.75;color:var(--ink-2);margin:0 auto 18px;max-width:48ch}
-.story .pull{font-family:var(--display);font-style:italic;font-size:24px;color:var(--aegean);max-width:36ch;margin:32px auto 0;line-height:1.4;border-top:1px solid var(--gold);padding-top:24px}
-.visit{padding:140px 36px;background:var(--aegean-d);color:var(--chalk)}
-.visit-wrap{max-width:980px;margin:0 auto}
-.visit .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:24px}
-.visit h2{font-family:var(--display);font-weight:500;font-size:clamp(44px,5.5vw,82px);line-height:.96;color:var(--chalk);margin-bottom:28px;letter-spacing:-.02em}
-.visit h2 .italic{font-style:italic;color:var(--gold)}
-.visit dl{display:grid;grid-template-columns:1fr 1fr;gap:30px 40px;margin:50px 0 40px}
-.visit dt{font-family:var(--mono);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:500;padding-top:22px;border-top:1px solid rgba(246,241,230,.14)}
-.visit dd{font-family:var(--display);font-size:22px;line-height:1.3;color:var(--chalk);font-weight:400;padding:8px 0 22px}
-.visit dd a{color:var(--chalk);text-decoration:none;border-bottom:1px solid var(--gold);transition:color .2s}.visit dd a:hover{color:var(--gold)}
-.visit .cta{margin-top:30px;display:flex;gap:18px;flex-wrap:wrap}
-.visit .cta a{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;transition:all .25s}
-.visit .cta .primary{background:var(--bougain);color:var(--chalk)}.visit .cta .primary:hover{background:var(--gold);color:var(--aegean-d);transform:translateY(-2px)}
-.visit .cta .ghost{color:var(--chalk);border:1px solid rgba(246,241,230,.35)}.visit .cta .ghost:hover{border-color:var(--gold);color:var(--gold)}
-@media(max-width:760px){.visit dl{grid-template-columns:1fr}}
-footer{padding:60px 36px 36px;background:var(--aegean-d);color:#EAD8B2;text-align:center;border-top:1px solid rgba(246,241,230,.10);font-family:var(--mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;opacity:.7}
+
+/* PIN STORY — sticky chapters with horizontal photo */
+.pin-story{position:relative;background:var(--chalk-w)}
+.pin-wrap{height:300vh}
+.pin-inner{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 5vw;gap:5vw}
+.pin-text{padding:50px 0}
+.pin-text .step{display:none}
+.pin-text .step.on{display:block}
+.pin-text .lbl{font-family:var(--m);font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
+.pin-text h3{font-family:var(--d);font-weight:500;font-size:clamp(34px,4vw,64px);line-height:1;color:var(--aegean);letter-spacing:-.02em;margin-bottom:22px}
+.pin-text h3 i{font-style:italic;color:var(--bougain)}
+.pin-text p{font-size:17px;line-height:1.7;color:var(--ink-2);max-width:42ch}
+.pin-img{position:relative;height:78vh;background:var(--aegean-d);overflow:hidden;box-shadow:0 50px 100px -40px rgba(10,43,71,.45)}
+.pin-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .9s ease,transform .9s ease;opacity:0;transform:scale(1.08)}
+.pin-img img.on{opacity:1;transform:scale(1)}
+.pin-img .cap{position:absolute;bottom:18px;left:20px;font-family:var(--m);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--chalk);background:rgba(6,25,43,.55);padding:7px 12px;backdrop-filter:blur(3px);z-index:2}
+@media(max-width:880px){.pin-wrap{height:auto}.pin-inner{position:relative;grid-template-columns:1fr;height:auto;padding:40px 5vw}.pin-text .step{display:block;padding:30px 0;border-top:1px solid var(--rule)}.pin-img{height:60vh}}
+
+/* MENU TILT — 3D card */
+.menu-sec{padding:160px 5vw;background:var(--chalk);text-align:center;perspective:1400px}
+.menu-sec .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--olive);font-weight:500;margin-bottom:18px}
+.menu-sec h2{font-family:var(--d);font-weight:500;font-style:italic;font-size:clamp(40px,5vw,72px);line-height:1;color:var(--aegean);margin-bottom:56px;letter-spacing:-.015em}
+.tilt{display:inline-block;max-width:680px;width:100%;transition:transform .12s ease-out;transform-style:preserve-3d;box-shadow:0 60px 100px -40px rgba(10,43,71,.5)}
+.tilt img{width:100%;display:block}
+.menu-sec .hint{margin-top:32px;font-family:var(--m);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-2);opacity:.65}
+
+/* QUOTE BAND — masked horizontal */
+.quote-band{padding:160px 5vw;background:var(--aegean-d);color:var(--chalk);text-align:center;position:relative;overflow:hidden}
+.quote-band::before{content:"„";position:absolute;top:-80px;left:50%;transform:translateX(-50%);font-family:var(--d);font-size:480px;color:rgba(231,178,92,.06);line-height:1}
+.quote-band p{position:relative;font-family:var(--d);font-style:italic;font-weight:400;font-size:clamp(32px,4.5vw,66px);line-height:1.2;max-width:22ch;margin:0 auto;color:var(--chalk)}
+.quote-band p i{color:var(--gold);font-style:italic}
+.quote-band cite{display:block;margin-top:32px;font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-style:normal;font-weight:500}
+
+/* VISIT */
+.visit{padding:160px 5vw;background:var(--chalk);color:var(--ink)}
+.visit-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start}
+.visit .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bougain);font-weight:500;margin-bottom:24px}
+.visit h2{font-family:var(--d);font-weight:500;font-size:clamp(46px,5.5vw,92px);line-height:.96;color:var(--aegean);margin-bottom:28px;letter-spacing:-.02em}
+.visit h2 i{font-style:italic;color:var(--bougain)}
+.visit .pitch{font-size:17px;color:var(--ink-2);line-height:1.7;max-width:42ch}
+.visit dl{font-family:var(--s);font-size:14px}
+.visit dt{font-family:var(--m);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--olive);font-weight:500;padding-top:22px;border-top:1px solid var(--rule)}
+.visit dd{font-family:var(--d);font-size:22px;line-height:1.3;color:var(--ink);font-weight:400;padding:8px 0 22px}
+.visit dd a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold);transition:color .2s}.visit dd a:hover{color:var(--bougain)}
+.visit .cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.visit .cta a{display:inline-flex;align-items:center;gap:10px;padding:18px 28px;text-decoration:none;font-family:var(--m);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;transition:all .25s}
+.visit .cta .primary{background:var(--bougain);color:var(--chalk)}.visit .cta .primary:hover{background:var(--aegean-d);transform:translateY(-2px)}
+.visit .cta .ghost{color:var(--aegean);border:1px solid var(--rule)}.visit .cta .ghost:hover{border-color:var(--bougain);color:var(--bougain)}
+@media(max-width:880px){.visit-wrap{grid-template-columns:1fr;gap:40px}}
+
+footer{padding:60px 5vw;background:var(--aegean-d);color:#EAD8B2;text-align:center;font-family:var(--m);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;opacity:.6}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="mark">Τσελεμεντές</div><nav><a href="#istoria">Η ιστορία</a><a href="#galleria">Γκαλερί</a><a href="#vrisko">Εδώ είμαστε</a></nav></div>
+
+<div class="rail" id="rail"></div>
+<div class="topbar">
+  <div class="mark">Τσελεμεντές</div>
+  <nav><a href="#istoria">Η ιστορία</a><a href="#karta">Η κάρτα</a><a href="#vrisko">Εδώ είμαστε</a></nav>
+</div>
 
 <section class="hero">
-<div class="bg"></div>
-<div class="hero-inner">
-<div class="kicker">Απολλωνία · Σίφνος · στενά σοκάκια</div>
-<h1>Τσελε<span class="italic">μεντές</span></h1>
-<p class="sub">Καφενείο-ουζερί στα στενά της Απολλωνίας. Ψάθινες καρέκλες, μαρμάρινα τραπεζάκια, ρακή από βαρέλι και κουβέντα μέχρι τα μεσάνυχτα.</p>
-<div class="meta"><span>Ανοιχτά έως 00:00</span><span class="dot"></span><span>Steno, Apollonia 840 03</span><span class="dot"></span><span>+30 22840 33601</span></div>
-</div>
+  <div class="bg"></div>
+  <div class="hero-inner">
+    <div class="kicker" data-anim="kicker">Απολλωνία · Σίφνος · 840 03</div>
+    <h1>
+      <span><b id="w1">Τσελε</b></span>
+      <span><i id="w2">μεντές.</i></span>
+    </h1>
+    <p class="sub" data-anim="sub">Καφενείο-ουζερί στα στενά της Απολλωνίας. Ψάθινες καρέκλες, μαρμάρινα τραπεζάκια, ρακή χύμα και κουβέντα μέχρι τα μεσάνυχτα.</p>
+    <div class="meta" data-anim="meta"><span>Ανοιχτά έως 00:00</span><i>•</i><span>Steno, Απολλωνία</span><i>•</i><span>+30 22840 33601</span></div>
+  </div>
+  <div class="scroll-cue">scroll</div>
+</section>
+
+<section class="chapter" id="istoria">
+  <div class="num">Κεφάλαιο α′</div>
+  <h2>Από τον <i>1878</i> ζει το όνομα.</h2>
 </section>
 
 <div class="ribbon"><div class="ribbon-row">
-ρακή χύμα <span class="d">✦</span> ελληνικός καφές <span class="d">✦</span> σιφνέικη μαντζετιά <span class="d">✦</span> κάππαρη Σίφνου <span class="d">✦</span> κρασί χύμα <span class="d">✦</span> τσιπουράκι
-<span class="d">✦</span> ρακή χύμα <span class="d">✦</span> ελληνικός καφές <span class="d">✦</span> σιφνέικη μαντζετιά <span class="d">✦</span> κάππαρη Σίφνου <span class="d">✦</span> κρασί χύμα <span class="d">✦</span> τσιπουράκι
+  ρακή χύμα <span class="d">✦</span> ελληνικός καφές <span class="d">✦</span> σιφνέικη μαντζετιά <span class="d">✦</span> κάππαρη Σίφνου <span class="d">✦</span> κρασί χύμα <span class="d">✦</span> τσιπουράκι
+  <span class="d">✦</span> ρακή χύμα <span class="d">✦</span> ελληνικός καφές <span class="d">✦</span> σιφνέικη μαντζετιά <span class="d">✦</span> κάππαρη Σίφνου <span class="d">✦</span> κρασί χύμα <span class="d">✦</span> τσιπουράκι
 </div></div>
 
-<section class="gallery" id="galleria">
-<span class="label">— Γκαλερί</span>
-<h2>Τρεις στιγμές</h2>
-<div class="gal-grid">
-<figure class="g1"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_EoAZLE1SDRcLLvylMowSWMDJlyYB-9-eLVJY9jKWXrCbmvgusJvZm49l8w6-zYeOvsik6Hf4fBvAq6O0vMllIp_-KLXbs7ftQ1SyhZXckSng-CiCd8Y9BtIPZTmeV0QTHuQ=w1100-h1500-k-no" alt="Tselementes terrace, Apollonia" loading="lazy"><figcaption>Στα στενά</figcaption></figure>
-<figure class="g2"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlPohCdOYwUSq8Arzl9bN0bGd_oSKLxwPnFJe1zelqvduxX_skxAt0NUawzfH_n3jxIx4rsmooI-DRCZvzGETZMQ8DWjviQYi4SGUcg-QwRBJGB_WtO9tNjgacOS0rZX6tI6aJ=w1100-h900-k-no" alt="Tselementes menu" loading="lazy"><figcaption>Η κάρτα</figcaption></figure>
-<figure class="g3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBHPoy8EHXOq3oit6sNfQU5hk271owh-PpwZzClDYsARkQJuRv8L-T5PRLSGVXrWvD-XKL5vNQ81huYMG56uKLG-5AmCsue0c1P16pn_J5e_Bxixc3MI9KWvs_2qgR96CNJAOo=w1100-h900-k-no" alt="Tselementes meze plate" loading="lazy"><figcaption>Από την κουζίνα</figcaption></figure>
-</div>
+<section class="pin-story">
+  <div class="pin-wrap" id="pinWrap">
+    <div class="pin-inner">
+      <div class="pin-text" id="pinText">
+        <div class="step on" data-i="0">
+          <div class="lbl">Α′ · Το όνομα</div>
+          <h3>Νικόλαος <i>Τσελεμεντές.</i></h3>
+          <p>Γεννήθηκε στη Σίφνο το 1878. Έγραψε το πρώτο ελληνικό βιβλίο μαγειρικής το 1910. Από τότε, στη Σίφνο, κάθε ταβέρνα στέκεται κάτω από τη σκιά του.</p>
+        </div>
+        <div class="step" data-i="1">
+          <div class="lbl">Β′ · Η κουζίνα</div>
+          <h3>Σιφνέικη <i>μαντζετιά.</i></h3>
+          <p>Η κάρτα κρατάει τη συνταγή απλή. Κάππαρη Σίφνου, χορταρικά, ελιά, ρακή χύμα από βαρέλι. Λίγα πράγματα, καλά φτιαγμένα.</p>
+        </div>
+        <div class="step" data-i="2">
+          <div class="lbl">Γ′ · Η ώρα</div>
+          <h3>Στα <i>στενά.</i></h3>
+          <p>Τα στενά σοκάκια της Απολλωνίας στενεύουν τον χρόνο. Ψάθινες καρέκλες, μαρμάρινο τραπεζάκι, μια ρακή. Κανείς δεν βιάζεται να φύγει.</p>
+        </div>
+      </div>
+      <div class="pin-img">
+        <img class="on" data-i="0" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_EoAZLE1SDRcLLvylMowSWMDJlyYB-9-eLVJY9jKWXrCbmvgusJvZm49l8w6-zYeOvsik6Hf4fBvAq6O0vMllIp_-KLXbs7ftQ1SyhZXckSng-CiCd8Y9BtIPZTmeV0QTHuQ=w1100-h1400-k-no" alt="terrace">
+        <img data-i="1" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBHPoy8EHXOq3oit6sNfQU5hk271owh-PpwZzClDYsARkQJuRv8L-T5PRLSGVXrWvD-XKL5vNQ81huYMG56uKLG-5AmCsue0c1P16pn_J5e_Bxixc3MI9KWvs_2qgR96CNJAOo=w1100-h1400-k-no" alt="meze">
+        <img data-i="2" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlPohCdOYwUSq8Arzl9bN0bGd_oSKLxwPnFJe1zelqvduxX_skxAt0NUawzfH_n3jxIx4rsmooI-DRCZvzGETZMQ8DWjviQYi4SGUcg-QwRBJGB_WtO9tNjgacOS0rZX6tI6aJ=w1100-h1400-k-no" alt="menu">
+        <div class="cap" id="cap">Στενά της Απολλωνίας</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="story" id="istoria">
-<div class="story-wrap">
-<div class="label">— Η ιστορία</div>
-<h2>Το όνομα του <span class="italic">Τσελεμεντέ.</span></h2>
-<p>Ο Νικόλαος Τσελεμεντές, γεννημένος στη Σίφνο το 1878, έγραψε το πρώτο ελληνικό βιβλίο μαγειρικής το 1910. Από τότε, στη Σίφνο, κάθε ταβέρνα στέκεται κάτω από τη σκιά του.</p>
-<p>Εδώ, στα στενά της Απολλωνίας, το ουζερί κρατάει τη συνταγή απλή. Σιφνέικη παράδοση — χωρίς πομπώδη λόγια.</p>
-<p class="pull">«Στη Σίφνο δεν υπάρχει συνταγή που δεν περνάει από τον Τσελεμεντέ.»</p>
-</div>
+<section class="menu-sec" id="karta">
+  <div class="lbl">Κεφάλαιο β′ · Η κάρτα</div>
+  <h2>Καφές, μεζές, <span style="font-style:italic;color:var(--olive)">ρακή</span></h2>
+  <div class="tilt" id="tilt"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlPohCdOYwUSq8Arzl9bN0bGd_oSKLxwPnFJe1zelqvduxX_skxAt0NUawzfH_n3jxIx4rsmooI-DRCZvzGETZMQ8DWjviQYi4SGUcg-QwRBJGB_WtO9tNjgacOS0rZX6tI6aJ=w1100-h1500-k-no" alt="The actual Tselementes menu" loading="lazy"></div>
+  <div class="hint">Η αληθινή κάρτα του Τσελεμεντέ — όπως είναι, τυπωμένη</div>
+</section>
+
+<section class="quote-band">
+  <p>«Στη Σίφνο δεν υπάρχει συνταγή που δεν περνάει από τον <i>Τσελεμεντέ.</i>»</p>
+  <cite>— σιφνέικη παροιμία</cite>
 </section>
 
 <section class="visit" id="vrisko">
-<div class="visit-wrap">
-<div class="label">— Επικοινωνία</div>
-<h2>Στα <span class="italic">στενά.</span></h2>
-<dl>
-<dt>Διεύθυνση</dt><dd>Steno, Απολλωνία · 840 03 Σίφνος</dd>
-<dt>Τηλέφωνο</dt><dd><a href="tel:+302284033601">+30 22840 33601</a></dd>
-<dt>Email</dt><dd><a href="mailto:tselementes.ouzeri@gmail.com">tselementes.ouzeri@gmail.com</a></dd>
-<dt>Ωράριο</dt><dd>Καθημερινά έως τα μεσάνυχτα</dd>
-</dl>
-<div class="cta">
-<a class="primary" href="tel:+302284033601">📞 Κράτηση</a>
-<a class="ghost" href="https://www.google.com/maps/place/Kafeneio-Ouzeri+TSELEMENTES/@36.9716759,24.7236658,17z" target="_blank">📍 Στον χάρτη</a>
-</div>
-</div>
+  <div class="visit-wrap">
+    <div>
+      <div class="lbl">Κεφάλαιο γ′ · Επικοινωνία</div>
+      <h2>Εδώ <i>είμαστε.</i></h2>
+      <p class="pitch">Στα στενά της Απολλωνίας, ακριβώς έξω από την κεντρική πλατεία. Καθημερινά από το πρωί. Καλύτερα να τηλεφωνήσετε για κράτηση, ιδιαίτερα τα Σάββατα.</p>
+      <div class="cta">
+        <a class="primary" href="tel:+302284033601">📞 Κράτηση τηλεφωνικά</a>
+        <a class="ghost" href="https://www.google.com/maps/place/Kafeneio-Ouzeri+TSELEMENTES/@36.9716759,24.7236658,17z" target="_blank">📍 Στον χάρτη</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Διεύθυνση</dt><dd>Steno, Απολλωνία<br>840 03 Σίφνος</dd>
+      <dt>Τηλέφωνο</dt><dd><a href="tel:+302284033601">+30 22840 33601</a></dd>
+      <dt>Email</dt><dd><a href="mailto:tselementes.ouzeri@gmail.com">tselementes.ouzeri<br>@gmail.com</a></dd>
+      <dt>Ωράριο</dt><dd>Καθημερινά<br>έως τα μεσάνυχτα</dd>
+    </dl>
+  </div>
 </section>
 
-<footer>Steno · Apollonia · Sifnos</footer>
+<footer>Steno · Apollonia · Sifnos · κουζίνα παράδοσης</footer>
+
+<script>
+// Progress rail
+const rail = document.getElementById('rail');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  rail.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, {passive:true});
+
+// Hero reveal
+gsap.to('#w1', {y:0,opacity:1,duration:1.1,ease:'power3.out',delay:.2});
+gsap.to('#w2', {y:0,opacity:1,duration:1.1,ease:'power3.out',delay:.4});
+gsap.to('[data-anim="kicker"]', {y:0,opacity:1,duration:.8,ease:'power2.out',delay:.0});
+gsap.to('[data-anim="sub"]', {y:0,opacity:1,duration:.9,ease:'power2.out',delay:.7});
+gsap.to('[data-anim="meta"]', {y:0,opacity:1,duration:.9,ease:'power2.out',delay:.95});
+
+// Pinned story sequencer
+gsap.registerPlugin(ScrollTrigger);
+const steps = document.querySelectorAll('#pinText .step');
+const imgs = document.querySelectorAll('.pin-img img');
+const caps = ['Στενά της Απολλωνίας','Από την κουζίνα','Η κάρτα'];
+const cap = document.getElementById('cap');
+ScrollTrigger.create({
+  trigger:'#pinWrap',
+  start:'top top',
+  end:'bottom bottom',
+  scrub:false,
+  onUpdate:self => {
+    const i = Math.min(2, Math.floor(self.progress * 3));
+    steps.forEach((s,idx) => s.classList.toggle('on', idx===i));
+    imgs.forEach((img,idx) => img.classList.toggle('on', idx===i));
+    cap.textContent = caps[i];
+  }
+});
+
+// 3D tilt on menu card
+const tilt = document.getElementById('tilt');
+tilt.addEventListener('mousemove', e => {
+  const r = tilt.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width - .5;
+  const y = (e.clientY - r.top) / r.height - .5;
+  tilt.style.transform = `rotateX(${-y*8}deg) rotateY(${x*10}deg) scale(1.02)`;
+});
+tilt.addEventListener('mouseleave', () => tilt.style.transform = 'rotateX(0) rotateY(0) scale(1)');
+</script>
 </body>
 </html>
