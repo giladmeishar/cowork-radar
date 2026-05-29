@@ -172,12 +172,11 @@
   ],
   "processedNoteDraftIds": [],
   "lastScanReport": {
-    "runId": "f23e3d40-95ee-445e-b8bf-ddc3712463a3",
-    "completedAt": "2026-05-29T18:04:26.552277Z",
+    "runId": "manual-reset",
+    "completedAt": "2026-05-29T18:35:00Z",
     "added": [],
     "notesActedOn": [],
     "emailReplies": [],
-    "heartbeat": true,
-    "note": "Discovery paused pending re-approval after 3 photo-attribution failures. No triggers/notes/replies this cycle."
+    "note": "Heartbeat pause cleared. Discovery active. Photo failure #4 (Tselementes) protocol now in SKILL.md Step 3.5."
   }
 }
