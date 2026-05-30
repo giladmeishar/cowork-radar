@@ -1,0 +1,5 @@
+{
+  "queue": [],
+  "processed": [],
+  "note": "Pre-vetted candidates. Each cron run pulls queue[0], verifies photos (scoped panel selector + audit screenshot), builds basic+premium, pushes, then moves entry to processed[]. Discovery is decoupled — Gilad or Claude-in-chat curate this queue when there's time; cron just drains."
+}
