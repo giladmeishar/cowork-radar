@@ -1,0 +1,74 @@
+<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ταβέρνα Μιχάλης — Χώρα Τήνου</title>
+<meta name="description" content="Παραδοσιακή τηνιακή ταβέρνα στη Χώρα της Τήνου.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#4C7A4A;--green-d:#2E5230;--green-dd:#1B331C;--cream:#F4EEDD;--cream-w:#FAF5E9;--tomato:#C0492F;--honey:#E0A23C;--ink:#17190F;--ink-2:#3A3D2E;--rule:rgba(46,82,48,.16);--d:'Cormorant Garamond',Georgia,serif;--s:'Inter',sans-serif;--m:'Roboto Mono',monospace}
+html{scroll-behavior:smooth}body{background:var(--cream);color:var(--ink);font-family:var(--s);font-weight:300;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;font-family:var(--m);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);font-weight:500;mix-blend-mode:difference}
+.topbar .mark{font-family:var(--d);font-style:italic;font-size:22px;text-transform:none}.topbar nav{display:flex;gap:24px}.topbar nav a{color:inherit;text-decoration:none;opacity:.7}.topbar nav a:hover{opacity:1}
+.hero{min-height:88vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--green-dd)}
+.hero .bg{position:absolute;inset:0;background-image:url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAHz4O5rKYCidl7XaLlYHJK5ryu5Fa3SgxqNl6QcEnkbeU_YvIRnZZNc7CWbhJ3AQtbaPY9peIKT-oO7Ks57ry-51AYrDxuodn9-iiM0g59mLWCsHvA0ahdE2-R2rLBZ6VYUSEpf=w1800-h2400-k-no");background-size:cover;background-position:center 42%;animation:kb 30s ease-in-out infinite alternate;filter:contrast(1.04)}
+@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.07)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,51,28,.36) 0%,rgba(27,51,28,.05) 38%,rgba(27,51,28,.74) 92%,var(--green-dd) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 36px 80px;color:var(--cream)}
+.hero .kicker{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero .kicker::before{content:"";width:38px;height:1px;background:var(--honey)}
+.hero h1{font-family:var(--d);font-weight:500;font-size:clamp(52px,10vw,160px);line-height:.88;letter-spacing:-.025em;color:var(--cream);margin-bottom:22px}.hero h1 i{font-style:italic;color:var(--honey)}
+.hero .sub{font-family:var(--d);font-style:italic;font-size:clamp(21px,2.5vw,33px);color:#EFE0BE;max-width:35ch;line-height:1.32;margin-bottom:44px}
+.hero .meta{display:flex;gap:26px;font-family:var(--m);font-size:11px;letter-spacing:.2em;color:#EFE0BE;flex-wrap:wrap;text-shadow:0 1px 8px rgba(27,51,28,.5)}.hero .meta i{font-style:normal;color:var(--honey);margin:0 4px}
+.ribbon{background:var(--green-dd);color:var(--cream);padding:24px 0;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ribbon-row{display:flex;gap:54px;white-space:nowrap;font-family:var(--d);font-style:italic;font-size:30px;animation:marq 58s linear infinite}.ribbon-row .d{color:var(--honey);font-style:normal}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.gallery{padding:110px 36px 50px;background:var(--cream)}
+.gallery .lbl{display:block;text-align:center;font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--tomato);font-weight:500;margin-bottom:16px}
+.gallery h2{text-align:center;font-family:var(--d);font-weight:500;font-style:italic;font-size:clamp(34px,4.8vw,64px);line-height:1;color:var(--green-d);margin-bottom:50px}
+.gal{max-width:1380px;margin:0 auto;display:grid;gap:16px}
+.gal figure{margin:0;background:var(--green-dd);overflow:hidden;position:relative;box-shadow:0 30px 60px -32px rgba(46,82,48,.4)}
+.gal figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s cubic-bezier(.16,.84,.34,1)}.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;bottom:14px;left:16px;font-family:var(--m);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--cream);background:rgba(27,51,28,.6);padding:6px 11px;backdrop-filter:blur(3px)}
+@media(max-width:880px){.gal{grid-template-columns:1fr!important;grid-template-rows:auto!important}.gal figure{grid-column:1!important;grid-row:auto!important;height:300px;aspect-ratio:auto!important}}
+.story{padding:130px 36px;background:var(--cream-w);text-align:center;border-bottom:1px solid var(--rule)}
+.story-wrap{max-width:700px;margin:0 auto}
+.story .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--tomato);font-weight:500;margin-bottom:22px}
+.story h2{font-family:var(--d);font-weight:500;font-size:clamp(38px,5.2vw,78px);line-height:.98;color:var(--green-d);margin-bottom:30px}.story h2 i{font-style:italic;color:var(--tomato)}
+.story p{font-size:17.5px;line-height:1.74;color:var(--ink-2);margin:0 auto 16px;max-width:48ch}
+.story .pull{font-family:var(--d);font-style:italic;font-size:23px;color:var(--green-d);max-width:38ch;margin:30px auto 0;line-height:1.4;border-top:1px solid var(--honey);padding-top:22px}
+.visit{padding:130px 36px;background:var(--green-dd);color:var(--cream)}
+.visit-wrap{max-width:1040px;margin:0 auto}
+.visit .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:22px}
+.visit h2{font-family:var(--d);font-weight:500;font-size:clamp(40px,5vw,78px);line-height:.96;color:var(--cream);margin-bottom:24px}.visit h2 i{font-style:italic;color:var(--honey)}
+.visit .pitch{font-size:17px;color:#EFE0BE;line-height:1.7;max-width:42ch}
+.visit dt{font-family:var(--m);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--honey);font-weight:500;padding-top:20px;border-top:1px solid rgba(244,238,221,.14)}
+.visit dd{font-family:var(--d);font-size:21px;line-height:1.3;color:var(--cream);padding:7px 0 20px}.visit dd a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--honey)}.visit dd a:hover{color:var(--honey)}
+.visit .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.visit .cta a{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;text-decoration:none;font-family:var(--m);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;transition:all .25s}
+.visit .cta .primary{background:var(--tomato);color:var(--cream)}.visit .cta .primary:hover{background:var(--honey);color:var(--green-dd);transform:translateY(-2px)}
+.visit .cta .ghost{color:var(--cream);border:1px solid rgba(244,238,221,.3)}.visit .cta .ghost:hover{border-color:var(--honey);color:var(--honey)}
+@media(max-width:880px){.visit-wrap{grid-template-columns:1fr!important;gap:40px}.visit dl{grid-template-columns:1fr!important}}
+footer{padding:50px 36px;background:var(--green-dd);color:#EFE0BE;text-align:center;font-family:var(--m);font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.55}
+.gal{grid-template-columns:1.2fr 1fr}.gal .g1{grid-column:1;grid-row:1/3;aspect-ratio:3/4}.gal .g2,.gal .g3{aspect-ratio:4/3}
+.visit dl{display:grid;grid-template-columns:1fr 1fr;gap:26px 36px;margin:46px 0 36px}</style></head><body><div class="topbar"><div class="mark">Μιχάλης</div><nav><a href="#galleria">Γκαλερί</a><a href="#story">Η ταβέρνα</a><a href="#visit">Εδώ είμαστε</a></nav></div>
+<section class="hero"><div class="bg"></div><div class="hero-inner">
+<div class="kicker">Χώρα Τήνου · παραδοσιακή τηνιακή κουζίνα</div>
+<h1>Ταβέρνα <i>Μιχάλης.</i></h1>
+<p class="sub">Παραδοσιακή τηνιακή ταβέρνα στα σοκάκια της Χώρας. Φρέσκο ψάρι, ντόπιοι μεζέδες, νησιώτικη κουζίνα όπως παλιά.</p>
+<div class="meta"><span>Γεωργίου Γκάφου 7</span><i>•</i><span>Χώρα Τήνου</span><i>•</i><span>+30 2283 023498</span></div>
+</div></section><div class="ribbon"><div class="ribbon-row">
+φρέσκο ψάρι <span class="d">✦</span> τηνιακοί μεζέδες <span class="d">✦</span> καλαμάρι γεμιστό <span class="d">✦</span> χταπόδι <span class="d">✦</span> ντόπιο κρασί <span class="d">✦</span> νησιώτικη κουζίνα
+<span class="d">✦</span> φρέσκο ψάρι <span class="d">✦</span> τηνιακοί μεζέδες <span class="d">✦</span> καλαμάρι γεμιστό <span class="d">✦</span> χταπόδι <span class="d">✦</span> ντόπιο κρασί
+</div></div><section class="gallery" id="galleria"><span class="lbl">— Γκαλερί</span><h2>Τρεις στιγμές</h2><div class="gal">
+<figure class="g1"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHz4O5rKYCidl7XaLlYHJK5ryu5Fa3SgxqNl6QcEnkbeU_YvIRnZZNc7CWbhJ3AQtbaPY9peIKT-oO7Ks57ry-51AYrDxuodn9-iiM0g59mLWCsHvA0ahdE2-R2rLBZ6VYUSEpf=w1100-h1500-k-no" alt="front" loading="lazy"><figcaption>Στα σοκάκια</figcaption></figure>
+<figure class="g2"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1f0t1UTC0GyyEnkEy0J-jp8TYycQtotWyqQLr1DjRb17_-fodrk4TQ1hGOqpfdrzAdcsp2_46nmCCWN3h8j_qd35u9qwqVdooEOk1uIdpMYpaW7h6Tc1VY8Yrk5FMCHS-5Yc=w1100-h900-k-no" alt="interior" loading="lazy"><figcaption>Στο μαγαζί</figcaption></figure>
+<figure class="g3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYZG0DbM2N65iRXESVs7D4ehWTwG8goC-Ogmk1NWUqS0X_CU4vlAa2-_iVuQ7cRhMYfoG7F9c8Y3ptOnzyWNTWa8KRcAFSWlWvCt7qqTB5nKQ9-UqqTSedhK8_QQ9BrE8lXmIJ9NLVBHje=w1100-h900-k-no" alt="menu" loading="lazy"><figcaption>Η κάρτα</figcaption></figure>
+</div></section><section class="story" id="story"><div class="story-wrap">
+<div class="lbl">— Η ταβέρνα</div><h2>Τηνιακή κουζίνα, <i>όπως παλιά.</i></h2>
+<p>Η Ταβέρνα Μιχάλης βρίσκεται στα στενά σοκάκια της Χώρας της Τήνου — πράσινη πρόσοψη, κόκκινοι τοίχοι, καρέκλες στο δρομάκι. Παραδοσιακή τηνιακή κουζίνα: φρέσκο ψάρι, καλαμάρι γεμιστό, ντόπιοι μεζέδες.</p>
+<p>Ο Μιχάλης στην κουζίνα, το κρασί χύμα, το ψάρι της ημέρας. Τίποτα φανταχτερό — μόνο νησιώτικα πιάτα φτιαγμένα με μεράκι.</p>
+<p class="pull">«Παραδοσιακή τηνιακή κουζίνα — φρέσκο ψάρι &amp; θαλασσινά.»</p>
+</div></section><section class="visit" id="visit"><div class="visit-wrap">
+<div class="lbl">— Επικοινωνία</div><h2>Στα <i>σοκάκια.</i></h2>
+<dl><dt>Διεύθυνση</dt><dd>Γεωργίου Γκάφου 7<br>Χώρα Τήνου</dd><dt>Τηλέφωνο</dt><dd><a href="tel:+302283023498">+30 2283 023498</a></dd><dt>Email</dt><dd><a href="mailto:tavernamichalistinos@gmail.com">tavernamichalistinos@gmail.com</a></dd><dt>Ωράριο</dt><dd>Καθημερινά</dd></dl>
+<div class="cta"><a class="primary" href="tel:+302283023498">📞 Κράτηση</a><a class="ghost" href="https://www.google.com/maps/place/?q=place_id:ChIJl_sA1cHsohQRLwiIXPvf-2I" target="_blank">📍 Στον χάρτη</a></div>
+</div></section><footer>Χώρα Τήνου · Κυκλάδες · παραδοσιακή ταβέρνα</footer></body></html>

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-29T19:55:00Z",
+  "lastScan": "2026-05-29T20:05:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -333,6 +333,66 @@
         "subject": "Μια μικρή ιδέα για το Λιμανάκι",
         "body": "Γεια σας,\n\nΕίδα την ψαροταβέρνα σας στον Φάρο και έφτιαξα δύο μικρά δείγματα ιστοσελίδας — δωρεάν.\n\nΚλασικό: https://giladmeishar.github.io/cowork-radar/limanaki-sifnos-20260529-basic.html\nΜοντέρνο: https://giladmeishar.github.io/cowork-radar/limanaki-sifnos-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες από το Google Maps. Αν σας αρέσει, μπορώ να το κάνω δικό σας με όνομα τομέα (πχ. limanaki-sifnos.gr) — γύρω στα 60€/χρόνο. Μοναδικό μήνυμα.\n\nΦιλικά, Gilad",
         "bodyHebrew": "שלום,\nראיתי את הפסארוטברנה שלכם בפארוס, סיפנוס, ובניתי שני אתרי דוגמה חינמיים עם התמונות שלכם מגוגל. אם תאהבו — דומיין משלכם ~60€/שנה. הודעה חד-פעמית."
+      }
+    },
+    {
+      "id": "taverna-michalis-tinos-20260529",
+      "name": "Ταβέρνα Μιχάλης (Taverna Michalis)",
+      "type": "Ταβέρνα",
+      "city": "Tinos Town",
+      "country": "GR",
+      "address": "Georgiou Gafou 7, Tinos Town, Greece",
+      "phone": "+30 2283 023498",
+      "email": "tavernamichalistinos@gmail.com",
+      "rating": "4.2",
+      "reviewCount": "380",
+      "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJl_sA1cHsohQRLwiIXPvf-2I",
+      "discoveredAt": "2026-05-29T20:05:00Z",
+      "status": "draft-created",
+      "sites": {
+        "basic": "taverna-michalis-tinos-20260529-basic.html",
+        "premium": "taverna-michalis-tinos-20260529-premium.html"
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHz4O5rKYCidl7XaLlYHJK5ryu5Fa3SgxqNl6QcEnkbeU_YvIRnZZNc7CWbhJ3AQtbaPY9peIKT-oO7Ks57ry-51AYrDxuodn9-iiM0g59mLWCsHvA0ahdE2-R2rLBZ6VYUSEpf",
+          "type": "exterior",
+          "content": "green-painted taverna front with sign ΤΑΒΕΡΝΑ ΜΙΧΑΛΗΣ, green/orange chairs in stone alley",
+          "source": "google-maps",
+          "verified": "audit-michalis.html-#0"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYZG0DbM2N65iRXESVs7D4ehWTwG8goC-Ogmk1NWUqS0X_CU4vlAa2-_iVuQ7cRhMYfoG7F9c8Y3ptOnzyWNTWa8KRcAFSWlWvCt7qqTB5nKQ9-UqqTSedhK8_QQ9BrE8lXmIJ9NLVBHje",
+          "type": "menu",
+          "content": "handwritten Greek/German fish menu",
+          "source": "google-maps",
+          "verified": "audit-michalis.html-#1"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1f0t1UTC0GyyEnkEy0J-jp8TYycQtotWyqQLr1DjRb17_-fodrk4TQ1hGOqpfdrzAdcsp2_46nmCCWN3h8j_qd35u9qwqVdooEOk1uIdpMYpaW7h6Tc1VY8Yrk5FMCHS-5Yc",
+          "type": "interior",
+          "content": "red-walled interior, dolphin decor, cook in black MICHALIS t-shirt",
+          "source": "google-maps",
+          "verified": "audit-michalis.html-#2"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG83XD6bnQ9n4tsFnCcqi6ldhUTh8UcXIZW_3MM81kCSYrjE9lSkuDWJzyXP3VB4-AVSqV_nZ1XLR4BUrLwIxZfB9HIsdcmKvaeybgdqv_Px0YFOoUDfGH9dKfDH1dh3cCdjSjiQg",
+          "type": "food",
+          "content": "plate of fried food with greens",
+          "source": "google-maps",
+          "verified": "audit-michalis.html-#3"
+        }
+      ],
+      "design": {
+        "palette": "taverna green + cream + tomato + honey",
+        "layout": "4-photo mosaic",
+        "motion": "ken-burns + marquee"
+      },
+      "emailDraft": {
+        "language": "el",
+        "subject": "Μια μικρή ιδέα για την Ταβέρνα Μιχάλης",
+        "body": "Γεια σας,\n\nΕίδα την ταβέρνα σας στη Χώρα της Τήνου και έφτιαξα δύο μικρά δείγματα ιστοσελίδας — δωρεάν.\n\nΚλασικό: https://giladmeishar.github.io/cowork-radar/taverna-michalis-tinos-20260529-basic.html\nΜοντέρνο: https://giladmeishar.github.io/cowork-radar/taverna-michalis-tinos-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες. Μοναδικό μήνυμα.\n\nΦιλικά, Gilad",
+        "bodyHebrew": "שלום,\nראיתי את הטברנה שלכם בטינוס ובניתי שני אתרי דוגמה חינמיים עם התמונות שלכם. הודעה חד-פעמית."
       }
     }
   ],
