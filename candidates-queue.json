@@ -1,70 +1,10 @@
 {
-  "queue": [
+  "queue": [],
+  "processed": [
     {
       "id": "akrogiali-astypalaia-20260529",
-      "prebuilt": true,
-      "business": {
-        "id": "akrogiali-astypalaia-20260529",
-        "name": "Ακρογιάλι (Akrogiali)",
-        "type": "Ταβέρνα",
-        "city": "Astypalaia",
-        "country": "GR",
-        "address": "Beach, 859 00 Astypalaia, Greece",
-        "phone": "+30 22430 61511",
-        "email": "akrogiali.astipalea@gmail.com",
-        "rating": "4.4",
-        "reviewCount": "—",
-        "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK5OX25q1lxQRDe6BHeFsHpc",
-        "discoveredAt": "2026-05-29T20:15:00Z",
-        "status": "draft-created",
-        "sites": {
-          "basic": "akrogiali-astypalaia-20260529-basic.html",
-          "premium": "akrogiali-astypalaia-20260529-premium.html"
-        },
-        "photos": [
-          {
-            "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGuPE2OncybJOaXgjXL9MSTO9qXdDDZMCOTkcx6i5BoE1pDbl5AaLtS77sjc_4VggfNoEQcl5sIV8Z-6SUXrwh66Huo80MjEIDVe4EREfX4CjHpaPPxp8N_ReSJu5M4LHRgfr8",
-            "type": "exterior",
-            "content": "whitewashed seaside taverna terrace with blue chairs and woven pendant lamps by the sea",
-            "source": "google-maps",
-            "verified": "audit-akrogiali.html-#0"
-          },
-          {
-            "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDGGQuc9Esb32HYaNGlMwbeuhcvWfCUNlhCPteiG261ZDy92by6pTfKM5ZvRZx1EL0bUabTFT_O4UnCOmKDItBKeopdS1JZJZIVZQdv9wMjP0aP6ss4iqsV-ASMbydCo8BmL21",
-            "type": "menu",
-            "content": "menu printing 'Σαλάτα Ακρογιάλι / Akrogiali Salad', Greek salad, Dakos, boiled greens",
-            "source": "google-maps",
-            "verified": "audit-akrogiali.html-#1"
-          },
-          {
-            "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH--3Gq14qXERZf8RDw9Mk8a4bu0fbhz49C5hhXwE2LmFLiwwUHuUrMwZCKvflqsgJezxxnnJBuaEezYfaYc-xL_otnEsfpXNStDgGHIOkq7uC-vZrOxi3pQIJxpb7brAwhZnyuTw",
-            "type": "food",
-            "content": "harbour-side night table with wine bottle, bread basket with Akrogiali sailboat-logo napkin and a pasta dish",
-            "source": "google-maps",
-            "verified": "audit-akrogiali.html-#2"
-          },
-          {
-            "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHrsEqkXcwLQwdM8fNPpBtiscri76JX3ZbuTSb8hsuEd9nUesVxKnnj2p1ghpArT--aD0wYpVmGC3n2n1i5rBSaY75Kf6BRlc6kHRKjSzquOdB22cbmskLO1HFWNDAW_K_Z_193",
-            "type": "exterior",
-            "content": "blue-chaired seaside table setting",
-            "source": "google-maps",
-            "verified": "audit-akrogiali.html-#3"
-          }
-        ],
-        "design": {
-          "palette": "Aegean blue + ivory + amber lantern + coral",
-          "layout": "4-photo mosaic",
-          "motion": "ken-burns + marquee"
-        },
-        "emailDraft": {
-          "language": "el",
-          "subject": "Μια μικρή ιδέα για το Ακρογιάλι",
-          "body": "Γεια σας,\n\nΕίδα την ταβέρνα σας στην Αστυπάλαια και έφτιαξα δύο μικρά δείγματα ιστοσελίδας — δωρεάν.\n\nΚλασικό: https://giladmeishar.github.io/cowork-radar/akrogiali-astypalaia-20260529-basic.html\nΜοντέρνο: https://giladmeishar.github.io/cowork-radar/akrogiali-astypalaia-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες. Μοναδικό μήνυμα.\n\nΦιλικά, Gilad",
-          "bodyHebrew": "שלום,\nראיתי את הטברנה שלכם באסטיפלאיה ובניתי שני אתרי דוגמה חינמיים עם התמונות שלכם. הודעה חד-פעמית."
-        }
-      }
+      "at": "2026-05-30T16:02:55.015116Z"
     }
   ],
-  "processed": [],
   "note": "Pre-vetted candidates. Each cron run pulls queue[0], verifies photos (scoped panel selector + audit screenshot), builds basic+premium, pushes, then moves entry to processed[]. Discovery is decoupled — Gilad or Claude-in-chat curate this queue when there's time; cron just drains."
 }
