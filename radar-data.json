@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-29T19:45:00Z",
+  "lastScan": "2026-05-29T19:55:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -273,6 +273,66 @@
         "subject": "A small idea for Seaways",
         "body": "Hello,\n\nI came across Seaways on Google Maps and was charmed enough by the pale-blue façade and the bunting that I built two small sample websites for the shop — completely free, just to show what an online presence could look like.\n\nClassic version: https://giladmeishar.github.io/cowork-radar/seaways-bookshop-fishguard-20260529-basic.html\nModern version: https://giladmeishar.github.io/cowork-radar/seaways-bookshop-fishguard-20260529-premium.html\n\nI used your own Google Maps photos. If you like one of them I can set it up under a proper domain (e.g. seawaysbooks.co.uk) — around £45/year for domain + hosting, one-off setup free.\n\nThis is a one-off message; I don't send newsletters and I won't write again unless you'd like me to.\n\nKind regards,\nGilad",
         "bodyHebrew": "שלום,\nראיתי את חנות הספרים שלכם בפישגארד ובניתי שני אתרי דוגמה חינמיים. השתמשתי בתמונות שלכם מגוגל. אם תאהבו, אפשר להקים עם דומיין שלכם (~45£/שנה). הודעה חד-פעמית."
+      }
+    },
+    {
+      "id": "limanaki-sifnos-20260529",
+      "name": "Το Λιμανάκι (Limanaki Fish Tavern)",
+      "type": "Ψαροταβέρνα",
+      "city": "Faros, Sifnos",
+      "country": "GR",
+      "address": "Faros beach, 840 03 Sifnos, Greece",
+      "phone": "+30 22840 71973",
+      "email": "tolimanaki11@hotmail.com",
+      "rating": "4.3",
+      "reviewCount": "1016",
+      "googleMapsUrl": "https://www.google.com/maps/place/Limanaki+Fish+Tavern/@36.9434882,24.7521958,17z/data=!3m1!4b1!4m6!3m5!1s0x1498f2e65ad1c1d5:0x22c0367462b2a7ee!8m2!3d36.9434882!4d24.7521958!16s%2Fg%2F11b5qrgm32",
+      "discoveredAt": "2026-05-29T19:55:00Z",
+      "status": "draft-created",
+      "sites": {
+        "basic": "limanaki-sifnos-20260529-basic.html",
+        "premium": "limanaki-sifnos-20260529-premium.html"
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFp-TgJSH7ziol92Jw9CyOHXKAfYaGkWt7ssLe7FrTrx05YuZ3J06Tp9JtTBYrC10NOMam-GODdN0mHxucwb0yq82102kIhS6QGkgyIbcSlNYHwFA5ysY30abN7dCIEiaNT8dOQ",
+          "type": "exterior",
+          "content": "seaside taverna terrace with blue chairs and tables on a paved walkway by the harbour, beach umbrellas",
+          "source": "google-maps",
+          "verified": "audit-limanaki.html-#0"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxi23qDheEJJ6qs9I2k3XSsEWGf-wpjQy88B9GfaTk2cQEI9rLPxID3iMntW8SUYI16K2ya_KiAWHdtyQCFfCsbZTmz6vdK7kTkOrEdrMCpVUZdUyNQOeU8lseXHNhrKM8N0ARh5VBbbM",
+          "type": "food",
+          "content": "grilled fish fillet plated with a grilled tomato and lemon wedge",
+          "source": "google-maps",
+          "verified": "audit-limanaki.html-#1"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGUVn4STBc9E3CiaBCFHcXUT7AIM4BY6j0BtUJ527Nyff81Pent15QCDwDHlTE_BCiN87Evl2CGBvllPHHPLNF8UQunpyk4VBLZR3Mhw8DQ0OisESXK3QopV6_xQPsIzM_PR3W9-s1X6DGe",
+          "type": "menu",
+          "content": "printed menu in Greek/English/French listing 'Limanaki salad' and 'Flora's salad', tuna fillet, octopus",
+          "source": "google-maps",
+          "verified": "audit-limanaki.html-#2"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFAe5cdYEzcfk6iOLYKtSiyo50wcZCxdnoDd6EUYwv47yhy2LzThWUpBFKKjQ468p6vMEVljSADBGvsjZfsE01GA9DlKLMiLPdJHxsd96JAm5DDz07X-WKC_e1oj7KdVI8HXS692w",
+          "type": "food",
+          "content": "plate of seafood pasta",
+          "source": "google-maps",
+          "verified": "audit-limanaki.html-#3"
+        }
+      ],
+      "design": {
+        "palette": "Aegean sea + sand + coral sunset + saffron",
+        "layout": "4-photo mosaic",
+        "motion": "ken-burns hero + marquee"
+      },
+      "emailDraft": {
+        "language": "el",
+        "subject": "Μια μικρή ιδέα για το Λιμανάκι",
+        "body": "Γεια σας,\n\nΕίδα την ψαροταβέρνα σας στον Φάρο και έφτιαξα δύο μικρά δείγματα ιστοσελίδας — δωρεάν.\n\nΚλασικό: https://giladmeishar.github.io/cowork-radar/limanaki-sifnos-20260529-basic.html\nΜοντέρνο: https://giladmeishar.github.io/cowork-radar/limanaki-sifnos-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες από το Google Maps. Αν σας αρέσει, μπορώ να το κάνω δικό σας με όνομα τομέα (πχ. limanaki-sifnos.gr) — γύρω στα 60€/χρόνο. Μοναδικό μήνυμα.\n\nΦιλικά, Gilad",
+        "bodyHebrew": "שלום,\nראיתי את הפסארוטברנה שלכם בפארוס, סיפנוס, ובניתי שני אתרי דוגמה חינמיים עם התמונות שלכם מגוגל. אם תאהבו — דומיין משלכם ~60€/שנה. הודעה חד-פעמית."
       }
     }
   ],

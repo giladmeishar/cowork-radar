@@ -1,0 +1,102 @@
+<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Το Λιμανάκι — Ψαροταβέρνα, Φάρος Σίφνου</title>
+<meta name="description" content="Ψαροταβέρνα στην παραλία του Φάρου, Σίφνος. Φρέσκο ψάρι, θαλασσινά, μεζέδες με θέα το λιμανάκι.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--sea:#1C6E8C;--sea-d:#0E4257;--sea-dd:#072A38;--sand:#F3E9D6;--sand-w:#FAF4E7;--coral:#E8765A;--sun:#F2B33D;--ink:#16191B;--ink-2:#374247;--rule:rgba(14,66,87,.16);--d:'Cormorant Garamond',Georgia,serif;--s:'Inter',sans-serif;--m:'Roboto Mono',monospace}
+html{scroll-behavior:smooth}body{background:var(--sand);color:var(--ink);font-family:var(--s);font-weight:300;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;font-family:var(--m);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:500;mix-blend-mode:difference;pointer-events:none}
+.topbar>*{pointer-events:auto}.topbar .mark{font-family:var(--d);font-style:italic;font-size:22px;text-transform:none}
+.topbar nav{display:flex;gap:24px}.topbar nav a{color:inherit;text-decoration:none;opacity:.7}.topbar nav a:hover{opacity:1}
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--sea-dd)}
+.hero .bg{position:absolute;inset:0;background-image:url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAFp-TgJSH7ziol92Jw9CyOHXKAfYaGkWt7ssLe7FrTrx05YuZ3J06Tp9JtTBYrC10NOMam-GODdN0mHxucwb0yq82102kIhS6QGkgyIbcSlNYHwFA5ysY30abN7dCIEiaNT8dOQ=w1800-h2400-k-no");background-size:cover;background-position:center 40%;animation:kb 30s ease-in-out infinite alternate;filter:saturate(1.02) contrast(1.04)}
+@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,42,56,.32) 0%,rgba(7,42,56,.05) 38%,rgba(7,42,56,.72) 90%,var(--sea-dd) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 36px 80px;color:var(--sand)}
+.hero .kicker{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--sun);font-weight:500;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero .kicker::before{content:"";width:38px;height:1px;background:var(--sun)}
+.hero h1{font-family:var(--d);font-weight:500;font-size:clamp(56px,11vw,176px);line-height:.86;letter-spacing:-.025em;color:var(--sand);margin-bottom:22px}
+.hero h1 i{font-style:italic;color:var(--sun);font-weight:500}
+.hero .sub{font-family:var(--d);font-style:italic;font-size:clamp(22px,2.6vw,34px);color:#F0E2C3;max-width:35ch;line-height:1.32;margin-bottom:46px}
+.hero .meta{display:flex;gap:28px;font-family:var(--m);font-size:11px;letter-spacing:.22em;color:#F0E2C3;flex-wrap:wrap;text-shadow:0 1px 8px rgba(7,42,56,.55)}.hero .meta i{font-style:normal;color:var(--sun);margin:0 4px}
+.ribbon{background:var(--sea-dd);color:var(--sand);padding:24px 0;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ribbon-row{display:flex;gap:54px;white-space:nowrap;font-family:var(--d);font-style:italic;font-size:32px;animation:marq 58s linear infinite}.ribbon-row .d{color:var(--sun);font-style:normal}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.gallery{padding:120px 36px 50px;background:var(--sand)}
+.gallery .lbl{display:block;text-align:center;font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--coral);font-weight:500;margin-bottom:18px}
+.gallery h2{text-align:center;font-family:var(--d);font-weight:500;font-style:italic;font-size:clamp(36px,5vw,68px);line-height:1;color:var(--sea-d);margin-bottom:52px}
+.gal{max-width:1380px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:340px 340px;gap:16px}
+.gal figure{margin:0;background:var(--sea-dd);overflow:hidden;position:relative;box-shadow:0 30px 60px -32px rgba(14,66,87,.4)}
+.gal figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.16,.84,.34,1)}.gal figure:hover img{transform:scale(1.06)}
+.gal .g1{grid-column:1;grid-row:1/3}.gal .g2{grid-column:2;grid-row:1}.gal .g3{grid-column:3;grid-row:1}.gal .g4{grid-column:2/4;grid-row:2}
+.gal figcaption{position:absolute;bottom:16px;left:18px;font-family:var(--m);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);background:rgba(7,42,56,.6);padding:7px 12px;backdrop-filter:blur(3px)}
+@media(max-width:880px){.gal{grid-template-columns:1fr;grid-template-rows:repeat(4,300px)}.gal .g1,.gal .g2,.gal .g3,.gal .g4{grid-column:1;grid-row:auto}}
+.story{padding:140px 36px;background:var(--sand-w);text-align:center;border-bottom:1px solid var(--rule)}
+.story-wrap{max-width:720px;margin:0 auto}
+.story .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--coral);font-weight:500;margin-bottom:24px}
+.story h2{font-family:var(--d);font-weight:500;font-size:clamp(40px,5.5vw,84px);line-height:.98;color:var(--sea-d);margin-bottom:32px}
+.story h2 i{font-style:italic;color:var(--coral)}
+.story p{font-size:18px;line-height:1.75;color:var(--ink-2);margin:0 auto 18px;max-width:48ch}
+.story .pull{font-family:var(--d);font-style:italic;font-size:24px;color:var(--sea-d);max-width:38ch;margin:32px auto 0;line-height:1.4;border-top:1px solid var(--sun);padding-top:24px}
+.visit{padding:140px 36px;background:var(--sea-dd);color:var(--sand)}
+.visit-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
+.visit .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--sun);font-weight:500;margin-bottom:22px}
+.visit h2{font-family:var(--d);font-weight:500;font-size:clamp(40px,5vw,82px);line-height:.96;color:var(--sand);margin-bottom:24px}.visit h2 i{font-style:italic;color:var(--sun)}
+.visit .pitch{font-size:17px;color:#F0E2C3;line-height:1.7;max-width:42ch}
+.visit dl{font-family:var(--s);font-size:14px}
+.visit dt{font-family:var(--m);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--sun);font-weight:500;padding-top:22px;border-top:1px solid rgba(243,233,214,.14)}
+.visit dd{font-family:var(--d);font-size:22px;line-height:1.3;color:var(--sand);padding:8px 0 22px}.visit dd a{color:var(--sand);text-decoration:none;border-bottom:1px solid var(--sun)}.visit dd a:hover{color:var(--sun)}
+.visit .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.visit .cta a{display:inline-flex;align-items:center;gap:10px;padding:18px 28px;text-decoration:none;font-family:var(--m);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;transition:all .25s}
+.visit .cta .primary{background:var(--coral);color:var(--sand)}.visit .cta .primary:hover{background:var(--sun);color:var(--sea-dd);transform:translateY(-2px)}
+.visit .cta .ghost{color:var(--sand);border:1px solid rgba(243,233,214,.35)}.visit .cta .ghost:hover{border-color:var(--sun);color:var(--sun)}
+@media(max-width:880px){.visit-wrap{grid-template-columns:1fr;gap:40px}}
+footer{padding:50px 36px;background:var(--sea-dd);color:#F0E2C3;text-align:center;font-family:var(--m);font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.55}
+</style></head><body>
+<div class="topbar"><div class="mark">Λιμανάκι</div><nav><a href="#galleria">Γκαλερί</a><a href="#story">Η ιστορία</a><a href="#visit">Εδώ είμαστε</a></nav></div>
+<section class="hero"><div class="bg"></div><div class="hero-inner">
+<div class="kicker">Φάρος · Σίφνος · στην παραλία</div>
+<h1>Το <i>Λιμανάκι.</i></h1>
+<p class="sub">Ψαροταβέρνα στην παραλία του Φάρου. Φρέσκο ψάρι, θαλασσινά, μεζέδες — με τα πόδια στην άμμο και θέα το λιμανάκι.</p>
+<div class="meta"><span>Παραλία Φάρου</span><i>•</i><span>840 03 Σίφνος</span><i>•</i><span>+30 22840 71973</span></div>
+</div></section>
+<div class="ribbon"><div class="ribbon-row">
+φρέσκο ψάρι <span class="d">✦</span> χταπόδι ξιδάτο <span class="d">✦</span> γαρίδες <span class="d">✦</span> σαλάτα Λιμανάκι <span class="d">✦</span> ταραμοσαλάτα <span class="d">✦</span> κρασί χύμα
+<span class="d">✦</span> φρέσκο ψάρι <span class="d">✦</span> χταπόδι ξιδάτο <span class="d">✦</span> γαρίδες <span class="d">✦</span> σαλάτα Λιμανάκι <span class="d">✦</span> ταραμοσαλάτα <span class="d">✦</span> κρασί χύμα
+</div></div>
+<section class="gallery" id="galleria">
+<span class="lbl">— Γκαλερί</span><h2>Τέσσερις στιγμές</h2>
+<div class="gal">
+<figure class="g1"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFp-TgJSH7ziol92Jw9CyOHXKAfYaGkWt7ssLe7FrTrx05YuZ3J06Tp9JtTBYrC10NOMam-GODdN0mHxucwb0yq82102kIhS6QGkgyIbcSlNYHwFA5ysY30abN7dCIEiaNT8dOQ=w1100-h1500-k-no" alt="seaside terrace" loading="lazy"><figcaption>Στην παραλία</figcaption></figure>
+<figure class="g2"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxi23qDheEJJ6qs9I2k3XSsEWGf-wpjQy88B9GfaTk2cQEI9rLPxID3iMntW8SUYI16K2ya_KiAWHdtyQCFfCsbZTmz6vdK7kTkOrEdrMCpVUZdUyNQOeU8lseXHNhrKM8N0ARh5VBbbM=w1100-h900-k-no" alt="grilled fish" loading="lazy"><figcaption>Φρέσκο ψάρι</figcaption></figure>
+<figure class="g3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFAe5cdYEzcfk6iOLYKtSiyo50wcZCxdnoDd6EUYwv47yhy2LzThWUpBFKKjQ468p6vMEVljSADBGvsjZfsE01GA9DlKLMiLPdJHxsd96JAm5DDz07X-WKC_e1oj7KdVI8HXS692w=w1100-h900-k-no" alt="seafood pasta" loading="lazy"><figcaption>Θαλασσινά</figcaption></figure>
+<figure class="g4"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGUVn4STBc9E3CiaBCFHcXUT7AIM4BY6j0BtUJ527Nyff81Pent15QCDwDHlTE_BCiN87Evl2CGBvllPHHPLNF8UQunpyk4VBLZR3Mhw8DQ0OisESXK3QopV6_xQPsIzM_PR3W9-s1X6DGe=w1400-h800-k-no" alt="the menu" loading="lazy"><figcaption>Η κάρτα</figcaption></figure>
+</div></section>
+<section class="story" id="story"><div class="story-wrap">
+<div class="lbl">— Η ιστορία</div>
+<h2>Στην παραλία του <i>Φάρου.</i></h2>
+<p>Το Λιμανάκι είναι η ψαροταβέρνα της οικογένειας της Φλώρας, πάνω στην παραλία του Φάρου — εκεί που το παλιό λιμανάκι των ψαράδων συναντά τη θάλασσα.</p>
+<p>Το ψάρι έρχεται φρέσκο, τα χtaπόδια κρέμονται να στεγνώσουν στον ήλιο, η σαλάτα «Λιμανάκι» και η «σαλάτα της Φλώρας» είναι δικές μας. Τραπεζάκια στην άμμο, κρασί χύμα, ηλιοβασίλεμα.</p>
+<p class="pull">«Με τα πόδια στην άμμο και το ψάρι μόλις βγαλμένο.»</p>
+</div></section>
+<section class="visit" id="visit"><div class="visit-wrap">
+<div>
+<div class="lbl">— Επικοινωνία</div>
+<h2>Στο <i>λιμανάκι.</i></h2>
+<p class="pitch">Πάνω στην παραλία του Φάρου, στη νότια Σίφνο. Ανοιχτά όλη μέρα την σεζόν. Για τραπέζι το βράδυ, ιδιαίτερα στο ηλιοβασίλεμα, καλύτερα να τηλεφωνήσετε.</p>
+<div class="cta">
+<a class="primary" href="tel:+302284071973">📞 Κράτηση</a>
+<a class="ghost" href="https://www.google.com/maps/place/Limanaki+Fish+Tavern/@36.9434882,24.7521958,17z" target="_blank">📍 Στον χάρτη</a>
+</div>
+</div>
+<dl>
+<dt>Τοποθεσία</dt><dd>Παραλία Φάρου<br>840 03 Σίφνος</dd>
+<dt>Τηλέφωνο</dt><dd><a href="tel:+302284071973">+30 22840 71973</a></dd>
+<dt>Email</dt><dd><a href="mailto:tolimanaki11@hotmail.com">tolimanaki11<br>@hotmail.com</a></dd>
+<dt>Ωράριο</dt><dd>Καθημερινά τη σεζόν<br>μεσημέρι &amp; βράδυ</dd>
+</dl>
+</div></section>
+<footer>Φάρος · Σίφνος · ψαροταβέρνα στην παραλία</footer>
+</body></html>
