@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-05-29T19:25:00Z",
+  "lastScan": "2026-05-29T19:35:00Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -220,6 +220,59 @@
         "subject": "Μια μικρή ιδέα για το Τσελεμεντές",
         "body": "Γεια σας,\n\nΕίδα το καφενείο-ουζερί σας στην Απολλωνία και έφτιαξα δύο μικρά δείγματα ιστοσελίδας — δωρεάν, για να δείτε πώς θα μπορούσε να μοιάζει η παρουσία σας στο διαδίκτυο.\n\nΚλασική: https://giladmeishar.github.io/cowork-radar/tselementes-sifnos-20260529-basic.html\nΜοντέρνα: https://giladmeishar.github.io/cowork-radar/tselementes-sifnos-20260529-premium.html\n\nΧρησιμοποίησα τις δικές σας φωτογραφίες από το Google Maps. Αν σας αρέσει κάποια, μπορώ να την κάνω δική σας με όνομα τομέα (πχ. tselementes-sifnos.gr) — γύρω στα 60€/χρόνο.\n\nΑυτό είναι μοναδικό μήνυμα — δεν στέλνω newsletters.\n\nΦιλικά,\nGilad",
         "bodyHebrew": "שלום,\nראיתי את הקפנייו-אוזרי שלכם בסיפנוס ובניתי שני אתרי דוגמה חינמיים. השתמשתי בתמונות שלכם מגוגל. אם אהבתם, אפשר להקים עם דומיין שלכם (~60€/שנה). הודעה חד-פעמית."
+      }
+    },
+    {
+      "id": "seaways-bookshop-fishguard-20260529",
+      "name": "Seaways Bookshop",
+      "type": "Independent bookshop",
+      "city": "Fishguard",
+      "country": "GB",
+      "address": "12 West Street, Fishguard SA65 9AE, Wales",
+      "phone": "+44 1348 873433",
+      "email": "seawaysbooks@gmail.com",
+      "rating": "4.7",
+      "reviewCount": "68",
+      "googleMapsUrl": "https://www.google.com/maps/place/Seaways+Bookshop/@51.9943779,-4.9771402,17z/data=!3m1!4b1!4m6!3m5!1s0x4868d7310f342275:0xa97c0853d4f38ab7!8m2!3d51.9943779!4d-4.9771402!16s%2Fg%2F1tglydcr",
+      "discoveredAt": "2026-05-29T19:35:00Z",
+      "status": "draft-created",
+      "sites": {
+        "basic": "seaways-bookshop-fishguard-20260529-basic.html",
+        "premium": "seaways-bookshop-fishguard-20260529-premium.html"
+      },
+      "photos": [
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUpDCn6x49hUFE55XWSHPDtZZI2bq84spdtDWELH7dhQEp9lpyhGjNaRWyHc3D5sOLhycZDbNL2-zzM9K5W0gCBTGGdZOo-pSnDsBDOtSC3G0xkqPK5cUbWw8T4UqESzxjygo4",
+          "type": "interior",
+          "content": "crammed wooden bookshelves with art monograph spines (Klee, Botticelli, Cezanne) and a vintage wooden chair with blue-striped cushion in the corner",
+          "source": "google-maps",
+          "verified": "audit-seaways.html-#0"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHEUuJpOVhMaNctyyXdKr3t6n6uYsfL1-a-eJlzKn741ChaTrjxJ6rfptrnAw8etG3oWUIUD0h944GNLof7g31sJ9BVg5OYfpM52_t1ovXXWB9p84hKt2o9HsP-lOYPuL4aGsOPxfdmLo_k",
+          "type": "detail",
+          "content": "hand holding a children's picture book 'How to Be a Fit Bird' by Marion Deuchars against bookshop shelves",
+          "source": "google-maps",
+          "verified": "audit-seaways.html-#1"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPkUzMvtpVNZUsYxHQ_i41cL8u1UfaVFWRGVe0sbVbgANNAwyAsAe-pKhKqqZYwBJIjTp6Ra7MRq4WPlPBtPix5vVPV1EvgECQzVUT0XW6z0I0xD0OEgfTkH3mJQLCfaUHOhw",
+          "type": "exterior",
+          "content": "pale-blue painted Welsh terraced shopfront with multicolour bunting flags strung across, low fence, books in lower windows",
+          "source": "google-maps",
+          "verified": "audit-seaways.html-#2"
+        }
+      ],
+      "design": {
+        "palette": "sea blue + ivory + bunting red+yellow+green+salmon",
+        "layout": "bunting decoration + 3-frame gallery + book-spine row",
+        "motion": "swaying bunting + ken-burns hero"
+      },
+      "emailDraft": {
+        "language": "en",
+        "subject": "A small idea for Seaways",
+        "body": "Hello,\n\nI came across Seaways on Google Maps and was charmed enough by the pale-blue façade and the bunting that I built two small sample websites for the shop — completely free, just to show what an online presence could look like.\n\nClassic version: https://giladmeishar.github.io/cowork-radar/seaways-bookshop-fishguard-20260529-basic.html\nModern version: https://giladmeishar.github.io/cowork-radar/seaways-bookshop-fishguard-20260529-premium.html\n\nI used your own Google Maps photos. If you like one of them I can set it up under a proper domain (e.g. seawaysbooks.co.uk) — around £45/year for domain + hosting, one-off setup free.\n\nThis is a one-off message; I don't send newsletters and I won't write again unless you'd like me to.\n\nKind regards,\nGilad",
+        "bodyHebrew": "שלום,\nראיתי את חנות הספרים שלכם בפישגארד ובניתי שני אתרי דוגמה חינמיים. השתמשתי בתמונות שלכם מגוגל. אם תאהבו, אפשר להקים עם דומיין שלכם (~45£/שנה). הודעה חד-פעמית."
       }
     }
   ],

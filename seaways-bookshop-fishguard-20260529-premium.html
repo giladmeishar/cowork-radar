@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seaways Bookshop — Fishguard, Pembrokeshire</title>
+<meta name="description" content="An independent bookshop on West Street, Fishguard, a Welsh harbour town. Art books, children's books, second-hand finds.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sea:#7FB8C7;--sea-d:#3D6F7E;--sea-dd:#1C3F4A;--ivory:#F5EFE0;--ivory-w:#FAF5E8;
+  --salmon:#E08B6E;--bunting-red:#C8493A;--bunting-yellow:#E7B25C;--bunting-green:#7EA67A;
+  --ink:#1D1F22;--ink-2:#3F4146;--rule:rgba(29,31,34,.13);
+  --d:'Fraunces','Iowan Old Style',Georgia,serif;--s:'Inter',sans-serif;--m:'Roboto Mono',monospace;
+}
+html{scroll-behavior:smooth}body{background:var(--ivory);color:var(--ink);font-family:var(--s);font-weight:300;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* TOP BAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;font-family:var(--m);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ivory);font-weight:500;mix-blend-mode:difference;pointer-events:none}
+.topbar > *{pointer-events:auto}
+.topbar .mark{font-family:var(--d);font-style:italic;font-size:22px;letter-spacing:0;text-transform:none;font-weight:500}
+.topbar nav{display:flex;gap:24px}.topbar nav a{color:inherit;text-decoration:none;opacity:.7}.topbar nav a:hover{opacity:1}
+
+/* BUNTING (top decoration) */
+.bunting{position:fixed;top:0;left:0;right:0;height:46px;z-index:55;pointer-events:none;overflow:hidden}
+.bunting svg{position:absolute;top:-4px;left:0;width:200%;animation:sway 6s ease-in-out infinite alternate}
+@keyframes sway{0%{transform:translateX(0)}100%{transform:translateX(-1%)}}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--sea-dd)}
+.hero .bg{position:absolute;inset:0;background-image:url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPkUzMvtpVNZUsYxHQ_i41cL8u1UfaVFWRGVe0sbVbgANNAwyAsAe-pKhKqqZYwBJIjTp6Ra7MRq4WPlPBtPix5vVPV1EvgECQzVUT0XW6z0I0xD0OEgfTkH3mJQLCfaUHOhw=w1800-h2200-k-no");background-size:cover;background-position:center 38%;animation:zoom 30s ease-in-out infinite alternate;filter:saturate(.95) contrast(1.02)}
+@keyframes zoom{0%{transform:scale(1)}100%{transform:scale(1.07)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,63,74,.32) 0%,rgba(28,63,74,.05) 40%,rgba(28,63,74,.7) 90%,var(--sea-dd) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 36px 80px;color:var(--ivory)}
+.hero .kicker{font-family:var(--m);font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--bunting-yellow);font-weight:500;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero .kicker::before{content:"";width:38px;height:1px;background:var(--bunting-yellow)}
+.hero h1{font-family:var(--d);font-weight:400;font-size:clamp(56px,11vw,180px);line-height:.88;letter-spacing:-.025em;color:var(--ivory);margin-bottom:22px;font-variation-settings:"opsz" 144}
+.hero h1 i{font-style:italic;color:var(--bunting-yellow);font-weight:500}
+.hero .sub{font-family:var(--d);font-style:italic;font-size:clamp(22px,2.4vw,32px);color:#EAE0C2;max-width:36ch;line-height:1.32;margin-bottom:46px;font-weight:400}
+.hero .meta{display:flex;gap:28px;font-family:var(--m);font-size:11px;letter-spacing:.2em;color:#EAE0C2;flex-wrap:wrap;text-shadow:0 1px 6px rgba(28,63,74,.5)}
+.hero .meta i{font-style:normal;color:var(--bunting-yellow);margin:0 4px}
+
+/* RIBBON — book titles */
+.ribbon{background:var(--sea-dd);color:var(--ivory);padding:24px 0;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ribbon-row{display:flex;gap:54px;white-space:nowrap;font-family:var(--d);font-style:italic;font-size:32px;font-weight:400;animation:marq 60s linear infinite}
+.ribbon-row .d{color:var(--bunting-yellow);font-style:normal}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* GALLERY — 3 frames */
+.gallery{padding:120px 36px 60px;background:var(--ivory)}
+.gallery .lbl{display:block;text-align:center;font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bunting-red);font-weight:500;margin-bottom:18px}
+.gallery h2{text-align:center;font-family:var(--d);font-weight:500;font-style:italic;font-size:clamp(36px,5vw,68px);line-height:1;color:var(--sea-dd);letter-spacing:-.015em;margin-bottom:52px}
+.gal{max-width:1380px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:340px 340px;gap:16px}
+.gal figure{margin:0;background:var(--sea-dd);overflow:hidden;position:relative;box-shadow:0 30px 60px -32px rgba(28,63,74,.4)}
+.gal figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.16,.84,.34,1)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal .g1{grid-column:1;grid-row:1/3}.gal .g2{grid-column:2/4;grid-row:1}.gal .g3{grid-column:2/4;grid-row:2}
+.gal figcaption{position:absolute;bottom:16px;left:18px;font-family:var(--m);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ivory);background:rgba(28,63,74,.6);padding:7px 12px;backdrop-filter:blur(3px)}
+@media(max-width:880px){.gal{grid-template-columns:1fr;grid-template-rows:auto;gap:12px}.gal .g1,.gal .g2,.gal .g3{grid-column:1;grid-row:auto;height:300px}}
+
+/* STORY */
+.story{padding:140px 36px;background:var(--ivory-w);text-align:center;border-bottom:1px solid var(--rule)}
+.story-wrap{max-width:720px;margin:0 auto}
+.story .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bunting-red);font-weight:500;margin-bottom:24px}
+.story h2{font-family:var(--d);font-weight:500;font-size:clamp(40px,5.5vw,84px);line-height:.96;color:var(--sea-dd);margin-bottom:32px;letter-spacing:-.02em}
+.story h2 i{font-style:italic;color:var(--bunting-red)}
+.story p{font-size:18px;line-height:1.75;color:var(--ink-2);margin:0 auto 18px;max-width:48ch}
+.story .pull{font-family:var(--d);font-style:italic;font-size:24px;color:var(--sea-dd);max-width:38ch;margin:32px auto 0;line-height:1.4;border-top:1px solid var(--sea);padding-top:24px}
+
+/* SHELF — horizontal scroll of book spine colors */
+.shelf{padding:80px 0;background:var(--ivory);overflow:hidden;text-align:center}
+.shelf .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--sea-d);font-weight:500;margin-bottom:18px}
+.shelf h3{font-family:var(--d);font-style:italic;font-weight:500;font-size:clamp(28px,3.2vw,46px);color:var(--sea-dd);margin-bottom:40px}
+.spines{display:flex;justify-content:center;align-items:flex-end;gap:0;padding:0 36px;max-width:1400px;margin:0 auto}
+.spine{width:54px;border-radius:3px 3px 0 0;writing-mode:vertical-rl;text-orientation:mixed;font-family:var(--d);font-style:italic;font-size:13px;padding:18px 0;text-align:center;font-weight:500;color:var(--ivory-w);transition:transform .35s ease;cursor:default;box-shadow:inset 0 -3px 0 rgba(0,0,0,.15)}
+.spine:hover{transform:translateY(-14px)}
+.spine.c1{background:var(--sea-d);height:240px}.spine.c2{background:var(--bunting-red);height:220px}
+.spine.c3{background:var(--bunting-green);height:260px}.spine.c4{background:var(--bunting-yellow);height:200px;color:var(--sea-dd)}
+.spine.c5{background:var(--sea-dd);height:250px}.spine.c6{background:var(--salmon);height:210px;color:var(--sea-dd)}
+.spine.c7{background:var(--sea);height:230px;color:var(--sea-dd)}.spine.c8{background:#7A6A93;height:245px}
+
+/* VISIT */
+.visit{padding:140px 36px;background:var(--sea-dd);color:var(--ivory)}
+.visit-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
+.visit .lbl{font-family:var(--m);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bunting-yellow);font-weight:500;margin-bottom:22px}
+.visit h2{font-family:var(--d);font-weight:500;font-size:clamp(40px,5vw,82px);line-height:.96;color:var(--ivory);margin-bottom:24px;letter-spacing:-.02em}
+.visit h2 i{font-style:italic;color:var(--bunting-yellow)}
+.visit .pitch{font-size:17px;color:#EAE0C2;line-height:1.7;max-width:42ch}
+.visit dl{font-family:var(--s);font-size:14px}
+.visit dt{font-family:var(--m);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--bunting-yellow);font-weight:500;padding-top:22px;border-top:1px solid rgba(245,239,224,.14)}
+.visit dd{font-family:var(--d);font-size:22px;line-height:1.3;color:var(--ivory);font-weight:400;padding:8px 0 22px}
+.visit dd a{color:var(--ivory);text-decoration:none;border-bottom:1px solid var(--bunting-yellow)}.visit dd a:hover{color:var(--bunting-yellow)}
+.visit .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.visit .cta a{display:inline-flex;align-items:center;gap:10px;padding:18px 28px;text-decoration:none;font-family:var(--m);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;transition:all .25s}
+.visit .cta .primary{background:var(--bunting-red);color:var(--ivory)}.visit .cta .primary:hover{background:var(--bunting-yellow);color:var(--sea-dd);transform:translateY(-2px)}
+.visit .cta .ghost{color:var(--ivory);border:1px solid rgba(245,239,224,.35)}.visit .cta .ghost:hover{border-color:var(--bunting-yellow);color:var(--bunting-yellow)}
+@media(max-width:880px){.visit-wrap{grid-template-columns:1fr;gap:40px}}
+
+footer{padding:50px 36px;background:var(--sea-dd);color:#EAE0C2;text-align:center;font-family:var(--m);font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.55;border-top:1px solid rgba(245,239,224,.08)}
+</style>
+</head>
+<body>
+
+<div class="bunting">
+<svg viewBox="0 0 1600 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,8 Q400,32 800,18 T1600,12" stroke="#1D1F22" stroke-width="1" fill="none" opacity=".5"/>
+  <g>
+    <polygon points="40,8 60,8 50,32" fill="#C8493A"/>
+    <polygon points="100,11 120,12 110,36" fill="#E7B25C"/>
+    <polygon points="160,14 180,16 170,40" fill="#7EA67A"/>
+    <polygon points="220,17 240,19 230,43" fill="#E08B6E"/>
+    <polygon points="280,18 300,20 290,44" fill="#3D6F7E"/>
+    <polygon points="340,20 360,21 350,45" fill="#C8493A"/>
+    <polygon points="400,21 420,21 410,45" fill="#E7B25C"/>
+    <polygon points="460,21 480,21 470,45" fill="#7EA67A"/>
+    <polygon points="520,21 540,20 530,44" fill="#E08B6E"/>
+    <polygon points="580,20 600,19 590,43" fill="#3D6F7E"/>
+    <polygon points="640,19 660,18 650,42" fill="#C8493A"/>
+    <polygon points="700,18 720,16 710,40" fill="#E7B25C"/>
+    <polygon points="760,16 780,15 770,39" fill="#7EA67A"/>
+    <polygon points="820,15 840,15 830,39" fill="#E08B6E"/>
+    <polygon points="880,15 900,16 890,40" fill="#3D6F7E"/>
+    <polygon points="940,17 960,18 950,42" fill="#C8493A"/>
+    <polygon points="1000,19 1020,20 1010,44" fill="#E7B25C"/>
+    <polygon points="1060,20 1080,20 1070,44" fill="#7EA67A"/>
+    <polygon points="1120,20 1140,19 1130,43" fill="#E08B6E"/>
+    <polygon points="1180,19 1200,18 1190,42" fill="#3D6F7E"/>
+    <polygon points="1240,17 1260,16 1250,40" fill="#C8493A"/>
+    <polygon points="1300,15 1320,14 1310,38" fill="#E7B25C"/>
+    <polygon points="1360,14 1380,13 1370,37" fill="#7EA67A"/>
+    <polygon points="1420,13 1440,13 1430,37" fill="#E08B6E"/>
+    <polygon points="1480,14 1500,14 1490,38" fill="#3D6F7E"/>
+    <polygon points="1540,15 1560,15 1550,39" fill="#C8493A"/>
+  </g>
+</svg>
+</div>
+
+<div class="topbar"><div class="mark">Seaways</div><nav><a href="#story">The shop</a><a href="#galleria">Inside</a><a href="#visit">Find us</a></nav></div>
+
+<section class="hero">
+  <div class="bg"></div>
+  <div class="hero-inner">
+    <div class="kicker">Fishguard · Pembrokeshire · since 1979</div>
+    <h1>Sea<i>ways.</i></h1>
+    <p class="sub">An independent bookshop in a pale-blue Welsh townhouse on West Street. Art books, children's books, second-hand finds and a chair by the window.</p>
+    <div class="meta"><span>12 West Street</span><i>•</i><span>Fishguard SA65 9AE</span><i>•</i><span>01348 873433</span></div>
+  </div>
+</section>
+
+<div class="ribbon"><div class="ribbon-row">
+  art books <span class="d">✦</span> children's books <span class="d">✦</span> second-hand finds <span class="d">✦</span> Welsh language <span class="d">✦</span> poetry <span class="d">✦</span> maps & guides
+  <span class="d">✦</span> art books <span class="d">✦</span> children's books <span class="d">✦</span> second-hand finds <span class="d">✦</span> Welsh language <span class="d">✦</span> poetry <span class="d">✦</span> maps & guides
+</div></div>
+
+<section class="gallery" id="galleria">
+  <span class="lbl">— Inside</span>
+  <h2>Three frames</h2>
+  <div class="gal">
+    <figure class="g1"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUpDCn6x49hUFE55XWSHPDtZZI2bq84spdtDWELH7dhQEp9lpyhGjNaRWyHc3D5sOLhycZDbNL2-zzM9K5W0gCBTGGdZOo-pSnDsBDOtSC3G0xkqPK5cUbWw8T4UqESzxjygo4=w1100-h1500-k-no" alt="Seaways bookshop interior — art books and reading chair" loading="lazy"><figcaption>The reading chair</figcaption></figure>
+    <figure class="g2"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHEUuJpOVhMaNctyyXdKr3t6n6uYsfL1-a-eJlzKn741ChaTrjxJ6rfptrnAw8etG3oWUIUD0h944GNLof7g31sJ9BVg5OYfpM52_t1ovXXWB9p84hKt2o9HsP-lOYPuL4aGsOPxfdmLo_k=w1400-h800-k-no" alt="picture book held in front of the shelves" loading="lazy"><figcaption>A new arrival</figcaption></figure>
+    <figure class="g3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPkUzMvtpVNZUsYxHQ_i41cL8u1UfaVFWRGVe0sbVbgANNAwyAsAe-pKhKqqZYwBJIjTp6Ra7MRq4WPlPBtPix5vVPV1EvgECQzVUT0XW6z0I0xD0OEgfTkH3mJQLCfaUHOhw=w1400-h800-k-no" alt="pale-blue Fishguard shopfront with bunting" loading="lazy"><figcaption>West Street, Fishguard</figcaption></figure>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="story-wrap">
+    <div class="lbl">— The shop</div>
+    <h2>A blue door <i>on West Street.</i></h2>
+    <p>Seaways has been a working bookshop in Fishguard for over four decades — the pale-blue terrace house, the bunting outside in summer, the wooden shelves crammed floor to ceiling with art, fiction, children's books and second-hand finds.</p>
+    <p>No big chains. No algorithm. Just the slow joy of running a finger along spines, and a chair by the window if you fancy reading a chapter before deciding.</p>
+    <p class="pull">"A small shop run by people who actually read what they sell."</p>
+  </div>
+</section>
+
+<section class="shelf">
+  <div class="lbl">— On the shelves today</div>
+  <h3>A row from the front window</h3>
+  <div class="spines">
+    <div class="spine c1">Klee · drawings</div>
+    <div class="spine c2">Rebecca · du Maurier</div>
+    <div class="spine c3">Welsh poems</div>
+    <div class="spine c4">Botticelli</div>
+    <div class="spine c5">Penguin classics</div>
+    <div class="spine c6">Picture books</div>
+    <div class="spine c7">Coastal walks</div>
+    <div class="spine c8">Cezanne</div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="visit-wrap">
+    <div>
+      <div class="lbl">— Visiting</div>
+      <h2>Come <i>in.</i></h2>
+      <p class="pitch">On West Street, two minutes from Fishguard's main square. Open most days — best to ring ahead in winter. We post overseas if you can't get to Pembrokeshire.</p>
+      <div class="cta">
+        <a class="primary" href="tel:+441348873433">📞 Ring the shop</a>
+        <a class="ghost" href="https://www.google.com/maps/place/Seaways+Bookshop/@51.9943779,-4.9771402,17z" target="_blank">📍 Find us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>12 West Street<br>Fishguard SA65 9AE</dd>
+      <dt>Telephone</dt><dd><a href="tel:+441348873433">01348 873433</a></dd>
+      <dt>Email</dt><dd><a href="mailto:seawaysbooks@gmail.com">seawaysbooks<br>@gmail.com</a></dd>
+      <dt>Hours</dt><dd>Tue–Sat, mostly<br>Ring in winter</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>West Street · Fishguard · Pembrokeshire · Wales</footer>
+</body>
+</html>
