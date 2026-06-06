@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastScan": "2026-06-06T10:33:46.648821Z",
+  "lastScan": "2026-06-06T11:03:46.233496Z",
   "businesses": [
     {
       "id": "deacon-house-cafe-edinburgh-20260525",
@@ -458,7 +458,7 @@
   ],
   "processedNoteDraftIds": [],
   "lastScanReport": {
-    "completedAt": "2026-06-06T10:33:46.648821Z",
+    "completedAt": "2026-06-06T11:03:46.233496Z",
     "added": [],
     "skipReason": "buffer empty — Gilad needs to refill the queue",
     "queueLength": 0
